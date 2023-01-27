@@ -55,11 +55,17 @@ roman_numeral = {'I': 1,'V': 5, 'X': 10,'L': 50, 'C': 100, 'D': 500, 'M': 1000}
 class Solution:
 
     def romanToInt(self, s: str) -> int:
-        if roman_numeral[s]:
-            print(roman_numeral[s])
-            return s
-        else:
-            return False
-
+        summ, last = 0, 0
+        for num in list(s)[::-1]: 
+            if roman_numeral[num]:
+                if roman_numeral[num] >= last:
+                    summ+=roman_numeral[num]
+                else:
+                    summ-=roman_numeral[num]
+            else:
+                return False
+            last = roman_numeral[num]
+        print(summ) 
+        return summ
 
 Solution.romanToInt(roman_numeral,input('Enter roman numeral: '))
