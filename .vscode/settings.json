@@ -5,7 +5,7 @@
             "name": "Python: Django",
             "type": "python",
             "request": "launch",
-            "program": "${workspaceFolder}/Akashi/manage.py",
+            "program": "${workspaceFolder}/1Two Sum.py",
             "args": [
                 "runserver",
             ],
