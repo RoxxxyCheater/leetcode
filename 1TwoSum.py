@@ -43,12 +43,6 @@ class Solution(object):
         for i in range(len(nums)):
             for j in range(len(nums[::-1])):
                 if target == nums[i] + nums[::-1][j] and i != nums.index(nums[::-1][j]):
-                    print('Sum: ',nums[i] + nums[::-1][j], 'Target: ', target)
-                    print(i,nums.index(nums[::-1][j]))
                     return i,nums.index(nums[::-1][j])
-                else:
-                    print('NOT Succsess')
-        #nums.pop(i)
-        return True
-
 Solution.twoSum(nums,nums,target =6)
+
