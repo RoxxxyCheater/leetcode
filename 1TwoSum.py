@@ -37,12 +37,19 @@
 
  
 # Follow-up: Can you come up with an algorithm that is less than O(n2) time complexity?
-nums = [3,2,4]#[3,3]#[2,7,11,15]#
+nums = [2,7,11,15]#[3,2,4]#[3,3]#
+from time import perf_counter
 class Solution(object):
     def twoSum(self, nums, target): 
-        for i in range(len(nums)):
-            for j in range(len(nums[::-1])):
-                if target == nums[i] + nums[::-1][j] and i != nums.index(nums[::-1][j]):
-                    return i,nums.index(nums[::-1][j])
-Solution.twoSum(nums,nums,target =6)
+        res_list = {}
+        for index, num in enumerate(nums):
+            result = target - num
+            print(result, index)
+            if result in res_list: return [res_list[result], index]
+            res_list[num] = index
 
+if __name__ == '__main__':
+
+    start = perf_counter()
+    Solution.twoSum(nums,nums,target =9)
+    print(f"time: {(perf_counter()-start):.02f}")
