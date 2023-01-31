@@ -36,7 +36,7 @@
 # 5.4M
 # Acceptance Rate
 # 53.3%
-
+list_num = [121,-121, 10]
 
 class Solution(object):
     def isPalindrome(self, x):
@@ -44,4 +44,12 @@ class Solution(object):
         :type x: int
         :rtype: bool
         """
-        return x
+        if x < 0:
+            return False
+        else:
+            reversed_num = int(str(x)[::-1])
+            print(True if x == reversed_num else False)
+            return True if x == reversed_num else False
+
+for i in list_num:
+    Solution.isPalindrome("Success", i)
