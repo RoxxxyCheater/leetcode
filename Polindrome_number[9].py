@@ -48,7 +48,6 @@ class Solution(object):
             return False
         else:
             reversed_num = int(str(x)[::-1])
-            print(True if x == reversed_num else False)
             return True if x == reversed_num else False
 
 for i in list_num:
