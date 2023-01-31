@@ -49,9 +49,12 @@ class Solution(object):
         """
         :type l1: ListNode
         :type l2: ListNode
+
         :rtype: ListNode
         """
-        return l1, l2
+        res = list(map(int,l1[::-1])) + list(map(int,l2[::-1]))
+        print(res, l1, l2)
+        return res, l1, l2
 
 for i in range(len(list1)):
     Solution.addTwoNumbers(list1[i],list1[i], list2[i])
