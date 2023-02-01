@@ -43,15 +43,10 @@ class Solution(object):
         :rtype: str
         """
         pre = []
-        print(len(strs))
         a,b,c = (' '.join(strs)).split(" ")
-        print("abc: ", len(''.join(strs)))
         for index,letter in enumerate(min(strs, key=len)):
             if a[index] == b[index] == c[index]:
                 pre.append(a[index])
-                print("==letter: ", a[index],b[index],c[index], letter)
-            else:
-                print("!=letter: ", a[index],b[index],c[index])
         return "" if not pre else ''.join(pre)
 
 for i in list_str:
