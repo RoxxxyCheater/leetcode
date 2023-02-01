@@ -42,12 +42,13 @@ class Solution(object):
         :type strs: List[str]
         :rtype: str
         """
-        pre = []
+
         a,b,c = (' '.join(strs)).split(" ")
-        for index,letter in enumerate(min(strs, key=len)):
-            if a[index] == b[index] == c[index]:
-                pre.append(a[index])
-        return "" if not pre else ''.join(pre)
+        bre = ''.join([a[index] for index,letter in enumerate(min(strs, key=len)) if a[index] == b[index] == c[index]])
+        print(''.join([a[index] for index,letter in enumerate(min(strs, key=len)) if a[index] == b[index] == c[index]]))
+        return "" if not bre else bre
+
+
 
 for i in list_str:
     Solution.longestCommonPrefix("Success", i)
