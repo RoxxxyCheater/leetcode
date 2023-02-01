@@ -35,11 +35,24 @@
 # 5.3M
 # Acceptance Rate
 # 40.8%
-
+list_str = ["flower","flow","flight"] , ["dog","racecar","car"] , ["bluedog","blueracecar","bluscar"]
 class Solution(object):
     def longestCommonPrefix(self, strs):
         """
         :type strs: List[str]
         :rtype: str
         """
-        return strs
+        pre = []
+        print(len(strs))
+        a,b,c = (' '.join(strs)).split(" ")
+        print("abc: ", len(''.join(strs)))
+        for index,letter in enumerate(min(strs, key=len)):
+            if a[index] == b[index] == c[index]:
+                pre.append(a[index])
+                print("==letter: ", a[index],b[index],c[index], letter)
+            else:
+                print("!=letter: ", a[index],b[index],c[index])
+        return "" if not pre else ''.join(pre)
+
+for i in list_str:
+    Solution.longestCommonPrefix("Success", i)
