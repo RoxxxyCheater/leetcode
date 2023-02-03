@@ -42,7 +42,7 @@ class Solution(object):
         :type strs: List[str]
         :rtype: str
         """
-
+        return "".join([word[0] if len(set(word))==1 else '.' for word in zip(*strs)]).split('.')[0]
 
 for i in list_str:
     Solution.longestCommonPrefix("Success", i)
