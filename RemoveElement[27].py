@@ -41,7 +41,7 @@
 # Explanation: Your function should return k = 5, with the first five elements of nums containing 0, 0, 1, 3, and 4.
 # Note that the five elements can be returned in any order.
 # It does not matter what you leave beyond the returned k (hence they are underscores).
-
+list_val = [3,2,2,3],[0,1,2,2,3,0,4,2]
 class Solution(object):
     def removeElement(self, nums, val):
         """
@@ -49,3 +49,13 @@ class Solution(object):
         :type val: int
         :rtype: int
         """
+
+        for i in nums[::-1]:
+            if i == val:
+                nums.remove(i) 
+        return len(nums) 
+
+
+
+for i in list_val:
+    Solution.removeElement("Success", i, val=2)
