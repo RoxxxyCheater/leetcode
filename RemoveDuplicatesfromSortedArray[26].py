@@ -53,11 +53,16 @@
 # 5.4M
 # Acceptance Rate
 # 51.3%
-
+nums_list = [0,0,1,1,1,2,2,3,3,4], [1,1,2]
 class Solution(object):
     def removeDuplicates(self, nums):
         """
         :type nums: List[int]
         :rtype: int
         """   
-        return nums
+        nums[:]=sorted(set(nums))
+        print(len(nums))
+        return len(nums)
+
+for i in nums_list:
+    Solution.removeDuplicates("Success", i)
