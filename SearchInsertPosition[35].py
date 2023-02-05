@@ -35,7 +35,7 @@
 # Acceptance Rate
 # 42.5%
 list_nums = [1,3,5,6]
-lest_target = 2, 1, 7
+lest_target = 5,2, 7
 class Solution(object):
     def searchInsert(self, nums, target):
         """
@@ -43,4 +43,14 @@ class Solution(object):
         :type target: int
         :rtype: int
         """
-        return nums, target
+        for  index,num in enumerate(nums):
+            if target == num:
+                return index
+        if target not in nums:
+            nums.append(target)
+            nums.sort()
+        return nums.index(target)
+
+
+for i in lest_target:
+    Solution.searchInsert("Success", list_nums, i)
