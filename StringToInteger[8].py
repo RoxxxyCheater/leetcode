@@ -80,9 +80,22 @@ class Solution(object):
         :type s: str
         :rtype: int
         """
-        return s
+        input_str = s.strip()
+        if not input_str:
+            return 0
+        res,min_num,max_num,sign = 0, -2 ** 31, 2 ** 31 - 1, -1 if input_str[0] == '-' else 1
+        input_str = input_str[1:] if input_str[0] == '-' or input_str[0] == '+' else input_str
+        for num in input_str:
+            if not num.isdigit():
+                break
+            res = res * 10 + int(num)
+            if res * sign >= max_num:
+                return max_num
+            if res * sign <= min_num:
+                return min_num
+        return res * sign
 
 
-str_list = "42","   -42", "4193 with words"
+str_list = "42","   -42", "4193 with words", "",".1", "-91283472332","3.14159", 
 for i in str_list:
     Solution.myAtoi("Success", i)
