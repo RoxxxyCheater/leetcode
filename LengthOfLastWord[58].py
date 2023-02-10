@@ -42,7 +42,7 @@ class Solution(object):
         :type s: str
         :rtype: int
         """
-        return s
+        return len(s.split()[-1])
       
       
 str_list = " asd llooq qwertz  "
