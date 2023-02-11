@@ -42,8 +42,24 @@ class Solution(object):
         :type s: str
         :rtype: List[str]
         """
-
-        return s
-list_num = "25525511135","0000","101023"
+        print(s)
+        interval,n,res_ip = '.', 1, []
+        # interval_nums = range(1,len(s)+1/3)
+        if s.isdigit() and 12 >= len(s) >= 4 :
+            print('is_dig -supere', int(s))
+            for index, num in enumerate(s): 
+                print(index, num)
+                if index < (len(s)+1)/3:
+                    new_ip = s[0:1] + interval + s[1:2] + interval + s[2:3] + interval + s[3:4]
+                    print(new_ip)
+                    res_ip.append(new_ip) 
+                elif index == (len(s)+1)/3:
+                    new_ip = s[0] #[0:1] + interval + s[1+ index:2+index] + interval + s[2 + index:3] + interval + s[3+index:4+index]
+                    print(new_ip)
+        print(res_ip)
+        return res_ip
+list_num = "25525s11135", "25525511135","0000","101023"
 for i in list_num:
     Solution.restoreIpAddresses('Succees', i)
+
+
