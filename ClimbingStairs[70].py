@@ -41,12 +41,13 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
-        def recursion(n):
-            return 1 if n == 1
-            return 2 if n == 2
-            return recursion(n-1) + recursion(n-2)
-        return recursion(n)
+        if n <= 2:return n
+        res, one, two = 0, 1, 2
+        for i in range(3, n + 1):
+            res = one + two
+            one, two = two, res
+        return res
 
-list_stairs = range(0, 10)
-for i in list_stairs:
-    Solution.climbStairs('Success', i)
+list_nums = 44, 2,3, 99
+for i in list_nums:
+    print(Solution.climbStairs('Success', i))
