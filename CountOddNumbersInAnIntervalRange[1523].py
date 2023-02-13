@@ -39,6 +39,8 @@ class Solution(object):
         else:
             if (high % 2) != 0 or (low % 2) != 0: return int(res/2) +1
             else: return int(res/2)
+
+            
 low_list = 4,9
 high_list = 3,7
 
