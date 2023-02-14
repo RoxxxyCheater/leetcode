@@ -37,19 +37,13 @@ class Solution(object):
         :type nums: List[int]
         :rtype: bool
         """
-        res = nums[:]
-        for index,num in enumerate(nums):
-            print('index: ',index, 'num: ', num, num in nums)
-            res.remove(num)
-            print('index: ',index, 'num: ', num, 'nums: ', res)
-            print('num in res', num in res, res, num)
+        res = set()
+        for num in nums:
             if num in res: 
-                print(num in res)
                 return True
-            elif index == len(nums):
-                print('FAAALLLSE')
-                return -1
-        return False
+            else:
+                res.add(num)
+
 
 list_nums = [1,2,3,4],[1,2,3,1],[1,1,1,3,3,4,3,2,4,2]
 for i in list_nums:
