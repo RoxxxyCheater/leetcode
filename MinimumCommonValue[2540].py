@@ -41,8 +41,7 @@ class Solution(object):
         :type nums2: List[int]
         :rtype: int
         """
-        result = set(nums1) & set(nums2)
-        return min(result) if result else -1
+        return nums1
 
 
 list_nums = []
