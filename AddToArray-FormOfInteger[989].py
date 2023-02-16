@@ -1,3 +1,4 @@
+import reduce
 # The array-form of an integer num is an array representing its digits in left to right order.
 
 #     For example, for num = 1321, the array form is [1,3,2,1].
@@ -24,6 +25,7 @@
 # Output: [1,0,2,1]
 # Explanation: 215 + 806 = 1021
 
+
 class Solution(object):
     def addToArrayForm(self, num, k):
         """
@@ -31,7 +33,8 @@ class Solution(object):
         :type k: int
         :rtype: List[int]
         """
-        return num,k
+        res = reduce(lambda x, y: x * 10 + y, num) + k
+        return [int(a) for a in str(res)]
 
 list_nums,list_keys = [1,2,0,0],[2,7,4],[2,1,5],34,181,806
  
