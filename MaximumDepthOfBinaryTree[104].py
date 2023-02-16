@@ -44,7 +44,10 @@ class Solution(object):
         :rtype: int
         """
         if not root: return 0 
-
+        left_dep = self.maxDepth(root.left) 
+        right_dep = self.maxDepth(root.right) 
+        return max(left_dep, right_dep) + 1
+        
 list_nums = [3,9,20,'null','null',15,7] , [1,'null',2]
 for i in list_nums:
     Solution.maxDepth('Success', i)
