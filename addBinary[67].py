@@ -34,7 +34,9 @@ class Solution(object):
         :type b: str
         :rtype: str
         """
-        return a,b
+        x = int(a, 2)
+        y = int(b, 2)
+        return format(x+y, 'b')
 
 list_nums = 11,1010
 list_keys = 1,1011
