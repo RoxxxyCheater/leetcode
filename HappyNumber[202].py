@@ -47,16 +47,14 @@ class Solution(object):
         :type n: int
         :rtype: bool
         """
+        res = []
         def sqrtn(n):
-            sum = 0
+            summ = 0
             while 0 < n:
                 num = n % 10
                 n = n // 10
-                print('n: ',n, 'num: ', num)
-                sum = sum + num ** 2
-            return sum
-        print('n: ',n)
-        res = []
+                summ = summ + num ** 2
+            return summ
         while n != 1 and n not in res:
             res.append(n)
             n = sqrtn(n)
