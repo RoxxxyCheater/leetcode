@@ -37,7 +37,8 @@ class Solution(object):
         :rtype: int
         """
 
-
+        for index in range(0,len(nums)- 1, 2):
+            if nums[index] != nums[index+1]:return nums[index]
         return -1
 
 
@@ -47,3 +48,10 @@ for i in list_nums:
     Solution.singleNonDuplicate('Success', i)
 
 
+# TimeLimit
+        # uniq = set(nums) 
+        # return [i for i in uniq if nums.count(i) == 1][0]
+
+        # uniq = set(nums) 
+        # for i in uniq:
+        #     if nums.count(i) == 1: return i
