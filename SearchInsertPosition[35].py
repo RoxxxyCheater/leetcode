@@ -43,13 +43,18 @@ class Solution(object):
         :type target: int
         :rtype: int
         """
-        for  index,num in enumerate(nums):
-            if target == num:
-                return index
-        if target not in nums:
-            nums.append(target)
-            nums.sort()
-        return nums.index(target)
+        for index,num in enumerate(nums):
+            if target < num: return index
+            if num == target: return index
+        return len(nums)
+       
+#         for  index,num in enumerate(nums):
+#             if target == num:
+#                 return index
+#         if target not in nums:
+#             nums.append(target)
+#             nums.sort()
+#         return nums.index(target)
 
 
 for i in lest_target:
