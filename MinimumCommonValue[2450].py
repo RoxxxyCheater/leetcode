@@ -39,4 +39,6 @@ class Solution(object):
         :rtype: int
         """
 
-        return nums1, nums2
+        result = set(nums1) & set(nums2)
+        return min(result) if result else -1
+
