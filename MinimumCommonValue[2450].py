@@ -41,4 +41,7 @@ class Solution(object):
 
         result = set(nums1) & set(nums2)
         return min(result) if result else -1
-
+nums1 = [1,2,3],[1,2,3,6] 
+nums2 = [2,4], [2,3,4,5]
+for i in range(len(nums1)):
+    Solution.searchInsert("Success", nums1[i],nums2[i])
