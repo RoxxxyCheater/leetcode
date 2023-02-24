@@ -35,5 +35,17 @@ class Solution(object):
         :type s: str
         :rtype: int
         """
-
-        return s
+        res,not_pair = 0, False
+        s_dict={x:s.count(x) for x in [x for x in set(''.join(s))]}
+        for val in s_dict.values():
+            if val % 2 == 1:
+                res += val-1
+                not_pair = True              
+            else:
+                res += val
+        return res if not not_pair else res + 1
+    
+    
+list_s = "abccccdd" ,"a"
+for i in list_s:
+    Solution.longestPalindrome('Success', i)
