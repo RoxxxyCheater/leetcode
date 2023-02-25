@@ -29,3 +29,17 @@
 # 5.7M
 # Acceptance Rate
 # 54.3%
+
+class Solution(object):
+    def maxProfit(self, prices):
+        """
+        :type prices: List[int]
+        :rtype: int
+        """
+        min_val,max_val = float('inf'),0
+        return prices
+   
+   
+ list_prices = [7,6,4,3,1],[7,1,5,3,6,4]
+ for i in list_prices:
+    Solution.maxProfit('Success', i)
