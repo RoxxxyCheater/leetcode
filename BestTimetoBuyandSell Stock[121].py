@@ -37,7 +37,10 @@ class Solution(object):
         :rtype: int
         """
         min_val,max_val = float('inf'),0
-        return prices
+        for price in prices:
+            if price < min_val: min_val = price 
+            elif price - min_val > max_val: max_val = price - min_val 
+        return max_val
    
    
  list_prices = [7,6,4,3,1],[7,1,5,3,6,4]
