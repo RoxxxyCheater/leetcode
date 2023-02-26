@@ -35,7 +35,7 @@
 # 57.5%
 
 
-
+import datetime
 class Solution(object):
     def dayOfTheWeek(self, day, month, year):
         """
@@ -44,7 +44,8 @@ class Solution(object):
         :type year: int
         :rtype: str
         """
-        return day, month, year
+        date_obj = datetime.datetime(year, month, day)
+        return date_obj.strftime("%A")
     
 day = 31,18,15
 month = 8,7,8
