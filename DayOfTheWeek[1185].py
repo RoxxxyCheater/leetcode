@@ -36,3 +36,19 @@
 
 
 
+class Solution(object):
+    def dayOfTheWeek(self, day, month, year):
+        """
+        :type day: int
+        :type month: int
+        :type year: int
+        :rtype: str
+        """
+        return day, month, year
+    
+day = 31,18,15
+month = 8,7,8
+year = 2019, 1999,1993
+
+for i in range(len(year)):
+    Solution.dayOfTheWeek('Success', day[i], month[i], year[i])
