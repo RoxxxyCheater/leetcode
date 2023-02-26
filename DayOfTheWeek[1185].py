@@ -35,7 +35,7 @@
 # 57.5%
 
 
-import datetime
+# import datetime
 class Solution(object):
     def dayOfTheWeek(self, day, month, year):
         """
@@ -44,8 +44,18 @@ class Solution(object):
         :type year: int
         :rtype: str
         """
-        date_obj = datetime.datetime(year, month, day)
-        return date_obj.strftime("%A")
+        # faster Zeller's algoritm
+        days = ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+        if month < 3: 
+            month += 12
+            year -= 1
+        k = year % 100
+        j = year // 100
+        h = (day + 13*(month+1)//5 + k + k//4 + j//4 + 5*j) % 7
+        return days[h]
+
+        # date_obj = datetime.datetime(year, month, day)
+        # return date_obj.strftime("%A")
     
 day = 31,18,15
 month = 8,7,8
