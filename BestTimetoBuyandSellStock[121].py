@@ -43,6 +43,6 @@ class Solution(object):
         return max_val
    
    
- list_prices = [7,6,4,3,1],[7,1,5,3,6,4]
- for i in list_prices:
+list_prices = [7,6,4,3,1],[7,1,5,3,6,4]
+for i in list_prices:
     Solution.maxProfit('Success', i)
