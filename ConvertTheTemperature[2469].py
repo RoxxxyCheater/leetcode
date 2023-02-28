@@ -44,7 +44,11 @@ class Solution(object):
         :type celsius: float
         :rtype: List[float]
         """
-        return [celsius + 273.15 , celsius *1.8 + 32]
+        kelvin=celsius+273.15
+        fahrenheit=(celsius*1.80)+32.00
+        ans=[kelvin,fahrenheit]
+        return ans
+        # return [celsius + 273.15 , celsius *1.8 + 32]
     
 cels_list = 36.50,122.11
 for i in cels_list:
