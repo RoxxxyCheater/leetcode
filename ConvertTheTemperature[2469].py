@@ -37,3 +37,15 @@
 # 71.6K
 # Acceptance Rate
 # 89.2%
+
+class Solution(object):
+    def convertTemperature(self, celsius):
+        """
+        :type celsius: float
+        :rtype: List[float]
+        """
+        return celsius
+    
+cels_list = 36.50,122.11
+for i in cels_list:
+    Solution.convertTemperature('Success', i)
