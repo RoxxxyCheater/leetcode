@@ -52,4 +52,4 @@ class Solution(object):
 list_val_s =  "abcd", ""
 list_val_t = "abcde", "y"
 for index,num in enumerate(list_val_s):
-    Solution.findTheDifference('Succsess' num,  list_val_t[index])
+    Solution.findTheDifference('Succsess', num,  list_val_t[index])
