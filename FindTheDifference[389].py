@@ -39,7 +39,16 @@ class Solution(object):
         :type t: str
         :rtype: str
         """
-        return t - s
+        freq_s = {}
+        freq_t = {}
+        for c in s:
+            freq_s[c] = freq_s.get(c, 0) + 1
+        for c in t:
+            freq_t[c] = freq_t.get(c, 0) + 1
+        for c in freq_t:
+            if c not in freq_s or freq_t[c] > freq_s[c]:
+                return c
+        
 list_val_s =  "abcd", ""
 list_val_t = "abcde", "y"
 for index,num in enumerate(list_val_s):
