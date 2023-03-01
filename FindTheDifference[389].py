@@ -31,3 +31,16 @@
 # 797.4K
 # Acceptance Rate
 # 60.0%
+
+class Solution(object):
+    def findTheDifference(self, s, t):
+        """
+        :type s: str
+        :type t: str
+        :rtype: str
+        """
+        return t - s
+list_val_s =  "abcd", ""
+list_val_t = "abcde", "y"
+for index,num in enumerate(list_val_s):
+    Solution.findTheDifference('Succsess' num,  list_val_t[index])
