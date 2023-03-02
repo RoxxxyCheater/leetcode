@@ -36,7 +36,19 @@
 
 class Solution(object):
     def mostFrequentEven(self, nums):
-       return nums
+        freq = {}
+        for num in nums:
+            if num % 2 == 0:
+                freq[num] = freq.get(num, 0) + 1
+        
+        most_frequent = -1
+        highest_freq = 0
+        for num in freq:
+            if freq[num] > highest_freq or (freq[num] == highest_freq and num < most_frequent):
+                highest_freq = freq[num]
+                most_frequent = num
+        
+        return most_frequent
   
 for i in enumeratelist_nums:
    Solution. mostFrequentEven('Success', i)
