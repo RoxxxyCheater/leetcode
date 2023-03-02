@@ -33,3 +33,10 @@
 #86.6K
 #Acceptance Rate
 #51.2%
+
+class Solution(object):
+    def mostFrequentEven(self, nums):
+       return nums
+  
+for i in enumeratelist_nums:
+   Solution. mostFrequentEven('Success', i)
