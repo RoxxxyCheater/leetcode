@@ -35,7 +35,16 @@ class Solution(object):
         :type needle: str
         :rtype: int
         """
-        return haystack, needle
+        
+        if not needle:
+            return 0
+        
+        n = len(needle)
+        for i in range(len(haystack) - n + 1):
+            if haystack[i:i+n] == needle:
+                return i
+        
+        return -1
     
 list_needle = "sad", "leeto"
 list_haystack = "leetcode",'sadbutsad'
