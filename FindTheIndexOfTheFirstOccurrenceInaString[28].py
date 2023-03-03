@@ -28,3 +28,17 @@
 # 4.2M
 # Acceptance Rate
 # 38.7%
+class Solution(object):
+    def strStr(self, haystack, needle):
+        """
+        :type haystack: str
+        :type needle: str
+        :rtype: int
+        """
+        return haystack, needle
+    
+list_needle = "sad", "leeto"
+list_haystack = "leetcode",'sadbutsad'
+for index, strs in enumerate(list_needle):
+        Solution('Success', haystack[index], strs)
+
