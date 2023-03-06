@@ -26,3 +26,14 @@
 #76.4K
 #Acceptance Rate
 #49.3%
+class Solution(object):
+    def secondHighest(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        return s
+
+list_strs = "dfa12321afd","abc1111"
+for index, strs in enumerate(list_strs):
+    Solution.secondHighest('Success', strs)
