@@ -32,7 +32,8 @@ class Solution(object):
         :type s: str
         :rtype: int
         """
-        return s
+        digits = sorted(set(c for c in s if c.isdigit()), reverse=True)
+        return int(digits[1]) if len(digits) > 1 else -1
 
 list_strs = "dfa12321afd","abc1111"
 for index, strs in enumerate(list_strs):
