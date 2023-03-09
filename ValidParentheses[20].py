@@ -32,3 +32,14 @@
 # 7.7M
 # Acceptance Rate
 # 40.3%
+class Solution(object):
+    def isValid(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+    
+    
+list_chars = "()","()[]{}","(]"
+for i in list_chars:
+   Solution.isValid('Success', i)
