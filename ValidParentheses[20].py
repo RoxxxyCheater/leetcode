@@ -38,6 +38,16 @@ class Solution(object):
         :type s: str
         :rtype: bool
         """
+        stack = []
+        pair = {')': '(', '}': '{', ']': '['}
+        for char in s:
+            if char in pair:
+                unpair_el = stack.pop() if stack else '#'
+                if pair[char] != unpair_el:
+                    return False
+            else:
+                stack.append(char)
+        return not stack
     
     
 list_chars = "()","()[]{}","(]"
