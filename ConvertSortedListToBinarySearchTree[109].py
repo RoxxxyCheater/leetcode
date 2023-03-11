@@ -46,11 +46,12 @@ class Solution(object):
         :type head: Optional[ListNode]
         :rtype: Optional[TreeNode]
         """
+        # Преобразуем связный список в список значений
         values = []
         while head:
             values.append(head.val)
             head = head.next
-    
+        # Рекурсивная функция для построения сбалансированного дерева поиска
         def buildsTree(left, right): 
             if left > right:
                 return None
@@ -59,7 +60,7 @@ class Solution(object):
             root.left = buildsTree(left, mid - 1)
             root.right = buildsTree(mid + 1, right)
             return root
-
+        # Вызываем функцию для построения дерева
         return buildsTree(0, len(values) - 1) 
 
 list_chars = [-10,-3,0,5,9], []
