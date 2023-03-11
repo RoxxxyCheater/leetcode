@@ -52,9 +52,29 @@ class Solution(object):
 
         :rtype: ListNode
         """
-        res = list(map(int,l1[::-1])) + list(map(int,l2[::-1]))
-        print(res, l1, l2)
-        return res, l1, l2
+        
+
+        result = ListNode(0)
+        curr = result
+        carry = 0
+
+        while l1 or l2 or carry:
+            x = l1.val if l1 else 0
+            y = l2.val if l2 else 0
+            summ = x + y + carry
+            carry, val = divmod(summ, 10)
+            curr.next = ListNode(val)
+            curr = curr.next
+            if l1: l1 = l1.next
+            if l2: l2 = l2.next
+
+        return result.next
+
+
+        # not for Node List Solution
+        # res = list(map(int,l1[::-1])) + list(map(int,l2[::-1]))
+        # print(res, l1, l2)
+        # return res, l1, l2
 
 for i in range(len(list1)):
     Solution.addTwoNumbers(list1[i],list1[i], list2[i])
