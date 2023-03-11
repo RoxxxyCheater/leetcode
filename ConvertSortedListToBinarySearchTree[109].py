@@ -46,7 +46,21 @@ class Solution(object):
         :type head: Optional[ListNode]
         :rtype: Optional[TreeNode]
         """
+        values = []
+        while head:
+            values.append(head.val)
+            head = head.next
+    
+        def buildsTree(left, right): 
+            if left > right:
+                return None
+            mid = (left + right) // 2
+            root = TreeNode(values[mid])
+            root.left = buildsTree(left, mid - 1)
+            root.right = buildsTree(mid + 1, right)
+            return root
 
+        return buildsTree(0, len(values) - 1) 
 
 list_chars = [-10,-3,0,5,9], []
 for i in list_chars:
