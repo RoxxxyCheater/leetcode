@@ -57,7 +57,33 @@ class Solution(object):
         :type lists: List[ListNode]
         :rtype: ListNode
         """
-        return lists
+        if not lists:
+            return None
+        if len(lists) == 1:
+            return lists[0]
+        # Разделяем лист на пополам
+        mid = len(lists) // 2
+        left = self.mergeKLists(lists[:mid])
+        right = self.mergeKLists(lists[mid:])
+        # рекурсивно соединяем левую и правую сторону списка 
+        return self.merge(left, right)
+    
+    def merge(self, l1, l2):
+        dummy = ListNode(0)
+        curr = dummy
+        while l1 and l2:
+            if l1.val < l2.val:
+                curr.next = l1
+                l1 = l1.next
+            else:
+                curr.next = l2
+                l2 = l2.next
+            curr = curr.next
+        if l1:
+            curr.next = l1
+        if l2:
+            curr.next = l2
+        return dummy.next
     
 lists = [[1,4,5],[1,3,4],[2,6]], [], [[]]
 for i in lists:
