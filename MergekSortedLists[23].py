@@ -51,39 +51,62 @@
 #     def __init__(self, val=0, next=None):
 #         self.val = val
 #         self.next = next
+from queue import PriorityQueue
 class Solution(object):
     def mergeKLists(self, lists):
         """
         :type lists: List[ListNode]
         :rtype: ListNode
         """
-        if not lists:
-            return None
-        if len(lists) == 1:
-            return lists[0]
-        # Разделяем лист на пополам
-        mid = len(lists) // 2
-        left = self.mergeKLists(lists[:mid])
-        right = self.mergeKLists(lists[mid:])
-        # рекурсивно соединяем левую и правую сторону списка 
-        return self.merge(left, right)
-    
-    def merge(self, l1, l2):
-        dummy = ListNode(0)
-        curr = dummy
-        while l1 and l2: #до последнего элемента
-            if l1.val < l2.val:
-                curr.next = l1
-                l1 = l1.next
-            else:
-                curr.next = l2
-                l2 = l2.next
+        head = curr = ListNode(0)
+        q = PriorityQueue()
+        for l in lists:
+            if l:
+                q.put((l.val, l))
+        while not q.empty():
+            val, node = q.get()
+            curr.next = ListNode(val)
             curr = curr.next
-        if l1:
-            curr.next = l1
-        if l2:
-            curr.next = l2
-        return dummy.next
+            node = node.next
+            if node:
+                q.put((node.val, node))
+        return head.next
+
+
+
+
+
+
+
+
+
+    #     if not lists:
+    #         return None
+    #     if len(lists) == 1:
+    #         return lists[0]
+    #     # Разделяем лист на пополам
+    #     mid = len(lists) // 2
+    #     left = self.mergeKLists(lists[:mid])
+    #     right = self.mergeKLists(lists[mid:])
+    #     # рекурсивно соединяем левую и правую сторону списка 
+    #     return self.merge(left, right)
+    
+    # def merge(self, l1, l2):
+    #     dummy = ListNode(0)
+    #     curr = dummy
+    #     while l1 and l2: #до последнего элемента
+    #         if l1.val < l2.val:
+    #             curr.next = l1
+    #             l1 = l1.next
+    #         else:
+    #             curr.next = l2
+    #             l2 = l2.next
+    #         curr = curr.next
+    #     if l1:
+    #         curr.next = l1
+    #     if l2:
+    #         curr.next = l2
+    #     return dummy.next
     
 lists = [[1,4,5],[1,3,4],[2,6]], [], [[]]
 for i in lists:
