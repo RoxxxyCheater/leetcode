@@ -58,19 +58,19 @@ class Solution(object):
         :type lists: List[ListNode]
         :rtype: ListNode
         """
-        head = curr = ListNode(0)
-        q = PriorityQueue()
+        head = curr = ListNode(0) # связанный список/текущий узел
+        q = PriorityQueue() # пустая куча
         for l in lists:
             if l:
-                q.put((l.val, l))
-        while not q.empty():
-            val, node = q.get()
-            curr.next = ListNode(val)
-            curr = curr.next
-            node = node.next
+                q.put((l.val, l)) # добавляем главный елемент и сам связаный список если он существует в кучу
+        while not q.empty(): #пока куча не опустошится
+            val, node = q.get() #получаем минимальный элемент
+            curr.next = ListNode(val) # создаём новый узел c минимальным элементом
+            curr = curr.next #перемещаем указатель текущего узла на только что созданный
+            node = node.next # перемещаем указатель на слудующий узел в списке нод
             if node:
-                q.put((node.val, node))
-        return head.next
+                q.put((node.val, node)) # добавляем главный элемент нода в кучу если нод не пуст
+        return head.next #возарщается готовый связаный список 
 
 
 
