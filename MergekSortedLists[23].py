@@ -71,7 +71,7 @@ class Solution(object):
     def merge(self, l1, l2):
         dummy = ListNode(0)
         curr = dummy
-        while l1 and l2:
+        while l1 and l2: #до последнего элемента
             if l1.val < l2.val:
                 curr.next = l1
                 l1 = l1.next
