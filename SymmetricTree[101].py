@@ -41,17 +41,17 @@ class Solution(object):
         :rtype: bool
         """
         if root is None:
-            return True
-        return self.isMirror(root.left, root.right)
+            return True # возвращаем если дерево симметрично
+        return self.isMirror(root.left, root.right) # вызываем функцию сравнения симметрии левой и правой веток
 
     def isMirror(self, node1, node2):
-        if node1 is None and node2 is None:
-            return True
-        if node1 is None or node2 is None:
-            return False
+        if node1 is None and node2 is None: 
+            return True # если оба зеркальные 
+        if node1 is None or node2 is None: 
+            return False # если одна из веток пуста
         if node1.val != node2.val:
-            return False
-        return self.isMirror(node1.left, node2.right) and self.isMirror(node1.right, node2.left)
+            return False # если значение веток не равны
+        return self.isMirror(node1.left, node2.right) and self.isMirror(node1.right, node2.left) # перебираем левое поддерево первого узла и правое поддерево второго узла, правое поддервео первого узла и левое поддервео второго узла
 
 
 roots_list = [1,2,2,3,4,4,3],[1,2,2,null,3,null,3]
