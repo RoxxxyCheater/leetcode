@@ -40,26 +40,25 @@ class Solution(object):
         :type root: TreeNode
         :rtype: bool
         """
-        if not root:
+        if not root:  # Если дерево пустое/полное
             return True
-        queue = [root]
-        has_single_child = False
-        
-        while queue:
-            node = queue.pop(0)
-            if node.left:
-                if has_single_child:
-                    return False
-                queue.append(node.left)
-                if node.right:
-                    queue.append(node.right)
-                else:
-                    has_single_child = True
-            elif node.right:
-                return False
-            else:
-                has_single_child = True
-        return True
+        queue = [root]  # Создаем очередь и добавляем корневой узел в нее
+        single_child = False  # узел с одним потомком
+        while queue:  # Пока очередь не пуста
+            node = queue.pop(0)  # Получаем первый узел
+            if node.left:  # Если узел с левым потомком
+                if single_child:  
+                    return False # Отсекаем узел с одним потомком(дерево не полное)
+                queue.append(node.left)  # Добавляем в очередь узел с левым потомком
+                if node.right: # Если узел с правым потомком
+                    queue.append(node.right) # Добавляем в очередь узел с правым потомком
+                else:  # Если узел без правого потомка, то следующие узлы тоже имеют только одного потомка
+                    single_child = True
+            elif node.right:  # Если узел с правым потомком
+                return False # Отсекаем узел с одним потомком(дерево не полное)
+            else:  # Если узел без потомков, то следующие узлы тоже имеют только одного потомка
+                single_child = True
+        return True  # Если после проверки не было найдено узлов с одним потомком, то дерево полное
     
     
 roots =[1,2,3,4,5,null,7],[1,2,3,4,5,6]
