@@ -40,7 +40,26 @@ class Solution(object):
         :type root: TreeNode
         :rtype: bool
         """
-        return root
+        if not root:
+            return True
+        queue = [root]
+        has_single_child = False
+        
+        while queue:
+            node = queue.pop(0)
+            if node.left:
+                if has_single_child:
+                    return False
+                queue.append(node.left)
+                if node.right:
+                    queue.append(node.right)
+                else:
+                    has_single_child = True
+            elif node.right:
+                return False
+            else:
+                has_single_child = True
+        return True
     
     
 roots =[1,2,3,4,5,null,7],[1,2,3,4,5,6]
