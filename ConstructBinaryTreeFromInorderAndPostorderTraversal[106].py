@@ -44,7 +44,23 @@ class Solution(object):
         :type postorder: List[int]
         :rtype: TreeNode
         """
-        return inorder, postorder
+        if not postorder:
+            return None
+        
+        root_val = postorder[-1]
+        root = TreeNode(root_val)
+        
+        root_index = inorder.index(root_val)
+        
+        left_inorder = inorder[:root_index]
+        left_postorder = postorder[:root_index]
+        root.left = self.buildTree(left_inorder, left_postorder)
+        
+        right_inorder = inorder[root_index + 1:]
+        right_postorder = postorder[root_index:-1]
+        root.right = self.buildTree(right_inorder, right_postorder)
+        
+        return root
     
 
 inorder = [9,3,15,20,7],[-1] 
