@@ -44,27 +44,37 @@ class Solution(object):
         :type postorder: List[int]
         :rtype: TreeNode
         """
-        
-        if not postorder: # отсекаем если список постордерного обхода пуст
-            return None # дерево пустое
-        
-        root_val = postorder[-1] # получаем крайний элемент постордерного обхода
-        root = TreeNode(root_val) # Извлекаем корневой узел
-        
-        
-        root_index = inorder.index(root_val) # получаем индекс корневого узла в инордерном обходе
-        
-        # Рекурсивно вызываем функцию для левого поддерева
-        left_inorder = inorder[:root_index]
-        left_postorder = postorder[:root_index]
-        root.left = self.buildTree(left_inorder, left_postorder)
-        
-        # Рекурсивно вызываем функцию для правого поддерева
-        right_inorder = inorder[root_index + 1:]
-        right_postorder = postorder[root_index:-1]
-        root.right = self.buildTree(right_inorder, right_postorder)
-        
+        if not inorder:
+            return None
+        root_val = postorder.pop()
+        root = TreeNode(root_val)
+        index = inorder.index(root_val)
+        root.right = self.buildTree(inorder[index+1:], postorder)
+        root.left = self.buildTree(inorder[:index], postorder)
         return root
+
+
+
+        # if not postorder: # отсекаем если список постордерного обхода пуст
+        #     return None # дерево пустое
+        
+        # root_val = postorder[-1] # получаем крайний элемент постордерного обхода
+        # root = TreeNode(root_val) # Извлекаем корневой узел
+        
+        
+        # root_index = inorder.index(root_val) # получаем индекс корневого узла в инордерном обходе
+        
+        # # Рекурсивно вызываем функцию для левого поддерева
+        # left_inorder = inorder[:root_index]
+        # left_postorder = postorder[:root_index]
+        # root.left = self.buildTree(left_inorder, left_postorder)
+        
+        # # Рекурсивно вызываем функцию для правого поддерева
+        # right_inorder = inorder[root_index + 1:]
+        # right_postorder = postorder[root_index:-1]
+        # root.right = self.buildTree(right_inorder, right_postorder)
+        
+        # return root
     
 
 inorder = [9,3,15,20,7],[-1] 
