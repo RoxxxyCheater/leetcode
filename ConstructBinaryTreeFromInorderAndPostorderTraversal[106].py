@@ -44,18 +44,22 @@ class Solution(object):
         :type postorder: List[int]
         :rtype: TreeNode
         """
-        if not postorder:
-            return None
         
-        root_val = postorder[-1]
-        root = TreeNode(root_val)
+        if not postorder: # отсекаем если список постордерного обхода пуст
+            return None # дерево пустое
         
-        root_index = inorder.index(root_val)
+        root_val = postorder[-1] # получаем крайний элемент постордерного обхода
+        root = TreeNode(root_val) # Извлекаем корневой узел
         
+        
+        root_index = inorder.index(root_val) # получаем индекс корневого узла в инордерном обходе
+        
+        # Рекурсивно вызываем функцию для левого поддерева
         left_inorder = inorder[:root_index]
         left_postorder = postorder[:root_index]
         root.left = self.buildTree(left_inorder, left_postorder)
         
+        # Рекурсивно вызываем функцию для правого поддерева
         right_inorder = inorder[root_index + 1:]
         right_postorder = postorder[root_index:-1]
         root.right = self.buildTree(right_inorder, right_postorder)
