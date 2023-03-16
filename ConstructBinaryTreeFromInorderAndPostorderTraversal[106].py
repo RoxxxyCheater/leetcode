@@ -44,11 +44,13 @@ class Solution(object):
         :type postorder: List[int]
         :rtype: TreeNode
         """
-        if not inorder:
-            return None
-        root_val = postorder.pop()
-        root = TreeNode(root_val)
-        index = inorder.index(root_val)
+        if not inorder: # Отсекаем если список inorder пустой
+            return None  # дерево пустое
+        
+        root_val = postorder.pop() # Извлекаем значение корневого узла из postorder
+        root = TreeNode(root_val) # Создаем новый узел
+        index = inorder.index(root_val) # Находим индекс корневого узла в inorder
+        # Разделяем дерево на стороны
         root.right = self.buildTree(inorder[index+1:], postorder)
         root.left = self.buildTree(inorder[:index], postorder)
         return root
