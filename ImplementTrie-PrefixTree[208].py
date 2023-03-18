@@ -39,32 +39,32 @@
 # 62.6%
 class Trie(object):
 
-    def __init__(self):
-        self.trie = {}
+    def __init__(self):# Метод инициализации 
+        self.trie = {} #Инициализируем Trie как пустой словарь
 
-    def insert(self, word):
-        node = self.trie
-        for char in word:
-            if char not in node:
-                node[char] = {}
-            node = node[char]
-        node['$'] = True
+    def insert(self, word): # Метод вставляет строку word в Trie
+        node = self.trie # Создаём ноду из словаря     
+        for char in word: # Перебираем символы строки word
+            
+            if char not in node:# Если символ отсутствует в текущем узле
+                node[char] = {} # Добавляем его и устанавливаем пустой словарь для этого символа
+            node = node[char] # Переходим к следующему узлу
+        node['$'] = True # Устанавливаем флаг конца слова в последнем узле
+    def search(self, word):# Метод для поиска строки word в Trie
+        node = self.trie # Создаём ноду из словаря     
+        for char in word: # Перебираем символы строки word
+            if char not in node: # Если символ отсутствует в текущем узле
+                return False # Отсекаем с помощью False
+            node = node[char] # Переходим к следующему узлу
+        return '$' in node # Если флаг конца слова установлен, возвращаем True, иначе False
 
-    def search(self, word):
-        node = self.trie
-        for char in word:
-            if char not in node:
-                return False
-            node = node[char]
-        return '$' in node
-
-    def startsWith(self, prefix):
-        node = self.trie
-        for char in prefix:
-            if char not in node:
-                return False
-            node = node[char]
-        return True
+    def startsWith(self, prefix): #Метод для проверки, есть ли в Trie ранее вставленное слово, которое начинающееся с префикса prefix
+        node = self.trie # Создаём ноду из словаря 
+        for char in prefix: # Перебираем символы префикса
+            if char not in node: # Если символ отсутствует в текущем узле
+                return False # Отсекаем с помощью False
+            node = node[char] # Переходим к следующему узлу
+        return True # Возвращаем True, если есть хотя бы одно слово, которое начинается с префикса prefix
 
 
 
