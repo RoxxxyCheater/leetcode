@@ -41,3 +41,16 @@
 # 1.3M
 # Acceptance Rate
 # 33.2%
+
+
+class Solution(object):
+    def thirdMax(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        return nums
+        
+list_nums =  [3,2,1],[1,2],[2,2,3,1]
+for i in list_nums:
+    Solution.thirdMax('Success', i)
