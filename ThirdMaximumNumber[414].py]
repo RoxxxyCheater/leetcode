@@ -49,11 +49,20 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
+        # С помощью множества оставляем уникальные значения
         unique_nums = set(nums)
+
+        # Если в множестве менее 3 элементов, вернуть максимальный элемент
         if len(unique_nums) < 3:
             return max(unique_nums)
+
+        # Удаляем максимальный элемент из множества
         unique_nums.remove(max(unique_nums))
+
+        # Удаляем следующий максимальный элемент из множества
         unique_nums.remove(max(unique_nums))
+
+        # Возвращаем третий максимальный элемент
         return max(unique_nums)
         
 list_nums =  [3,2,1],[1,2],[2,2,3,1]
