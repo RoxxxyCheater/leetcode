@@ -36,7 +36,7 @@ class Solution(object):
         :type n: int
         :rtype: bool
         """
-        return False
+        return False if n <= 0 else log(n, 4).is_integer()
       
 list_nums = 16,5,1
 for i in list_nums:
