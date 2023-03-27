@@ -30,13 +30,14 @@
 # 973.2K
 # Acceptance Rate
 # 46.1%
+
 class Solution(object):
     def isPowerOfFour(self, n):
         """
         :type n: int
         :rtype: bool
         """
-        return False if n <= 0 else log(n, 4).is_integer()
+        return False if n <= 0 else log(n, 4).is_integer() #Если число <= 0 False, иначе вычисляем логарифм до основания 4
       
 list_nums = 16,5,1
 for i in list_nums:
