@@ -30,3 +30,14 @@
 # 973.2K
 # Acceptance Rate
 # 46.1%
+class Solution(object):
+    def isPowerOfFour(self, n):
+        """
+        :type n: int
+        :rtype: bool
+        """
+        return False
+      
+list_nums = 16,5,1
+for i in list_nums:
+  Solution.isPowerOfFour('Success', i)
