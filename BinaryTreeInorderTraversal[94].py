@@ -44,7 +44,12 @@ class Solution(object):
         :type root: TreeNode
         :rtype: List[int]
         """
-        return root
+        if not root:
+            return []
+        left_values = self.inorderTraversal(root.left)
+        root_value = [root.val]
+        right_values = self.inorderTraversal(root.right)
+        return left_values + root_value + right_values
     
 list_root =  [1,null,2,3], [], [1]
 for i in list_root:
