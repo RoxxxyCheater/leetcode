@@ -45,18 +45,26 @@ class Solution(object):
         :rtype: List[int]
         """
     
-    # Stack method
-    
+        # Stack method
+
+        # Создаем пустой стек и пустой список для значений в порядке inorder.
         stack = []
         result = []
+
+        # Идем вглубь дерева, добавляя в стек каждый узел на своем пути.
         curr = root
         while stack or curr:
             while curr:
                 stack.append(curr)
                 curr = curr.left
+
+            # Как только достигнут конечный узел, добавляем его значение в список,
+            # извлекаем его из стека и переходим к его правому поддереву.
             curr = stack.pop()
             result.append(curr.val)
             curr = curr.right
+
+        # Возвращаем список значений в порядке inorder.
         return result
     
     
