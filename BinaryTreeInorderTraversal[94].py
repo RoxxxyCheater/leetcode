@@ -44,11 +44,22 @@ class Solution(object):
         :type root: TreeNode
         :rtype: List[int]
         """
+        
         if not root:
-            return []
-        left_values = self.inorderTraversal(root.left)
+            return [] # Отсекаем,если  корень дерева является пустым (null)
+
+        # Вызываем рекурсивно функцию для левого поддерева,
+        # чтобы получить список значений в порядке inorder.
+        left_values = inorderTraversal(root.left)
+
+        # Добавляем значение корня в список.
         root_value = [root.val]
-        right_values = self.inorderTraversal(root.right)
+
+        # Вызываем рекурсивно функцию для правого поддерева,
+        # чтобы получить список значений в порядке inorder.
+        right_values = inorderTraversal(root.right)
+
+        # Объединяем все списки и возвращаем их.
         return left_values + root_value + right_values
     
 list_root =  [1,null,2,3], [], [1]
