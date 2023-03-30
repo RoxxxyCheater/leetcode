@@ -44,23 +44,43 @@ class Solution(object):
         :type root: TreeNode
         :rtype: List[int]
         """
-        
-        if not root:
-            return [] # Отсекаем,если  корень дерева является пустым (null)
+    
+    # Stack method
+    
+        stack = []
+        result = []
+        curr = root
+        while stack or curr:
+            while curr:
+                stack.append(curr)
+                curr = curr.left
+            curr = stack.pop()
+            result.append(curr.val)
+            curr = curr.right
+        return result
+    
+    
+    
+    
 
-        # Вызываем рекурсивно функцию для левого поддерева,
-        # чтобы получить список значений в порядке inorder.
-        left_values = inorderTraversal(root.left)
+#           Recursion method
 
-        # Добавляем значение корня в список.
-        root_value = [root.val]
+#         if not root:
+#             return [] # Отсекаем,если  корень дерева является пустым (null)
 
-        # Вызываем рекурсивно функцию для правого поддерева,
-        # чтобы получить список значений в порядке inorder.
-        right_values = inorderTraversal(root.right)
+#         # Вызываем рекурсивно функцию для левого поддерева,
+#         # чтобы получить список значений в порядке inorder.
+#         left_values = inorderTraversal(root.left)
 
-        # Объединяем все списки и возвращаем их.
-        return left_values + root_value + right_values
+#         # Добавляем значение корня в список.
+#         root_value = [root.val]
+
+#         # Вызываем рекурсивно функцию для правого поддерева,
+#         # чтобы получить список значений в порядке inorder.
+#         right_values = inorderTraversal(root.right)
+
+#         # Объединяем все списки и возвращаем их.
+#         return left_values + root_value + right_values
     
 list_root =  [1,null,2,3], [], [1]
 for i in list_root:
