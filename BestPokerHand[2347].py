@@ -54,22 +54,7 @@ class Solution(object):
         :type suits: List[str]
         :rtype: str
         """
-        # Check for Flush
-        if len(set(suits)) == 1:
-            return "Flush"
-        
-        # Check for Three of a Kind
-        for rank in set(ranks):
-            if ranks.count(rank) == 3:
-                return "Three of a Kind"
-        
-        # Check for Pair
-        for rank in set(ranks):
-            if ranks.count(rank) == 2:
-                return "Pair"
-        
-        # High Card
-        return "High Card"
+        return "Flush" if len(set(suits)) == 1 else "Three of a Kind" if any(ranks.count(rank) == 4 for rank in set(ranks)) else "Four of a Kind" if len(set([r for r in ranks if ranks.count(r) >= 3])) == 1 else "High Card" if len(set([r for r in ranks if ranks.count(r) >= 2])) == 2 else "Pair"
     
 ranks = [10, 9, 10, 3, 5]
 suits = ['H', 'H', 'H', 'D', 'H']
