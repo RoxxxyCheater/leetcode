@@ -46,3 +46,16 @@
 # 51.6K
 # Acceptance Rate
 # 60.6%
+
+class Solution(object):
+    def bestHand(self, ranks, suits):
+        """
+        :type ranks: List[int]
+        :type suits: List[str]
+        :rtype: str
+        """
+        return ranks, suits
+    
+ranks = [10, 9, 10, 3, 5]
+suits = ['H', 'H', 'H', 'D', 'H']
+Solution.bestHand('Success', ranks, suits) # Output: Three of a Kind
