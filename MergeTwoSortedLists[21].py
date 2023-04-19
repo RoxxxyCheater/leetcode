@@ -16,17 +16,17 @@ class Solution(object):
         :type list2: Optional[ListNode]
         :rtype: Optional[ListNode]
         """
-        if not list1:
-            return list2
-        elif not list2:
-            return list1
-        
-        if list1.val < list2.val:
-            list1.next = self.mergeTwoLists(list1.next, list2)
-            return list1
-        else:
-            list2.next = self.mergeTwoLists(list1, list2.next)
-            return list2
+ 
+        if not l1: # Отсекаем, если первый список пуст
+            return l2
+        elif not l2: # Отсекаем, если второй список пуст
+            return l1
+        if l1.val < l2.val: # Если первый узел первого списка имеет меньшее значение
+            l1.next = self.mergeTwoLists(l1.next, l2) # перенаправляем указатель на следующий узел первого списка
+            return l1 # на результат рекурсивного вызова mergeTwoLists с оставшейся частью первого списка и вторым списком
+        else: # Иначе перенаправляем указатель 
+            l2.next = self.mergeTwoLists(l1, l2.next) #на следующий узел второго списка
+            return l2 # на результат рекурсивного вызова mergeTwoLists с первым списком и оставшейся частью второго списка
 
       
 list1 = [1,2,4],[],[]
