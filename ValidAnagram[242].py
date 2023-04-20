@@ -37,15 +37,19 @@ class Solution(object):
         :type t: str
         :rtype: bool
         """
-        if len(s) != len(t):
-            return False
-        s_dict = {}
-        t_dict = {}
-        for char in s:
-            s_dict[char] = s_dict.get(char, 0) + 1
-        for char in t:
-            t_dict[char] = t_dict.get(char, 0) + 1
-        return s_dict == t_dict
+    
+    if len(s) != len(t):# Отсекаем,если длины строк не равны
+        return False
+    s_dict = {} # Создаем словарь для частот каждого символа в строке s
+    t_dict = {} # Создаем словарь для частот каждого символа в строке t
+
+    for char in s: # Используем метод get для увеличения счетчика символа
+        s_dict[char] = s_dict.get(char, 0) + 1
+    for char in t: # Используем метод get для увеличения счетчика символа
+        t_dict[char] = t_dict.get(char, 0) + 1
+
+   
+    return s_dict == t_dict  #Возвращаем True если словари прошли проверку на анаграмму сравнением
        
 list_s = "anagram","rat"
 list_t = "nagaram","car"
