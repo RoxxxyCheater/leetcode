@@ -29,3 +29,18 @@
 # 3.3M
 # Acceptance Rate
 # 63.1%
+
+class Solution(object):
+    def isAnagram(self, s, t):
+        """
+        :type s: str
+        :type t: str
+        :rtype: bool
+        """
+        return s, t
+       
+list_s = "anagram","rat"
+list_t = "nagaram","car"
+ 
+for index, num in enumerate(list_s):
+    Solution.addToArrayForm('Success', num, list_t[index])
