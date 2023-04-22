@@ -57,8 +57,8 @@ class Solution(object):
         """
         return root, targetSum
     
-root_list = 
-targetSum_list =
+root_list = [5,4,8,11,null,13,4,7,2,null,null,null,1], [1,2,3]
+targetSum_list = 22,5,0
 
 for index,num in enumerate(root_list):
   Solution('Success',  num, targetSum_list[index])
