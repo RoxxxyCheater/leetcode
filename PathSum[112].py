@@ -55,7 +55,12 @@ class Solution(object):
         :type targetSum: int
         :rtype: bool
         """
-        return root, targetSum
+        if not root:  
+            return False
+        if not root.left and not root.right: 
+            return root.val == targetSum
+        return self.hasPathSum(root.left, targetSum - root.val) or self.hasPathSum(root.right, targetSum - root.val)
+
     
 root_list = [5,4,8,11,null,13,4,7,2,null,null,null,1], [1,2,3]
 targetSum_list = 22,5,0
