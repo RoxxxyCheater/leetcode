@@ -39,3 +39,26 @@
 # 2.4M
 # Acceptance Rate
 # 48.3%
+
+
+
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution(object):
+    def hasPathSum(self, root, targetSum):
+        """
+        :type root: TreeNode
+        :type targetSum: int
+        :rtype: bool
+        """
+        return root, targetSum
+    
+root_list = 
+targetSum_list =
+
+for index,num in enumerate(root_list):
+  Solution('Success',  num, targetSum_list[index])
