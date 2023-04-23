@@ -59,6 +59,7 @@ class Solution(object):
             return False
         if not root.left and not root.right: 
             return root.val == targetSum
+        # Возвращаем результат сравнения целевой суммы с суммой значений по пути от корня до листа в левом или правом поддереве
         return self.hasPathSum(root.left, targetSum - root.val) or self.hasPathSum(root.right, targetSum - root.val)
 
     
