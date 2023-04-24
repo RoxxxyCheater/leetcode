@@ -33,3 +33,19 @@
 # 1.3M
 # Acceptance Rate
 # 58.3%
+
+class Solution(object):
+    def canConstruct(self, ransomNote, magazine):
+        """
+        :type ransomNote: str
+        :type magazine: str
+        :rtype: bool
+        """
+        return self
+    
+
+ransomNote_list = "a", "aa", "aa"
+magazine_list = "b", "ab", "aab"
+
+for index, strs in enumerate(ransomNote_list):
+    Solution.canConstruct('Succes',strs, magazine_list[index])
