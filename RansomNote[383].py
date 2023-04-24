@@ -41,7 +41,17 @@ class Solution(object):
         :type magazine: str
         :rtype: bool
         """
-        return self
+        mag_dict = {}
+        for c in magazine:
+            if c in mag_dict:
+                mag_dict[c] += 1
+            else:
+                mag_dict[c] = 1
+        for c in ransomNote:
+            if c not in mag_dict or mag_dict[c] == 0:
+                return False
+            mag_dict[c] -= 1
+        return True
     
 
 ransomNote_list = "a", "aa", "aa"
