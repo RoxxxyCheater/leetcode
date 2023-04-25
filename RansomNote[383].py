@@ -41,17 +41,17 @@ class Solution(object):
         :type magazine: str
         :rtype: bool
         """
-        mag_dict = {}
-        for c in magazine:
+        mag_dict = {} #Словарь для храниния букв из журнала
+        for c in magazine: # перебираем журнал
             if c in mag_dict:
-                mag_dict[c] += 1
+                mag_dict[c] += 1 # пересчитываем колическвто если буква в словаре
             else:
-                mag_dict[c] = 1
-        for c in ransomNote:
-            if c not in mag_dict or mag_dict[c] == 0:
-                return False
-            mag_dict[c] -= 1
-        return True
+                mag_dict[c] = 1 # Добавляем 1 букву если её ещё нет в словаре
+        for c in ransomNote: # Перебираем ransomeNote 
+            if c not in mag_dict or mag_dict[c] == 0: # Если буквы нет или колл-во 0
+                return False # Отсекаем
+            mag_dict[c] -= 1 # шаг перебора
+        return True # если перебрали все буквы в ransomNote, значит, мы можно построить его из magazine
     
 
 ransomNote_list = "a", "aa", "aa"
