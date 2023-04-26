@@ -46,7 +46,16 @@ class Solution(object):
         :type words: List[str]
         :rtype: str
         """
-        return word
+        n = len(words[0])
+        diff_dict = {}
+        for i in range(n - 1):
+            for word in words:
+                diff = ord(word[i+1]) - ord(word[i])
+                if i in diff_dict:
+                    if diff_dict[i] != diff:
+                        return word
+                else:
+                    diff_dict[i] = diff
     
 words_list = ["adc","wzy","abc"], ["aaa","bob","ccc","ddd"]
 
