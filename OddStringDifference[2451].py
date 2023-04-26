@@ -37,3 +37,21 @@
 # 34.9K
 # Acceptance Rate
 # 59.6%
+
+
+
+class Solution(object):
+    def oddString(self, words):
+        """
+        :type words: List[str]
+        :rtype: str
+        """
+        return word
+    
+words_list = ["adc","wzy","abc"], ["aaa","bob","ccc","ddd"]
+
+for i in words_list:
+   Solution.oddString('Success', i)
+
+
+
