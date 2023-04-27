@@ -34,3 +34,16 @@
 # 265.5K
 # Acceptance Rate
 # 69.6%
+
+class Solution(object):
+    def findWords(self, words):
+        """
+        :type words: List[str]
+        :rtype: List[str]
+        """
+        return words
+    
+words_list = ["Hello","Alaska","Dad","Peace"],["omk"],["adsdf","sfd"]
+
+for i in words_list:
+ Solution.findWords('Success', i)
