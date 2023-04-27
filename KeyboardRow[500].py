@@ -41,13 +41,10 @@ class Solution(object):
         :type words: List[str]
         :rtype: List[str]
         """
-        first_row = set("qwertyuiop")
-        second_row = set("asdfghjkl")
-        third_row = set("zxcvbnm")
-        result = []
+        first_row,second_row,third_row,result  = set("qwertyuiop"),set("asdfghjkl"),set("zxcvbnm"),[] # три ряда клавиатуры и результат
         for word in words:
-            word_set = set(word.lower())
-            if word_set.issubset(first_row) or word_set.issubset(second_row) or word_set.issubset(third_row):
+            word_set = set(word.lower())  # Преобразуем слово во множество букв в нижнем регистре
+            if word_set.issubset(first_row) or word_set.issubset(second_row) or word_set.issubset(third_row): # Если один ряд клавиатуры, добавляем слово
                 result.append(word)
         return result
     
