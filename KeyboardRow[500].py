@@ -41,7 +41,15 @@ class Solution(object):
         :type words: List[str]
         :rtype: List[str]
         """
-        return words
+        first_row = set("qwertyuiop")
+        second_row = set("asdfghjkl")
+        third_row = set("zxcvbnm")
+        result = []
+        for word in words:
+            word_set = set(word.lower())
+            if word_set.issubset(first_row) or word_set.issubset(second_row) or word_set.issubset(third_row):
+                result.append(word)
+        return result
     
 words_list = ["Hello","Alaska","Dad","Peace"],["omk"],["adsdf","sfd"]
 
