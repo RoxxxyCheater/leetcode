@@ -37,3 +37,14 @@
 # 4.3M
 # Acceptance Rate
 # 44.5%
+class Solution(object):
+    def isPalindrome(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        return s
+
+list_s = "A man, a plan, a canal: Panama","race a car", " "
+for i in list_s:
+  Solution.isPalindrome('Success', i)
