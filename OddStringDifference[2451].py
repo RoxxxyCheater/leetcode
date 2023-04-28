@@ -46,15 +46,15 @@ class Solution(object):
         :type words: List[str]
         :rtype: str
         """
-        n = len(words[0])
-        diff_dict = {}
-        for i in range(n - 1):
-            for word in words:
-                diff = ord(word[i+1]) - ord(word[i])
-                if i in diff_dict:
+        n = len(words[0]) # Получаем длину первого слова
+        diff_dict = {} # Словарь разности между символами
+        for i in range(n - 1): # Проходимся по всем индексам и словам
+            for word in words: 
+                diff = ord(word[i+1]) - ord(word[i]) # Находим разность между символами на текущем и следующем индексах
+                if i in diff_dict: # Если индекс уже есть в словаре и разность не совпадает, значит это отличающееся слово
                     if diff_dict[i] != diff:
                         return word
-                else:
+                else: # Иначе добавляем разность в словарь для этого индекса
                     diff_dict[i] = diff
     
 words_list = ["adc","wzy","abc"], ["aaa","bob","ccc","ddd"]
