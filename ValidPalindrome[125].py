@@ -43,7 +43,8 @@ class Solution(object):
         :type s: str
         :rtype: bool
         """
-        return s
+        s = ''.join(filter(str.isalnum, str(s))).lower()
+        return s == s[::-1]
 
 list_s = "A man, a plan, a canal: Panama","race a car", " "
 for i in list_s:
