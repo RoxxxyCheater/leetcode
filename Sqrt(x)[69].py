@@ -31,3 +31,15 @@
 # 3.9M
 # Acceptance Rate
 # 37.5%
+
+class Solution(object):
+    def mySqrt(self, x):
+        """
+        :type x: int
+        :rtype: int
+        """
+        return x
+    
+list_x = 4,8
+for i in list_x:
+ Solution.mySqrt('Success', i)
