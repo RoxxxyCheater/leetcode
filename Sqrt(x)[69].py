@@ -38,10 +38,10 @@ class Solution(object):
         :type x: int
         :rtype: int
         """
-        if x < 2:
+        if x < 2: # Задаём начальное приближение
             return x
         guess = x // 2
-        while abs(guess * guess - x) > 1e-6:
+        while abs(guess * guess - x) > 1e-6: # Узнаём приближения с помощью метода Ньютона
             guess = (guess + x / guess) / 2
         return int(guess)        
 
