@@ -38,17 +38,28 @@ class Solution(object):
         :type x: int
         :rtype: int
         """
-        left, right = 0, x  # задаем начальные границы для бинарного поиска
-        while left <= right:  # запускаем бинарный поиск
-            mid = (left + right) // 2  # находим середину отрезка
+        if x < 2:
+            return x
+        guess = x // 2
+        while abs(guess * guess - x) > 1e-6:
+            guess = (guess + x / guess) / 2
+        return int(guess)        
 
-            if mid * mid <= x < (mid + 1) * (mid + 1):  # если нашли корень, возвращаем его
-                return mid
-            elif x < mid * mid:  # если корень больше середины, идем в левую часть
-                right = mid - 1
-            else:  # если корень меньше середины, идем в правую часть
-                left = mid + 1
-        return -1  # если корень не найден, возвращаем -1
+
+
+
+
+        # left, right = 0, x  # задаем начальные границы для бинарного поиска
+        # while left <= right:  # запускаем бинарный поиск
+        #     mid = (left + right) // 2  # находим середину отрезка
+
+        #     if mid * mid <= x < (mid + 1) * (mid + 1):  # если нашли корень, возвращаем его
+        #         return mid
+        #     elif x < mid * mid:  # если корень больше середины, идем в левую часть
+        #         right = mid - 1
+        #     else:  # если корень меньше середины, идем в правую часть
+        #         left = mid + 1
+        # return -1  # если корень не найден, возвращаем -1
     
 list_x = 4,8
 for i in list_x:
