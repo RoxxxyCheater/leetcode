@@ -35,3 +35,18 @@
 # 2.1M
 # Acceptance Rate
 # 43.0%
+class Solution(object):
+    def isIsomorphic(self, s, t):
+        """
+        :type s: str
+        :type t: str
+        :rtype: bool
+        """
+        return True
+
+
+
+list_strs = "egg","foo","paper"
+list_strt = "add","bar","title"
+for index, strs in enumerate(list_strs):
+    Solution.secondHighest('Success', strs)
