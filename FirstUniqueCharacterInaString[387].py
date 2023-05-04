@@ -26,3 +26,15 @@
 # 2.3M
 # Acceptance Rate
 # 59.7%
+
+
+class Solution(object):
+    def firstUniqChar(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        return s
+list_s = "leetcode","loveleetcode", "aabb"
+for i in list_s:
+ Solution.firstUniqChar('Success', i)
