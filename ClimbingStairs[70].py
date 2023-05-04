@@ -41,10 +41,22 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
-        if n <= 2:return n
+        if n <= 2:return n # если n меньше или равно 2, то количество способов равно n
         res, one, two = 0, 1, 2
+        for i in range(3, n + 1): # начинаем с 3, так как мы уже рассмотрели случаи для n = 1 и n = 2
+            res = one + two # считаем количество способов для i-ой ступеньки как сумму способов для i-2 и i-1 ступенек
+            one, two = two, res # обновляем значения one и two для следующей итерации
+        return res
+       
+       
+               if n <= 2:  
+            return n
+        res, one, two = 0, 1, 2
+        
         for i in range(3, n + 1):
+            
             res = one + two
+            # обновляем значения one и two для следующей итерации
             one, two = two, res
         return res
 
