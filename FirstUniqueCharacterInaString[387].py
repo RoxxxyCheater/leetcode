@@ -34,7 +34,27 @@ class Solution(object):
         :type s: str
         :rtype: int
         """
-        return s
+
+
+class Solution(object):
+    def firstUniqChar(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        count = {}
+        for c in s:
+            if c in count:
+                count[c] += 1
+            else:
+                count[c] = 1
+        for i in range(len(s)):
+            if count[s[i]] == 1:
+                return i
+        return -1
+       
+       
+       
 list_s = "leetcode","loveleetcode", "aabb"
 for i in list_s:
  Solution.firstUniqChar('Success', i)
