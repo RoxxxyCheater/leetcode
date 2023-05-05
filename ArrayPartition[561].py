@@ -24,3 +24,16 @@
 #1 <= n <= 104
 #nums.length == 2 * n
 #-104 <= nums[i] <= 104
+
+
+class Solution(object):
+    def arrayPairSum(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        return nums
+
+list_num = [1,4,3,2], [6,2,6,5,1,2]
+for i in list_num:
+    Solution.arrayPairSum("Success", i)
