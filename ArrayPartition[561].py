@@ -32,7 +32,11 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        return nums
+        nums.sort() 
+        sum = 0 
+        for i in range(0, len(nums), 2): 
+           sum += nums[i] 
+        return sum
 
 list_num = [1,4,3,2], [6,2,6,5,1,2]
 for i in list_num:
