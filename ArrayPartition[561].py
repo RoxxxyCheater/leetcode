@@ -31,12 +31,14 @@ class Solution(object):
         """
         :type nums: List[int]
         :rtype: int
-        """
-        nums.sort() 
-        sum = 0 
-        for i in range(0, len(nums), 2): 
-           sum += nums[i] 
-        return sum
+        """ 
+
+        nums.sort() # сортируем массив
+        sum = 0 # инициализируем переменную для хранения суммы
+        for i in range(0, len(nums), 2): # проходим по массиву с шагом 2
+           sum += nums[i] # добавляем к сумме элементы с четными индексами
+        return sum # возвращаем сумму
+
 
 list_num = [1,4,3,2], [6,2,6,5,1,2]
 for i in list_num:
