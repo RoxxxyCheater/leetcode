@@ -25,3 +25,19 @@
 #1 <= g.length <= 3 * 104
 #0 <= s.length <= 3 * 104
 #1 <= g[i], s[j] <= 231 - 1
+
+
+class Solution(object):
+    def findContentChildren(self, g, s):
+        """
+        :type g: List[int]
+        :type s: List[int]
+        :rtype: int
+        """
+    return g, s
+
+list_g = [1,2,3],[1,2]
+list_s = [1,1],[1,2,3]
+
+for index, list_g in enumerate(list_g):
+    Solution.findContentChildren("Success", list_g, list_s[index])
