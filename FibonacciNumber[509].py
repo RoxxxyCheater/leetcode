@@ -26,7 +26,12 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
-        return True
+        if n == 0:
+            return 0
+        elif n == 1:
+            return 1
+        else:
+            return self.fib(n-1) + self.fib(n-2)
 
 list_n = 2,3,4
 
