@@ -31,14 +31,14 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
-        if n == 0:
-            return 0
-        elif n in (1, 2):
-            return 1
-        a, b, c = 0, 1, 1
-        for _ in range(n-2):
-            a, b, c = b, c, a+b+c
-        return c
+        if n == 0: # если n равно 0, то возвращаем 0
+             return 0
+        elif n in (1, 2): # если n равно 1 или 2, то возвращаем 1
+             return 1
+        a, b, c = 0, 1, 1 # инициализация переменных a, b и c
+        for _ in range(n-2): # цикл от 0 до n-2
+             a, b, c = b, c, a+b+c # переопределение значений переменных a, b и c
+        return c # возвращаем значение переменной c
 
 
 list_n = 4,25
