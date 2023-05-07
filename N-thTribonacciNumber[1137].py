@@ -33,13 +33,12 @@ class Solution(object):
         """
         if n == 0:
             return 0
-        elif n == 1 or n == 2:
+        elif n in (1, 2):
             return 1
-        else:
-            a, b, c = 0, 1, 1
-            for i in range(n-2):
-                a, b, c = b, c, a+b+c
-            return c
+        a, b, c = 0, 1, 1
+        for _ in range(n-2):
+            a, b, c = b, c, a+b+c
+        return c
 
 
 list_n = 4,25
