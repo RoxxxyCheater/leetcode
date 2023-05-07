@@ -26,16 +26,11 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
-
-    # отсекаем если n равно 0, возвращаем 0
-    if n == 0:
-        return 0
-    # отсекаем если n равно 1, возвращаем 1
-    elif n == 1:
-        return 1
-    # рекурсивно вызываем функцию fib для n-1 и n-2 и складываем результаты
-    else:
-        return fib(n-1) + fib(n-2)
+        if n < 2:
+            return n
+        # рекурсивно вызываем функцию fib для n-1 и n-2 и складываем результаты
+        else:
+            return fib(n-1) + fib(n-2)
 
 list_n = 2,3,4
 
