@@ -26,6 +26,7 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
+        # отсекаем если n меньше двух
         if n < 2:
             return n
         # рекурсивно вызываем функцию fib для n-1 и n-2 и складываем результаты
