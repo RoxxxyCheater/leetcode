@@ -23,3 +23,18 @@
 
 #0 <= n <= 37
 #The answer is guaranteed to fit within a 32-bit integer, ie. answer <= 2^31 - 1.
+
+
+class Solution(object):
+    def tribonacci(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        return n
+
+list_n = 4
+
+for i in list_n:
+    Solution.tribonacci("Success", i)
+
