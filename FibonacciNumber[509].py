@@ -18,3 +18,17 @@
  
 #Constraints:
 # • 0 <= n <= 30
+
+
+class Solution(object):
+    def fib(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        return True
+
+list_n = 2,3,4
+
+for i in list_n:
+    Solution.fib("Success", i)
