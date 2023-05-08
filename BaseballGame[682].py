@@ -62,3 +62,14 @@
 # 249,775
 # Submissions
 # 335,582
+class Solution(object):
+    def calPoints(self, operations):
+        """
+        :type operations: List[str]
+        :rtype: int
+        """
+         return operations
+      
+list_op = ["5","2","C","D","+"],["5","-2","4","C","D","9","+","+"],["1","C"]
+for i in list_op:
+   Solution.calPoints('Success', i)
