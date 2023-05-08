@@ -68,17 +68,17 @@ class Solution(object):
         :type operations: List[str]
         :rtype: int
         """
-        stack = []
-        for op in operations:
-            if op.isdigit() or op[0] == '-' and op[1:].isdigit():
-                stack.append(int(op))
-            elif op == 'C':
-                stack.pop()
-            elif op == 'D':
-                stack.append(stack[-1] * 2)
-            elif op == '+':
-                stack.append(stack[-1] + stack[-2])
-        return sum(stack)
+       stack = [] # создаем пустой стек для хранения результатов
+       for op in ops: # итерируемся по всем операциям в списке
+           if op.isdigit() or op[0] == '-' and op[1:].isdigit(): # если текущая операция - целое число
+               stack.append(int(op)) # преобразуем его в число и добавляем в стек
+           elif op == 'C': # если текущая операция - 'C'
+               stack.pop() # удаляем последний элемент из стека
+           elif op == 'D': # если текущая операция - 'D'
+               stack.append(stack[-1] * 2) # умножаем последний элемент стека на 2 и добавляем его в стек
+           elif op == '+': # если текущая операция - '+'
+               stack.append(stack[-1] + stack[-2]) # добавляем в стек сумму двух последних элементов стека
+       return sum(stack) # возвращаем сумму всех элементов в стеке
       
 list_op = ["5","2","C","D","+"],["5","-2","4","C","D","9","+","+"],["1","C"]
 for i in list_op:
