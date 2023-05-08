@@ -36,10 +36,18 @@ class Solution(object):
         :type prices: List[int]
         :rtype: int
         """
+        # Инициализируем переменные min_val и max_val
+        # min_val присваиваем бесконечно большое значение, а max_val - ноль
         min_val,max_val = float('inf'),0
+        # Итерируемся по ценам в списке prices
         for price in prices:
-            if price < min_val: min_val = price 
-            elif price - min_val > max_val: max_val = price - min_val 
+            # Если текущая цена меньше минимальной цены, то обновляем минимальную цену
+            if price < min_val: 
+                min_val = price 
+            # Если прибыль от продажи акции с текущей ценой больше, чем максимальная прибыль, то обновляем максимальную прибыль
+            elif price - min_val > max_val: 
+                max_val = price - min_val 
+        # Возвращаем максимальную прибыль
         return max_val
    
    
