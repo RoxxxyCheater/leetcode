@@ -68,7 +68,17 @@ class Solution(object):
         :type operations: List[str]
         :rtype: int
         """
-         return operations
+        stack = []
+        for op in operations:
+            if op.isdigit() or op[0] == '-' and op[1:].isdigit():
+                stack.append(int(op))
+            elif op == 'C':
+                stack.pop()
+            elif op == 'D':
+                stack.append(stack[-1] * 2)
+            elif op == '+':
+                stack.append(stack[-1] + stack[-2])
+        return sum(stack)
       
 list_op = ["5","2","C","D","+"],["5","-2","4","C","D","9","+","+"],["1","C"]
 for i in list_op:
