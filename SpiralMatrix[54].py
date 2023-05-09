@@ -24,3 +24,17 @@
 # 1,070,059
 # Submissions
 # 2,319,695
+
+
+class Solution(object):
+    def spiralOrder(self, matrix):
+        """
+        :type matrix: List[List[int]]
+        :rtype: List[int]
+        """
+        return matrix
+    
+    
+list_matrix = [[1,2,3],[4,5,6],[7,8,9]],[[1,2,3,4],[5,6,7,8],[9,10,11,12]]
+for i in list_matrix:
+    Solution.spiralOrder('Success', i)
