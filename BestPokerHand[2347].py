@@ -54,11 +54,19 @@ class Solution(object):
         :type suits: List[str]
         :rtype: str
         """
-        return "Flush" if len(set(suits)) == 1 else \
-            "Three of a Kind" if any(ranks.count(rank) == 4 for rank in set(ranks)) else \
-            "Four of a Kind" if len(set([r for r in ranks if ranks.count(r) >= 3])) == 1 else \
-            "High Card" if len(set([r for r in ranks if ranks.count(r) >= 2])) == 2 else \
-            "Pair"
+        if len(set(suits)) == 1:
+            return "Flush"
+        # затем на Тройку (Three of a Kind)
+        if any(ranks.count(rank) == 3 for rank in set(ranks)):
+            return "Three of a Kind"
+        # затем на Каре (Four of a Kind)
+        if any(ranks.count(rank) == 4 for rank in set(ranks)):
+            return "Four of a Kind"
+        # затем на Две пары (Two Pair)
+        if len(set([r for r in ranks if ranks.count(r) >= 2])) == 2:
+            return "Two Pair"
+        # если нет лучшей комбинации, то это "Старшая карта" (High Card)
+        return "High Card"
     
 ranks = [10, 9, 10, 3, 5]
 suits = ['H', 'H', 'H', 'D', 'H']
