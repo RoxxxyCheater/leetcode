@@ -21,3 +21,14 @@
 # 486,849
 # Submissions
 # 701,201
+class Solution(object):
+    def generateMatrix(self, n):
+        """
+        :type n: int
+        :rtype: List[List[int]]
+        """
+        return True
+      
+list_n = 3,1
+for i in list_n:
+  Solution.generateMatrix('Success', i)
