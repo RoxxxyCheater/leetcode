@@ -43,10 +43,11 @@ class Solution(object):
         :type root: TreeNode
         :rtype: int
         """
-        if not root: return 0 
-        left_dep = self.maxDepth(root.left) 
-        right_dep = self.maxDepth(root.right) 
-        return max(left_dep, right_dep) + 1
+        if not root: return 0  # Если корень пустой, возвращаем ноль (глубина равна нулю)
+        left_dep = self.maxDepth(root.left)  # Рекурсивно вычисляем глубину левого поддерева
+        right_dep = self.maxDepth(root.right)  # Рекурсивно вычисляем глубину правого поддеревa
+        return max(left_dep, right_dep) + 1  # Возвращаем максимальную глубину из левого и правого поддерева плюс один
+
         
 list_nums = [3,9,20,'null','null',15,7] , [1,'null',2]
 for i in list_nums:
