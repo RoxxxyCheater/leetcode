@@ -59,11 +59,12 @@ class Solution(object):
         :type num: int
         :rtype: str
         """
-        for n in sorted(list(roman_dict.keys()))[::-1]:
-            while num >= n:
-                num -= n
-                res += roman_dict[n]
-        return res
+        for n in sorted(list(roman_dict.keys()))[::-1]:  # Проходим по значениям ключей словаря roman_dict в порядке убывания
+            while num >= n:  # Пока число num больше или равно текущего значения n
+                num -= n  # Вычитаем значение n из числа num
+                res += roman_dict[n]  # Добавляем соответствующую римскую цифру в результирующую строку
+        return res  # Возвращаем результирующую строку с римским числом
+
 
 list_nums = 3, 58, 1994,1993
 for i in list_nums:
