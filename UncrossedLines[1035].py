@@ -36,3 +36,16 @@
 # 125,114
 # Submissions
 # 201,767
+class Solution(object):
+    def maxUncrossedLines(self, nums1, nums2):
+        """
+        :type nums1: List[int]
+        :type nums2: List[int]
+        :rtype: int
+        """
+        return True
+    
+list_nums1 = [2,5,1,2,5], [1,4,2],[1,3,7,1,7,5]
+list_nums2 = [10,5,2,1,5,2],[1,2,4],[1,9,2,5,1]
+for index,num in enumerate(list_nums1):
+    Solution.maxUncrossedLines('Success', num, list_nums2[index])
