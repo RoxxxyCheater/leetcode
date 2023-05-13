@@ -37,3 +37,17 @@
 # Submissions
 # 110,714
 # Seen this question in a real interview before?
+
+
+class Solution(object):
+    def stringMatching(self, words):
+        """
+        :type words: List[str]
+        :rtype: List[str]
+        """
+        return words
+    
+    
+list_num = ["mass","as","hero","superhero"], ["leetcode","et","code"],["blue","green","bu"]
+for i in list_num:
+    Solution.stringMatching('Success', i)
