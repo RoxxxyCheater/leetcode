@@ -45,9 +45,15 @@ class Solution(object):
         :type words: List[str]
         :rtype: List[str]
         """
-        return words
+        result = []
+        for i in range(len(words)):
+            for j in range(len(words)):
+                if i != j and words[i] in words[j]:
+                    result.append(words[i])
+                    break
+        return result
     
-    
+
 list_num = ["mass","as","hero","superhero"], ["leetcode","et","code"],["blue","green","bu"]
 for i in list_num:
     Solution.stringMatching('Success', i)
