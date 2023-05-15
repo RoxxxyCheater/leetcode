@@ -38,17 +38,17 @@ class Solution(object):
         :type s: str
         :rtype: bool
         """
-        stack = []
-        pair = {')': '(', '}': '{', ']': '['}
-        for char in s:
-            if char in pair:
-                unpair_el = stack.pop() if stack else '#'
-                if pair[char] != unpair_el:
-                    return False
-            else:
-                stack.append(char)
-        return not stack
-    
+        stack = []  # Создание пустого стека для хранения открывающих символов
+        pair = {')': '(', '}': '{', ']': '['}  # Словарь, связывающий закрывающие и открывающие символы
+        for char in s:  # Проход по каждому символу в строке s
+            if char in pair:  # Если символ является закрывающим
+                unpair_el = stack.pop() if stack else '#'  # Извлечение последнего элемента из стека или '#' в случае пустого стека
+                if pair[char] != unpair_el:  # Если открывающий символ для текущего закрывающего символа не соответствует извлеченному символу
+                    return False  # Возвращается False, так как скобки не сбалансированы
+            else:  # Если символ является открывающим
+                stack.append(char)  # Добавление символа в стек
+        return not stack  # Возвращается True, если стек пуст (все скобки сбалансированы), иначе возвращается False
+
     
 list_chars = "()","()[]{}","(]"
 for i in list_chars:
