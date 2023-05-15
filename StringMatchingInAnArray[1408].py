@@ -45,13 +45,13 @@ class Solution(object):
         :type words: List[str]
         :rtype: List[str]
         """
-        result = []
+        result = []# Создаем пустой список для хранения общих подстрок
         for i in range(len(words)):
             for j in range(len(words)):
-                if i != j and words[i] in words[j]:
-                    result.append(words[i])
-                    break
-        return result
+                if i != j and words[i] in words[j]:# Проверяем, является ли words[i] подстрокой words[j]
+                    result.append(words[i])# Добавляем words[i] в список результатов
+                    break  # Выходим из внутреннего цикла, так как найдено совпадение
+        return result  # Возвращаем список общих подстрок
     
 
 list_num = ["mass","as","hero","superhero"], ["leetcode","et","code"],["blue","green","bu"]
