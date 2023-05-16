@@ -38,24 +38,29 @@ class Solution(object):
         :type head: ListNode
         :rtype: ListNode
         """
-        
+        # Если список пуст или содержит только один узел, то нет необходимости менять узлы местами
         if not head or not head.next:
             return head
 
+        # Создаем фиктивный узел, который будет служить новым началом списка
         dummy = ListNode(0)
         dummy.next = head
 
-        prev = dummy
-        curr = head
+        # Инициализируем указатели для обмена
+        prev = dummy  # Указатель на предыдущий узел
+        curr = head  # Указатель на текущий узел
 
         while curr and curr.next:
-            first = curr
-            second = curr.next
+            # Узлы, которые нужно поменять местами
+            first = curr  # Первый узел
+            second = curr.next  # Второй узел
 
+            # Обмен
             prev.next = second
             first.next = second.next
             second.next = first
 
+            # Обновляем указатели для следующей итерации
             prev = first
             curr = first.next
 
