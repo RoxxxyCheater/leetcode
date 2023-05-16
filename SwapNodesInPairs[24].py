@@ -26,3 +26,21 @@
 # 1,139,498
 # Submissions
 # 1,828,890
+
+# Definition for singly-linked list.
+# class ListNode(object):
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution(object):
+    def swapPairs(self, head):
+        """
+        :type head: ListNode
+        :rtype: ListNode
+        """
+        return head
+        
+list_int = [1,2,3,4],[],[1]
+
+for i in list_int:
+    Solution.swapPairs('Success', i)
