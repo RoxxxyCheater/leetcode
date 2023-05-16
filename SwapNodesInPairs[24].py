@@ -38,7 +38,28 @@ class Solution(object):
         :type head: ListNode
         :rtype: ListNode
         """
-        return head
+        
+        if not head or not head.next:
+            return head
+
+        dummy = ListNode(0)
+        dummy.next = head
+
+        prev = dummy
+        curr = head
+
+        while curr and curr.next:
+            first = curr
+            second = curr.next
+
+            prev.next = second
+            first.next = second.next
+            second.next = first
+
+            prev = first
+            curr = first.next
+
+        return dummy.next
         
 list_int = [1,2,3,4],[],[1]
 
