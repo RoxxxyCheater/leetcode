@@ -62,56 +62,22 @@ class Solution(object):
         :type head: Optional[ListNode]
         :rtype: int
         """ 
-        # Функция для нахождения максимальной суммы соседних узлов-близнецов в связанном списке
+        node_dict = {} 
         current = head
-        max_sum = float('-inf')  # Инициализируем переменную максимальной суммы с отрицательной бесконечностью
-
-        while current:
-            twin = self.findTwin(head, current)  # Находим близнеца текущего узла
-            twin_sum = current.val + twin.val  # Вычисляем сумму текущего узла и его близнеца
-
-            # Обновляем максимальную сумму, если найдена более большая сумма близнецов
-            max_sum = max(max_sum, twin_sum)
-
-            current = current.next
-
-        return max_sum
-
-    def findTwin(self, head, node):
-        # Функция для нахождения близнеца заданного узла в связанном списке
-        n = self.getLength(head)
-        twin_index = n - 1 - self.getIndex(head, node)  # Вычисляем индекс близнеца узла
-
-        twin = head
-        for _ in range(twin_index):
-            twin = twin.next
-
-        return twin
-
-    def getLength(self,head):
-        # Функция для подсчета длины связанного списка
-        length = 0
-        current = head
-
-        while current:
-            length += 1
-            current = current.next
-
-        return length
-
-    def getIndex(self,head, node):
-        # Функция для получения индекса заданного узла в связанном списке
+        max_sum = float('-inf')
         index = 0
-        current = head
-
         while current:
-            if current == node:
-                return index
+            node_dict[index] = current.val
             index += 1
             current = current.next
 
-        return -1
-        
+        for i in range(index // 2):
+            twin_sum = node_dict[i] + node_dict[index - 1 - i]
+            max_sum = max(max_sum, twin_sum)
+
+        return max_sum
+
+
 list_num = [5,4,2,1], [4,2,2,3], [1,100000]
 for i in list_num:
     Solution.pairSum('Success', i)
