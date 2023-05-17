@@ -62,7 +62,41 @@ class Solution(object):
         :type head: Optional[ListNode]
         :rtype: int
         """ 
-        return head
+        current = head
+        max_sum = float('-inf') 
+        
+        while current:
+            twin = self.findTwin(head, current) 
+            twin_sum = current.val + twin.val 
+            max_sum = max(max_sum, twin_sum)
+            current = current.next
+        return max_sum
+
+    def findTwin(self, head, node):
+        n = self.getLength(head)
+        twin_index = n - 1 - self.getIndex(head, node)
+        twin = head
+        for _ in range(twin_index):
+            twin = twin.next
+        return twin
+
+    def getLength(self,head):
+        length = 0
+        current = head
+        while current:
+            length += 1
+            current = current.next
+        return length
+
+    def getIndex(self,head, node):
+        index = 0
+        current = head
+        while current:
+            if current == node:
+                return index
+            index += 1
+            current = current.next
+        return -1
         
 list_num = [5,4,2,1], [4,2,2,3], [1,100000]
 for i in list_num:
