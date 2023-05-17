@@ -46,3 +46,24 @@
 # 152,161
 # Submissions
 # 183,668
+
+
+
+
+# Definition for singly-linked list.
+# class ListNode(object):
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+
+class Solution(object):
+    def pairSum(self, head):
+        """
+        :type head: Optional[ListNode]
+        :rtype: int
+        """ 
+        return head
+        
+list_num = [5,4,2,1], [4,2,2,3], [1,100000]
+for i in list_num:
+    Solution.pairSum('Success', i)
