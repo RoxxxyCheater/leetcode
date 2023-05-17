@@ -62,20 +62,23 @@ class Solution(object):
         :type head: Optional[ListNode]
         :rtype: int
         """ 
-        node_dict = {} 
-        current = head
-        max_sum = float('-inf')
-        index = 0
-        while current:
-            node_dict[index] = current.val
+        # Функция для нахождения максимальной суммы соседних узлов-близнецов в связанном списке
+        node_dict = {}                  # Хэш-таблица для хранения значений узлов
+        current = head                  # Текущий узел, начинаем с головы списка
+        max_sum = float('-inf')         # Инициализируем переменную максимальной суммы с отрицательной бесконечностью
+
+        index = 0                       # Инициализируем индекс узла
+        while current:                  # Проходим по всем узлам списка
+            node_dict[index] = current.val   # Сохраняем значение текущего узла в хэш-таблицу по его индексу
             index += 1
             current = current.next
 
-        for i in range(index // 2):
-            twin_sum = node_dict[i] + node_dict[index - 1 - i]
-            max_sum = max(max_sum, twin_sum)
+        for i in range(index // 2):      # Проходим только по половине списка, индексация от 0 до (n / 2) - 1
+            twin_sum = node_dict[i] + node_dict[index - 1 - i]   # Вычисляем сумму текущего узла и его близнеца
+            max_sum = max(max_sum, twin_sum)    # Обновляем максимальную сумму, если текущая сумма больше
 
-        return max_sum
+        return max_sum                   # Возвращаем максимальную сумму близнецов
+
 
 
 list_num = [5,4,2,1], [4,2,2,3], [1,100000]
