@@ -43,12 +43,10 @@ class Solution(object):
         """
         # Создаем пустой набор истоковых вершин
         sources = set(range(n))
-
         # Проходим по каждому ребру и удаляем конечную вершину из набора истоковых вершин
         for _, to in edges:
             if to in sources:
                 sources.remove(to)
-
         # Возвращаем список истоковых вершин
         return list(sources)
        
