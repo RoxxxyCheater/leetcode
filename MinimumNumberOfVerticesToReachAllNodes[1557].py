@@ -41,11 +41,16 @@ class Solution(object):
         :type edges: List[List[int]]
         :rtype: List[int]
         """
+        # Создаем пустой набор истоковых вершин
         sources = set(range(n))
+
+        # Проходим по каждому ребру и удаляем конечную вершину из набора истоковых вершин
         for _, to in edges:
             if to in sources:
                 sources.remove(to)
-        return list(sources) 
+
+        # Возвращаем список истоковых вершин
+        return list(sources)
        
 list_n = 6,5, 
 edges = [[0,1],[0,2],[2,5],[3,4],[4,2]],[[0,1],[2,1],[3,1],[1,4],[2,4]]
