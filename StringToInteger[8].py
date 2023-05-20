@@ -80,20 +80,22 @@ class Solution(object):
         :type s: str
         :rtype: int
         """
-        input_str = s.strip()
+        input_str = s.strip()  # Удаление начальных и конечных пробелов
         if not input_str:
-            return 0
-        res,min_num,max_num,sign = 0, -2 ** 31, 2 ** 31 - 1, -1 if input_str[0] == '-' else 1
+            return 0  # Если строка пустая, возвращаем 0
+        res, min_num, max_num, sign = 0, -2 ** 31, 2 ** 31 - 1, -1 if input_str[0] == '-' else 1
+        # res - результат преобразования, min_num и max_num - минимальное и максимальное значение, sign - знак числа
         input_str = input_str[1:] if input_str[0] == '-' or input_str[0] == '+' else input_str
+        # Если первый символ "-" или "+", удаляем его из строки
         for num in input_str:
             if not num.isdigit():
-                break
-            res = res * 10 + int(num)
+                break  # Если текущий символ не является цифрой, прерываем цикл
+            res = res * 10 + int(num)  # Добавляем цифру к результату, умножая его на 10
             if res * sign >= max_num:
-                return max_num
+                return max_num  # Если результат превышает максимальное значение, возвращаем max_num
             if res * sign <= min_num:
-                return min_num
-        return res * sign
+                return min_num  # Если результат меньше минимального значения, возвращаем min_num
+        return res * sign  # Возвращаем результат с учетом знака
 
 
 str_list = "42","   -42", "4193 with words", "",".1", "-91283472332","3.14159", 
