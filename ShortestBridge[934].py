@@ -50,6 +50,7 @@ class Solution(object):
         queue = deque()
         found = False
 
+        # Поиск первого острова и добавление его вершин в очередь
         for i in range(n):
             if found:
                 break
@@ -58,8 +59,11 @@ class Solution(object):
                     self.dfs(grid, i, j, queue)
                     found = True
                     break
+
+        # Поиск границы между островами с помощью BFS
         directions = [(0, 1), (0, -1), (1, 0), (-1, 0)]
         min_flips = 0
+
         while queue:
             size = len(queue)
             for _ in range(size):
@@ -70,12 +74,14 @@ class Solution(object):
 
                     if 0 <= nx < n and 0 <= ny < n:
                         if grid[nx][ny] == 1:
-                            return min_flips  
+                            return min_flips  # Мы достигли другого острова, возвращаем минимальное количество переворотов
 
                         if grid[nx][ny] == 0:
-                            grid[nx][ny] = -1  
+                            grid[nx][ny] = -1  # Помечаем границу между островами
                             queue.append((nx, ny))
+
             min_flips += 1
+
         return min_flips
 
 
