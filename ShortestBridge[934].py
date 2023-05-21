@@ -38,3 +38,18 @@
 # 279,360
 
 
+
+
+class Solution(object):
+    def shortestBridge(self, grid):
+        """
+        :type grid: List[List[int]]
+        :rtype: int
+        """
+        return grid
+
+
+
+list_num = [[0,1],[1,0]],[[0,1,0],[0,0,0],[0,0,1]],[[1,1,1,1,1],[1,0,0,0,1],[1,0,1,0,1],[1,0,0,0,1],[1,1,1,1,1]]
+for i in list_num:
+    Solution.shortestBridge('Success', i)
