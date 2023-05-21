@@ -37,7 +37,7 @@
 # Submissions
 # 279,360
 
-
+from collections import deque
 
 
 class Solution(object):
@@ -46,8 +46,51 @@ class Solution(object):
         :type grid: List[List[int]]
         :rtype: int
         """
-        return grid
+        n = len(grid)
+        queue = deque()
+        found = False
 
+        for i in range(n):
+            if found:
+                break
+            for j in range(n):
+                if grid[i][j] == 1:
+                    self.dfs(grid, i, j, queue)
+                    found = True
+                    break
+        directions = [(0, 1), (0, -1), (1, 0), (-1, 0)]
+        min_flips = 0
+        while queue:
+            size = len(queue)
+            for _ in range(size):
+                x, y = queue.popleft()
+
+                for dx, dy in directions:
+                    nx, ny = x + dx, y + dy
+
+                    if 0 <= nx < n and 0 <= ny < n:
+                        if grid[nx][ny] == 1:
+                            return min_flips  
+
+                        if grid[nx][ny] == 0:
+                            grid[nx][ny] = -1  
+                            queue.append((nx, ny))
+            min_flips += 1
+        return min_flips
+
+
+    def dfs(self,grid, i, j, queue):
+        n = len(grid)
+        if i < 0 or i >= n or j < 0 or j >= n or grid[i][j] != 1:
+            return
+
+        grid[i][j] = -1  # Помечаем посещенные вершины первого острова
+        queue.append((i, j))  # Добавляем вершины первого острова в очередь
+
+        self.dfs(grid, i - 1, j, queue)
+        self.dfs(grid, i + 1, j, queue)
+        self.dfs(grid, i, j - 1, queue)
+        self.dfs(grid, i, j + 1, queue)
 
 
 list_num = [[0,1],[1,0]],[[0,1,0],[0,0,0],[0,0,1]],[[1,1,1,1,1],[1,0,0,0,1],[1,0,1,0,1],[1,0,0,0,1],[1,1,1,1,1]]
