@@ -35,8 +35,14 @@
 # 25,046
 # Submissions
 # 77,188    
-        
+class Solution(object):
+    """
+    :type nums: List[List[int]]
+    :rtype: int
+    """        
         
 
-
+list_nums = [[1,2,3],[5,6,7],[9,10,11]],[[1,2,3],[5,17,7],[9,11,10]]
+for i in list_nums:
+   Solution.diagonalPrime('Success', i)
 
