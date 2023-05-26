@@ -36,30 +36,33 @@
 # Submissions
 # 77,188    
 class Solution(object):
-    """
-    :type nums: List[List[int]]
-    :rtype: int
-    """
-    def is_prime(self, num):
-        # Проверяет, является ли число простым.
-        if num < 2:
-            return False
-        for i in range(2, int(math.sqrt(num)) + 1):
-            if num % i == 0:
-                return False
-        return True
-
     def diagonalPrime(self, nums):
-        largest_prime = 0  # Переменная для хранения наибольшего простого числа
+        """
+        :type nums: List[List[int]]
+        :rtype: int
+        """
+        def is_prime(num):
+            """
+            Проверяет, является ли число простым.
+            :param num: Число для проверки
+            :return: True, если число простое, иначе False
+            """
+            if num < 2:
+                return False
+            for i in range(2, int(math.sqrt(num)) + 1):
+                if num % i == 0:
+                    return False
+            return True
+
+        largest_prime = 0  # Инициализация переменной для хранения наибольшего простого числа
         n = len(nums)  # Получение размерности массива nums
 
         for i in range(n):
-            if self.is_prime(nums[i][i]) and nums[i][i] > largest_prime:
+            if is_prime(nums[i][i]) and nums[i][i] > largest_prime:  # Проверка простоты элемента на главной диагонали
                 largest_prime = nums[i][i]  # Обновление значения наибольшего простого числа
 
         for i in range(n):
-            if self.is_prime(nums[i][n - i - 1]) and nums[i][n - i - 1] > largest_prime:
+            if is_prime(nums[i][n - i - 1]) and nums[i][n - i - 1] > largest_prime:  # Проверка простоты элемента на побочной диагонали
                 largest_prime = nums[i][n - i - 1]  # Обновление значения наибольшего простого числа
 
         return largest_prime if largest_prime != 0 else 0  # Возвращение наибольшего простого числа, если оно существует, иначе 0
-
