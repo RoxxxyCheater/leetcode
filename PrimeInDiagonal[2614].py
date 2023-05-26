@@ -40,7 +40,27 @@ class Solution(object):
     :type nums: List[List[int]]
     :rtype: int
     """        
-        
+    def is_prime(self, num):
+        if num < 2:
+            return False
+        for i in range(2, int(math.sqrt(num)) + 1):
+            if num % i == 0:
+                return False
+        return True
+
+    def diagonalPrime(self, nums):
+        largest_prime = 0
+        n = len(nums)
+
+        for i in range(n):
+            if self.is_prime(nums[i][i]) and nums[i][i] > largest_prime:
+                largest_prime = nums[i][i]
+
+        for i in range(n):
+            if self.is_prime(nums[i][n - i - 1]) and nums[i][n - i - 1] > largest_prime:
+                largest_prime = nums[i][n - i - 1]
+
+        return largest_prime if largest_prime != 0 else 0
 
 list_nums = [[1,2,3],[5,6,7],[9,10,11]],[[1,2,3],[5,17,7],[9,11,10]]
 for i in list_nums:
