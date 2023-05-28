@@ -34,3 +34,15 @@
 # 21,862
 # Submissions
 # 41,773
+class Solution(object):
+    def numberOfCuts(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        return n
+    
+    
+list_n = 4,3
+for i in list_n:
+    Solution.numberCuts('Success', i)
