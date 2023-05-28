@@ -40,7 +40,12 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
-        return n
+        if n == 1:
+            return 0
+        elif n % 2 == 0:
+            return n // 2
+        else:
+            return n
     
     
 list_n = 4,3
