@@ -32,27 +32,25 @@
 # 186,428
 # Submissions
 # 211,828
-class ParkingSystem(object):
-
+class ParkingSystem:
     def __init__(self, big, medium, small):
         """
         :type big: int
         :type medium: int
         :type small: int
         """
-        self.slots = [big, medium, small]
-        
+        self.slots = [big, medium, small]  # Инициализация списка слотов для каждого типа автомобиля
 
     def addCar(self, carType):
         """
         :type carType: int
         :rtype: bool
         """
-        if self.slots[carType - 1] > 0:
-            self.slots[carType - 1] -= 1
-            return True
+        if self.slots[carType - 1] > 0:  # Проверяем, есть ли доступные слоты для указанного типа автомобиля
+            self.slots[carType - 1] -= 1  # Занимаем один слот данного типа автомобиля
+            return True  # Возвращаем True, чтобы указать успешное добавление автомобиля
         else:
-            return False
+            return False  # Возвращаем False, если нет доступных слотов данного типа автомобиля
 
 
 # Your ParkingSystem object will be instantiated and called as such:
