@@ -40,17 +40,18 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
-        left = 1
-        right = n
+        left = 1  # Начальная версия, с которой начинается поиск
+        right = n  # Конечная версия, с которой заканчивается поиск
 
-        while left < right:
-            mid = left + (right - left) // 2
-            if isBadVersion(mid):
-                right = mid
+        while left < right:  # Пока левая граница меньше правой границы
+            mid = left + (right - left) // 2  # Вычисляем среднюю версию
+
+            if isBadVersion(mid):  # Если средняя версия плохая
+                right = mid  # Сужаем диапазон поиска до версий слева от средней
             else:
-                left = mid + 1
+                left = mid + 1  # Сужаем диапазон поиска до версий справа от средней
 
-        return left
+        return left  # Возвращаем значение левой границы как первую плохую версию
     
 list_n = 5,1
 
