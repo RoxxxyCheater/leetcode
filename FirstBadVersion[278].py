@@ -29,3 +29,21 @@
 # 1,489,037
 # Submissions
 # 3,425,488
+
+# The isBadVersion API is already defined for you.
+# @param version, an integer
+# @return a bool
+# def isBadVersion(version):
+
+class Solution(object):
+    def firstBadVersion(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        return n
+    
+list_n = 5,1
+
+for index,num in enumerate(list_n):
+    Solution.firstBadVersion('Success', num)
