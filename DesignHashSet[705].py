@@ -38,28 +38,28 @@
 class MyHashSet(object):
 
     def __init__(self):
-        
+        self.hashset = [False] * 1000001
 
     def add(self, key):
         """
         :type key: int
         :rtype: None
         """
-        
+        self.hashset = [False] * 1000001
 
     def remove(self, key):
         """
         :type key: int
         :rtype: None
         """
-        
+        self.hashset = [False] * 1000001
 
     def contains(self, key):
         """
         :type key: int
         :rtype: bool
         """
-        
+        return self.hashset[key] 
 
 
 # Your MyHashSet object will be instantiated and called as such:
