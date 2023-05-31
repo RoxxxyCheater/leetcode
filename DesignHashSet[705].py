@@ -38,28 +38,28 @@
 class MyHashSet(object):
 
     def __init__(self):
-        self.hashset = [False] * 1000001
+        self.hashset = [False] * 1000001  # Инициализация хэш-множества с заранее заданным размером
 
     def add(self, key):
         """
         :type key: int
         :rtype: None
         """
-        self.hashset = [False] * 1000001
+        self.hashset[key] = True  # Устанавливаем значение в индексе ключа равным True для указания наличия ключа
 
     def remove(self, key):
         """
         :type key: int
         :rtype: None
         """
-        self.hashset = [False] * 1000001
+        self.hashset[key] = False  # Устанавливаем значение в индексе ключа равным False для указания удаления ключа
 
     def contains(self, key):
         """
         :type key: int
         :rtype: bool
         """
-        return self.hashset[key] 
+        return self.hashset[key]  # Возвращаем значение в индексе ключа для проверки наличия ключа
 
 
 # Your MyHashSet object will be instantiated and called as such:
