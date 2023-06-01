@@ -44,3 +44,14 @@
 # 350,592
 # Submissions
 # 757,669
+class Solution(object):
+    def shortestPathBinaryMatrix(self, grid):
+        """
+        :type grid: List[List[int]]
+        :rtype: int
+        """
+        return -1
+    
+inp_list = [[0,1],[1,0]],[[0,0,0],[1,1,0],[1,1,0]],[[1,0,0],[1,1,0],[1,1,0]]
+for i in inp_list:
+    Solution.shortestPathBinaryMatrix('Success', i)
