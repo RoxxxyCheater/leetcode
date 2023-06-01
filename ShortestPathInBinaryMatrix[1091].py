@@ -56,29 +56,31 @@ class Solution(object):
         :type grid: List[List[int]]
         :rtype: int
         """
-        n = len(grid)
+        n = len(grid)  # Получение размера матрицы
 
-        if grid[0][0] == 1 or grid[n-1][n-1] == 1:
-            return -1
+        if grid[0][0] == 1 or grid[n-1][n-1] == 1:  # Проверка, заблокированы ли начальная или конечная ячейка
+            return -1  # Если да, возвращаем -1
 
-        directions = [(0, 1), (0, -1), (1, 0), (-1, 0), (1, 1), (1, -1), (-1, 1), (-1, -1)]
-        queue = deque([(0, 0, 1)])  # (row, col, path_length)
-        grid[0][0] = 1  
+        directions = [(0, 1), (0, -1), (1, 0), (-1, 0), (1, 1), (1, -1), (-1, 1), (-1, -1)]  # Список направлений движения
+        queue = deque([(0, 0, 1)])  # Создание очереди с начальной ячейкой (0, 0) и длиной пути 1
+        grid[0][0] = 1  # Пометка начальной ячейки как посещенной
 
-        while queue:
-            row, col, path_length = queue.popleft()
+        while queue:  # Пока очередь не пуста
+            row, col, path_length = queue.popleft()  # Извлечение ячейки из очереди
 
-            if row == n - 1 and col == n - 1:  
-                return path_length
+            if row == n - 1 and col == n - 1:  # Проверка, достигли ли конечной ячейки
+                return path_length  # Если да, возвращаем длину пути
 
-            for drow, dcol in directions:
-                new_row, new_col = row + drow, col + dcol
+            for drow, dcol in directions:  # Перебор направлений движения
+                new_row, new_col = row + drow, col + dcol  # Вычисление новой позиции
 
-                if 0 <= new_row < n and 0 <= new_col < n and grid[new_row][new_col] == 0:
-                    queue.append((new_row, new_col, path_length + 1))
-                    grid[new_row][new_col] = 1  
+                if 0 <= new_row < n and 0 <= new_col < n and grid[new_row][new_col] == 0:  # Проверка, валидна ли новая позиция
+                    queue.append((new_row, new_col, path_length + 1))  # Добавление новой ячейки в очередь с обновленной длиной пути
+                    grid[new_row][new_col] = 1  # Пометка новой ячейки как посещенной
 
-        return -1
+        return -1  # Если путь не найден, возвращаем -1
+
+
     
 inp_list = [[0,1],[1,0]],[[0,0,0],[1,1,0],[1,1,0]],[[1,0,0],[1,1,0],[1,1,0]]
 for i in inp_list:
