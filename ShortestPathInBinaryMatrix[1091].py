@@ -50,6 +50,34 @@ class Solution(object):
         :type grid: List[List[int]]
         :rtype: int
         """
+        class Solution(object):
+    def shortestPathBinaryMatrix(self, grid):
+        """
+        :type grid: List[List[int]]
+        :rtype: int
+        """
+        n = len(grid)
+
+        if grid[0][0] == 1 or grid[n-1][n-1] == 1:
+            return -1
+
+        directions = [(0, 1), (0, -1), (1, 0), (-1, 0), (1, 1), (1, -1), (-1, 1), (-1, -1)]
+        queue = deque([(0, 0, 1)])  # (row, col, path_length)
+        grid[0][0] = 1  
+
+        while queue:
+            row, col, path_length = queue.popleft()
+
+            if row == n - 1 and col == n - 1:  
+                return path_length
+
+            for drow, dcol in directions:
+                new_row, new_col = row + drow, col + dcol
+
+                if 0 <= new_row < n and 0 <= new_col < n and grid[new_row][new_col] == 0:
+                    queue.append((new_row, new_col, path_length + 1))
+                    grid[new_row][new_col] = 1  
+
         return -1
     
 inp_list = [[0,1],[1,0]],[[0,0,0],[1,1,0],[1,1,0]],[[1,0,0],[1,1,0],[1,1,0]]
