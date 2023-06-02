@@ -26,3 +26,17 @@
 # 24,164
 # Submissions
 # 30,474
+
+
+class Solution(object):
+    def removeTrailingZeros(self, num):
+        """
+        :type num: str
+        :rtype: str
+        """
+        return num[1]
+    
+num_list = "51230100","123"
+for i in num_list:
+   Solution.removeTrailingZeros('Success', i)
+ 
