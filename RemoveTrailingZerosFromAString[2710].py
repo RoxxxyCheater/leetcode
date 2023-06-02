@@ -34,7 +34,12 @@ class Solution(object):
         :type num: str
         :rtype: str
         """
-        return num[1]
+        i = len(num) - 1
+
+        while i >= 0 and num[i] == '0':
+            i -= 1
+
+        return num[:i+1]
     
 num_list = "51230100","123"
 for i in num_list:
