@@ -44,22 +44,22 @@ class Solution(object):
         :type isConnected: List[List[int]]
         :rtype: int
         """
-        n = len(isConnected)
-        visited = [False] * n
-        provinces = 0
+        n = len(isConnected)  # Получаем общее количество городов (размер матрицы)
+        visited = [False] * n  # Создаем булев массив для отслеживания посещенных городов
+        provinces = 0  # Инициализируем переменную для подсчета общего числа провинций
 
         def dfs(city, visited):
-            visited[city] = True
-            for i in range(n):
-                if isConnected[city][i] == 1 and not visited[i]:
-                    dfs(i, visited)
+            visited[city] = True  # Отмечаем текущий город как посещенный
+            for i in range(n):  # Итерируемся по всем городам
+                if isConnected[city][i] == 1 and not visited[i]:  # Проверяем, связан ли город непосредственно и не посещался ли он ранее
+                    dfs(i, visited)  # Рекурсивно вызываем функцию dfs для связанного города
 
-        for city in range(n):
-            if not visited[city]:
-                dfs(city, visited)
-                provinces += 1
+        for city in range(n):  # Итерируемся по всем городам
+            if not visited[city]:  # Если город не был посещен
+                dfs(city, visited)  # Вызываем функцию dfs для исследования связанных городов
+                provinces += 1  # Увеличиваем счетчик провинций
 
-        return provinces
+        return provinces  # Возвращаем общее число провинций
     
 is_list = [[1,1,0],[1,1,0],[0,0,1]],[[1,0,0],[0,1,0],[0,0,1]]
 for i in is_list:
