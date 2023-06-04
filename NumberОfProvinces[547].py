@@ -44,7 +44,22 @@ class Solution(object):
         :type isConnected: List[List[int]]
         :rtype: int
         """
-        return isConnected
+        n = len(isConnected)
+        visited = [False] * n
+        provinces = 0
+
+        def dfs(city, visited):
+            visited[city] = True
+            for i in range(n):
+                if isConnected[city][i] == 1 and not visited[i]:
+                    dfs(i, visited)
+
+        for city in range(n):
+            if not visited[city]:
+                dfs(city, visited)
+                provinces += 1
+
+        return provinces
     
 is_list = [[1,1,0],[1,1,0],[0,0,1]],[[1,0,0],[0,1,0],[0,0,1]]
 for i in is_list:
