@@ -36,3 +36,16 @@
 # 664,132
 # Submissions
 # 1,026,177
+
+
+class Solution(object):
+    def findCircleNum(self, isConnected):
+        """
+        :type isConnected: List[List[int]]
+        :rtype: int
+        """
+        return isConnected
+    
+is_list = [[1,1,0],[1,1,0],[0,0,1]],[[1,0,0],[0,1,0],[0,0,1]]
+for i in is_list:
+   Solution.findCircleNum('Success', i)
