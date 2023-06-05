@@ -39,20 +39,21 @@ class Solution(object):
         :type moves: str
         :rtype: bool
         """
-        x = 0
-        y = 0
+        x = 0  # Инициализируем координату x робота
+        y = 0  # Инициализируем координату y робота
 
-        for move in moves:
-            if move == 'U':
-                y += 1
-            elif move == 'D':
-                y -= 1
-            elif move == 'L':
-                x -= 1
-            elif move == 'R':
-                x += 1
+        for move in moves:  # Проходимся по каждому символу в строке moves
+            if move == 'U':  # Если символ равен 'U'
+                y += 1  # Увеличиваем координату y на 1
+            elif move == 'D':  # Если символ равен 'D'
+                y -= 1  # Уменьшаем координату y на 1
+            elif move == 'L':  # Если символ равен 'L'
+                x -= 1  # Уменьшаем координату x на 1
+            elif move == 'R':  # Если символ равен 'R'
+                x += 1  # Увеличиваем координату x на 1
 
-        return x == 0 and y == 0
+        return x == 0 and y == 0  # Возвращаем True, если робот вернулся в исходную точку (координаты x и y равны 0), иначе возвращаем False
+
     
 list_move = "UP", "LL"
 for i in list_move:
