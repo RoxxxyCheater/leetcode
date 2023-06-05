@@ -31,3 +31,15 @@
 # 373,239
 # Submissions
 # 495,273
+
+
+class Solution(object):
+    def judgeCircle(self, moves):
+        """
+        :type moves: str
+        :rtype: bool
+        """
+        return moves
+list_move = "UP", "LL"
+for i in list_move:
+   Solution.judgeCircle('Success', i)
