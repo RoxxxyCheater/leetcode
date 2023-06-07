@@ -39,3 +39,18 @@
 # 43,157
 # Submissions
 # 52,685
+
+
+class Solution(object):
+    def minBitFlips(self, start, goal):
+        """
+        :type start: int
+        :type goal: int
+        :rtype: int
+        """
+        return goal
+    
+list_st = 10, 3
+list_gl = 7, 4
+for index, num in enumerate(list_st):
+  Solution.minBitFlips('Success', num, list_gl[index])
