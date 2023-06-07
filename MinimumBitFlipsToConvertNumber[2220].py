@@ -48,14 +48,16 @@ class Solution(object):
         :type goal: int
         :rtype: int
         """
-        flips = 0  
-        while start != goal:  
+        flips = 0  # Инициализируем переменную flips для подсчета количества переворотов битов
+        while start != goal:  # Пока start и goal не равны друг другу
             if start & 1 != goal & 1:
+                # Если текущие биты start и goal не совпадают, требуется перевернуть бит
                 flips += 1
-            start >>= 1  
-            goal >>= 1  
 
-        return flips  
+            start >>= 1  # Сдвигаем число start вправо на 1 бит
+            goal >>= 1  # Сдвигаем число goal вправо на 1 бит
+
+        return flips  # Возвращаем общее количество переворотов битов
     
 list_st = 10, 3
 list_gl = 7, 4
