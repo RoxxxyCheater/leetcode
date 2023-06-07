@@ -48,7 +48,14 @@ class Solution(object):
         :type goal: int
         :rtype: int
         """
-        return goal
+        flips = 0  
+        while start != goal:  
+            if start & 1 != goal & 1:
+                flips += 1
+            start >>= 1  
+            goal >>= 1  
+
+        return flips  
     
 list_st = 10, 3
 list_gl = 7, 4
