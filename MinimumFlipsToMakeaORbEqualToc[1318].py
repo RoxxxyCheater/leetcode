@@ -33,3 +33,19 @@
 # 82,647
 # Submissions
 # 115,608
+class Solution(object):
+    def minFlips(self, a, b, c):
+        """
+        :type a: int
+        :type b: int
+        :type c: int
+        :rtype: int
+        """
+        return count
+    
+list_a = 2, 4, 1
+list_b = 6, 2, 2 
+list_c = 5, 7, 3
+
+for index, num in enumerate(list_a):
+  Solution.minFlips('Success', num, list_b[index], list_c[index])
