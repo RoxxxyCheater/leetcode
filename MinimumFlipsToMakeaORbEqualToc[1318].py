@@ -33,6 +33,8 @@
 # 82,647
 # Submissions
 # 115,608
+
+
 class Solution(object):
     def minFlips(self, a, b, c):
         """
@@ -41,6 +43,25 @@ class Solution(object):
         :type c: int
         :rtype: int
         """
+        count = 0
+
+        while a or b or c:
+            bit_a = a & 1
+            bit_b = b & 1
+            bit_c = c & 1
+
+            if bit_c == 1 and (bit_a == 0 and bit_b == 0):
+                count += 1
+            elif bit_c == 0:
+                if bit_a == 1 and bit_b == 1:
+                    count += 2
+                elif bit_a == 1 or bit_b == 1:
+                    count += 1
+
+            a >>= 1
+            b >>= 1
+            c >>= 1
+
         return count
     
 list_a = 2, 4, 1
