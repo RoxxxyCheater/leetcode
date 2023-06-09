@@ -48,8 +48,22 @@ class Solution(object):
         :type target: str
         :rtype: str
         """
-        return res
-    
+        left = 0
+        right = len(letters) - 1
+
+        while left <= right:
+            mid = left + (right - left) // 2
+
+            if letters[mid] <= target:
+                left = mid + 1
+            else:
+                right = mid - 1
+
+        if left < len(letters):
+            return letters[left]
+        else:
+            return letters[0]
+
 letters_list = ["c","f","j"], ["c","f","j"], ["x","x","y","y"]
 target_list = "a","c","z"
 for index, let in letters_list:
