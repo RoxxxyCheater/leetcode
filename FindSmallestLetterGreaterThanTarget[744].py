@@ -48,21 +48,21 @@ class Solution(object):
         :type target: str
         :rtype: str
         """
-        left = 0
-        right = len(letters) - 1
+        left = 0  # Инициализация указателя "left" на начало массива
+           right = len(letters) - 1  # Инициализация указателя "right" на конец массива
 
-        while left <= right:
-            mid = left + (right - left) // 2
+           while left <= right:  # Цикл будет выполняться, пока "left" не превысит "right"
+               mid = left + (right - left) // 2  # Вычисление среднего индекса
 
-            if letters[mid] <= target:
-                left = mid + 1
-            else:
-                right = mid - 1
+               if letters[mid] <= target:  # Если значение в середине меньше или равно целевому значению
+                   left = mid + 1  # Смещаем "left" вправо, чтобы исключить половину массива с меньшими значениями
+               else:
+                   right = mid - 1  # Смещаем "right" влево, чтобы исключить половину массива с большими значениями
 
-        if left < len(letters):
-            return letters[left]
-        else:
-            return letters[0]
+           if left < len(letters):  # Если "left" все еще находится в пределах массива
+               return letters[left]  # Возвращаем символ по индексу "left"
+           else:
+               return letters[0]  # Если "left" выходит за пределы массива, возвращаем первый символ в массиве
 
 letters_list = ["c","f","j"], ["c","f","j"], ["x","x","y","y"]
 target_list = "a","c","z"
