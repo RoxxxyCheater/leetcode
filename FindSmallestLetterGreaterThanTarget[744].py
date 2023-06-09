@@ -39,3 +39,18 @@
 # 372,892
 # Submissions
 # 743,093
+
+
+class Solution(object):
+    def nextGreatestLetter(self, letters, target):
+        """
+        :type letters: List[str]
+        :type target: str
+        :rtype: str
+        """
+        return res
+    
+letters_list = ["c","f","j"], ["c","f","j"], ["x","x","y","y"]
+target_list = "a","c","z"
+for index, let in letters_list:
+  Solutions.nextGreatestLetter('Success', let, target_list[index])
