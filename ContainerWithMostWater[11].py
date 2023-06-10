@@ -34,3 +34,15 @@
 # 2,134,641
 # Submissions
 # 3,954,374
+class Solution(object):
+    def maxArea(self, height):
+        """
+        :type height: List[int]
+        :rtype: int
+        """
+        return height
+
+    
+list_height = [1,8,6,2,5,4,8,3,7],[1,1], [2,2]
+fot i in list_height:
+   Solution.maxArea('Success', i)
