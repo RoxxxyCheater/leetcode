@@ -40,22 +40,24 @@ class Solution(object):
         :type height: List[int]
         :rtype: int
         """
-        class Solution(object):
-    def maxArea(self, height):
-        """
-        :type height: List[int]
-        :rtype: int
-        """
-        left = 0
-        right = len(height) - 1
-        max_area = 0
+        left = 0  # Указатель, начинающийся с левого края
+        right = len(height) - 1  # Указатель, начинающийся с правого края
+        max_area = 0  # Переменная для хранения максимальной площади
         
         while left < right:
+            # Вычисляем высоту контейнера как минимальную высоту между двумя линиями
             h = min(height[left], height[right])
+            
+            # Вычисляем ширину контейнера
             w = right - left
+            
+            # Вычисляем площадь контейнера
             area = h * w
+            
+            # Обновляем максимальную площадь, если текущая площадь больше
             max_area = max(max_area, area)
             
+            # Перемещаем указатель с меньшей высотой внутрь
             if height[left] < height[right]:
                 left += 1
             else:
