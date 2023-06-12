@@ -49,24 +49,33 @@ class Solution(object):
         """
         if not nums:
             return []
-
-        ranges = []
-        start = end = nums[0]
-
+    
+        ranges = []  # Инициализируем пустой список для хранения диапазонов
+        start = end = nums[0]  # Инициализируем начальное значение диапазона
+    
         for i in range(1, len(nums)):
             if nums[i] == nums[i-1] + 1:
+                # Если текущий элемент следует за предыдущим элементом,
+                # то продолжаем расширять диапазон
                 end = nums[i]
             else:
-                ranges.append(self.formatRange(start, end))
+                # Если текущий элемент не следует за предыдущим,
+                # то добавляем текущий диапазон в результат и
+                # обновляем начальное и конечное значения для нового диапазона
+                ranges.append(formatRange(start, end))
                 start = end = nums[i]
-
-        ranges.append(self.formatRange(start, end))
+    
+        # Добавляем последний диапазон в результат
+        ranges.append(formatRange(start, end))
         return ranges
-
-    def formatRange(self, start, end):
+    
+    def formatRange(start, end):
         if start == end:
+            # Если начальное и конечное значения равны,
+            # возвращаем только один элемент
             return str(start)
         else:
+            # Иначе возвращаем диапазон в формате "start->end"
             return str(start) + '->' + str(end)
 
 list_num = [0,1,2,4,5,7],[0,2,3,4,6,8,9]
