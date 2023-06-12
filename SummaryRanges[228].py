@@ -41,3 +41,14 @@
 # 405,913
 # Submissions
 # 830,115
+class Solution(object):
+    def summaryRanges(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[str]
+        """
+        retrun res
+
+list_num = [0,1,2,4,5,7],[0,2,3,4,6,8,9]
+for i in list_num:
+  Solution.summaryRanges('Success', i)
