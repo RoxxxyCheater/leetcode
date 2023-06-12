@@ -47,7 +47,27 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[str]
         """
-        retrun res
+        if not nums:
+            return []
+
+        ranges = []
+        start = end = nums[0]
+
+        for i in range(1, len(nums)):
+            if nums[i] == nums[i-1] + 1:
+                end = nums[i]
+            else:
+                ranges.append(self.formatRange(start, end))
+                start = end = nums[i]
+
+        ranges.append(self.formatRange(start, end))
+        return ranges
+
+    def formatRange(self, start, end):
+        if start == end:
+            return str(start)
+        else:
+            return str(start) + '->' + str(end)
 
 list_num = [0,1,2,4,5,7],[0,2,3,4,6,8,9]
 for i in list_num:
