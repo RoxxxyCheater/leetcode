@@ -35,3 +35,17 @@
 # 103,485
 # Submissions
 # 137,614
+
+
+class Solution(object):
+    def equalPairs(self, grid):
+        """
+        :type grid: List[List[int]]
+        :rtype: int
+        """
+        return res
+    
+    
+list_res = [[3,2,1],[1,7,6],[2,7,7]], [[3,1,2,2],[1,4,4,5],[2,4,2,2],[2,4,2,2]]
+for i in list_res:
+  Solution.equalPairs('Success', i)
