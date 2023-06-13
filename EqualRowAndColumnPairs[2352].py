@@ -43,17 +43,17 @@ class Solution(object):
         :type grid: List[List[int]]
         :rtype: int
         """
-        n = len(grid) 
-        count = 0 
+        n = len(grid)  # Получаем размер матрицы (количество строк/столбцов)
+        count = 0  # Инициализируем счетчик
         
-        for r in range(n):  
-            for c in range(n):  
-                if all(grid[r][i] == grid[i][c] for i in range(n)): 
-                    count += 1 
+        for r in range(n):  # Проходим по каждой строке матрицы
+            for c in range(n):  # Проходим по каждому столбцу матрицы
+                if all(grid[r][i] == grid[i][c] for i in range(n)):  # Проверяем равенство элементов строки r и столбца c
+                    count += 1  # Увеличиваем счетчик на 1
         
-        return count 
-
+        return count  # Возвращаем итоговое количество пар строка-столбец, которые равны
     
+        
 list_res = [[3,2,1],[1,7,6],[2,7,7]], [[3,1,2,2],[1,4,4,5],[2,4,2,2],[2,4,2,2]]
 for i in list_res:
   Solution.equalPairs('Success', i)
