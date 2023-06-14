@@ -36,3 +36,21 @@
 # 215,500
 # Submissions
 # 375,395
+
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution(object):
+    def getMinimumDifference(self, root):
+        """
+        :type root: TreeNode
+        :rtype: int
+        """
+        return res
+    
+list_nums = [4,2,6,1,3],[1,0,48,null,null,12,49] 
+for i in list_nums:
+  Solution.getMinimumDifference('Success', i)
