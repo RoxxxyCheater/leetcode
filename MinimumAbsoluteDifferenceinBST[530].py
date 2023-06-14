@@ -49,22 +49,22 @@ class Solution(object):
         :type root: TreeNode
         :rtype: int
         """
-        stack = [] 
-        prev_val = float('-inf')
-        min_diff = float('inf') 
+        stack = []  # Стек для хранения узлов дерева
+        prev_val = float('-inf')  # Предыдущее значение
+        min_diff = float('inf')  # Минимальная разница
         
-        while stack or root:
-            while root:
-                stack.append(root)
-                root = root.left
+        while stack or root:  # Пока стек не пуст или есть узлы для обработки
+            while root:  # Переходим к самому левому узлу
+                stack.append(root)  # Добавляем узел в стек
+                root = root.left  # Переходим к левому поддереву
             
-            node = stack.pop()
-            min_diff = min(min_diff, abs(node.val - prev_val))
-            prev_val = node.val
+            node = stack.pop()  # Извлекаем узел из стека
+            min_diff = min(min_diff, abs(node.val - prev_val))  # Вычисляем разницу между текущим значением и предыдущим значением
+            prev_val = node.val  # Обновляем предыдущее значение
             
-            root = node.right
+            root = node.right  # Переходим к правому поддереву
         
-        return min_diff
+        return min_diff  # Возвращаем минимальную разницу
 
 
 
