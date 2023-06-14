@@ -49,7 +49,17 @@ class Solution(object):
         :type root: TreeNode
         :rtype: int
         """
-        return res
+        self.min_diff = float('inf')
+        def dfs(node, prev_val):
+            if node is None:
+                return prev_val
+            prev_val = dfs(node.left, prev_val)
+            self.min_diff = min(self.min_diff, abs(node.val - prev_val))
+            prev_val = node.val
+            prev_val = dfs(node.right, prev_val)
+            return prev_val
+        dfs(root, float('-inf'))
+        return self.min_diff
     
 list_nums = [4,2,6,1,3],[1,0,48,null,null,12,49] 
 for i in list_nums:
