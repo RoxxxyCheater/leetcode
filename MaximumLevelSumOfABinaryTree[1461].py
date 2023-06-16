@@ -38,3 +38,24 @@
 # 191,858
 # Submissions
 # 282,465
+
+
+
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution(object):
+    def maxLevelSum(self, root):
+        """
+        :type root: TreeNode
+        :rtype: int
+        """
+        return res
+    
+    
+list_root = [1,7,0,7,-8,null,null], [989,null,10250,98693,-89388,null,null,null,-32127]
+for i in list_root:
+  Solution.maxLevelSum('Success', i)
