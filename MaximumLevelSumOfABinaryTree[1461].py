@@ -53,32 +53,32 @@ class Solution(object):
         :type root: TreeNode
         :rtype: int
         """
-        if not root:
+        if not root:  # Если корень равен None, то возвращаем 0, так как дерево пустое
             return 0
 
-        queue = deque([(root, 1)]) 
-        max_sum = float('-inf') 
-        max_level = 1  
+        queue = deque([(root, 1)])  # Очередь для обхода в ширину, каждый элемент содержит узел и его уровень
+        max_sum = float('-inf')  # Максимальная сумма значений, инициализируем с самым маленьким значением
+        max_level = 1  # Уровень с максимальной суммой значений, инициализируем как первый уровень
 
-        while queue:
-            level_sum = 0
-            level_size = len(queue)
+        while queue:  # Пока очередь не пуста
+            level_sum = 0  # Текущая сумма значений на уровне
+            level_size = len(queue)  # Количество узлов на текущем уровне
 
-            for _ in range(level_size):
-                node, level = queue.popleft()
-                level_sum += node.val  
+            for _ in range(level_size):  # Проходим по всем узлам на текущем уровне
+                node, level = queue.popleft()  # Извлекаем узел и его уровень из очереди
+                level_sum += node.val  # Добавляем значение узла к текущей сумме уровня
 
-                if node.left:
+                if node.left:  # Если у узла есть левый потомок, добавляем его в очередь с уровнем на 1 больше текущего
                     queue.append((node.left, level + 1))
-                if node.right:
+                if node.right:  # Если у узла есть правый потомок, добавляем его в очередь с уровнем на 1 больше текущего
                     queue.append((node.right, level + 1))
 
-            if level_sum > max_sum:
-                max_sum = level_sum
-                max_level = level
+            if level_sum > max_sum:  # Если текущая сумма значений на уровне больше максимальной суммы
+                max_sum = level_sum  # Обновляем максимальную сумму значений
+                max_level = level  # Обновляем уровень с максимальной суммой значений
 
-        return max_level
-    
+        return max_level  # Возвращаем уровень с максимальной суммой значений
+
     
 list_root = [1,7,0,7,-8,null,null], [989,null,10250,98693,-89388,null,null,null,-32127]
 for i in list_root:
