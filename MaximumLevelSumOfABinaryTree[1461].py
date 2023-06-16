@@ -53,7 +53,31 @@ class Solution(object):
         :type root: TreeNode
         :rtype: int
         """
-        return res
+        if not root:
+            return 0
+
+        queue = deque([(root, 1)]) 
+        max_sum = float('-inf') 
+        max_level = 1  
+
+        while queue:
+            level_sum = 0
+            level_size = len(queue)
+
+            for _ in range(level_size):
+                node, level = queue.popleft()
+                level_sum += node.val  
+
+                if node.left:
+                    queue.append((node.left, level + 1))
+                if node.right:
+                    queue.append((node.right, level + 1))
+
+            if level_sum > max_sum:
+                max_sum = level_sum
+                max_level = level
+
+        return max_level
     
     
 list_root = [1,7,0,7,-8,null,null], [989,null,10250,98693,-89388,null,null,null,-32127]
