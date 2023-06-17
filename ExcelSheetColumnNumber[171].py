@@ -43,3 +43,20 @@
 # 605,298
 # Submissions
 # 970,958
+
+
+
+
+class Solution(object):
+    def titleToNumber(self, columnTitle):
+        """
+        :type columnTitle: str
+        :rtype: int
+        """
+        retrun res
+     
+     
+     
+list_wd = "A", "AB", "ZY"
+for i in list_wd:
+  Solution.titleToNumber('success', i)
