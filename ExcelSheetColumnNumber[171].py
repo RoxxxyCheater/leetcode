@@ -53,13 +53,13 @@ class Solution(object):
         :type columnTitle: str
         :rtype: int
         """
-        result = 0
-        n = len(columnTitle)
-        for i in range(n):
-            value = ord(columnTitle[i]) - ord('A') + 1
-            result += value * (26 ** (n - i - 1))
-        return result
-     
+        result = 0  # Инициализируем переменную для хранения результата
+        n = len(columnTitle)  # Получаем длину строки columnTitle
+        for i in range(n):  # Проходим по каждому символу строки
+            value = ord(columnTitle[i]) - ord('A') + 1 # Вычисляем числовое значение текущей буквы
+            result += value * (26 ** (n - i - 1)) # Добавляем числовое значение в результат с учетом позиции
+        return result  # Возвращаем полученный результат
+
      
      
 list_wd = "A", "AB", "ZY"
