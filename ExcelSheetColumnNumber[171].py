@@ -53,7 +53,12 @@ class Solution(object):
         :type columnTitle: str
         :rtype: int
         """
-        retrun res
+        result = 0
+        n = len(columnTitle)
+        for i in range(n):
+            value = ord(columnTitle[i]) - ord('A') + 1
+            result += value * (26 ** (n - i - 1))
+        return result
      
      
      
