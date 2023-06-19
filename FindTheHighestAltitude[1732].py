@@ -39,8 +39,7 @@ class Solution(object):
         :type gain: List[int]
         :rtype: int
         """
-        max_altitude = 0  # Инициализируем максимальную высоту
-        current_altitude = 0  # Инициализируем текущую высоту
+        max_altitude = current_altitude = 0  # Инициализируем максимальную и текущую высоты
 
         for g in gain:
             current_altitude += g  # Вычисляем текущую высоту
