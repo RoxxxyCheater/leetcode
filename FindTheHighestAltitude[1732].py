@@ -31,3 +31,18 @@
 # 186,527
 # Submissions
 # 227,741
+
+
+class Solution(object):
+    def largestAltitude(self, gain):
+        """
+        :type gain: List[int]
+        :rtype: int
+        """
+        return res
+    
+    
+    
+list_gain = [-5,1,5,0,-7], [-4,-3,-2,-1,4,3,2]
+for i in list_gain:
+  Solution.largestAltitude('Success', i)
