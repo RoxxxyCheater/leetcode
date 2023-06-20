@@ -55,3 +55,33 @@
 # 79,868
 # Submissions
 # 163,383
+
+
+class Solution(object):
+    def getAverages(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: List[int]
+        """
+        return res
+    
+    
+list_nums = [7,4,3,9,1,8,5,2,6], [100000], [8]
+list_k = 3, 0, 100000
+for index, num in list_nums:
+  Solution.getAverages('Success', num , list_k[index])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
