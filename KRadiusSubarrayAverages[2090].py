@@ -64,7 +64,22 @@ class Solution(object):
         :type k: int
         :rtype: List[int]
         """
-        return res
+        n = len(nums)
+        avgs = []
+        prefix_sum = [0] * (n + 1)
+        for i in range(n):
+            prefix_sum[i+1] = prefix_sum[i] + nums[i]
+        for i in range(n):
+            start = max(0, i - k)
+            end = min(n, i + k + 1)
+            subarray_sum = prefix_sum[end] - prefix_sum[start]
+            subarray_length = end - start
+            if subarray_length < 2 * k + 1:
+                avgs.append(-1)
+            else:
+                avg = subarray_sum / subarray_length
+                avgs.append(avg)
+        return avgs
     
     
 list_nums = [7,4,3,9,1,8,5,2,6], [100000], [8]
