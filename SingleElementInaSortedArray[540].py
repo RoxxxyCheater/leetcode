@@ -36,11 +36,12 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-
-        for index in range(0,len(nums)- 1, 2):
-            if nums[index] != nums[index+1]:return nums[index]
-        return -1
-
+        # Итерация по парам элементов с шагом 2
+        for index in range(0, len(nums) - 1, 2):
+            # Проверяем, отличаются ли элементы пары
+            if nums[index] != nums[index+1]:
+                return nums[index]  # Если элементы не равны, возвращаем первый элемент пары
+        return -1  # Если нет непарного элемента, возвращаем -1
 
 
 list_nums = [1,1,2,3,3,4,4,8,8], [3,3,7,7,10,11,11]
