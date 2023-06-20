@@ -64,22 +64,25 @@ class Solution(object):
         :type k: int
         :rtype: List[int]
         """
-        n = len(nums)
-        avgs = []
-        prefix_sum = [0] * (n + 1)
+        n = len(nums)  # Длина массива nums
+        avgs = []  # Результирующий массив средних значений
+
+        prefix_sum = [0] * (n + 1)  # Префиксная сумма массива nums
         for i in range(n):
-            prefix_sum[i+1] = prefix_sum[i] + nums[i]
+            prefix_sum[i+1] = prefix_sum[i] + nums[i]  # Вычисляем префиксную сумму
+
         for i in range(n):
-            start = max(0, i - k)
-            end = min(n, i + k + 1)
-            subarray_sum = prefix_sum[end] - prefix_sum[start]
-            subarray_length = end - start
+            start = max(0, i - k)  # Начальный индекс подмассива
+            end = min(n, i + k + 1)  # Конечный индекс подмассива
+            subarray_sum = prefix_sum[end] - prefix_sum[start]  # Сумма подмассива
+            subarray_length = end - start  # Длина подмассива
             if subarray_length < 2 * k + 1:
-                avgs.append(-1)
+                avgs.append(-1)  # Если длина подмассива меньше 2k+1, добавляем -1 в результирующий массив
             else:
-                avg = subarray_sum / subarray_length
-                avgs.append(avg)
-        return avgs
+                avg = subarray_sum / subarray_length  # Вычисляем среднее значение подмассива
+                avgs.append(avg)  # Добавляем среднее значение в результирующий массив
+
+        return avgs  # Возвращаем результирующий массив средних значений
     
     
 list_nums = [7,4,3,9,1,8,5,2,6], [100000], [8]
