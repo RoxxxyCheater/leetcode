@@ -46,3 +46,18 @@
 # 50,477
 # Submissions
 # 109,714
+
+class Solution(object):
+    def minCost(self, nums, cost):
+        """
+        :type nums: List[int]
+        :type cost: List[int]
+        :rtype: int
+        """
+        return res
+
+list_num = [1,3,5,2], [2,2,2,2,2]
+list_cost = [2,3,1,14], [4,2,8,1,3]
+
+for index, num in enumerate(list_num):
+   Solution.minCost('Success', num, list_cost[index])
