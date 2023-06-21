@@ -54,7 +54,29 @@ class Solution(object):
         :type cost: List[int]
         :rtype: int
         """
-        return res
+        total_cost = 0
+        n = len(nums)
+        
+        # Итерируемся по массиву и сравниваем соседние элементы
+        i = 1
+        while i < n:
+            # Если текущий элемент равен предыдущему, считаем стоимость изменения
+            if nums[i] == nums[i - 1]:
+                total_cost += min(cost[i], cost[i - 1])  # Добавляем минимальную стоимость изменения
+                max_cost = max(cost[i], cost[i - 1])  # Находим максимальную стоимость изменения
+                j = i + 1
+                
+                # Находим группу с одинаковыми числами и суммируем их стоимость
+                while j < n and nums[j] == nums[i]:
+                    total_cost += min(max_cost, cost[j])  # Добавляем минимальную стоимость изменения
+                    max_cost = max(max_cost, cost[j])  # Обновляем максимальную стоимость изменения
+                    j += 1
+                    
+                i = j  # Переходим к следующей группе
+            else:
+                i += 1
+        
+        return total_cost
 
 list_num = [1,3,5,2], [2,2,2,2,2]
 list_cost = [2,3,1,14], [4,2,8,1,3]
