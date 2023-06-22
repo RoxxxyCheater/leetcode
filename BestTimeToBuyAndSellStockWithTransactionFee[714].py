@@ -41,3 +41,18 @@
 # 277,629
 # Submissions
 # 412,967
+
+
+class Solution(object):
+    def maxProfit(self, prices, fee):
+        """
+        :type prices: List[int]
+        :type fee: int
+        :rtype: int
+        """
+        return res
+
+list_prices = [1,3,2,8,4,9],[1,3,7,5,10,3]
+list_fee = 2,3
+for index, num in enumerate(list_prices):
+  Solution.maxProfit('Success', num, list_fee[index])
