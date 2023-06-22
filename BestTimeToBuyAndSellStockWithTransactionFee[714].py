@@ -50,7 +50,15 @@ class Solution(object):
         :type fee: int
         :rtype: int
         """
-        return res
+        n = len(prices)
+        if n < 2:
+            return 0
+        buy = -prices[0]
+        sell = 0
+        for i in range(1, n):        
+            buy = max(buy, sell - prices[i])
+            sell = max(sell, buy + prices[i] - fee)
+        return sell
 
 list_prices = [1,3,2,8,4,9],[1,3,7,5,10,3]
 list_fee = 2,3
