@@ -48,17 +48,16 @@ class Solution(object):
         :rtype: int
         """
         n = len(nums)
-        dp = [{} for _ in range(n)]  
-        max_len = 2 
+        dp = [{} for _ in range(n)]  # Массив для хранения длин арифметических последовательностей        
+        max_len = 2  # Максимальная длина арифметической последовательности        
         for i in range(n):
             for j in range(i):
-                diff = nums[i] - nums[j] 
+                diff = nums[i] - nums[j]  # Разность между текущим и предыдущим элементами
                 if diff in dp[j]:
-                    dp[i][diff] = dp[j][diff] + 1
+                    dp[i][diff] = dp[j][diff] + 1  # Если разность уже присутствует в предыдущей арифметической последовательности, увеличиваем длину на 1
                 else:
-                    dp[i][diff] = 2
-                
-                max_len = max(max_len, dp[i][diff]) 
+                    dp[i][diff] = 2  # Иначе, начинаем новую арифметическую последовательность длиной 2
+                max_len = max(max_len, dp[i][diff])  # Обновляем максимальную длину, если необходимо
         return max_len
 
 list_nums = [3,6,9,12],[9,4,7,2,10],[20,1,15,3,10,5,8]
