@@ -39,3 +39,16 @@
 # 143,808
 # Submissions
 # 293,005
+
+
+class Solution(object):
+    def longestArithSeqLength(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        return res
+
+list_nums = [3,6,9,12],[9,4,7,2,10],[20,1,15,3,10,5,8]
+for i in list_nums:
+  Solution.longesdtArithSeqLength('Success', i)
