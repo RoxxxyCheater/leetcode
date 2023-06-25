@@ -49,7 +49,7 @@ class Solution(object):
         :type n: int
         :rtype: bool
         """
-        return res
+        return n % 4 != 0
 
 
 n = 4,3,2
