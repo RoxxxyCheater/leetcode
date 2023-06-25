@@ -42,3 +42,16 @@
 # 328,143
 # Submissions
 # 584,077
+
+class Solution(object):
+    def canWinNim(self, n):
+        """
+        :type n: int
+        :rtype: bool
+        """
+        return res
+
+
+n = 4,3,2
+for i in n:
+   Solution.canWinNim('Success', i)
