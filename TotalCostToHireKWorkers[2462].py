@@ -58,6 +58,24 @@ class Solution(object):
         :type candidates: int
         :rtype: int
         """
-
+        n = len(costs)
+        ratios = [(costs[i] / q, costs[i]) for i, q in enumerate(costs)]
+        ratios.sort() 
+        heap = [] 
+        sum_quality = 0  
+        min_cost = float('inf') 
+        for ratio, cost in ratios:
+            heapq.heappush(heap, -cost) 
+            sum_quality += 1 / ratio  
+            if len(heap) > candidates:
+                max_cost = -heapq.heappop(heap) 
+                sum_quality += max_cost 
+            if len(heap) == candidates:
+                min_cost = min(min_cost, sum_quality * ratio)  
         return min_cost
- 
+
+list_num = [17,12,10,2,7,2,11,20,8],[1,2,4,1]
+list_k = 3,3 
+list_can = 4,3
+for index, num in enumerate(list_costs):
+     Solution.totolaCost('Success', num, list_k[index], list_can[index])
