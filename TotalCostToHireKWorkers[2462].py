@@ -48,3 +48,16 @@
 # 56,857
 # Submissions
 # 124,557
+
+
+class Solution(object):
+    def totalCost(self, costs, k, candidates):
+        """
+        :type costs: List[int]
+        :type k: int
+        :type candidates: int
+        :rtype: int
+        """
+
+        return min_cost
+ 
