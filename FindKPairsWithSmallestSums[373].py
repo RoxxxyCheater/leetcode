@@ -40,3 +40,20 @@
 # 243,506
 # Submissions
 # 606,270
+
+
+class Solution(object):
+    def kSmallestPairs(self, nums1, nums2, k):
+        """
+        :type nums1: List[int]
+        :type nums2: List[int]
+        :type k: int
+        :rtype: List[List[int]]
+        """
+        return res
+     
+list_num1 = [1,7,11], [1,1,2], [1,2]
+list_num2 = [2,4,6], [1,2,3], [3]
+list_k = 3, 2, 3
+for index, num in enumerate(list_num1):
+     Solution.totolaCost('Success', num, list_nums2[index], list_k[index])
