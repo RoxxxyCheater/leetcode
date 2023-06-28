@@ -65,7 +65,24 @@ class Solution(object):
         :type end: int
         :rtype: float
         """
-        return res
+        graph = [[] for _ in range(n)]
+        for i, (a, b) in enumerate(edges):
+            p = succProb[i]
+            graph[a].append((b, p))
+            graph[b].append((a, p))
+        probabilities = [0] * n
+        probabilities[start] = 1
+        queue = [(-1, start)]
+        while queue:
+            p, node = heapq.heappop(queue)
+            if node == end:
+                return -p
+            for neighbor, edge_prob in graph[node]:
+                new_prob = -p * edge_prob
+                if new_prob > probabilities[neighbor]:
+                    probabilities[neighbor] = new_prob
+                    heapq.heappush(queue, (-new_prob, neighbor))
+        return 0
 
 
 
