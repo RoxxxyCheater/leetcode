@@ -54,6 +54,7 @@
 # 195,701
 
 
+# задача решена с использованием алгоритма поиска в ширину с модификацией для поиска пути с максимальной вероятностью.
 
 class Solution(object):
     def maxProbability(self, n, edges, succProb, start, end):
@@ -65,23 +66,41 @@ class Solution(object):
         :type end: int
         :rtype: float
         """
+        # Создаем граф с использованием списков смежности
         graph = [[] for _ in range(n)]
+        
+        # Заполняем граф ребрами и их вероятностями успешного прохождения
         for i, (a, b) in enumerate(edges):
             p = succProb[i]
             graph[a].append((b, p))
             graph[b].append((a, p))
+        
+        # Вероятность успешного прохождения до каждой вершины из start
         probabilities = [0] * n
         probabilities[start] = 1
+        
+        # Очередь с приоритетами для выбора вершины с максимальной вероятностью
         queue = [(-1, start)]
+        
         while queue:
+            # Извлекаем вершину с наибольшей вероятностью из очереди
             p, node = heapq.heappop(queue)
+            
+            # Если достигли конечной вершины, возвращаем вероятность успешного прохождения
             if node == end:
-                return -p
+                return -p  # Возвращаем отрицательное значение, чтобы элементы были отсортированы по убыванию
+            
+            # Обновляем вероятности для соседних вершин
             for neighbor, edge_prob in graph[node]:
-                new_prob = -p * edge_prob
+                new_prob = -p * edge_prob  # Новая вероятность успешного прохождения ребра
+                
+                # Если новая вероятность больше текущей вероятности успешного прохождения до соседней вершины,
+                # обновляем вероятность и добавляем вершину в очередь с приоритетами
                 if new_prob > probabilities[neighbor]:
                     probabilities[neighbor] = new_prob
                     heapq.heappush(queue, (-new_prob, neighbor))
+        
+        # Если пути от start до end не существует, возвращаем 0
         return 0
 
 
