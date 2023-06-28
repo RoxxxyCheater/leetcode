@@ -37,7 +37,7 @@
 # Output: 0.00000
 # Explanation: There is no path between 0 and 2.
  
-
+ 
 # Constraints:
 
 # 2 <= n <= 10^4
@@ -52,3 +52,28 @@
 # 106,219
 # Submissions
 # 195,701
+
+
+
+class Solution(object):
+    def maxProbability(self, n, edges, succProb, start, end):
+        """
+        :type n: int
+        :type edges: List[List[int]]
+        :type succProb: List[float]
+        :type start: int
+        :type end: int
+        :rtype: float
+        """
+        return res
+
+
+
+list_n = 3, 3, 3 
+list_edges = [[0,1],[1,2],[0,2]], [[0,1],[1,2],[0,2]],  [[0,1]]
+list_succProb = [0.5,0.5,0.2], [0.5,0.5,0.3], [0.5]
+list_start= 0, 0, 0
+list_end = 2, 2, 2
+
+for index, num in enumerate(list_n):
+   Solution.maxProbability('Success', num, list_edges[index], list_succProb[index], list_start[index], list_end[index])
