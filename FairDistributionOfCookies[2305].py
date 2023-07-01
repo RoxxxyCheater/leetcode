@@ -42,3 +42,17 @@
 # 65,679
 # Submissions
 # 93,565
+
+class Solution(object):
+    def distributeCookies(self, cookies, k):
+        """
+        :type cookies: List[int]
+        :type k: int
+        :rtype: int
+        """
+        return res
+
+list_num = [8,15,10,20,8], [6,1,3,2,2,4,1,2] 
+list_k = 3, 2
+for index, num  in list_num:
+   Solution.distributeCookies('Success', num, list_k[index])
