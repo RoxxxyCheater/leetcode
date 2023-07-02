@@ -44,7 +44,15 @@ class Solution(object):
         :type n: int
         :rtype: bool
         """
-        return res
+        if n <= 0:
+            return False
+        while n % 2 == 0:
+            n /= 2
+        while n % 3 == 0:
+            n /= 3
+        while n % 5 == 0:
+            n /= 5
+        return n == 1
      
 list_num = 6, 1, 14
 for i in list_num:
