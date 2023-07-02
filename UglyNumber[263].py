@@ -38,3 +38,14 @@
 # 435,467
 # Submissions
 # 1,033,509
+class Solution(object):
+    def isUgly(self, n):
+        """
+        :type n: int
+        :rtype: bool
+        """
+        return res
+     
+list_num = 6, 1, 14
+for i in list_num:
+  Solution.isUgly('Success', i)
