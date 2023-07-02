@@ -1,4 +1,4 @@
-# 263. Ugly Number
+v# 263. Ugly Number
 # Easy
 
 # 2922
@@ -45,12 +45,12 @@ class Solution(object):
         :rtype: bool
         """
         if n <= 0:
-            return False 
-        prime_factors = [2, 3, 5] 
+            return False  # Число должно быть положительным, поэтому возвращаем False, если n меньше или равно 0.
+        prime_factors = [2, 3, 5]  # Потенциальные простые делители
         for factor in prime_factors:
             while n % factor == 0:
-                n //= factor  
-        return n == 1 
+                n //= factor  # Целочисленное деление n на текущий простой делитель, пока оно делится нацело.
+        return n == 1  # Если после всех делений получается 1, то исходное число является уродливым.
      
         # if n <= 0:
         #     return False  # Число должно быть положительным, поэтому возвращаем False, если n меньше или равно 0.
