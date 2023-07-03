@@ -67,7 +67,16 @@ class Solution(object):
         :type sentence: str
         :rtype: bool
         """
-        return res
+        words = sentence.split()
+        n = len(words)
+
+        for i in range(n):
+            curr_word = words[i]
+            next_word = words[(i + 1) % n]
+            if curr_word[-1] != next_word[0]:
+                return False
+
+        return words[-1][-1] == words[0][0]
 
 list_s = "leetcode exercises sound delightful", "eetcode",  "Leetcode is cool"
 for i in list_s:
