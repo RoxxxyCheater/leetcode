@@ -67,16 +67,16 @@ class Solution(object):
         :type sentence: str
         :rtype: bool
         """
-        words = sentence.split()
-        n = len(words)
-
+        words = sentence.split()  # Разделяем предложение на слова по пробелам и сохраняем их в список
+        n = len(words)  # Количество слов в предложении
+        
         for i in range(n):
-            curr_word = words[i]
-            next_word = words[(i + 1) % n]
-            if curr_word[-1] != next_word[0]:
-                return False
-
-        return words[-1][-1] == words[0][0]
+            curr_word = words[i]  # Текущее слово
+            next_word = words[(i + 1) % n]  # Следующее слово (при достижении конца списка, переходим к первому слову)
+            if curr_word[-1] != next_word[0]:  # Проверяем, равны ли последний символ текущего слова и первый символ следующего слова
+                return False  # Если символы не равны, предложение не является круговым
+        
+        return words[-1][-1] == words[0][0]  # Проверяем, равны ли последний символ последнего слова и первый символ первого слова
 
 list_s = "leetcode exercises sound delightful", "eetcode",  "Leetcode is cool"
 for i in list_s:
