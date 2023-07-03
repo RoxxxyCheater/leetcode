@@ -59,3 +59,16 @@
 # 29,738
 # Submissions
 # 46,926
+
+
+class Solution(object):
+    def isCircularSentence(self, sentence):
+        """
+        :type sentence: str
+        :rtype: bool
+        """
+        return res
+
+list_s = "leetcode exercises sound delightful", "eetcode",  "Leetcode is cool"
+for i in list_s:
+  Solution. isCircularSentence('Success', i)
