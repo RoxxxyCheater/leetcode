@@ -57,7 +57,23 @@ class Solution(object):
         :type k: int
         :rtype: List[int]
         """
-        return res
+        decrypted = []
+        n = len(code)
+        if k > 0:
+            for i in range(n):
+                s = 0
+                for j in range(1, k + 1):
+                    s += code[(i + j) % n]
+                decrypted.append(s)
+        elif k < 0:
+            for i in range(n):
+                s = 0
+                for j in range(1, abs(k) + 1):
+                    s += code[(i - j) % n]
+                decrypted.append(s)
+        else:  
+            decrypted = [0] * n
+        return decrypted
 
 list_c = [5,7,1,4], [1,2,3,4],[2,4,9,3]
 list_k = 3, 0, -2
