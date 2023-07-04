@@ -48,3 +48,18 @@
 # 32,378
 # Submissions
 # 51,809
+
+
+class Solution(object):
+    def decrypt(self, code, k):
+        """
+        :type code: List[int]
+        :type k: int
+        :rtype: List[int]
+        """
+        return res
+
+list_c = [5,7,1,4], [1,2,3,4],[2,4,9,3]
+list_k = 3, 0, -2
+for index, c in list_c:
+   Solution.decrypt('Success', c, list_k[index])
