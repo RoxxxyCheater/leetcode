@@ -36,3 +36,16 @@
 # 899,708
 # Submissions
 # 1,900,740
+class Solution(object):
+    def isSubsequence(self, s, t):
+        """
+        :type s: str
+        :type t: str
+        :rtype: bool
+        """
+        return res
+
+list_s = "abc",  "axc"
+list_t = "ahbgdc", "ahbgdc"
+for index, s in enumerate(list_s):
+   Solution.isSubsequence('Success', s, list_t[index])
