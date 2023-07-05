@@ -43,13 +43,15 @@ class Solution(object):
         :type t: str
         :rtype: bool
         """
-        i, j = 0, 0  
-        m, n = len(s), len(t)      
-        while i < m and j < n:
-            if s[i] == t[j]: 
-                i += 1
-            j += 1
-        return i == m 
+        i, j = 0, 0  # Инициализируем указатели i и j
+        m, n = len(s), len(t)  # Получаем длины строк s и t
+        
+        while i < m and j < n:  # Пока не достигнут конец s или t
+            if s[i] == t[j]:  # Если текущие символы совпадают
+                i += 1  # Переходим к следующему символу в s
+            j += 1  # Переходим к следующему символу в t
+        
+        return i == m  # Возвращаем True, если все символы s были найдены, иначе False
 
 list_s = "abc",  "axc"
 list_t = "ahbgdc", "ahbgdc"
