@@ -48,21 +48,37 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-
-        n = len(nums)  # Длина массива
-        left = 0  # Левый указатель начинает с индекса 0
-        subarray_sum = 0  # Инициализируем сумму подмассива нулем
-        min_length = float('inf')  # Изначально устанавливаем наименьшую длину в бесконечность
+        n = len(nums)
+        left = 0
+        subarray_sum = 0
+        min_length = float('inf')
         
-        for right in range(n):  # Проходим по массиву с помощью правого указателя
-            subarray_sum += nums[right]  # Добавляем текущий элемент к сумме подмассива
+        for right in range(n):
+            subarray_sum += nums[right]
             
-            while subarray_sum >= target:  # Пока сумма подмассива больше или равна целевому значению
-                min_length = min(min_length, right - left + 1)  # Проверяем, является ли текущая длина подмассива наименьшей и обновляем ее
-                subarray_sum -= nums[left]  # Уменьшаем сумму подмассива, удаляя левый элемент
-                left += 1  # Сдвигаем левый указатель вправо
+            while subarray_sum >= target:
+                min_length = min(min_length, right - left + 1)
+                subarray_sum -= nums[left]
+                left += 1
         
-        return min_length if min_length != float('inf') else 0  # Возвращаем наименьшую длину подмассива, если такой подмассив существует, иначе возвращаем 0
+        return min_length if min_length != float('inf') else 0
+        
+
+
+        # n = len(nums)  # Длина массива
+        # left = 0  # Левый указатель начинает с индекса 0
+        # subarray_sum = 0  # Инициализируем сумму подмассива нулем
+        # min_length = float('inf')  # Изначально устанавливаем наименьшую длину в бесконечность
+        
+        # for right in range(n):  # Проходим по массиву с помощью правого указателя
+        #     subarray_sum += nums[right]  # Добавляем текущий элемент к сумме подмассива
+            
+        #     while subarray_sum >= target:  # Пока сумма подмассива больше или равна целевому значению
+        #         min_length = min(min_length, right - left + 1)  # Проверяем, является ли текущая длина подмассива наименьшей и обновляем ее
+        #         subarray_sum -= nums[left]  # Уменьшаем сумму подмассива, удаляя левый элемент
+        #         left += 1  # Сдвигаем левый указатель вправо
+        
+        # return min_length if min_length != float('inf') else 0  # Возвращаем наименьшую длину подмассива, если такой подмассив существует, иначе возвращаем 0
 
 list_t = 7, 4, 11
 list_n = [2,3,1,2,4,3], [1,4,4], [1,1,1,1,1,1,1,1]
