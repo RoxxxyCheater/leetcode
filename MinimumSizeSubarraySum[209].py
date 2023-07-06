@@ -39,3 +39,18 @@
 # 782,319
 # Submissions
 # 1,689,573
+
+
+class Solution(object):
+    def minSubArrayLen(self, target, nums):
+        """
+        :type target: int
+        :type nums: List[int]
+        :rtype: int
+        """
+        return res
+
+list_t = 7, 4, 11
+list_n = [2,3,1,2,4,3], [1,4,4], [1,1,1,1,1,1,1,1]
+for index, num in enumerate(list_t):
+   Solution.minSubArrayLen('Success', num, list_n[index])
