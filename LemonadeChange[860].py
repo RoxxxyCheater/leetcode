@@ -48,24 +48,27 @@ class Solution(object):
         :type bills: List[int]
         :rtype: bool
         """
-        fiveCount = 0
-        tenCount = 0    
+        fiveCount = 0  # Количество доступных купюр номиналом $5
+        tenCount = 0  # Количество доступных купюр номиналом $10
+    
         for bill in bills:
-            if bill == 5:
-                fiveCount += 1
-            elif bill == 10:
-                fiveCount -= 1
-                tenCount += 1
-            elif bill == 20:
-                if tenCount > 0:
-                    tenCount -= 1
-                    fiveCount -= 1
-                else:
-                    fiveCount -= 3    
-            if fiveCount < 0 or tenCount < 0:
-                return False
-        return True
-     
+            if bill == 5:  # Если покупатель платит купюрой номиналом $5
+                fiveCount += 1  # Увеличиваем количество $5 купюр на 1
+            elif bill == 10:  # Если покупатель платит купюрой номиналом $10
+                fiveCount -= 1  # Уменьшаем количество $5 купюр на 1
+                tenCount += 1  # Увеличиваем количество $10 купюр на 1
+            elif bill == 20:  # Если покупатель платит купюрой номиналом $20
+                if tenCount > 0:  # Если у нас есть доступные купюры номиналом $10
+                    tenCount -= 1  # Уменьшаем количество $10 купюр на 1
+                    fiveCount -= 1  # Уменьшаем количество $5 купюр на 1
+                else:  # Если у нас нет доступных купюр номиналом $10
+                    fiveCount -= 3  # Уменьшаем количество $5 купюр на 3
+    
+            if fiveCount < 0 or tenCount < 0:  # Если у нас отрицательное количество купюр
+                return False  # Возвращаем False, так как не можем предоставить правильную сдачу
+    
+        return True  # Если все покупатели получили правильную сдачу, возвращаем True
+         
 list_b = [5,5,5,10,20], [5,5,10,10,20]
 for i in lit_b:
   Solution.lemonadeChange('Success', i)
