@@ -48,7 +48,23 @@ class Solution(object):
         :type bills: List[int]
         :rtype: bool
         """
-        return res
+        fiveCount = 0
+        tenCount = 0    
+        for bill in bills:
+            if bill == 5:
+                fiveCount += 1
+            elif bill == 10:
+                fiveCount -= 1
+                tenCount += 1
+            elif bill == 20:
+                if tenCount > 0:
+                    tenCount -= 1
+                    fiveCount -= 1
+                else:
+                    fiveCount -= 3    
+            if fiveCount < 0 or tenCount < 0:
+                return False
+        return True
      
 list_b = [5,5,5,10,20], [5,5,10,10,20]
 for i in lit_b:
