@@ -40,3 +40,16 @@
 # 137,942
 # Submissions
 # 260,633
+
+
+class Solution(object):
+    def lemonadeChange(self, bills):
+        """
+        :type bills: List[int]
+        :rtype: bool
+        """
+        return res
+     
+list_b = [5,5,5,10,20], [5,5,10,10,20]
+for i in lit_b:
+  Solution.lemonadeChange('Success', i)
