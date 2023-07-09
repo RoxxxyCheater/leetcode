@@ -45,21 +45,21 @@ class Solution(object):
         """
         if num == 1:
             return True
-
+    
         left, right = 1, num // 2
-
+    
         while left <= right:
-            mid = left + (right - left) // 2
-            square = mid * mid
-
-            if square == num:
+            mid = left + (right - left) // 2  # Вычисляем середину диапазона для бинарного поиска
+            square = mid * mid  # Вычисляем квадрат числа mid
+    
+            if square == num:  # Если квадрат числа равен num, то num является точным квадратом
                 return True
-            elif square < num:
+            elif square < num:  # Если квадрат числа меньше num, ищем в правой половине диапазона
                 left = mid + 1
-            else:
+            else:  # Если квадрат числа больше num, ищем в левой половине диапазона
                 right = mid - 1
-
-        return False
+    
+        return False  # Если не нашли точный квадрат, возвращаем False
 
 list_n = 16, 14
 for i in list_n:
