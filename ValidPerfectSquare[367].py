@@ -43,7 +43,23 @@ class Solution(object):
         :type num: int
         :rtype: bool
         """
-        return res
+        if num == 1:
+            return True
+
+        left, right = 1, num // 2
+
+        while left <= right:
+            mid = left + (right - left) // 2
+            square = mid * mid
+
+            if square == num:
+                return True
+            elif square < num:
+                left = mid + 1
+            else:
+                right = mid - 1
+
+        return False
 
 list_n = 16, 14
 for i in list_n:
