@@ -35,3 +35,16 @@
 # 500,814
 # Submissions
 # 1,155,148
+
+
+class Solution(object):
+    def isPerfectSquare(self, num):
+        """
+        :type num: int
+        :rtype: bool
+        """
+        return res
+
+list_n = 16, 14
+for i in list_n:
+   Solution.isPerfectSquare('Success', i)
