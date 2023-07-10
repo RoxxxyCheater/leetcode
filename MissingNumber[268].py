@@ -51,11 +51,16 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        missing = 0  # Инициализация переменной для хранения результата
-        for i, num in enumerate(nums):  # Итерация по массиву nums с использованием индексов
-            missing ^= i ^ num  # Выполнение операции XOR с текущим индексом и элементом массива
-        missing ^= len(nums)  # Выполнение операции XOR с длиной массива для учета самого пропущенного числа
-        return missing  # Возвращаем пропущенное число
+        n = len(nums)
+        expected_sum = (n * (n + 1)) // 2 
+        actual_sum = sum(nums) 
+        return expected_sum - actual_sum
+        
+        # missing = 0  # Инициализация переменной для хранения результата
+        # for i, num in enumerate(nums):  # Итерация по массиву nums с использованием индексов
+        #     missing ^= i ^ num  # Выполнение операции XOR с текущим индексом и элементом массива
+        # missing ^= len(nums)  # Выполнение операции XOR с длиной массива для учета самого пропущенного числа
+        # return missing  # Возвращаем пропущенное число
 
 list_n = [3,0,1], [0,1], [9,6,4,2,3,5,7,0,1]
 for i in list_n:
