@@ -51,7 +51,11 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        return res
+        missing = 0
+        for i, num in enumerate(nums):
+            missing ^= i ^ num
+        missing ^= len(nums)
+        return missing
 
 list_n = [3,0,1], [0,1], [9,6,4,2,3,5,7,0,1]
 for i in list_n:
