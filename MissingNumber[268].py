@@ -52,9 +52,9 @@ class Solution(object):
         :rtype: int
         """
         n = len(nums)
-        expected_sum = (n * (n + 1)) // 2 
-        actual_sum = sum(nums) 
-        return expected_sum - actual_sum
+        expected_sum = (n * (n + 1)) // 2  # Ожидаемая сумма для чисел от 0 до n
+        actual_sum = sum(nums)  # Сумма всех чисел в массиве
+        return expected_sum - actual_sum  # Возвращаем пропущенное число
         
         # missing = 0  # Инициализация переменной для хранения результата
         # for i, num in enumerate(nums):  # Итерация по массиву nums с использованием индексов
