@@ -50,3 +50,16 @@
 # 30,398
 # Submissions
 # 52,506
+
+
+class Solution(object):
+    def distinctAverages(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        return res
+     
+list_n = [4,1,4,0,3,5], [1,100]
+for i in list_n:
+  Solution.distinctAverages('Success', i)
