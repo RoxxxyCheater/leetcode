@@ -47,7 +47,19 @@
 class Solution(object):
     def removeElements(self, head, val):
         """
-        return res
+        dummy = ListNode(0)
+        dummy.next = head
+        prev = dummy
+        curr = head
+    
+        while curr:
+            if curr.val == val:
+                prev.next = curr.next
+            else:
+                prev = curr
+            curr = curr.next
+    
+        return dummy.next
 
 
 list_h = [1,2,6,3,4,5,6], [], [7,7,7,7]
