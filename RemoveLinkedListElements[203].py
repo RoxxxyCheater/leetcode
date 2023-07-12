@@ -47,18 +47,26 @@
 class Solution(object):
     def removeElements(self, head, val):
         """
+        # Создаем фиктивный узел и устанавливаем его следующий узел на голову связного списка
         dummy = ListNode(0)
         dummy.next = head
+        
+        # Указатель prev указывает на текущий узел, указатель curr указывает на следующий узел
         prev = dummy
         curr = head
     
+        # Проходим по связному списку
         while curr:
+            # Если значение текущего узла равно val, пропускаем его путем обновления указателей
             if curr.val == val:
                 prev.next = curr.next
             else:
                 prev = curr
+            
+            # Переходим к следующему узлу
             curr = curr.next
     
+        # Возвращаем новую голову связного списка
         return dummy.next
 
 
