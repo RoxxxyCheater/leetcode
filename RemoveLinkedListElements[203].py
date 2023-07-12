@@ -36,3 +36,21 @@
 # 957,967
 # Submissions
 # 2,053,656
+
+
+
+# Definition for singly-linked list.
+# class ListNode(object):
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution(object):
+    def removeElements(self, head, val):
+        """
+        return res
+
+
+list_h = [1,2,6,3,4,5,6], [], [7,7,7,7]
+list_v = 6, 1, 7
+for index, num in list_h:
+   Solution.removeElements('Success', num, list_v[index])
