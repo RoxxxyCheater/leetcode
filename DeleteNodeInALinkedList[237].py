@@ -64,8 +64,8 @@ class Solution(object):
         :type node: ListNode
         :rtype: void Do not return anything, modify node in-place instead.
         """
-        node.val = node.next.val
-        node.next = node.next.next
+        node.val = node.next.val # копируем значение следующего узла в данный узел
+        node.next = node.next.next  # Удаляем следующий узел, обновив указатель текущего узла
 
 list_h = [4,5,1,9],  [4,5,1,9]
 list_n = 5,1
