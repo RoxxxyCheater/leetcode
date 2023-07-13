@@ -64,7 +64,8 @@ class Solution(object):
         :type node: ListNode
         :rtype: void Do not return anything, modify node in-place instead.
         """
-        return res
+        node.val = node.next.val
+        node.next = node.next.next
 
 list_h = [4,5,1,9],  [4,5,1,9]
 list_n = 5,1
