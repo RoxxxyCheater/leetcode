@@ -38,18 +38,18 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        count = 0
-        candidate = None
+        count = 0  # Счетчик для отслеживания количества вхождений текущего кандидата
+        candidate = None  # Текущий кандидат на основной элемент
 
         for num in nums:
-            if count == 0:
+            if count == 0:  # Если счетчик равен 0, выбираем нового кандидата
                 candidate = num
-            if num == candidate:
+            if num == candidate:  # Если текущий элемент совпадает с кандидатом, увеличиваем счетчик на 1
                 count += 1
-            else:
+            else:  # Если текущий элемент отличается от кандидата, уменьшаем счетчик на 1
                 count -= 1
 
-        return candidate
+        return candidate  # Возвращаем найденного кандидата в качестве основного элемента
 
 list_n = [3,2,3], [2,2,1,1,1,2,2]
 for i in list_n:
