@@ -38,7 +38,18 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        return res
+        count = 0
+        candidate = None
+
+        for num in nums:
+            if count == 0:
+                candidate = num
+            if num == candidate:
+                count += 1
+            else:
+                count -= 1
+
+        return candidate
 
 list_n = [3,2,3], [2,2,1,1,1,2,2]
 for i in list_n:
