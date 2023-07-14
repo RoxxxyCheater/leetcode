@@ -31,3 +31,15 @@
 # 1,853,247
 # Submissions
 # 2,901,860
+
+class Solution(object):
+    def majorityElement(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        return res
+
+list_n = [3,2,3], [2,2,1,1,1,2,2]
+for i in list_n:
+   Solution.majorityElement('Success', i)
