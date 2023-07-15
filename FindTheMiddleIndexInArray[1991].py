@@ -51,18 +51,18 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        left = 0
-        right = sum(nums[1:])
-
+        left = 0  # Индекс левой части массива
+        right = sum(nums[1:])  # Сумма элементов правой части массива, исключая первый элемент
+    
         for i in range(len(nums)):
-            if left == right:
-                return i
-
+            if left == right:  # Если сумма левой части равна сумме правой части
+                return i  # Возвращаем текущий индекс как левый центральный индекс
+    
             if i < len(nums) - 1:
-                left += nums[i]
-                right -= nums[i + 1]
-
-        return -1
+                left += nums[i]  # Увеличиваем сумму левой части на текущий элемент
+                right -= nums[i + 1]  # Уменьшаем сумму правой части на следующий элемент
+    
+        return -1  # Если левый центральный индекс не найден, возвращаем -1
 
 list_n =  [2,3,-1,8,4],[1,-1,4],[2,5]
 for i in list_n:
