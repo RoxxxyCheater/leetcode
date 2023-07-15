@@ -45,3 +45,14 @@
 # 68,326
 # Submissions
 # 101,599
+class Solution(object):
+    def findMiddleIndex(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        return res
+
+list_n =  [2,3,-1,8,4],[1,-1,4],[2,5]
+for i in list_n:
+  Solution.findMiddleIndex('Success', i)
