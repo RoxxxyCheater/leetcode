@@ -51,7 +51,18 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        return res
+        left = 0
+        right = sum(nums[1:])
+
+        for i in range(len(nums)):
+            if left == right:
+                return i
+
+            if i < len(nums) - 1:
+                left += nums[i]
+                right -= nums[i + 1]
+
+        return -1
 
 list_n =  [2,3,-1,8,4],[1,-1,4],[2,5]
 for i in list_n:
