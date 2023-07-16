@@ -50,3 +50,16 @@
 # 874,610
 # Submissions
 # 1,578,271
+
+
+class Solution(object):
+    def pivotIndex(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        return res
+
+list_n = [1,7,3,6,5,6], [1,2,3], [1,2,3]
+for i in list_n:
+   Solution.pivotIndex('Success',i )
