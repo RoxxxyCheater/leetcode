@@ -58,7 +58,15 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        return res
+        total_sum = sum(nums)
+        left_sum = 0
+
+        for i in range(len(nums)):
+            if left_sum == total_sum - left_sum - nums[i]:
+                return i
+            left_sum += nums[i]
+
+        return -1
 
 list_n = [1,7,3,6,5,6], [1,2,3], [1,2,3]
 for i in list_n:
