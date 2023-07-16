@@ -58,16 +58,14 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        total_sum = sum(nums)
-        left_sum = 0
-
+        total_sum = sum(nums)  # Вычисляем общую сумму всех чисел в массиве
+        left_sum = 0  # Инициализируем сумму чисел слевa
         for i in range(len(nums)):
-            if left_sum == total_sum - left_sum - nums[i]:
-                return i
-            left_sum += nums[i]
-
-        return -1
-
+            if left_sum == total_sum - left_sum - nums[i]:  # Если сумма чисел слева равна сумме чисел справа               
+                return i # возвращаем текущий индекс как индекс пивота
+            left_sum += nums[i]  # Прибавляем текущее число к сумме чисел слева    
+        return -1  # Если не найден пивот, возвращаем -1
+     
 list_n = [1,7,3,6,5,6], [1,2,3], [1,2,3]
 for i in list_n:
    Solution.pivotIndex('Success',i )
