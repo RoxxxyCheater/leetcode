@@ -40,3 +40,16 @@
 # 68,608
 # Submissions
 # 79,102
+
+
+class Solution(object):
+    def leftRightDifference(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+        return res
+
+list_n =  [10,4,8,3], [1]
+for i in list_n: 
+   Solution.leftRightDifference('Success', i)
