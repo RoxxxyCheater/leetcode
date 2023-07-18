@@ -48,15 +48,17 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[int]
         """
-        n = len(nums) 
-        prefixSum = [0] * (n + 1)
-        answer = [0] * n      
+        n = len(nums)  # Получаем длину входного массива
+        prefixSum = [0] * (n + 1)  # Инициализируем массив для хранения префиксных сумм
+        answer = [0] * n  # Инициализируем массив для хранения абсолютной разницы между суммой слева и суммой справа
+        # Вычисляем префиксные суммы для массива nums
         for i in range(1, n + 1):
             prefixSum[i] = prefixSum[i - 1] + nums[i - 1]
+        # Вычисляем абсолютную разницу между суммой слева и суммой справа для каждого индекса
         for i in range(n):
-            leftSum = prefixSum[i]
-            rightSum = prefixSum[n] - prefixSum[i + 1]  
-            answer[i] = abs(leftSum - rightSum)  
+            leftSum = prefixSum[i]  # Сумма элементов слева от индекса i
+            rightSum = prefixSum[n] - prefixSum[i + 1]  # Сумма элементов справа от индекса i
+            answer[i] = abs(leftSum - rightSum)  # Вычисляем абсолютную разницу
         return answer
         
         # n = len(nums)  # Получаем длину входного массива
