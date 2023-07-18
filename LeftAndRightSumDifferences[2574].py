@@ -48,16 +48,16 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[int]
         """
-        n = len(nums)
-        leftSum = [0] * n
-        rightSum = [0] * n
-        answer = [0] * n
-        for i in range(1, n):
-            leftSum[i] = leftSum[i - 1] + nums[i - 1]
-        for i in range(n - 2, -1, -1):
-            rightSum[i] = rightSum[i + 1] + nums[i + 1]
-        for i in range(n):
-            answer[i] = abs(leftSum[i] - rightSum[i])
+        n = len(nums)  # Получаем длину входного массива
+        leftSum = [0] * n  # Инициализируем массив для хранения суммы элементов слева от каждого индекса
+        rightSum = [0] * n  # Инициализируем массив для хранения суммы элементов справа от каждого индекса
+        answer = [0] * n  # Инициализируем массив для хранения абсолютной разницы между суммой слева и суммой справа        
+        for i in range(1, n):# Вычисляем сумму элементов слева для каждого индекса
+            leftSum[i] = leftSum[i - 1] + nums[i - 1]  # Суммируем предыдущую сумму и элемент слева от текущего индекса           
+        for i in range(n - 2, -1, -1):# Вычисляем сумму элементов справа для каждого индекса
+            rightSum[i] = rightSum[i + 1] + nums[i + 1]  # Суммируем следующую сумму и элемент справа от текущего индекса            
+        for i in range(n):# Вычисляем абсолютную разницу между суммой слева и суммой справа для каждого индекса
+            answer[i] = abs(leftSum[i] - rightSum[i])  # Вычисляем абсолютную разницу между суммой слева и суммой справа    
         return answer
 
 list_n =  [10,4,8,3], [1]
