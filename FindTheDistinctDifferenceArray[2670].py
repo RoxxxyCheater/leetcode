@@ -42,3 +42,17 @@
 # 24,150
 # Submissions
 # 31,230
+
+
+
+class Solution(object):
+    def distinctDifferenceArray(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+        return res
+
+list_n = [1,2,3,4,5],  [3,2,3,4,2]
+for i in list_n:
+   Solution.distinctDifferenceArray('Success', i)
