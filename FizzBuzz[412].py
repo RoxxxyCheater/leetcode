@@ -42,17 +42,17 @@ class Solution(object):
         :type n: int
         :rtype: List[str]
         """
-        result = []  # Создаем пустой список, в который будем добавлять результаты
-        for i in range(1, n + 1):  # Итерируемся от 1 до n включительно
-            if i % 3 == 0 and i % 5 == 0:  # Если число делится и на 3, и на 5 без остатка
-                result.append("FizzBuzz")  # Добавляем "FizzBuzz" в список результатов
-            elif i % 3 == 0:  # Если число делится на 3 без остатка
-                result.append("Fizz")  # Добавляем "Fizz" в список результатов
-            elif i % 5 == 0:  # Если число делится на 5 без остатка
-                result.append("Buzz")  # Добавляем "Buzz" в список результатов
-            else:  # Если число не делится ни на 3, ни на 5 без остатка
-                result.append(str(i))  # Преобразуем число в строку и добавляем в список результатов
-        return result  # Возвращаем список результатов
+        result = []
+        for i in range(1, n + 1):
+            if i % 15 == 0:
+                result.append("FizzBuzz")
+            elif i % 3 == 0:
+                result.append("Fizz")
+            elif i % 5 == 0:
+                result.append("Buzz")
+            else:
+                result.append(str(i))
+        return result
 
 list_n = 3,5,15
 for i in list_n:
