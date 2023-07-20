@@ -35,3 +35,15 @@
 # 1,022,142
 # Submissions
 # 1,449,459
+
+class Solution(object):
+    def fizzBuzz(self, n):
+        """
+        :type n: int
+        :rtype: List[str]
+        """
+        return res
+
+list_n = 3,5,15
+for i in list_n:
+   Solution.fizzBuzz('Success', i)
