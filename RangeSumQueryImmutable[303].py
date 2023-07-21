@@ -62,3 +62,6 @@ class NumArray(object):
 # obj = NumArray(nums)
 # param_1 = obj.sumRange(left,right)
 
+
+nums = [-2, 0, 3, -5, 2, -1]
+numArray = NumArray(nums)
