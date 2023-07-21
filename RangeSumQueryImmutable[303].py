@@ -40,16 +40,15 @@
 # Submissions
 # 747,649
 
-
 class NumArray(object):
 
     def __init__(self, nums):
         """
         :type nums: List[int]
         """
-        self.prefix_sums = [0] 
+        self.prefix_sums = [0]  # Префиксная сумма перед первым элементом
         for num in nums:
-            self.prefix_sums.append(self.prefix_sums[-1] + num) 
+            self.prefix_sums.append(self.prefix_sums[-1] + num)  # Вычисляем префиксные суммы и сохраняем
 
     def sumRange(self, left, right):
         """
@@ -57,12 +56,11 @@ class NumArray(object):
         :type right: int
         :rtype: int
         """
-        return self.prefix_sums[right+1] - self.prefix_sums[left]
+        return self.prefix_sums[right+1] - self.prefix_sums[left]  # Сумма элементов между left и right
 
 # Your NumArray object will be instantiated and called as such:
 # obj = NumArray(nums)
 # param_1 = obj.sumRange(left,right)
-
 
 nums = [-2, 0, 3, -5, 2, -1]
 numArray = NumArray(nums)
