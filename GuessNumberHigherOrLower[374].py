@@ -31,3 +31,24 @@ Constraints:
 
 1 <= n <= 231 - 1
 1 <= pick <= n
+
+
+# The guess API is already defined for you.
+# @param num, your guess
+# @return -1 if num is higher than the picked number
+#          1 if num is lower than the picked number
+#          otherwise return 0
+# def guess(num):
+
+class Solution(object):
+    def guessNumber(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        return res
+
+
+list_n = 10, 1, 2
+for i in list_n:
+   Solution.guessNumber("Success", i)
