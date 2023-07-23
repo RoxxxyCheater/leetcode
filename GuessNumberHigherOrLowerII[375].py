@@ -64,3 +64,17 @@
 # 109,494
 # Submissions
 # 230,608
+
+
+class Solution(object):
+    def getMoneyAmount(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        return res
+
+list_n = 1,2
+
+for i in list_n:
+   Solution.getMoneyAmount('Success', i)
