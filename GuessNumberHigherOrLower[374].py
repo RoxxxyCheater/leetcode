@@ -46,28 +46,27 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
-
-        left, right = 1, n
-
-        while left <= right:
-            mid = left + (right - left) // 2
-            result = self.guess(self, mid)
-
-            if result == 0:
-                return mid
-            elif result == -1:
-                right = mid - 1
-            else:
-                left = mid + 1
-
-    def guess(self, num):        
-        pick = 6  
+        left, right = 1, n  # Задаем начальные значения левой и правой границ поиска.
+        while left <= right:  # Запускаем цикл, пока левая граница не превышает или равна правой.
+            mid = left + (right - left) // 2  # Находим середину текущего диапазона.
+            result = guess(mid)  # Вызываем API, чтобы проверить предположение.
+            if result == 0:  # Если результат равен 0, это означает, что мы угадали число.
+                return mid  # Возвращаем найденное число.
+            elif result == -1:  # Если результат равен -1, число меньше нашего предположения.
+                right = mid - 1  # Сужаем диапазон поиска, отбрасывая правую часть.
+            else:  # Иначе результат равен 1, число больше нашего предположения.
+                left = mid + 1  # Сужаем диапазон поиска, отбрасывая левую часть.
+    # Замените эту реализацию на фактический вызов API.
+    def guess(num):
+        # Пример реализации для ориентира, замените его на фактический вызов API.
+        pick = 6  # В этом примере выбранное число - 6.
         if num < pick:
             return 1
         elif num > pick:
             return -1
         else:
             return 0
+
 
 
 list_n = 10, 1, 2
