@@ -72,7 +72,15 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
-        return res
+        dp = [[0] * (n + 1) for _ in range(n + 1)]
+        for l in range(2, n + 1):  
+            for i in range(1, n - l + 2):  
+                j = i + l - 1 
+                dp[i][j] = float('inf')
+                for k in range(i, j):
+                    cost = k + max(dp[i][k - 1] if k - 1 >= i else 0, dp[k + 1][j] if k + 1 <= j else 0)
+                    dp[i][j] = min(dp[i][j], cost)
+        return dp[1][n]
 
 list_n = 1,2
 
