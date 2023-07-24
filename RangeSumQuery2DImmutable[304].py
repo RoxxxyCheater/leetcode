@@ -51,21 +51,29 @@ class NumMatrix(object):
         """
         :type matrix: List[List[int]]
         """
+        # Проверяем, что матрица не пуста (m x n)
         if not matrix or not matrix[0]:
             return
 
+        # Получаем размеры матрицы
         m, n = len(matrix), len(matrix[0])
+
+        # Создаем новую матрицу для хранения накопительной суммы
+        # Размер новой матрицы будет (m+1) x (n+1) для удобства вычислений
         self.cumSum = [[0] * (n + 1) for _ in range(m + 1)]
 
+        # Заполняем накопительную сумму для каждой ячейки в новой матрице
         for i in range(1, m + 1):
             for j in range(1, n + 1):
+                # Накопительная сумма в точке (i, j) равна сумме текущего элемента матрицы,
+                # суммы элементов в предыдущей строке и предыдущем столбце,
+                # за вычетом дублирующегося элемента из предыдущей строки и столбца.
                 self.cumSum[i][j] = (
                     matrix[i - 1][j - 1]
                     + self.cumSum[i - 1][j]
                     + self.cumSum[i][j - 1]
                     - self.cumSum[i - 1][j - 1]
                 )
-
 
     def sumRegion(self, row1, col1, row2, col2):
         """
@@ -75,6 +83,11 @@ class NumMatrix(object):
         :type col2: int
         :rtype: int
         """
+        # Для вычисления суммы элементов в прямоугольнике используем накопительную сумму
+        # Накопительная сумма находится в точке (row2 + 1, col2 + 1), исключая (row1, col1).
+        # Чтобы получить сумму в прямоугольнике, вычитаем накопительные суммы в "лишних" областях:
+        # сумму элементов выше прямоугольника (row1) и слева от прямоугольника (col1),
+        # и прибавляем сумму элементов в верхнем левом квадрате (row1, col1), который был вычтен дважды.
         return (
             self.cumSum[row2 + 1][col2 + 1]
             - self.cumSum[row2 + 1][col1]
@@ -87,5 +100,19 @@ class NumMatrix(object):
 # obj = NumMatrix(matrix)
 # param_1 = obj.sumRegion(row1,col1,row2,col2
 
+
+# Тестирование реализации с примером из условия
+matrix = [
+    [3, 0, 1, 4, 2],
+    [5, 6, 3, 2, 1],
+    [1, 2, 0, 1, 5],
+    [4, 1, 0, 1, 7],
+    [1, 0, 3, 0, 5]
+]
+
+numMatrix = NumMatrix(matrix)
+print(numMatrix.sumRegion(2, 1, 4, 3))  # Вывод: 8
+print(numMatrix.sumRegion(1, 1, 2, 2))  # Вывод: 11
+print(numMatrix.sumRegion(1, 2, 2, 4))  # Вывод: 12
 
 
