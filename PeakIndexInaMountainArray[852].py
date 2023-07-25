@@ -41,3 +41,16 @@
 # 657,395
 # Submissions
 # 951,437
+
+
+class Solution(object):
+    def peakIndexInMountainArray(self, arr):
+        """
+        :type arr: List[int]
+        :rtype: int
+        """
+        return res7
+
+list_a = [0,1,0], [0,2,1,0], [0,10,5,2]
+for i in list_a:
+   Solution.peakIndexInMountainArray('Success', i)
