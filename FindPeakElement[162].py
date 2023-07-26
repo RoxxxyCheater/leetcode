@@ -35,3 +35,14 @@
 # 1,067,375
 # Submissions
 # 2,328,184
+class Solution(object):
+    def findPeakElement(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        return res
+
+list_n =  [1,2,3,1], [1,2,1,3,5,6,4]
+for i in list_n:
+  Solution.findPeakElement('Success', i)
