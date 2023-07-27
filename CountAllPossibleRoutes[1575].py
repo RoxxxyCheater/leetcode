@@ -52,3 +52,14 @@
 # 47,384
 # Submissions
 # 71,011
+class Solution(object):
+    def countHillValley(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        return res
+
+list_n =  [2,3,6,8,4], [4,3,1], [5,2,1]
+for i in list_n:
+  Solution.countHillValley('Success', i)
