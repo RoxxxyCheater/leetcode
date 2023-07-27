@@ -52,13 +52,23 @@
 # 47,384
 # Submissions
 # 71,011
-class Solution(object):
+
+class Solution:
     def countHillValley(self, nums):
         """
         :type nums: List[int]
         :rtype: int
         """
-        return res
+        state = -1
+        changes_count = 0
+        for i in range(1, len(nums)):
+            if nums[i] > nums[i - 1]:
+                changes_count += int(state == 0)
+                state = 1
+            elif nums[i] < nums[i - 1]:
+                changes_count += int(state == 1)
+                state = 0
+        return changes_count
 
 list_n =  [2,3,6,8,4], [4,3,1], [5,2,1]
 for i in list_n:
