@@ -35,3 +35,16 @@
 # 271,878
 # Submissions
 # 464,661
+
+
+class Solution(object):
+    def isMonotonic(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: bool
+        """
+        return res
+     
+list_num = [1,2,2,3], [6,5,4,4], [1,3,2]
+for i in list_num:
+    Solution.arrayPairSum("Success", i)
