@@ -43,7 +43,14 @@ class Solution(object):
         :type nums: List[int]
         :rtype: bool
         """
-        return res
+        increasing = decreasing = True
+        for i in range(1, len(nums)):
+            if nums[i] > nums[i - 1]:
+                decreasing = False
+            elif nums[i] < nums[i - 1]:
+                increasing = False
+        return increasing or decreasing
+
      
 list_num = [1,2,2,3], [6,5,4,4], [1,3,2]
 for i in list_num:
