@@ -43,13 +43,21 @@ class Solution(object):
         :type nums: List[int]
         :rtype: bool
         """
+        # Инициализируем переменные, чтобы отслеживать, является ли массив монотонно возрастающим и убывающим
         increasing = decreasing = True
+        
+        # Проходимся по массиву, начиная с индекса 1
         for i in range(1, len(nums)):
+            # Проверяем, является ли текущий элемент больше предыдущего
             if nums[i] > nums[i - 1]:
                 decreasing = False
+            # Проверяем, является ли текущий элемент меньше предыдущего
             elif nums[i] < nums[i - 1]:
                 increasing = False
+        
+        # Если либо increasing, либо decreasing равно True, то массив монотонен
         return increasing or decreasing
+
 
      
 list_num = [1,2,2,3], [6,5,4,4], [1,3,2]
