@@ -40,28 +40,23 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[int]
         """
-class Solution(object):
-    def minSubsequence(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[int]
-        """
-        nums.sort(reverse=True)
-        total_sum = sum(nums)
-        current_sum = 0
-        remaining_sum = total_sum
+        nums.sort(reverse=True)  # Сортируем массив в невозрастающем порядке
+        total_sum = sum(nums)  # Вычисляем сумму всех элементов в массиве
+        current_sum = 0  # Переменная для хранения суммы текущей подпоследовательности
+        remaining_sum = total_sum  # Переменная для хранения суммы элементов, не включенных в текущую подпоследовательность
+    
+        result = []  # Переменная для хранения найденной подпоследовательности
+    
+        for num in nums:  # Итерируемся по элементам массива в невозрастающем порядке
+            current_sum += num  # Добавляем текущий элемент к сумме текущей подпоследовательности
+            remaining_sum -= num  # Вычитаем текущий элемент из суммы оставшихся элементов
+            result.append(num)  # Добавляем текущий элемент в найденную подпоследовательность
+    
+            if current_sum > remaining_sum:  # Проверяем, если сумма текущей подпоследовательности больше суммы оставшихся элементов
+                return result  # Возвращаем найденную подпоследовательность
+    
+        return []  # Если подходящая подпоследовательность не найдена, возвращаем пустой массив
 
-        result = []
-
-        for num in nums:
-            current_sum += num
-            remaining_sum -= num
-            result.append(num)
-
-            if current_sum > remaining_sum:
-                return result
-
-        return []
 
 
 list_n = [4,3,10,9,8],[4,4,7,6,7]
