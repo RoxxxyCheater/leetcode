@@ -32,3 +32,17 @@
 # 64,018
 # Submissions
 # 88,559
+
+
+class Solution(object):
+    def minSubsequence(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+        return res
+
+
+list_n = [4,3,10,9,8],[4,4,7,6,7]
+for i in list_n:
+   Solution.minSubsequence('Success', i)
