@@ -40,7 +40,28 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[int]
         """
-        return res
+class Solution(object):
+    def minSubsequence(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+        nums.sort(reverse=True)
+        total_sum = sum(nums)
+        current_sum = 0
+        remaining_sum = total_sum
+
+        result = []
+
+        for num in nums:
+            current_sum += num
+            remaining_sum -= num
+            result.append(num)
+
+            if current_sum > remaining_sum:
+                return result
+
+        return []
 
 
 list_n = [4,3,10,9,8],[4,4,7,6,7]
