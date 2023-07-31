@@ -52,13 +52,14 @@ class Solution(object):
         :type accounts: List[List[int]]
         :rtype: int
         """
-        max_wealth = 0
-
-        for customer in accounts:
-            wealth = sum(customer)
-            max_wealth = max(max_wealth, wealth)
-
-        return max_wealth
+        max_wealth = 0  # Инициализируем переменную для хранения максимального богатства (начальное значение - 0).
+    
+        for customer in accounts:  # Итерируемся по каждому "клиенту" (строке) в сетке.
+            wealth = sum(customer)  # Считаем сумму денег у данного клиента (сумма по всем его банковским счетам).
+            max_wealth = max(max_wealth, wealth)  # Сравниваем сумму с текущим максимальным богатством и обновляем, если она больше.
+    
+        return max_wealth  # Возвращаем максимальное богатство, которое представляет собой богатство самого богатого клиента.
+    
 
 list_ac =  [[1,2,3],[3,2,1]],[[1,5],[7,3],[3,5]],[[2,8,7],[7,1,3],[1,9,5]]
 for i in list_ac:
