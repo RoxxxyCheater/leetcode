@@ -44,3 +44,19 @@
 # 661,024
 # Submissions
 # 755,124
+
+
+class Solution(object):
+    def maximumWealth(self, accounts):
+        """
+        :type accounts: List[List[int]]
+        :rtype: int
+        """
+
+        return res
+
+
+
+list_ac =  [[1,2,3],[3,2,1]],[[1,5],[7,3],[3,5]],[[2,8,7],[7,1,3],[1,9,5]]
+for i in list_ac:
+   Solution.maximumWealth('Success', i)
