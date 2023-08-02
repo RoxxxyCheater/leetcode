@@ -39,3 +39,18 @@
 # 1,324,078
 # Submissions
 # 3,272,465
+
+
+class Solution(object):
+    def exist(self, board, word):
+        """
+        :type board: List[List[str]]
+        :type word: str
+        :rtype: bool
+        """
+        return res
+
+board = [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]],[["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]],[["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]]
+word = "ABCCED",  "SEE", "ABCB"
+for index, w in enumerate(board):
+  Solution.exist('Success', w, word[index])
