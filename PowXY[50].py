@@ -35,3 +35,14 @@
 # 1,339,472
 # Submissions
 # 3,950,029
+class Solution(object):
+    def myPow(self, x, n):
+        """
+        :type x: float
+        :type n: int
+        :rtype: float
+        """
+        return res
+
+list_x = 2.00000, 2.10000, 2.00000
+list_n = 10, 3, -2
