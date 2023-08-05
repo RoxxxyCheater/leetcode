@@ -42,7 +42,25 @@ class Solution(object):
         :type n: int
         :rtype: float
         """
-        return res
+        if n == 0:
+            return 1.0
+
+        if n < 0:
+            x = 1 / x
+            n = -n
+
+        def helper(x, n):
+            if n == 1:
+                return x
+
+            half_pow = helper(x, n // 2)
+            if n % 2 == 0:
+                return half_pow * half_pow
+            else:
+                return half_pow * half_pow * x
+
+        return helper(x, n)
+
 
 list_x = 2.00000, 2.10000, 2.00000
 list_n = 10, 3, -2
