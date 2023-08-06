@@ -33,3 +33,18 @@
 # 62,204
 # Submissions
 # 173,094
+
+class Solution(object):
+    def superPow(self, a, b):
+        """
+        :type a: int
+        :type b: List[int]
+        :rtype: int
+        """
+        return res
+
+list_a =  2, 2, 1
+list_b = [3], [1,0], [4,3,3,8,5,2]
+
+for index, list_a in enumerate(list_a):
+    Solution.findContentChildren("Success", list_a, list_b[index])
