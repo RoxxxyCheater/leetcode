@@ -41,8 +41,26 @@ class Solution(object):
         :type b: List[int]
         :rtype: int
         """
-        return res
-
+        MOD = 1337
+    
+        # Helper function to calculate (a^k) % 1337
+        def power(a, k):
+            result = 1
+            a %= MOD
+            while k > 0:
+                if k % 2 == 1:
+                    result = (result * a) % MOD
+                k //= 2
+                a = (a * a) % MOD
+            return result
+    
+        result = 1
+        for digit in b:
+            # Update the result for each digit in b
+            result = (power(result, 10) * power(a, digit)) % MOD
+    
+        return result
+    
 list_a =  2, 2, 1
 list_b = [3], [1,0], [4,3,3,8,5,2]
 
