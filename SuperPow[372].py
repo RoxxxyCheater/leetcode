@@ -41,9 +41,11 @@ class Solution(object):
         :type b: List[int]
         :rtype: int
         """
+        # Helper function to calculate (a^k) % 1337
+        # Задаем модуль, чтобы брать остатки при вычислениях (1337 - простое число)
         MOD = 1337
     
-        # Helper function to calculate (a^k) % 1337
+        # Вспомогательная функция для вычисления (a^k) % 1337 методом быстрого возведения в степень
         def power(a, k):
             result = 1
             a %= MOD
@@ -54,9 +56,15 @@ class Solution(object):
                 a = (a * a) % MOD
             return result
     
+        # Инициализируем результат переменной result равным 1
         result = 1
+    
+        # Итерируемся по каждой цифре в массиве b (от левого края к правому)
         for digit in b:
-            # Update the result for each digit in b
+            # Обновляем результат для каждой цифры в b
+            # Сначала возводим result в 10-ю степень по модулю 1337
+            # Затем возводим a в степень digit и берем остаток по модулю 1337
+            # Затем умножаем полученные результаты и снова берем остаток по модулю 1337
             result = (power(result, 10) * power(a, digit)) % MOD
     
         return result
