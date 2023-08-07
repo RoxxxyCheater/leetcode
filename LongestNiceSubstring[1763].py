@@ -37,3 +37,10 @@
 # 41,497
 # Submissions
 # 68,162
+class Solution(object):
+    def longestNiceSubstring(self, s):
+        """
+        :type s: str
+        :rtype: str
+        """
+        return res
