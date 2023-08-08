@@ -37,25 +37,29 @@
 # 41,497
 # Submissions
 # 68,162
-class Solution(object):
-    def longestNiceSubstring(self, s):
-        """
-        :type s: str
-        :rtype: str
-        """
-        def is_nice(start, end):
-            seen = set()
-            for i in range(start, end + 1):
-                seen.add(s[i])
 
+
+class Solution(object):
+    def longestNiceSubstring(s):
+        def is_nice(start, end):
+            seen = set()  # Множество для отслеживания уникальных букв в текущем подстроке
+            for i in range(start, end + 1):
+                seen.add(s[i])  # Добавляем букву в множество
+            
             for char in seen:
                 if char.lower() not in seen or char.upper() not in seen:
-                    return False
+                    return False  # Если есть буква, у которой отсутствует пара в противоположном регистре, возвращаем False
             return True
-
-        longest = ""
+        
+        longest = ""  # Переменная для хранения самой длинной красивой подстроки
         for i in range(len(s)):
             for j in range(i + len(longest), len(s)):
                 if is_nice(i, j):
-                    longest = s[i:j + 1]
+                    longest = s[i:j + 1]  # Обновляем самую длинную красивую подстроку
         return longest
+
+
+list_s = "YazaAay", "Bb", "c"
+
+for i in list_s:
+   Solution.longestNiceSubstring('Success', i)
