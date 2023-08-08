@@ -43,4 +43,19 @@ class Solution(object):
         :type s: str
         :rtype: str
         """
-        return res
+        def is_nice(start, end):
+            seen = set()
+            for i in range(start, end + 1):
+                seen.add(s[i])
+
+            for char in seen:
+                if char.lower() not in seen or char.upper() not in seen:
+                    return False
+            return True
+
+        longest = ""
+        for i in range(len(s)):
+            for j in range(i + len(longest), len(s)):
+                if is_nice(i, j):
+                    longest = s[i:j + 1]
+        return longest
