@@ -55,3 +55,43 @@
 # 50,431
 # Submissions
 # 88,427
+
+
+class Solution(object):
+    def numberOfGoodPaths(self, vals, edges):
+        """
+        :type vals: List[int]
+        :type edges: List[List[int]]
+        :rtype: int
+        """
+        adj_list = {}
+        for a, b in edges:
+            if a not in adj_list:
+                adj_list[a] = []
+            if b not in adj_list:
+                adj_list[b] = []
+            adj_list[a].append(b)
+            adj_list[b].append(a)
+
+        def dfs(node, parent):
+            up[node] = 1 if vals[node] == max_vals[node] else 0
+
+            for child in adj_list.get(node, []):
+                if child != parent:
+                    dfs(child, node)
+                    up[node] += down[child]
+                    down[node] += up[child]
+
+        max_vals = [0] * len(vals)
+        for node in range(len(vals)):
+            max_vals[node] = max(max_vals[node], vals[node])
+            for child in adj_list.get(node, []):
+                max_vals[child] = max(max_vals[child], max_vals[node])
+
+        up = [0] * len(vals)
+        down = [0] * len(vals)
+        dfs(0, -1)
+
+        return sum(up)
+
+
