@@ -49,8 +49,9 @@ class Solution(object):
         :type candyType: List[int]
         :rtype: int
         """
-
-        return res
+        unique_candies = set(candyType)
+        max_eaten = len(candyType) // 2
+        return min(len(unique_candies), max_eaten)
 
 list_c = [1,1,2,2,3,3], [1,1,2,3], [6,6,6,6]
 for cand in list_c:
