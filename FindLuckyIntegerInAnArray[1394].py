@@ -36,3 +36,14 @@
 # 100,724
 # Submissions
 # 154,484
+class Solution(object):
+    def findLucky(self, arr):
+        """
+        :type arr: List[int]
+        :rtype: int
+        """
+        return res
+
+list_a = [2,2,3,4], [1,2,2,3,3,3], [2,2,2,3,3]
+for arr in list_a:
+   Solution.findLucky('Success', arr)
