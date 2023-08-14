@@ -42,17 +42,23 @@ class Solution(object):
         :type arr: List[int]
         :rtype: int
         """
-        freq = {}        
+        # Создаем словарь для подсчета частоты встречаемости чисел
+        freq = {}    
+        # Подсчитываем частоту встречаемости каждого числа в массиве
         for num in arr:
             if num in freq:
                 freq[num] += 1
             else:
-                freq[num] = 1        
-        largest_lucky = -1        
+                freq[num] = 1    
+        # Инициализируем наибольшее счастливое число значением -1
+        largest_lucky = -1    
+        # Проходим через словарь и находим наибольшее счастливое число
         for num, count in freq.items():
             if num == count and num > largest_lucky:
                 largest_lucky = num
+        # Возвращаем наибольшее счастливое число
         return largest_lucky
+
 
 list_a = [2,2,3,4], [1,2,2,3,3,3], [2,2,2,3,3]
 for arr in list_a:
