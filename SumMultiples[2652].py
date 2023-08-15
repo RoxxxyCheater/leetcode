@@ -44,7 +44,11 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
-        return res
+        total_sum = 0
+        for num in range(1, n + 1):
+            if num % 3 == 0 or num % 5 == 0 or num % 7 == 0:
+                total_sum += num
+        return total_sum
 
 list_n = 7, 10, 9
 for i in list_n:
