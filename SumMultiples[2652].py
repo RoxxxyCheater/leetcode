@@ -35,3 +35,17 @@
 # 61,007
 # Submissions
 # 71,677
+
+
+
+class Solution(object):
+    def sumOfMultiples(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        return res
+
+list_n = 7, 10, 9
+for i in list_n:
+  Solution.sumOfMultiples('Success', i)
