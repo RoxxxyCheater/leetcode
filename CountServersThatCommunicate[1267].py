@@ -39,3 +39,16 @@
 # 53,872
 # Submissions
 # 89,999
+
+
+class Solution(object):
+    def countServers(self, grid):
+        """
+        :type grid: List[List[int]]
+        :rtype: int
+        """
+        return res
+
+list_g = [[1,0],[0,1]], [[1,0],[1,1]], [[1,1,0,0],[0,0,1,0],[0,0,1,0],[0,0,0,1]]
+for i in list_g:
+  Solution.countServers('Success', i)
