@@ -47,7 +47,22 @@ class Solution(object):
         :type grid: List[List[int]]
         :rtype: int
         """
-        return res
+        m, n = len(grid), len(grid[0])
+        rows = [0] * m
+        cols = [0] * n
+        for i in range(m):
+            for j in range(n):
+                if grid[i][j] == 1:
+                    rows[i] += 1
+                    cols[j] += 1
+
+        total_communicating_servers = 0
+        for i in range(m):
+            for j in range(n):
+                if grid[i][j] == 1 and (rows[i] > 1 or cols[j] > 1):
+                    total_communicating_servers += 1
+
+        return total_communicating_servers
 
 list_g = [[1,0],[0,1]], [[1,0],[1,1]], [[1,1,0,0],[0,0,1,0],[0,0,1,0],[0,0,0,1]]
 for i in list_g:
