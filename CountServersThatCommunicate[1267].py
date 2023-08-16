@@ -47,21 +47,30 @@ class Solution(object):
         :type grid: List[List[int]]
         :rtype: int
         """
+        # Получаем размеры матрицы
         m, n = len(grid), len(grid[0])
+        
+        # Создаем списки для подсчета количества серверов в каждой строке и столбце
         rows = [0] * m
         cols = [0] * n
+    
+        # Подсчитываем количество серверов в каждой строке и столбце
         for i in range(m):
             for j in range(n):
                 if grid[i][j] == 1:
                     rows[i] += 1
                     cols[j] += 1
-
+    
+        # Инициализируем переменную для подсчета общего количества серверов, которые связаны с другими серверами
         total_communicating_servers = 0
+        
+        # Проходимся по всей матрице еще раз и подсчитываем общее количество связанных серверов
         for i in range(m):
             for j in range(n):
                 if grid[i][j] == 1 and (rows[i] > 1 or cols[j] > 1):
                     total_communicating_servers += 1
-
+    
+        # Возвращаем общее количество связанных серверов
         return total_communicating_servers
 
 list_g = [[1,0],[0,1]], [[1,0],[1,1]], [[1,1,0,0],[0,0,1,0],[0,0,1,0],[0,0,0,1]]
