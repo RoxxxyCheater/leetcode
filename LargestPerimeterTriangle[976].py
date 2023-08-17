@@ -40,7 +40,11 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        return res
+        nums.sort(reverse=True)  
+        for i in range(len(nums) - 2):
+            if nums[i] < nums[i + 1] + nums[i + 2]:
+                return nums[i] + nums[i + 1] + nums[i + 2]
+        return 0
 
 list_n = [2,1,2], [1,2,1,10]
 for i in list_n:
