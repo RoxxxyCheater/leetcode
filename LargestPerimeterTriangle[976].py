@@ -40,10 +40,15 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        nums.sort(reverse=True)  
+        nums.sort(reverse=True)  # Сортируем массив в порядке убывания
         for i in range(len(nums) - 2):
+            # Проверяем все тройки чисел, начиная с текущего индекса `i`
             if nums[i] < nums[i + 1] + nums[i + 2]:
+                # Если текущие три числа могут образовать треугольник,
+                # то возвращаем их сумму, которая будет периметром треугольника
                 return nums[i] + nums[i + 1] + nums[i + 2]
+        # Если не удалось найти треугольник с ненулевой площадью,
+        # то возвращаем 0
         return 0
 
 list_n = [2,1,2], [1,2,1,10]
