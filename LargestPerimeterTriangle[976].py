@@ -32,3 +32,16 @@
 # 213,932
 # Submissions
 # 389,589
+
+
+class Solution(object):
+    def largestPerimeter(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        return res
+
+list_n = [2,1,2], [1,2,1,10]
+for i in list_n:
+  Solution.largestPerimeter('Success', i)
