@@ -28,3 +28,19 @@
 # 43,818
 # Submissions
 # 72,961
+
+class Solution(object):
+    def largestTriangleArea(self, points):
+        """
+        :type points: List[List[int]]
+        :rtype: float
+        """
+        return res
+
+list_p = [[0,0],[0,1],[1,0],[0,2],[2,0]], [[1,0],[0,0],[0,1]]
+for i in list_p:
+   Solution.largestTriangleArea('Success', i)
+
+
+
+
