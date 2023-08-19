@@ -67,12 +67,12 @@ class Solution(object):
         :type students: List[int]
         :rtype: int
         """
-        seats.sort()  
-        students.sort()
+        seats.sort()  # Сортировка мест в порядке возрастания
+        students.sort()  # Сортировка студентов в порядке возрастания
         
-        total_moves = 0
+        total_moves = 0  # Общее количество перемещений
         for i in range(len(seats)):
-            total_moves += abs(seats[i] - students[i])  
+            total_moves += abs(seats[i] - students[i])  # Вычисление перемещений для каждого студента
         
         return total_moves
 
