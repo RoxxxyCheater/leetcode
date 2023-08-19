@@ -67,7 +67,14 @@ class Solution(object):
         :type students: List[int]
         :rtype: int
         """
-        return res
+        seats.sort()  
+        students.sort()
+        
+        total_moves = 0
+        for i in range(len(seats)):
+            total_moves += abs(seats[i] - students[i])  
+        
+        return total_moves
 
 list_s =[3,1,5], [4,1,5,9], [2,2,6,6]
 list_ss = [2,7,4], [1,3,2,6], [1,3,2,6]
