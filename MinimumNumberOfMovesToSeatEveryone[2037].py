@@ -1,4 +1,4 @@
-# 2037. Minimum Number of Moves to Seat Everyone
+v# 2037. Minimum Number of Moves to Seat Everyone
 # Easy
 
 # There are n seats and n students in a room. You are given an array seats of length n, where seats[i] is the position of the ith seat. You are also given the array students of length n, where students[j] is the position of the jth student.
@@ -58,3 +58,19 @@
 # 54,129
 # Submissions
 # 66,375
+
+
+class Solution(object):
+    def minMovesToSeat(self, seats, students):
+        """
+        :type seats: List[int]
+        :type students: List[int]
+        :rtype: int
+        """
+        return res
+
+list_s =[3,1,5], [4,1,5,9], [2,2,6,6]
+list_ss = [2,7,4], [1,3,2,6], [1,3,2,6]
+
+for index, item in list_s:
+   Solution.minMovesToSeat('Success', item, list_ss[index])
