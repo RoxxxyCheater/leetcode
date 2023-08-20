@@ -49,27 +49,38 @@ class Solution(object):
         :type s: str
         :rtype: bool
         """
+        # Разделяем строку s на слова
         words = s.split()
         
+        # Если количество символов в pattern не совпадает с количеством слов в s, возвращаем False
         if len(pattern) != len(words):
             return False
         
+        # Создаем два словаря для отображения символов в слова и слов в символы
         char_to_word = {}
         word_to_char = {}
         
+        # Проходим по парам символов в pattern и слов в words
         for char, word in zip(pattern, words):
+            # Проверяем, есть ли уже отображение для данного символа
             if char in char_to_word:
+                # Если отображение уже есть, проверяем, совпадает ли оно с текущим словом
                 if char_to_word[char] != word:
                     return False
             else:
+                # Если отображения нет, создаем его
                 char_to_word[char] = word
             
+            # Проверяем, есть ли уже отображение для данного слова
             if word in word_to_char:
+                # Если отображение уже есть, проверяем, совпадает ли оно с текущим символом
                 if word_to_char[word] != char:
                     return False
             else:
+                # Если отображения нет, создаем его
                 word_to_char[word] = char
         
+        # Если конфликтов не найдено, возвращаем True
         return True
 
 list_g =  "abba", "abba", "aaaa"
