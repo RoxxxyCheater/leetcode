@@ -40,3 +40,19 @@
 # 565,454
 # Submissions
 # 1,356,251
+
+
+class Solution(object):
+    def wordPattern(self, pattern, s):
+        """
+        :type pattern: str
+        :type s: str
+        :rtype: bool
+        """
+        return res
+
+list_g =  "abba", "abba", "aaaa"
+list_s = "dog cat cat dog", "dog cat cat fish", "dog cat cat dog"
+
+for index, list_g in enumerate(list_g):
+    Solution.wordPattern("Success", list_g, list_s[index])
