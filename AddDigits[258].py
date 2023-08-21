@@ -43,7 +43,10 @@ class Solution(object):
         :type num: int
         :rtype: int
         """
-        return res
+        if num == 0:
+            return 0
+        return 1 + (num - 1) % 9
+
 
 list_n = 38, 0
 for i in list_n:
