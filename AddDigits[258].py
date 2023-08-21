@@ -37,3 +37,14 @@
 # 678,476
 # Submissions
 # 1,029,965
+class Solution(object):
+    def addDigits(self, num):
+        """
+        :type num: int
+        :rtype: int
+        """
+        return res
+
+list_n = 38, 0
+for i in list_n:
+   Solution.addDigits('Success', i)
