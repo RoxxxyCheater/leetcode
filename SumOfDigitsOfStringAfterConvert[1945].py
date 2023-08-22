@@ -56,14 +56,18 @@
 
 class Solution(object):
     def getDigitSum(self, num):
+        # Вспомогательная функция для вычисления суммы цифр числа
         return sum(int(digit) for digit in str(num))
+    
     def getLucky(self, s, k):
         """
         :type s: str
         :type k: int
         :rtype: int
         """
+        # Преобразуем строку в целое число, заменяя буквы их позициями в алфавите
         num = int(''.join(str(ord(ch) - ord('a') + 1) for ch in s))
+        # Производим k преобразований
         for _ in range(k):
             num = self.getDigitSum(num)
         return num
