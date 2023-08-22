@@ -55,13 +55,18 @@
 # 71,131
 
 class Solution(object):
+    def getDigitSum(self, num):
+        return sum(int(digit) for digit in str(num))
     def getLucky(self, s, k):
         """
         :type s: str
         :type k: int
         :rtype: int
         """
-        return res
+        num = int(''.join(str(ord(ch) - ord('a') + 1) for ch in s))
+        for _ in range(k):
+            num = self.getDigitSum(num)
+        return num
 
 
 list_s = "iiii", "leetcode", "zbax"
