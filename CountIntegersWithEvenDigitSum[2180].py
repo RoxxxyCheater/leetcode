@@ -38,12 +38,25 @@
 # 71,976
 
 class Solution(object):
+    """
+    :type num: int
+    :rtype: int
+    """
     def countEven(self, num):
-        """
-        :type num: int
-        :rtype: int
-        """
-        return res
+        count = 0
+        for i in range(1, num + 1):
+            if self.is_even_digit_sum(i):
+                count += 1
+        return count
+    
+    def is_even_digit_sum(self,n):
+        digit_sum = 0
+        while n > 0:
+            digit_sum += n % 10
+            n //= 10
+        return digit_sum % 2 == 0
+
+
 
 
 list_n = 4,30
