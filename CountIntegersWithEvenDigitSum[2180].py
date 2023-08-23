@@ -43,18 +43,20 @@ class Solution(object):
     :rtype: int
     """
     def countEven(self, num):
+        # Функция для подсчета количества чисел с четной суммой цифр
         count = 0
         for i in range(1, num + 1):
             if self.is_even_digit_sum(i):
-                count += 1
+                count += 1  # Увеличиваем счетчик, если сумма цифр четная
         return count
     
     def is_even_digit_sum(self,n):
+        # Функция для проверки, является ли сумма цифр числа четной
         digit_sum = 0
         while n > 0:
-            digit_sum += n % 10
-            n //= 10
-        return digit_sum % 2 == 0
+            digit_sum += n % 10  # Добавляем последнюю цифру числа к сумме цифр
+            n //= 10  # Удаляем последнюю цифру числа
+        return digit_sum % 2 == 0  # Возвращаем True, если сумма четная, иначе False
 
 
 
