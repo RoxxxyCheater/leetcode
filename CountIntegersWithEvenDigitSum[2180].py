@@ -36,3 +36,16 @@
 # 47,469
 # Submissions
 # 71,976
+
+class Solution(object):
+    def countEven(self, num):
+        """
+        :type num: int
+        :rtype: int
+        """
+        return res
+
+
+list_n = 4,30
+for i in list_n:
+    Solution.countEven('Success', i)
