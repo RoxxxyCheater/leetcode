@@ -41,3 +41,14 @@
 # 46,658
 # Submissions
 # 59,250
+class Solution(object):
+    def separateDigits(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+        return res
+
+list_n = [13,25,83,77], [7,1,3,9]
+for i in list_n:
+    Solution.separateDigits('Success', i)
