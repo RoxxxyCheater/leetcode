@@ -47,12 +47,12 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[int]
         """
-        answer = []
-        for num in nums:
-            num_str = str(num)
-            digits = [int(digit) for digit in num_str]
-            answer.extend(digits)
-        return answer
+        answer = []  # Создаем пустой список для хранения результата
+        for num in nums:  # Итерируемся по каждому числу в массиве nums
+            num_str = str(num)  # Преобразуем число в строку, чтобы разделить его на цифры
+            digits = [int(digit) for digit in num_str]  # Создаем список цифр, конвертируя каждый символ строки обратно в целое число
+            answer.extend(digits)  # Добавляем цифры к списку ответа, сохраняя порядок
+        return answer 
 
 list_n = [13,25,83,77], [7,1,3,9]
 for i in list_n:
