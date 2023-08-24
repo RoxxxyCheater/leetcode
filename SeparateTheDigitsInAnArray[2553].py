@@ -47,7 +47,12 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[int]
         """
-        return res
+        answer = []
+        for num in nums:
+            num_str = str(num)
+            digits = [int(digit) for digit in num_str]
+            answer.extend(digits)
+        return answer
 
 list_n = [13,25,83,77], [7,1,3,9]
 for i in list_n:
