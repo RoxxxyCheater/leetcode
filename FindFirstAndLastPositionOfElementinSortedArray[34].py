@@ -37,3 +37,23 @@
 # 1,641,124
 # Submissions
 # 3,865,999
+
+
+
+
+class Solution(object):
+    def searchRange(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        return res
+
+
+
+list_g = [1,2,3],[1,2]
+list_s = [1,1],[1,2,3]
+
+for index, list_g in enumerate(list_g):
+    Solution.findContentChildren("Success", list_g, list_s[index])
