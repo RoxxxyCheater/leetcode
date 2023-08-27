@@ -52,8 +52,8 @@ class Solution(object):
 
 
 
-list_g = [1,2,3],[1,2]
-list_s = [1,1],[1,2,3]
+list_g = [5,7,7,8,8,10], [5,7,7,8,8,10], []
+list_s = 8, 6, 0
 
 for index, list_g in enumerate(list_g):
-    Solution.findContentChildren("Success", list_g, list_s[index])
+    Solution.searchRange("Success", list_g, list_s[index])
