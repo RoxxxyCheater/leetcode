@@ -48,37 +48,43 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
+        # Определяем метод класса для поиска начальной и конечной позиции целевого значения
+        
+        # Функция для поиска начальной позиции целевого значения в отсортированном массиве
         def findStart(nums, target):
             left, right = 0, len(nums) - 1
-            start = -1
+            start = -1  # Инициализируем начальную позицию значением -1 (если не найдено)
             while left <= right:
                 mid = left + (right - left) // 2
                 if nums[mid] == target:
-                    start = mid
-                    right = mid - 1
+                    start = mid  # Обновляем start, если нашли целевое значение
+                    right = mid - 1  # Ищем дальше на левой стороне, исключая текущую позицию
                 elif nums[mid] < target:
-                    left = mid + 1
+                    left = mid + 1  # Ищем на правой стороне
                 else:
-                    right = mid - 1
+                    right = mid - 1  # Ищем на левой стороне
             return start
         
+        # Функция для поиска конечной позиции целевого значения в отсортированном массиве
         def findEnd(nums, target):
             left, right = 0, len(nums) - 1
-            end = -1
+            end = -1  # Инициализируем конечную позицию значением -1 (если не найдено)
             while left <= right:
                 mid = left + (right - left) // 2
                 if nums[mid] == target:
-                    end = mid
-                    left = mid + 1
+                    end = mid  # Обновляем end, если нашли целевое значение
+                    left = mid + 1  # Ищем дальше на правой стороне, исключая текущую позицию
                 elif nums[mid] <= target:
-                    left = mid + 1
+                    left = mid + 1  # Ищем на правой стороне
                 else:
-                    right = mid - 1
+                    right = mid - 1  # Ищем на левой стороне
             return end
         
+        # Вызываем функции поиска начальной и конечной позиции
         start = findStart(nums, target)
         end = findEnd(nums, target)
         
+        # Возвращаем результат в виде списка [start, end]
         return [start, end]
 
 
