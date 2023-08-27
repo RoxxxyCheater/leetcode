@@ -37,12 +37,12 @@ class Solution(object):
         :type nums: List[int]
         :rtype: bool
         """
-        res = set()
-        for num in nums:
-            if num in res: 
-                return True
+        res = set()  # Создаем пустое множество для хранения уникальных чисел
+        for num in nums:  # Проходим по каждому числу в списке nums
+            if num in res:  # Если текущее число уже присутствует в множестве res
+                return True  # Возвращаем True, так как обнаружен дубликат
             else:
-                res.add(num)
+                res.add(num)  # Если число не найдено в множестве, добавляем его в множество
 
 
 list_nums = [1,2,3,4],[1,2,3,1],[1,1,1,3,3,4,3,2,4,2]
