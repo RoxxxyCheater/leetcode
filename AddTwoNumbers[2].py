@@ -54,21 +54,33 @@ class Solution(object):
         """
         
 
-        result = ListNode(0)
-        curr = result
-        carry = 0
+# Создаем новый связанный список, который будет содержать результат сложения
+result = ListNode(0)
+# Указатель на текущий узел в результирующем списке
+curr = result
+# Переменная для хранения "переноса" при сложении цифр
+carry = 0
 
-        while l1 or l2 or carry:
-            x = l1.val if l1 else 0
-            y = l2.val if l2 else 0
-            summ = x + y + carry
-            carry, val = divmod(summ, 10)
-            curr.next = ListNode(val)
-            curr = curr.next
-            if l1: l1 = l1.next
-            if l2: l2 = l2.next
+# Выполняем цикл, пока есть цифры для сложения или есть "перенос"
+while l1 or l2 or carry:
+    # Получаем значения текущих цифр из обоих списков или нули, если один из списков закончился
+    x = l1.val if l1 else 0
+    y = l2.val if l2 else 0
+    # Вычисляем сумму текущих цифр и "переноса" от предыдущего шага
+    summ = x + y + carry
+    # Вычисляем новое значение "переноса" и значение цифры для нового узла результирующего списка
+    carry, val = divmod(summ, 10)
+    # Создаем новый узел с вычисленной цифрой и добавляем его в результирующий список
+    curr.next = ListNode(val)
+    # Перемещаем указатель текущего узла на только что созданный узел
+    curr = curr.next
+    # Переходим к следующим цифрам в обоих списках, если они есть
+    if l1: l1 = l1.next
+    if l2: l2 = l2.next
 
-        return result.next
+# Возвращаем начало списка, пропуская первый узел с нулевым значением
+return result.next
+
 
 
         # not for Node List Solution
