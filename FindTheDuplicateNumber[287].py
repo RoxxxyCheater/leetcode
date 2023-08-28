@@ -42,3 +42,16 @@
 # 1,238,138
 # Submissions
 # 2,097,527
+
+class Solution(object):
+    def findDuplicate(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """   
+        return res
+
+
+list_prices = [1,3,4,2,2], [3,1,3,4,2]
+for i in list_prices:
+   Solution.findDuplicate('Success', i)
