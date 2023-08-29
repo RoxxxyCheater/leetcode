@@ -34,3 +34,15 @@
 # 281,875
 # Submissions
 # 663,076
+
+class Solution(object):
+    def findErrorNums(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+        return res 
+     
+list_n = [1,2,2,4], [1,1]
+for i in list_n:
+   Solution.findErrorNums('Success', i)
