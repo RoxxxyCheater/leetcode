@@ -41,7 +41,24 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[int]
         """
-        return res 
+        freq_dict = {}  
+        for num in nums:
+            if num in freq_dict:
+                freq_dict[num] += 1
+            else:
+                freq_dict[num] = 1
+        duplicate = None
+        missing = None
+        for num in range(1, len(nums) + 1):
+            if num in freq_dict:
+                if freq_dict[num] == 2:
+                    duplicate = num
+                elif freq_dict[num] == 0:
+                    missing = num
+            else:
+                missing = num
+
+        return [duplicate, missing]
      
 list_n = [1,2,2,4], [1,1]
 for i in list_n:
