@@ -41,23 +41,27 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[int]
         """
-        freq_dict = {}  
+        freq_dict = {}  # Словарь для хранения частоты чисел
+        
+        # Вычисляем частоту каждого числа в массиве nums
         for num in nums:
             if num in freq_dict:
                 freq_dict[num] += 1
             else:
                 freq_dict[num] = 1
-        duplicate = None
-        missing = None
+        
+        duplicate = None  # Переменная для хранения повторяющегося числа
+        missing = None    # Переменная для хранения пропущенного числа
+        # Проходимся по числам от 1 до длины массива nums
         for num in range(1, len(nums) + 1):
             if num in freq_dict:
                 if freq_dict[num] == 2:
-                    duplicate = num
+                    duplicate = num  # Если частота числа равна 2, это повторяющееся число
                 elif freq_dict[num] == 0:
-                    missing = num
+                    missing = num    # Если частота числа равна 0, это пропущенное число
             else:
                 missing = num
-
+        
         return [duplicate, missing]
      
 list_n = [1,2,2,4], [1,1]
