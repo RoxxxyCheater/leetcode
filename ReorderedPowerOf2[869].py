@@ -31,3 +31,16 @@
 # 109,023
 # Submissions
 # 172,617
+
+
+class Solution(object):
+    def reorderedPowerOf2(self, n):
+        """
+        :type n: int
+        :rtype: bool
+        """
+        return res
+
+list_n = 1, 10
+for i in list_n:
+   Solution.reorderedPowerOf2('Success', i)
