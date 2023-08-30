@@ -40,13 +40,17 @@ class Solution(object):
         :rtype: bool
         """
         def count_digits(num):
-            return sorted(str(num))         
-        power_of_two = 1 
+            return sorted(str(num))  # Преобразование числа в строку и сортировка его цифр
+        
+        power_of_two = 1  # Начинаем с 2^0, то есть 1
+        # Пока длина строки, представляющей текущую степень двойки, меньше или равна длине строки n
         while len(str(power_of_two)) <= len(str(n)):
+            # Если отсортированные цифры текущей степени двойки совпадают с цифрами n
             if count_digits(power_of_two) == count_digits(n):
-                return True  
-            power_of_two *= 2 
-        return False 
+                return True  # Возвращаем True, так как найдено совпадение
+            power_of_two *= 2  # Увеличиваем степень двойки
+        
+        return False  # Если не найдено совпадение, возвращаем False
 
 list_n = 1, 10
 for i in list_n:
