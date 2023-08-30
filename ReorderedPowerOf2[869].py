@@ -39,7 +39,14 @@ class Solution(object):
         :type n: int
         :rtype: bool
         """
-        return res
+        def count_digits(num):
+            return sorted(str(num))         
+        power_of_two = 1 
+        while len(str(power_of_two)) <= len(str(n)):
+            if count_digits(power_of_two) == count_digits(n):
+                return True  
+            power_of_two *= 2 
+        return False 
 
 list_n = 1, 10
 for i in list_n:
