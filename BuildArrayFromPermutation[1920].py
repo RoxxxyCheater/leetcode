@@ -40,3 +40,17 @@
 # 385,959
 # Submissions
 # 430,639
+
+
+
+class Solution(object):
+    def buildArray(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+        return res
+
+list_n = [0,2,1,5,3,4], [5,0,1,2,3,4]
+for i in list_n:  
+   Solution.buildArray('Success', i)
