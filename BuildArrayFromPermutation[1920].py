@@ -49,7 +49,15 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[int]
         """
-        return res
+        n = len(nums)
+        
+        for i in range(n):
+            nums[i] += n * (nums[nums[i]] % n)
+        
+        for i in range(n):
+            nums[i] //= n
+        
+        return nums
 
 list_n = [0,2,1,5,3,4], [5,0,1,2,3,4]
 for i in list_n:  
