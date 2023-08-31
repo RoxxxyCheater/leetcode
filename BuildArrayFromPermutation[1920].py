@@ -49,17 +49,25 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[int]
         """
-        n = len(nums)  # Получаем длину входного массива
+        # n = len(nums)  # Получаем длину входного массива
         
-        # Создаем массив для хранения результата
-        ans = [0] * n
+        # # Создаем массив для хранения результата
+        # ans = [0] * n
         
-        # Проходим по каждому индексу i в массиве
-        for i in range(n):
-            # Заполняем текущий индекс в ans значением по индексу nums[i] в nums
-            ans[i] = nums[nums[i]]
+        # # Проходим по каждому индексу i в массиве
+        # for i in range(n):
+        #     # Заполняем текущий индекс в ans значением по индексу nums[i] в nums
+        #     ans[i] = nums[nums[i]]
         
-        return ans  # Возвращаем результирующий массив
+        # return ans  # Возвращаем результирующий массив
+
+
+       n = len(nums)  
+       for i in range(n):
+           nums[i] += n * (nums[nums[i]] % n)
+       for i in range(n):
+           nums[i] //= n      
+       return nums  
 
 list_n = [0,2,1,5,3,4], [5,0,1,2,3,4]
 for i in list_n:  
