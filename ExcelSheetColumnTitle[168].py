@@ -52,8 +52,9 @@ class Solution(object):
         """
         if columnNumber == 0:
             return ""
-        remainder = (columnNumber - 1) % 26  
-        current_char = chr(ord('A') + remainder) 
+        remainder = (columnNumber - 1) % 26  # Определяем остаток от деления на 26
+        current_char = chr(ord('A') + remainder)  # Получаем текущий символ
+        # Рекурсивно вызываем функцию для оставшейся части числа
         return self.convertToTitle((columnNumber - 1) // 26) + current_char
 
 
