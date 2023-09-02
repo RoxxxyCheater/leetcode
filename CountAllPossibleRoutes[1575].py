@@ -53,12 +53,6 @@
 # Submissions
 # 71,011
 
-class Solution:
-    def countHillValley(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
 
 class Solution:
     def countHillValley(self, nums):
