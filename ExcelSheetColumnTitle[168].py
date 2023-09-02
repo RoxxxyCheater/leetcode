@@ -50,23 +50,32 @@ class Solution(object):
         :type columnNumber: int
         :rtype: str
         """
-        columnTitle = ""  # Инициализируем пустую строку для хранения заголовка столбца
+        if columnNumber == 0:
+            return ""
+        remainder = (columnNumber - 1) % 26  
+        current_char = chr(ord('A') + remainder) 
+        return self.convertToTitle((columnNumber - 1) // 26) + current_char
 
-        while columnNumber > 0:  # Запускаем цикл, пока columnNumber больше нуля
-            # Вычисляем остаток от деления columnNumber на 26.
-            # Этот остаток представляет позицию последнего символа в заголовке столбца.
-            remainder = (columnNumber - 1) % 26
 
-            # Добавляем соответствующий символ слева к columnTitle.
-            # Для этого используется chr(ord('A') + remainder),
-            # чтобы преобразовать остаток в соответствующий символ ASCII ('A' для 0, 'B' для 1 и так далее).
-            columnTitle = chr(ord('A') + remainder) + columnTitle
 
-            # Обновляем columnNumber, выполнив целочисленное деление на 26 (целочисленное деление).
-            # Это удаляет последний разряд из columnNumber и готовит его к следующей итерации цикла.
-            columnNumber = (columnNumber - 1) // 26
 
-        return columnTitle  # Возвращаем получившийся заголовок столбца как результат
+        # columnTitle = ""  # Инициализируем пустую строку для хранения заголовка столбца
+
+        # while columnNumber > 0:  # Запускаем цикл, пока columnNumber больше нуля
+        #     # Вычисляем остаток от деления columnNumber на 26.
+        #     # Этот остаток представляет позицию последнего символа в заголовке столбца.
+        #     remainder = (columnNumber - 1) % 26
+
+        #     # Добавляем соответствующий символ слева к columnTitle.
+        #     # Для этого используется chr(ord('A') + remainder),
+        #     # чтобы преобразовать остаток в соответствующий символ ASCII ('A' для 0, 'B' для 1 и так далее).
+        #     columnTitle = chr(ord('A') + remainder) + columnTitle
+
+        #     # Обновляем columnNumber, выполнив целочисленное деление на 26 (целочисленное деление).
+        #     # Это удаляет последний разряд из columnNumber и готовит его к следующей итерации цикла.
+        #     columnNumber = (columnNumber - 1) // 26
+
+        # return columnTitle  # Возвращаем получившийся заголовок столбца как результат
 
 list_c =  1, 28, 701
 for i in list_c:
