@@ -41,3 +41,17 @@
 # 467,399
 # Submissions
 # 1,190,325
+
+
+
+class Solution(object):
+    def convertToTitle(self, columnNumber):
+        """
+        :type columnNumber: int
+        :rtype: str
+        """
+        return res
+
+list_c =  1, 28, 701
+for i in list_c:
+  Solution.convertToTitle('Success', i)
