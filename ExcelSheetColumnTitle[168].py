@@ -50,7 +50,12 @@ class Solution(object):
         :type columnNumber: int
         :rtype: str
         """
-        return res
+        columnTitle = "" 
+        while columnNumber > 0: 
+            remainder = (columnNumber - 1) % 26
+            columnTitle = chr(ord('A') + remainder) + columnTitle
+            columnNumber = (columnNumber - 1) // 26
+        return columnTitle
 
 list_c =  1, 28, 701
 for i in list_c:
