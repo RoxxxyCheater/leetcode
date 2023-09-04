@@ -36,3 +36,15 @@
 # 99,433
 # Submissions
 # 115,227
+
+class Solution(object):
+    def minimumSum(self, num):
+        """
+        :type num: int
+        :rtype: int
+        """ 
+        return res
+
+list_n =  2932, 4009
+for i in list_n:
+   Solution.minimumSum('Success', i)
