@@ -39,3 +39,19 @@
 # 113,939
 # Submissions
 # 302,985
+
+class Solution(object):
+    def minOperations(self, nums, x):
+        """
+        :type nums: List[int]
+        :type x: int
+        :rtype: int
+        """
+        return res
+
+
+list_nums = [1,1,4,2,3], [5,6,7,8,9], [3,2,20,1,1,3],
+list_keys = 10, 4, 5
+ 
+for index, num in enumerate(list_nums):
+    Solution.minOperations('Success', num, list_keys[index])
