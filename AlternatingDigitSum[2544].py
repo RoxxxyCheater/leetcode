@@ -42,3 +42,16 @@
 # 43,274
 # Submissions
 # 63,198
+
+
+class Solution(object):
+    def alternateDigitSum(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        return res
+
+list_n =  521, 111, 886996
+for i in list_n:
+  Solution.alternateDigitSum('Success', i)
