@@ -50,7 +50,14 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
-        return res
+        total = 0
+        n_str = str(n)
+        sign = 1
+        for digit_char in n_str:
+            digit = int(digit_char)
+            total += sign * digit
+            sign *= -1    
+        return total
 
 list_n =  521, 111, 886996
 for i in list_n:
