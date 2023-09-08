@@ -42,3 +42,15 @@
 # 55,882
 # Submissions
 # 66,445
+
+class Solution(object):
+    def cellsInRange(self, s):
+        """
+        :type s: str
+        :rtype: List[str]
+        """
+        return res
+
+list_n = 38, 0
+for i in list_n:
+   Solution.addDigits('Success', i)
