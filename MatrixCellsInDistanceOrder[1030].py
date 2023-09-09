@@ -29,8 +29,6 @@
 # Explanation: The distances from (1, 2) to other cells are: [0,1,1,2,2,3]
 # There are other answers that would also be accepted as correct, such as [[1,2],[1,1],[0,2],[1,0],[0,1],[0,0]].
 
- 
-
 # Constraints:
 
 #     1 <= rows, cols <= 100
@@ -41,3 +39,20 @@
 # 52,837
 # Submissions
 # 75,453
+class Solution(object):
+    def allCellsDistOrder(self, rows, cols, rCenter, cCenter):
+        """
+        :type rows: int
+        :type cols: int
+        :type rCenter: int
+        :type cCenter: int
+        :rtype: List[List[int]]
+        """
+        return res
+     
+rows = 1,2,2
+cols = 2,2,3
+rCenter = 0,0,1
+cCenter = 0,1,2
+for index, row in enumerate(rows):
+   Solution.addToArrayForm('Success', row, cols[index], rCenter[index], cCenter[index])
