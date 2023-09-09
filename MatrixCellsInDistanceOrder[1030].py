@@ -48,7 +48,14 @@ class Solution(object):
         :type cCenter: int
         :rtype: List[List[int]]
         """
-        return res
+        cell_distances = []
+        for r in range(rows):
+            for c in range(cols):
+                distance = abs(r - rCenter) + abs(c - cCenter)
+                cell_distances.append((r, c, distance))       
+        cell_distances.sort(key=lambda x: x[2])
+        return [[r, c] for r, c, _ in cell_distances]
+
      
 rows = 1,2,2
 cols = 2,2,3
