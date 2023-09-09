@@ -48,14 +48,22 @@ class Solution(object):
         :type cCenter: int
         :rtype: List[List[int]]
         """
+        # Создаем список для хранения координат ячеек вместе с их расстояниями.
         cell_distances = []
+    
+        # Перебираем все ячейки в матрице.
         for r in range(rows):
             for c in range(cols):
+                # Рассчитываем расстояние от текущей ячейки до центра.
                 distance = abs(r - rCenter) + abs(c - cCenter)
-                cell_distances.append((r, c, distance))       
+                # Добавляем координаты ячейки и ее расстояние в виде кортежа.
+                cell_distances.append((r, c, distance))
+    
+        # Сортируем список cell_distances на основе расстояния (третий элемент кортежа).
         cell_distances.sort(key=lambda x: x[2])
+    
+        # Извлекаем и возвращаем отсортированные координаты ячеек без расстояний.
         return [[r, c] for r, c, _ in cell_distances]
-
      
 rows = 1,2,2
 cols = 2,2,3
