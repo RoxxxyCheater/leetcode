@@ -44,3 +44,17 @@
 # 82,001
 # Submissions
 # 98,084
+
+
+class Solution(object):
+    def differenceOfSum(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        
+        return res
+
+list_n =  [1,15,6,3], [1,2,3,4]
+for i in list_n:
+  Solution.differenceOfSum('Success', i)
