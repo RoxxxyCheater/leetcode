@@ -52,14 +52,26 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """  
-        element_sum = 0  
-        digit_sum = 0  
+        # Инициализируем переменные для хранения суммы элементов и суммы цифр
+        element_sum = 0  # Сумма элементов
+        digit_sum = 0    # Сумма цифр
+    
+        # Итерируемся по элементам массива nums
         for num in nums:
-            element_sum += num    
+            # Добавляем элемент к сумме элементов
+            element_sum += num
+    
+            # Преобразуем элемент в строку и итерируемся по его символам
             for char in str(num):
+                # Преобразуем символ обратно в целое число и добавляем его к сумме цифр
                 digit_sum += int(char)
+    
+        # Рассчитываем абсолютную разницу между суммой элементов и суммой цифр
         absolute_difference = abs(element_sum - digit_sum)
+    
+        # Возвращаем абсолютную разницу
         return absolute_difference
+
 
 
 list_n =  [1,15,6,3], [1,2,3,4]
