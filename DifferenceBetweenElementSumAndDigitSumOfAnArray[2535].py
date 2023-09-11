@@ -51,9 +51,16 @@ class Solution(object):
         """
         :type nums: List[int]
         :rtype: int
-        """
-        
-        return res
+        """  
+        element_sum = 0  
+        digit_sum = 0  
+        for num in nums:
+            element_sum += num    
+            for char in str(num):
+                digit_sum += int(char)
+        absolute_difference = abs(element_sum - digit_sum)
+        return absolute_difference
+
 
 list_n =  [1,15,6,3], [1,2,3,4]
 for i in list_n:
