@@ -53,7 +53,16 @@ class Solution(object):
         :type duration: int
         :rtype: int
         """
-        return res
+        if not timeSeries:
+            return 0
+        total_poisoned_time = 0
+        prev_attack = timeSeries[0]
+        for attack_time in timeSeries[1:]:
+            poisoned_duration = min(duration, attack_time - prev_attack)
+            total_poisoned_time += poisoned_duration
+            prev_attack = attack_time
+        total_poisoned_time += duration
+        return total_poisoned_time
 
 
 
