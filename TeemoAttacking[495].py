@@ -43,3 +43,22 @@
 # 133,453
 # Submissions
 # 235,962
+
+
+
+class Solution(object):
+    def findPoisonedDuration(self, timeSeries, duration):
+        """
+        :type timeSeries: List[int]
+        :type duration: int
+        :rtype: int
+        """
+        return res
+
+
+
+list_nums = [1,4],[1,2]
+list_keys = 2,2
+ 
+for index, num in enumerate(list_nums):
+    Solution.findPoisonedDuration('Success', num, list_keys[index])
