@@ -54,16 +54,25 @@ class Solution(object):
         :rtype: int
         """
         if not timeSeries:
-            return 0
-        total_poisoned_time = 0
-        prev_attack = timeSeries[0]
+            return 0  # Возвращаем 0, если массив пустой
+    
+        total_poisoned_time = 0  # Инициализируем общую длительность отравления
+        prev_attack = timeSeries[0]  # Запоминаем время первой атаки
+    
         for attack_time in timeSeries[1:]:
+            # Вычисляем длительность отравления для текущей атаки, ограниченную 'duration' и временем с момента предыдущей атаки
             poisoned_duration = min(duration, attack_time - prev_attack)
+            
+            # Добавляем длительность отравления к общей длительности
             total_poisoned_time += poisoned_duration
+    
+            # Обновляем время предыдущей атаки на текущее время
             prev_attack = attack_time
+    
+        # Добавляем полную длительность отравления для последней атаки
         total_poisoned_time += duration
+    
         return total_poisoned_time
-
 
 
 list_nums = [1,4],[1,2]
