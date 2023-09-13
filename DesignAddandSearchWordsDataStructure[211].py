@@ -47,44 +47,59 @@
 
 class TrieNode:
     def __init__(self):
+        # Инициализируем словарь для хранения дочерних узлов (букв)
         self.children = {}
+        # Флаг, который указывает, является ли этот узел концом слова
         self.is_end_of_word = False
 
 class WordDictionary(object):
 
     def __init__(self):
+        # Инициализируем корень дерева Trie
         self.root = TrieNode()
 
     def addWord(self, word):
         """
+        Добавляет слово в структуру данных Trie.
         :type word: str
         :rtype: None
         """
         node = self.root
+        # Проходим по каждой букве слова и строим соответствующие узлы Trie
         for char in word:
             if char not in node.children:
+                # Если буква отсутствует в текущем узле, создаем новый узел для нее
                 node.children[char] = TrieNode()
+            # Переходим к следующему узлу в Trie
             node = node.children[char]
+        # Помечаем конечный узел слова как конец слова
         node.is_end_of_word = True
 
     def search(self, word):
         """
+        Поиск слова в структуре данных Trie с учетом символов '.'.
         :type word: str
         :rtype: bool
         """
         def dfs(node, index):
             if index == len(word):
+                # Если мы достигли конца строки word, возвращаем флаг конца слова текущего узла Trie
                 return node.is_end_of_word
 
             char = word[index]
             if char != '.':
                 if char not in node.children:
+                    # Если буква не найдена в дочерних узлах, возвращаем False
                     return False
+                # Рекурсивно продолжаем поиск в следующем узле Trie
                 return dfs(node.children[char], index + 1)
             else:
+                # Если встречен символ '.', перебираем все дочерние узлы и ищем в них
                 for child in node.children:
                     if dfs(node.children[child], index + 1):
+                        # Если найдено совпадение в одном из дочерних узлов, возвращаем True
                         return True
+                # Если ни в одном из дочерних узлов не найдено совпадение, возвращаем False
                 return False
 
         return dfs(self.root, 0)
