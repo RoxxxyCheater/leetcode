@@ -45,12 +45,15 @@
 # 1,257,245
 
 
+class TrieNode:
+    def __init__(self):
+        self.children = {}
+        self.is_end_of_word = False
 
 class WordDictionary(object):
 
     def __init__(self):
-        self.children = {}
-        self.is_end_of_word = False
+        self.root = TrieNode()
 
     def addWord(self, word):
         """
@@ -65,7 +68,6 @@ class WordDictionary(object):
         :rtype: bool
         """
         return res
-
 
 # Your WordDictionary object will be instantiated and called as such:
 # obj = WordDictionary()
