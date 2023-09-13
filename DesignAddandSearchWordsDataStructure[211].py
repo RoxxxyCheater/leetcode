@@ -60,7 +60,12 @@ class WordDictionary(object):
         :type word: str
         :rtype: None
         """
-        return res
+        node = self.root
+        for char in word:
+            if char not in node.children:
+                node.children[char] = TrieNode()
+            node = node.children[char]
+        node.is_end_of_word = True
 
     def search(self, word):
         """
