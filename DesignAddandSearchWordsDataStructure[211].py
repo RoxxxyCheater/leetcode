@@ -43,3 +43,31 @@
 # 557,788
 # Submissions
 # 1,257,245
+
+
+
+class WordDictionary(object):
+
+    def __init__(self):
+        self.children = {}
+        self.is_end_of_word = False
+
+    def addWord(self, word):
+        """
+        :type word: str
+        :rtype: None
+        """
+        return res
+
+    def search(self, word):
+        """
+        :type word: str
+        :rtype: bool
+        """
+        return res
+
+
+# Your WordDictionary object will be instantiated and called as such:
+# obj = WordDictionary()
+# obj.addWord(word)
+# param_2 = obj.search(word)
