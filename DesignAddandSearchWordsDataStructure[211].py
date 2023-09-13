@@ -72,7 +72,22 @@ class WordDictionary(object):
         :type word: str
         :rtype: bool
         """
-        return res
+        def dfs(node, index):
+            if index == len(word):
+                return node.is_end_of_word
+
+            char = word[index]
+            if char != '.':
+                if char not in node.children:
+                    return False
+                return dfs(node.children[char], index + 1)
+            else:
+                for child in node.children:
+                    if dfs(node.children[child], index + 1):
+                        return True
+                return False
+
+        return dfs(self.root, 0)
 
 # Your WordDictionary object will be instantiated and called as such:
 # obj = WordDictionary()
