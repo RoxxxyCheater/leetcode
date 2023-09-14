@@ -44,15 +44,20 @@ class Solution(object):
         :type n: int
         :rtype: bool
         """
-        count = 0 
-        i = 0 
+        count = 0  # Переменная для отслеживания количества посаженных цветов
+        i = 0  # Индекс для итерации по цветочным грядкам
+    
         while i < len(flowerbed):
-            if flowerbed[i] == 0:              
+            if flowerbed[i] == 0:
+                # Проверяем, что текущая грядка пуста и соседние грядки тоже пусты или за границами массива
                 if (i == 0 or flowerbed[i - 1] == 0) and (i == len(flowerbed) - 1 or flowerbed[i + 1] == 0):
-                    flowerbed[i] = 1  
-                    count += 1  
+                    flowerbed[i] = 1  # Сажаем цветок на текущей грядке
+                    count += 1  # Увеличиваем счетчик посаженных цветов
             i += 1
+    
+        # Проверяем, достаточно ли цветов было посажено для удовлетворения требования (count >= n)
         return count >= n
+
 
 
 
