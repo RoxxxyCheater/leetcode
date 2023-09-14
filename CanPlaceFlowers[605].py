@@ -34,3 +34,20 @@
 # 548,707
 # Submissions
 # 1,810,525
+
+
+
+class Solution(object):
+    def canPlaceFlowers(self, flowerbed, n):
+        """
+        :type flowerbed: List[int]
+        :type n: int
+        :rtype: bool
+        """
+        return res
+
+
+list_f = [1,0,0,0,1], [1,0,0,0,1]
+list_n = 1, 2
+for index, f in enumerate(list_f):
+    Solution.canPlaceFlowers('Success', f, list_n[index])
