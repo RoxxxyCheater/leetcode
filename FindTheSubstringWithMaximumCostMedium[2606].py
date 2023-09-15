@@ -57,23 +57,40 @@ class Solution(object):
         :type vals: List[int]
         :rtype: int
         """
-        char_values = {}         
+        char_values = {}  # Словарь для хранения значений символов
+
+        # Заполняем словарь значениями символов из chars и соответствующими им значениями из vals
         for i, char in enumerate(chars):
-            char_values[char] = vals[i]    
-        max_cost, current_cost, left = 0,0,0
+            char_values[char] = vals[i]
+
+        max_cost = 0  # Переменная для хранения максимальной стоимости
+        current_cost = 0  # Переменная для хранения текущей стоимости подстроки
+        left = 0  # Левый указатель скользящего окна
+
+        # Проходим по строке s с помощью правого указателя (right)
         for right in range(len(s)):
             if s[right] in char_values:
+                # Если символ есть в chars, добавляем его значение к текущей стоимости
                 current_cost += char_values[s[right]]
             else:
+                # Если символа нет в chars, вычисляем его значение по алфавиту и добавляем к текущей стоимости
                 current_cost += ord(s[right]) - ord('a') + 1
+
+            # Проверяем условие, если текущая стоимость стала отрицательной
             while current_cost < 0:
                 if s[left] in char_values:
+                    # Если символ есть в chars, вычитаем его значение из текущей стоимости
                     current_cost -= char_values[s[left]]
                 else:
+                    # Если символа нет в chars, вычитаем его значение по алфавиту из текущей стоимости
                     current_cost -= ord(s[left]) - ord('a') + 1
-                left += 1
+                left += 1  # Увеличиваем левый указатель, смещая окно вправо
+
+            # Обновляем максимальную стоимость, если текущая стоимость больше
             max_cost = max(max_cost, current_cost)
+
         return max_cost
+
 
 
 
