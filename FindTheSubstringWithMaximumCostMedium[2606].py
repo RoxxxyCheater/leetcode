@@ -46,3 +46,24 @@
 # 19,869
 # Submissions
 # 35,549
+
+
+
+class Solution(object):
+    def maximumCostSubstring(self, s, chars, vals):
+        """
+        :type s: str
+        :type chars: str
+        :type vals: List[int]
+        :rtype: int
+        """
+        return res
+
+
+list_s = "adaa", "abc"
+list_c = "d", "abc"
+list_v = [-1000], [-1,-1,-1]
+
+
+for index, s in enumerate(list_s):
+    Solution.maximumCostSubstring('Success', s, list_c[index], list_v[index])
