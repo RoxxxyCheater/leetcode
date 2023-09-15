@@ -57,7 +57,24 @@ class Solution(object):
         :type vals: List[int]
         :rtype: int
         """
-        return res
+        char_values = {}         
+        for i, char in enumerate(chars):
+            char_values[char] = vals[i]    
+        max_cost, current_cost, left = 0,0,0
+        for right in range(len(s)):
+            if s[right] in char_values:
+                current_cost += char_values[s[right]]
+            else:
+                current_cost += ord(s[right]) - ord('a') + 1
+            while current_cost < 0:
+                if s[left] in char_values:
+                    current_cost -= char_values[s[left]]
+                else:
+                    current_cost -= ord(s[left]) - ord('a') + 1
+                left += 1
+            max_cost = max(max_cost, current_cost)
+        return max_cost
+
 
 
 list_s = "adaa", "abc"
