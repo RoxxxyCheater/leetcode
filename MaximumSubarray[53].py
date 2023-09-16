@@ -37,3 +37,17 @@
 # 3,395,332
 # Submissions
 # 6,747,749
+
+
+class Solution(object):
+    def maxSubArray(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+
+        return res
+
+list_n = [-2,1,-3,4,-1,2,1,-5,4], [1], [5,4,-1,7,8]
+for i in list_n:
+   Solution.maxSubArray('Success', i)
