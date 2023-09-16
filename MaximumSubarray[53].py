@@ -45,11 +45,15 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        max_sum = nums[0]  
-        current_sum = nums[0] 
+        max_sum = nums[0]  # Переменная для хранения максимальной суммы
+        current_sum = nums[0]  # Переменная для хранения текущей суммы
+
         for i in range(1, len(nums)):
+            # Выбираем максимум из текущего элемента и суммы текущего элемента с предыдущей суммой
             current_sum = max(nums[i], current_sum + nums[i])
+            # Обновляем максимальную сумму
             max_sum = max(max_sum, current_sum)
+
         return max_sum
 
 list_n = [-2,1,-3,4,-1,2,1,-5,4], [1], [5,4,-1,7,8]
