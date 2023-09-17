@@ -44,7 +44,26 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        return res
+class Solution(object):
+    def findShortestSubArray(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        element_info = {} 
+        max_degree = 0  
+        min_length = len(nums)  
+        for i, num in enumerate(nums):
+            if num in element_info:                
+                element_info[num][1] = i
+                element_info[num][2] += 1
+            else:
+                element_info[num] = [i, i, 1]
+            max_degree = max(max_degree, element_info[num][2])
+        for num, info in element_info.items():
+            if info[2] == max_degree:
+                min_length = min(min_length, info[1] - info[0] + 1)
+        return min_length
      
 list_n = [1,2,2,3,1], [1,2,2,3,1,4,2]
 
