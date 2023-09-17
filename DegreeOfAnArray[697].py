@@ -36,3 +36,17 @@
 # 191,534
 # Submissions
 # 341,604
+
+
+class Solution(object):
+    def findShortestSubArray(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        return res
+     
+list_n = [1,2,2,3,1], [1,2,2,3,1,4,2]
+
+for i in list_n:
+  Solution.findShortestSubArray('Success', i)
