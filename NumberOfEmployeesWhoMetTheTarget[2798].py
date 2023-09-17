@@ -49,12 +49,12 @@ class Solution(object):
         :type target: int
         :rtype: int
         """
-        count = 0 
-        current_sum = 0  
+        count = 0  # Инициализируем счетчик
         for h in hours:
             if h >= target:
-                count += 1 
-        return count 
+                count += 1  # Если текущий работник выполнил норму, увеличиваем счетчик
+        return count  # Возвращаем количество работников, которые выполнили цель
+
 
 
 
