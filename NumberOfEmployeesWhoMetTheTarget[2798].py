@@ -42,5 +42,17 @@
 # Submissions
 # 75,980
 
+class Solution(object):
+    def numberOfEmployeesWhoMetTarget(self, hours, target):
+        """
+        :type hours: List[int]
+        :type target: int
+        :rtype: int
+        """
+        return res
 
 
+List_h = [0,1,2,3,4], [5,1,4,2,2]
+list_t = 6, 2
+for index, h in enumerate(list_h):
+    Solution.numberOfEmployeesWhoMetTarget(h, list_t[index])
