@@ -49,7 +49,13 @@ class Solution(object):
         :type target: int
         :rtype: int
         """
-        return res
+        count = 0 
+        current_sum = 0  
+        for h in hours:
+            if h >= target:
+                count += 1 
+        return count 
+
 
 
 List_h = [0,1,2,3,4], [5,1,4,2,2]
