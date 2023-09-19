@@ -51,12 +51,20 @@ class Solution(object):
         :type k: int
         :rtype: int
         """
+        # Выбираем максимальное количество элементов со значением 1
         ones_selected = min(numOnes, k)
-        k -= ones_selected         
+        k -= ones_selected  # Уменьшаем k на количество выбранных элементов со значением 1
+
+        # Выбираем элементы со значением 0, если они остались и k > 0
         zeros_selected = min(numZeros, k)
-        k -= zeros_selected  
+        k -= zeros_selected  # Уменьшаем k на количество выбранных элементов со значением 0
+
+        # Выбираем элементы со значением -1, если они остались и k > 0
         neg_ones_selected = min(numNegOnes, k)
+
+        # Вычисляем сумму выбранных элементов
         total_sum = ones_selected - neg_ones_selected
+
         return total_sum
 
 
