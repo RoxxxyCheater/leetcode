@@ -55,7 +55,15 @@ class Solution:
         :type nums: List[int]
         :rtype: int
         """
-        return res
+        state, changes_count = -1, 0
+        for i in range(1, len(nums)):
+            if nums[i] > nums[i - 1]:
+                changes_count += int(state == 0)
+                state = 1
+            elif nums[i] < nums[i - 1]:
+                changes_count += int(state == 1)
+                state = 0
+        return changes_count
 
 list_n = [2,4,1,1,6,5], [6,6,5,5,4,1]
 for i in list_n:
