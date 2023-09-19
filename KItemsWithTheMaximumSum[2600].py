@@ -51,7 +51,13 @@ class Solution(object):
         :type k: int
         :rtype: int
         """
-        return res
+        ones_selected = min(numOnes, k)
+        k -= ones_selected         
+        zeros_selected = min(numZeros, k)
+        k -= zeros_selected  
+        neg_ones_selected = min(numNegOnes, k)
+        total_sum = ones_selected - neg_ones_selected
+        return total_sum
 
 
 list_o = 3, 3 
