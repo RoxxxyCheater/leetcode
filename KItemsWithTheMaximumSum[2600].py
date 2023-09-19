@@ -40,3 +40,23 @@
 # 30,133
 # Submissions
 # 49,297
+
+
+class Solution(object):
+    def kItemsWithMaximumSum(self, numOnes, numZeros, numNegOnes, k):
+        """
+        :type numOnes: int
+        :type numZeros: int
+        :type numNegOnes: int
+        :type k: int
+        :rtype: int
+        """
+        return res
+
+
+list_o = 3, 3 
+list_z = 2, 2
+list_n = 0, 0
+list_k = 2, 4
+for i, k in enumerate(list_k):
+    Solution.kItemsWithMaximumSum('Success', list_o[i],list_z[i], list_n[i], k)
