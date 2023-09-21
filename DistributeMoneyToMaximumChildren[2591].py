@@ -41,3 +41,19 @@
 # 21,134
 # Submissions
 # 113,156
+
+class Solution(object):
+    def distMoney(self, money, children):
+        """
+        :type money: int
+        :type children: int
+        :rtype: int
+        """
+        return res
+
+
+list_m = 20, 16
+list_c = 3, 2
+
+for index, m in enumerate(list_m):
+   Solution.distMoney('Success', m, list_c[index])
