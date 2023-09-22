@@ -39,3 +39,16 @@
 # 133,358
 # Submissions
 # 174,001
+
+class Solution(object):
+    def sumOfUnique(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        return res
+
+
+list_n = [1,2,3,2], [1,1,1,1,1], [1,2,3,4,5]
+for i in list_n:
+   Solution.sumOfUnique('Success', i)
