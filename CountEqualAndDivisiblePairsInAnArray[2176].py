@@ -32,3 +32,18 @@
 # 59,941
 # Submissions
 # 75,500
+
+class Solution(object):
+    def countPairs(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
+        return res
+
+list_n = [3,1,2,2,2,1,3], [1,2,3,4]
+list_k = 2, 1
+
+for i, n in enumerate(list_n):
+   Solution.countPairs('Sucess', n, list_k[i])
