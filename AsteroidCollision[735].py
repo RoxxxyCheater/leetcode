@@ -49,20 +49,27 @@ class Solution(object):
         :type asteroids: List[int]
         :rtype: List[int]
         """
-        stack = []  
-        for asteroid in asteroids:           
+        stack = []  # Инициализируем стек для отслеживания астероидов
+    
+        for asteroid in asteroids:
+            # Если стек пустой или астероид движется вправо, добавляем его в стек
             if not stack or asteroid > 0:
                 stack.append(asteroid)
             else:
+                # Астероид движется влево
                 while stack and stack[-1] > 0:
-                    top = stack.pop()  
-                    if top == -asteroid:                        
+                    top = stack.pop()  # Получаем астероида, двигающегося вправо, из вершины стека
+                    if top == -asteroid:
+                        # Оба астероида взрываются, если они одинакового размера
                         break
                     elif top > -asteroid:
+                        # Астероид, двигающийся вправо, больше, поэтому он выживает
                         stack.append(top)
                         break
+                    # Астероид, двигающийся влево, больше, продолжаем проверку
                 else:
-                    stack.append(asteroid)    
+                    stack.append(asteroid)
+    
         return stack
 
 list_a = [5,10,-5], [8,-8], [10,2,-5]
