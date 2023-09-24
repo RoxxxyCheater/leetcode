@@ -42,3 +42,15 @@
 # 391,748
 # Submissions
 # 865,123
+
+class Solution(object):
+    def asteroidCollision(self, asteroids):
+        """
+        :type asteroids: List[int]
+        :rtype: List[int]
+        """
+        return res
+
+list_a = [5,10,-5], [8,-8], [10,2,-5]
+for i in list_a:
+   Solution.asteroidCollisiom('Success', i)
