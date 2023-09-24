@@ -49,7 +49,21 @@ class Solution(object):
         :type asteroids: List[int]
         :rtype: List[int]
         """
-        return res
+        stack = []  
+        for asteroid in asteroids:           
+            if not stack or asteroid > 0:
+                stack.append(asteroid)
+            else:
+                while stack and stack[-1] > 0:
+                    top = stack.pop()  
+                    if top == -asteroid:                        
+                        break
+                    elif top > -asteroid:
+                        stack.append(top)
+                        break
+                else:
+                    stack.append(asteroid)    
+        return stack
 
 list_a = [5,10,-5], [8,-8], [10,2,-5]
 for i in list_a:
