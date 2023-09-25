@@ -44,3 +44,19 @@
 # 79,297
 # Submissions
 # 99,405
+
+
+class Solution(object):
+    def reversePrefix(self, word, ch):
+        """
+        :type word: str
+        :type ch: str
+        :rtype: str
+        """
+        return res
+
+list_w ="abcdefd", "xyxzxe", "abcd"
+list_ch = "d", "z", "z"
+
+for i, w in enumerate(list_w):
+    Solution.reversePrefix('Success', w, list_ch[i])
