@@ -53,7 +53,13 @@ class Solution(object):
         :type ch: str
         :rtype: str
         """
-        return res
+        index = word.find(ch)       
+        if index != -1:
+            reversed_word = word[:index + 1][::-1] + word[index + 1:]
+        else:
+            reversed_word = word        
+        return reversed_word
+
 
 list_w ="abcdefd", "xyxzxe", "abcd"
 list_ch = "d", "z", "z"
