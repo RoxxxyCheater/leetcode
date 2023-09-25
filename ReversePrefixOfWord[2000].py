@@ -53,12 +53,18 @@ class Solution(object):
         :type ch: str
         :rtype: str
         """
-        index = word.find(ch)       
+        # Найдем индекс первого вхождения символа 'ch' в строку 'word'.
+        index = word.find(ch)
+        
         if index != -1:
+            # Если 'ch' найден в строке, перевернем подстроку от начала строки до первого вхождения.
             reversed_word = word[:index + 1][::-1] + word[index + 1:]
         else:
-            reversed_word = word        
+            # Если 'ch' не найден, возвращаем исходную строку, так как переворачивать нечего.
+            reversed_word = word
+        
         return reversed_word
+
 
 
 list_w ="abcdefd", "xyxzxe", "abcd"
