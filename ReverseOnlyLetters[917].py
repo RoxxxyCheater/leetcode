@@ -47,16 +47,26 @@ class Solution(object):
         :type s: str
         :rtype: str
         """
+        # Преобразуем строку в список символов для возможности изменения
         s = list(s)
         left, right = 0, len(s) - 1
+    
         while left < right:
+            # Находим первую английскую букву слева
             while left < right and not s[left].isalpha():
                 left += 1
+    
+            # Находим первую английскую букву справа
             while left < right and not s[right].isalpha():
                 right -= 1
+    
+            # Обмениваемся английскими буквами
             s[left], s[right] = s[right], s[left]
+    
             left += 1
             right -= 1
+    
+        # Преобразуем список обратно в строку
         return ''.join(s)
 
 list_s = "ab-cd", "a-bC-dEf-ghIj", "Test1ng-Leet=code-Q!"
