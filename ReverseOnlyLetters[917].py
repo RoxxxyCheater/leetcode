@@ -39,3 +39,16 @@
 # 181,975
 # Submissions
 # 288,775
+
+
+class Solution(object):
+    def reverseOnlyLetters(self, s):
+        """
+        :type s: str
+        :rtype: str
+        """
+        return res
+
+list_s = "ab-cd", "a-bC-dEf-ghIj", "Test1ng-Leet=code-Q!"
+for i in list_s:
+   Solution.reverseOnlyLetters('Success', i )
