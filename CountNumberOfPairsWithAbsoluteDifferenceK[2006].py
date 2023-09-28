@@ -47,3 +47,18 @@
 # 115,053
 # Submissions
 # 138,632
+
+
+class Solution(object):
+    def countKDifference(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
+        return res
+     
+list_nums = [1,2,2,1], [1,3], [3,2,1,5,4]
+k = 2, 3, 1
+for index, num in enumerate(list_nums):
+    Solution.countKDifference('Success', num, k[index])
