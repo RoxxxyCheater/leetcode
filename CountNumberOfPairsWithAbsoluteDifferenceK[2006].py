@@ -55,8 +55,19 @@ class Solution(object):
         :type nums: List[int]
         :type k: int
         :rtype: int
-        """
-        return res
+        """        
+        num_count = {}
+        count = 0  
+        for num in nums:
+            if num - k in num_count:
+                count += num_count[num - k]
+            if num + k in num_count and k > 0:
+                count += num_count[num + k]
+            if num in num_count:
+                num_count[num] += 1
+            else:
+                num_count[num] = 1
+        return count
      
 list_nums = [1,2,2,1], [1,3], [3,2,1,5,4]
 k = 2, 3, 1
