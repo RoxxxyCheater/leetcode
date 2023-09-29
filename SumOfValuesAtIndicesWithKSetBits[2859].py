@@ -44,3 +44,20 @@ Constraints:
 1 <= nums.length <= 1000
 1 <= nums[i] <= 105
 0 <= k <= 10
+
+
+
+class Solution(object):
+    def sumIndicesWithKSetBits(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
+        return res
+
+list_nums = [5,10,1,5,2], [4,3,2,1]
+list_keys = 1, 2
+
+for index, num in enumerate(list_nums):
+    Solution.sumIndicesWithKSetBits('Success', num, list_keys[index])
