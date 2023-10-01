@@ -58,12 +58,14 @@ class Solution(object):
         :type s: str
         :rtype: str
         """
-        result = []
+        result = []  # Здесь будем хранить текст на экране
+    
         for char in s:
             if char == 'i':
-                result.reverse()  
+                result.reverse()  # Если символ 'i', инвертируем текст на экране
             else:
-                result.append(char)     
+                result.append(char)  # Иначе добавляем символ в конец текста
+    
         return ''.join(result)
 
 list_n = "string", "poiinter"
