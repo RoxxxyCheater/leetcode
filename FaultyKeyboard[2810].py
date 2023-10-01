@@ -50,3 +50,16 @@
 # 55.1K
 # Acceptance Rate
 # 82.1%
+
+
+class Solution(object):
+    def finalString(self, s):
+        """
+        :type s: str
+        :rtype: str
+        """
+        return res
+
+list_n = "string", "poiinter"
+for i in list_n:
+   Solution.finalString('Success', i)
