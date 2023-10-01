@@ -58,7 +58,13 @@ class Solution(object):
         :type s: str
         :rtype: str
         """
-        return res
+        result = []
+        for char in s:
+            if char == 'i':
+                result.reverse()  
+            else:
+                result.append(char)     
+        return ''.join(result)
 
 list_n = "string", "poiinter"
 for i in list_n:
