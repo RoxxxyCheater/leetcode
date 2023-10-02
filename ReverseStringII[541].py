@@ -40,11 +40,15 @@ class Solution(object):
         :type k: int
         :rtype: str
         """
-        result = []  
+        result = []  # Здесь будем хранить окончательный результат
         for i in range(0, len(s), 2 * k):
-            chunk = s[i:i + 2 * k]  
-            reversed_chunk = chunk[:k][::-1] + chunk[k:]  
-            result.append(reversed_chunk)       
+            # Получаем фрагмент строки размером 2k символов
+            chunk = s[i:i + 2 * k]
+            # Реверсируем первые k символов внутри фрагмента
+            reversed_chunk = chunk[:k][::-1] + chunk[k:]
+            result.append(reversed_chunk)
+        
+        # Объединяем модифицированные фрагменты, чтобы получить окончательный результат
         return ''.join(result)
 
 list_s = "abcdefg", "abcd"
