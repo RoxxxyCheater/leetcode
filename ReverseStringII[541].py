@@ -40,7 +40,12 @@ class Solution(object):
         :type k: int
         :rtype: str
         """
-        return res
+        result = []  
+        for i in range(0, len(s), 2 * k):
+            chunk = s[i:i + 2 * k]  
+            reversed_chunk = chunk[:k][::-1] + chunk[k:]  
+            result.append(reversed_chunk)       
+        return ''.join(result)
 
 list_s = "abcdefg", "abcd"
 list_k = 2, 2
