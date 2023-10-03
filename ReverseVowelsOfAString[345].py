@@ -33,3 +33,15 @@
 # Submissions
 # 1,225,720
 
+class Solution(object):
+    def reverseVowels(self, s):
+        """
+        :type s: str
+        :rtype: str
+        """
+        return res
+
+
+list_s = "hello", "leetcode"
+for i in list_s:
+   Solution.reverseVowels('Success', i)
