@@ -39,8 +39,9 @@ class Solution(object):
         :type s: List[str]
         :rtype: None Do not return anything, modify s in-place instead.
         """
-        left, right = 0, len(s) - 1
+        left, right = 0, len(s) - 1 # Инициализируем два указателя в начале и конце массива
         while left < right:
+            # Меняем местами символы, на которые указывают левый и правый указатели
             s[left], s[right] = s[right], s[left]
             left += 1
             right -= 1
