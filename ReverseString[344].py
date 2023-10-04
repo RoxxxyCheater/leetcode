@@ -39,7 +39,12 @@ class Solution(object):
         :type s: List[str]
         :rtype: None Do not return anything, modify s in-place instead.
         """
-        return res
+        left, right = 0, len(s) - 1
+        while left < right:
+            s[left], s[right] = s[right], s[left]
+            left += 1
+            right -= 1
+
 
 list_s = ["h","e","l","l","o"],  ["H","a","n","n","a","h"]
 
