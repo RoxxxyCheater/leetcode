@@ -32,3 +32,16 @@
 # 2,261,319
 # Submissions
 # 2,927,123
+
+class Solution(object):
+    def reverseString(self, s):
+        """
+        :type s: List[str]
+        :rtype: None Do not return anything, modify s in-place instead.
+        """
+        return res
+
+list_s = ["h","e","l","l","o"],  ["H","a","n","n","a","h"]
+
+for i in list_s:
+   Solution.reverseString('Success', i)
