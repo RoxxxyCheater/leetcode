@@ -51,17 +51,24 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        count = 0
-        n = len(nums)
-
-        for a in range(n):
-            for b in range(a + 1, n):
-                for c in range(b + 1, n):
-                    for d in range(c + 1, n):
+        count = 0  # Инициализируем счетчик числа четверок, удовлетворяющих условию
+        n = len(nums)  # Получаем длину массива nums
+        
+        for a in range(n):  # Первый цикл перебирает индекс a от 0 до n-1
+            for b in range(a + 1, n):  # Второй цикл перебирает индекс b от a+1 до n-1
+                for c in range(b + 1, n):  # Третий цикл перебирает индекс c от b+1 до n-1
+                    for d in range(c + 1, n):  # Четвертый цикл перебирает индекс d от c+1 до n-1
                         if nums[a] + nums[b] + nums[c] == nums[d]:
-                            count += 1
+                            # Проверяем, удовлетворяет ли сумма элементов в четверке условию
+                            count += 1  # Если условие выполняется, увеличиваем счетчик на 1
 
-        return count
+        return count  # Возвращаем общее количество четверок, удовлетворяющих условию
+
+
+
+
+
+
 
 
 list_n = [1,2,3,6], [3,3,6,4,5], [1,1,1,3,5]
