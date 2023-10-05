@@ -43,3 +43,17 @@
 # 34,783
 # Submissions
 # 57,770
+
+
+class Solution(object):
+    def countQuadruplets(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        return res
+
+
+list_n = [1,2,3,6], [3,3,6,4,5], [1,1,1,3,5]
+for i in list_n:
+   Solution.countQuadruplets('Success', i)
