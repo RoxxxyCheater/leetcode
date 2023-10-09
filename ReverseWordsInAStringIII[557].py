@@ -41,7 +41,11 @@ class Solution(object):
         :type s: str
         :rtype: str
         """
-        return res
+        words = s.split()
+        reversed_words = [word[::-1] for word in words]    
+        reversed_sentence = " ".join(reversed_words)    
+        return reversed_sentence
+
 
 
 list_s = "Let's take LeetCode contest", "God Ding"
