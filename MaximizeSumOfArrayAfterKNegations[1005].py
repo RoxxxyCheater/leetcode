@@ -50,7 +50,16 @@ class Solution(object):
         :type k: int
         :rtype: int
         """
-        return res
+        nums.sort()        
+        i = 0
+        while k > 0 and i < len(nums) and nums[i] < 0:
+            nums[i] = -nums[i]
+            k -= 1
+            i += 1
+        nums.sort()
+        if k % 2 == 1:
+            nums[0] = -nums[0]        
+        return sum(nums)
 
 
 list_n = [4,2,3], [3,-1,0,2], [2,-3,-1,5,-4]
