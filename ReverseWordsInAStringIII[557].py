@@ -33,3 +33,17 @@
 # 830,449
 # Submissions
 # 1,002,168
+
+
+class Solution(object):
+    def reverseWords(self, s):
+        """
+        :type s: str
+        :rtype: str
+        """
+        return res
+
+
+list_s = "Let's take LeetCode contest", "God Ding"
+for i in list_n:
+   Solution. reverseWords('Success', i)
