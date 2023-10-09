@@ -41,10 +41,17 @@ class Solution(object):
         :type s: str
         :rtype: str
         """
+        # Разбиваем предложение на слова
         words = s.split()
-        reversed_words = [word[::-1] for word in words]    
-        reversed_sentence = " ".join(reversed_words)    
+    
+        # Создаем новый список для хранения перевернутых слов
+        reversed_words = [word[::-1] for word in words]
+    
+        # Объединяем перевернутые слова обратно в предложение с пробелами
+        reversed_sentence = " ".join(reversed_words)
+    
         return reversed_sentence
+
 
 
 
