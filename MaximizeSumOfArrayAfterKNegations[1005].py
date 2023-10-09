@@ -41,3 +41,20 @@
 # 78,973
 # Submissions
 # 155,435
+
+
+class Solution(object):
+    def largestSumAfterKNegations(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
+        return res
+
+
+list_n = [4,2,3], [3,-1,0,2], [2,-3,-1,5,-4]
+list_k = 1, 3, 2
+
+for index, n in enumerate(list_n):
+   Solution.largestSumAfterKNegations('Success', n, list_k[index])
