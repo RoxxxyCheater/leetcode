@@ -42,3 +42,18 @@
 # 126,059
 # Submissions
 # 165,274
+
+
+class Solution(object):
+    def removePalindromeSub(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        return res
+
+
+
+list_s = "ababa", "abb", "baabb"
+for i in list_s:
+   Solution.removePalindromeSub('Success', i)
