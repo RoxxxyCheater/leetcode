@@ -50,7 +50,13 @@ class Solution(object):
         :type s: str
         :rtype: int
         """
-        return res
+        if not s:
+            return 0
+        elif s == s[::-1]:
+            return 1
+        else:
+            return 2
+
 
 
 
