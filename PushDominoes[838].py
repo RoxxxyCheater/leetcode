@@ -50,7 +50,42 @@ class Solution(object):
         :type dominoes: str
         :rtype: str
         """
-        return res
+        n = len(dominoes)
+        forces = [0] * n
+    
+        # Calculate forces acting to the right
+        force = 0
+        for i in range(n):
+            if dominoes[i] == 'R':
+                force = n
+            elif dominoes[i] == 'L':
+                force = 0
+            else:
+                force = max(force - 1, 0)
+            forces[i] += force
+    
+        # Calculate forces acting to the left
+        force = 0
+        for i in range(n - 1, -1, -1):
+            if dominoes[i] == 'L':
+                force = n
+            elif dominoes[i] == 'R':
+                force = 0
+            else:
+                force = max(force - 1, 0)
+            forces[i] -= force
+    
+        # Update the dominoes based on forces
+        result = []
+        for force in forces:
+            if force > 0:
+                result.append('R')
+            elif force < 0:
+                result.append('L')
+            else:
+                result.append('.')
+    
+        return ''.join(result)
 
 list_d = "RR.L", ".L.R...LR..L.."
 for i in list_d:
