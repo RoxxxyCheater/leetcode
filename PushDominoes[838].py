@@ -50,42 +50,42 @@ class Solution(object):
         :type dominoes: str
         :rtype: str
         """
+
         n = len(dominoes)
-        forces = [0] * n
-    
-        # Calculate forces acting to the right
+        forces = [0] * n  # Создаем массив, чтобы хранить силы, действующие на каждый домино.
+
+        # Рассчитываем силы, действующие вправо
         force = 0
         for i in range(n):
             if dominoes[i] == 'R':
-                force = n
+                force = n  # Если домино движется вправо ('R'), устанавливаем силу в n.
             elif dominoes[i] == 'L':
-                force = 0
+                force = 0  # Если домино движется влево ('L'), сила сбрасывается в 0.
             else:
-                force = max(force - 1, 0)
-            forces[i] += force
-    
-        # Calculate forces acting to the left
+                force = max(force - 1, 0)  # В остальных случаях уменьшаем силу на 1, но не меньше 0.
+            forces[i] += force  # Добавляем силу к текущему домино.
+
+        # Рассчитываем силы, действующие влево
         force = 0
         for i in range(n - 1, -1, -1):
             if dominoes[i] == 'L':
-                force = n
+                force = n  # Если домино движется влево ('L'), устанавливаем силу в n.
             elif dominoes[i] == 'R':
-                force = 0
+                force = 0  # Если домино движется вправо ('R'), сила сбрасывается в 0.
             else:
-                force = max(force - 1, 0)
-            forces[i] -= force
-    
-        # Update the dominoes based on forces
+                force = max(force - 1, 0)  # В остальных случаях уменьшаем силу на 1, но не меньше 0.
+            forces[i] -= force  # Вычитаем силу из текущего домино.
+
+        # Обновляем состояние домино на основе вычисленных сил
         result = []
         for force in forces:
             if force > 0:
-                result.append('R')
+                result.append('R')  # Если сила положительная, домино движется вправо ('R').
             elif force < 0:
-                result.append('L')
+                result.append('L')  # Если сила отрицательная, домино движется влево ('L').
             else:
-                result.append('.')
-    
-        return ''.join(result)
+                result.append('.')  # Если сила равна 0, домино стоит на месте ('.').
+        return ''.join(result)  # Преобразуем результат в строку и возвращаем его.
 
 list_d = "RR.L", ".L.R...LR..L.."
 for i in list_d:
