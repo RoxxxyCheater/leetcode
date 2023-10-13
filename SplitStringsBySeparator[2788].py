@@ -55,3 +55,20 @@
 # 36,676
 # Submissions
 # 51,316
+
+
+class Solution(object):
+    def splitWordsBySeparator(self, words, separator):
+        """
+        :type words: List[str]
+        :type separator: str
+        :rtype: List[str]
+        """
+        return res
+
+
+list_w = ["one.two.three","four.five","six"], ["$easy$","$problem$"], ["|||"]
+list_s = ".", "$", "|"
+
+for index, w in enumerate(list_w):
+   Solution.splitWordsBySeparator('Success', w, list_s[index])
