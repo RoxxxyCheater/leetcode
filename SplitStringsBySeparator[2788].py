@@ -64,7 +64,11 @@ class Solution(object):
         :type separator: str
         :rtype: List[str]
         """
-        return res
+        result = []
+        for word in words:
+            split_words = word.split(separator)
+            result.extend([split_word for split_word in split_words if split_word])
+        return result
 
 
 list_w = ["one.two.three","four.five","six"], ["$easy$","$problem$"], ["|||"]
