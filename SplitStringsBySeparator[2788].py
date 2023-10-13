@@ -64,11 +64,12 @@ class Solution(object):
         :type separator: str
         :rtype: List[str]
         """
-        result = []
-        for word in words:
-            split_words = word.split(separator)
-            result.extend([split_word for split_word in split_words if split_word])
-        return result
+        result = []  # Создаем пустой список для хранения результата.
+        for word in words:  # Итерируем по строкам в массиве words.
+            split_words = word.split(separator)  # Разбиваем текущую строку на подстроки, используя заданный разделитель.
+            result.extend([split_word for split_word in split_words if split_word])  # Добавляем непустые подстроки в результат.
+        return result  # Возвращаем итоговый массив.
+
 
 
 list_w = ["one.two.three","four.five","six"], ["$easy$","$problem$"], ["|||"]
