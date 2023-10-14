@@ -48,17 +48,19 @@ class Solution(object):
         :type s: str
         :rtype: int
         """
-        count = 0  
-        balance = 0  
+        count = 0  # Инициализируем счетчик допустимых подстрок
+        balance = 0  # Инициализируем баланс символов 'L' и 'R'
+    
         for char in s:
             if char == 'L':
-                balance += 1  
+                balance += 1  # Увеличиваем баланс при символе 'L'
             elif char == 'R':
-                balance -= 1      
-            if balance == 0:
-                count += 1 
-        return count
+                balance -= 1  # Уменьшаем баланс при символе 'R'
     
+            if balance == 0:
+                count += 1  # Увеличиваем счетчик допустимых подстрок, когда баланс становится равным нулю
+    
+        return count
 
 
 list_s = "RLRRLLRLRL", "RLRRRLLRLL", "LLLLRRRR"
