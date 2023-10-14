@@ -42,3 +42,16 @@
 # 271,096
 # Submissions
 # 316,795
+class Solution(object):
+    def balancedStringSplit(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        return res
+
+
+list_s = "RLRRLLRLRL", "RLRRRLLRLL", "LLLLRRRR"
+
+for i in list_s:
+   Solution.balancedStringSplit('Success', i)
