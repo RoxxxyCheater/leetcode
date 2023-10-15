@@ -53,8 +53,28 @@ class Solution(object):
         :type dictionary: List[str]
         :rtype: List[str]
         """
-        return res
-
+        def isMatch(word1, word2):
+            if word1 == word2:
+                return True
+            if len(word1) != len(word2):
+                return False
+            edit_count = 0
+            for i in range(len(word1)):
+                if word1[i] != word2[i]:
+                    edit_count += 1
+                    if edit_count > 2:
+                        return False
+            return True
+        result = []
+        for query in queries:
+            matched = False
+            for word in dictionary:
+                if isMatch(query, word):
+                    matched = True
+                    break
+            if matched:
+                result.append(query)
+        return result
 
 
 list_q = ["word","note","ants","wood"], ["yes"]
