@@ -53,29 +53,41 @@ class Solution(object):
         :type dictionary: List[str]
         :rtype: List[str]
         """
+        # Внутренняя функция для проверки совпадения двух слов после не более чем двух правок
         def isMatch(word1, word2):
+            # Проверка, являются ли слова одинаковыми. Если да, то нет необходимости в правках.
             if word1 == word2:
                 return True
+
+            # Проверка, имеют ли слова одинаковую длину. Если нет, не удается преобразовать слово.
             if len(word1) != len(word2):
                 return False
+
+            # Подсчет различных символов между двумя словами.
             edit_count = 0
             for i in range(len(word1)):
                 if word1[i] != word2[i]:
                     edit_count += 1
+                    # Если количество правок превысит 2, слова не совпадают.
                     if edit_count > 2:
                         return False
-            return True
-        result = []
-        for query in queries:
-            matched = False
-            for word in dictionary:
-                if isMatch(query, word):
-                    matched = True
-                    break
-            if matched:
-                result.append(query)
-        return result
 
+            # Если ни одно из вышеуказанных условий не выполняется, слова считаются совпадающими.
+            return True
+
+        result = []  # Создаем пустой список для хранения совпадающих слов
+
+        for query in queries:  # Перебираем слова из запросов
+            matched = False  # Флаг для отслеживания совпадений
+            for word in dictionary:  # Перебираем слова из словаря
+                if isMatch(query, word):  # Проверяем, совпадают ли слова
+                    matched = True  # Если есть совпадение, устанавливаем флаг
+                    break  # Прерываем внутренний цикл
+
+            if matched:
+                result.append(query)  # Если нашлось совпадение, добавляем слово в результат
+
+        return result  # Возвращаем список слов, которые соответствуют словам из словаря
 
 list_q = ["word","note","ants","wood"], ["yes"]
 list_d = ["wood","joke","moat"], ["not"]
