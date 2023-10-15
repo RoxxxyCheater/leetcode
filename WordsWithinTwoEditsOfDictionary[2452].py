@@ -44,3 +44,20 @@
 # 18,537
 # Submissions
 # 30,736
+
+
+class Solution(object):
+    def twoEditWords(self, queries, dictionary):
+        """
+        :type queries: List[str]
+        :type dictionary: List[str]
+        :rtype: List[str]
+        """
+        return res
+
+
+
+list_q = ["word","note","ants","wood"], ["yes"]
+list_d = ["wood","joke","moat"], ["not"]
+for index, q in enumerate(list_q):
+  Solution.twoEditWords('Success', q, list_d[index])
