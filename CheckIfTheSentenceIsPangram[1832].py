@@ -33,3 +33,16 @@
 # 271,609
 # Submissions
 # 326,856
+
+class Solution(object):
+    def checkIfPangram(self, sentence):
+        """
+        :type sentence: str
+        :rtype: bool
+        """
+        return res
+
+
+list_s = "thequickbrownfoxjumpsoverthelazydog", "leetcode"
+for i in list_s:
+   Solution.checkIfPangram('Success', i)
