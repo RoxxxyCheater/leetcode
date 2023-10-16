@@ -40,7 +40,12 @@ class Solution(object):
         :type sentence: str
         :rtype: bool
         """
-        return res
+        seen_letters = set()
+        for char in sentence:
+            if char.isalpha(): 
+                seen_letters.add(char)
+        return len(seen_letters) == 26
+
 
 
 list_s = "thequickbrownfoxjumpsoverthelazydog", "leetcode"
