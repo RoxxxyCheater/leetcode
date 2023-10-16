@@ -40,10 +40,15 @@ class Solution(object):
         :type sentence: str
         :rtype: bool
         """
+        # Создаем множество для хранения уникальных букв в предложении
         seen_letters = set()
+    
+        # Итерируемся по символам в предложении
         for char in sentence:
-            if char.isalpha(): 
-                seen_letters.add(char)
+            if char.isalpha():  # Проверяем, является ли символ буквой английского алфавита
+                seen_letters.add(char)  # Добавляем уникальные буквы в множество
+    
+        # Проверяем, содержит ли множество все 26 букв английского алфавита
         return len(seen_letters) == 26
 
 
