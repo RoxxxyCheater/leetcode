@@ -38,7 +38,6 @@
 # Submissions
 # 517,482
 
-
 # Definition for singly-linked list.
 # class ListNode(object):
 #     def __init__(self, val=0, next=None):
@@ -51,7 +50,12 @@ class Solution(object):
         :type head: ListNode
         :rtype: int
         """
-        return res
+        decimal_value = 0
+        current = head
+        while current:          
+            decimal_value = (decimal_value << 1) | current.val
+            current = current.next
+        return decimal_value
 
 
 list_h = [1,0,1], [0]
