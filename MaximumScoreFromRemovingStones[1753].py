@@ -64,7 +64,15 @@ class Solution(object):
         :type c: int
         :rtype: int
         """
-        return res
+        nums = [a, b, c]
+        score = 0
+        nums.sort(reverse=True)
+        while nums[1] > 0:
+            nums[0] -= 1
+            nums[1] -= 1
+            score += 1
+            nums.sort(reverse=True)
+        return score
 
 list_a = 2, 4, 1
 list_b = 4, 4, 8
