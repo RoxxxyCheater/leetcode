@@ -54,3 +54,21 @@
 # 35,524
 # Submissions
 # 52,628
+
+
+class Solution(object):
+    def maximumScore(self, a, b, c):
+        """
+        :type a: int
+        :type b: int
+        :type c: int
+        :rtype: int
+        """
+        return res
+
+list_a = 2, 4, 1
+list_b = 4, 4, 8
+list_c = 6, 6, 8
+
+for index, num in enumerate(list_a)
+  Solution.maximumScore('Success', num, list_b[index], list_c[index])
