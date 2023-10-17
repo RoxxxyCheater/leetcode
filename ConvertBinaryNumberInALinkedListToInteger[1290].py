@@ -52,3 +52,9 @@ class Solution(object):
         :rtype: int
         """
         return res
+
+
+list_h = [1,0,1], [0]
+
+for i in list_h:
+   Solution.getDecimalValue('Success', i)
