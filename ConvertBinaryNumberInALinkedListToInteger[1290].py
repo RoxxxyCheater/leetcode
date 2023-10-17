@@ -38,6 +38,11 @@
 # Submissions
 # 517,482
 
+
+# Определение класса ListNode для представления узлов связанного списка.
+# У каждого узла есть значение (val) и указатель на следующий узел (next).
+# Если next равно None, то это последний узел в связанном списке.
+
 # Definition for singly-linked list.
 # class ListNode(object):
 #     def __init__(self, val=0, next=None):
@@ -50,13 +55,23 @@ class Solution(object):
         :type head: ListNode
         :rtype: int
         """
+        # Инициализируем переменную decimal_value для хранения десятичного значения.
         decimal_value = 0
+        
+        # Инициализируем переменную current для указания на текущий узел, начиная с головного узла.
         current = head
-        while current:          
-            decimal_value = (decimal_value << 1) | current.val
-            current = current.next
-        return decimal_value
 
+        # Пока текущий узел существует (не равен None):
+        while current:
+            # Сдвигаем текущее десятичное значение влево на 1 бит (умножение на 2)
+            # и добавляем значение текущего узла (0 или 1) справа.
+            decimal_value = (decimal_value << 1) | current.val
+            
+            # Переходим к следующему узлу в связанном списке.
+            current = current.next
+
+        # Возвращаем полученное десятичное значение после обработки всего связанного списка.
+        return decimal_value
 
 list_h = [1,0,1], [0]
 
