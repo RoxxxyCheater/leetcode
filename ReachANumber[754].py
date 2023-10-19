@@ -43,3 +43,17 @@
 # 49,758
 # Submissions
 # 116,153
+
+
+class Solution(object):
+    def reachNumber(self, target):
+        """
+        :type target: int
+        :rtype: int
+        """
+        return res
+
+
+list_t = 2,3
+for i in list_t:
+  Solution. reachNumber('Success', i)
