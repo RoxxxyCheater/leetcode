@@ -51,7 +51,13 @@ class Solution(object):
         :type target: int
         :rtype: int
         """
-        return res
+        target = abs(target)
+        position = 0
+        while position < target or (position - target) % 2 != 0:
+            move += 1
+            position += move        
+        return move
+
 
 
 list_t = 2,3
