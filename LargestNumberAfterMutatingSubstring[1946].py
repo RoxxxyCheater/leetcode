@@ -59,17 +59,19 @@ class Solution(object):
         :type change: List[int]
         :rtype: str
         """
-        num = list(num) 
-        changed = False 
+        num = list(num)  # Преобразуем входную строку в список символов для удобства модификации
+        changed = False  # Флаг для отслеживания того, была ли уже сделана замена
+    
         for i in range(len(num)):
-            digit = int(num[i])
+            digit = int(num[i])  # Преобразуем текущий символ в цифру
             if change[digit] > digit:
-                num[i] = str(change[digit])
+                num[i] = str(change[digit])  # Если замена на более большую цифру возможна, производим замену
                 changed = True
             elif change[digit] < digit and changed:
-                break 
+                break  # Останавливаем замены, если уже была сделана замена и встречена меньшая цифра
+    
+        return ''.join(num)  # Преобразуем список обратно в строку и возвращаем результат
 
-        return ''.join(num)
 
 
 list_n = '123', '021', '5'
