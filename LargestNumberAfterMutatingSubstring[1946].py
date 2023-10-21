@@ -59,7 +59,18 @@ class Solution(object):
         :type change: List[int]
         :rtype: str
         """
-        return res
+        num = list(num) 
+        changed = False 
+        for i in range(len(num)):
+            digit = int(num[i])
+            if change[digit] > digit:
+                num[i] = str(change[digit])
+                changed = True
+            elif change[digit] < digit and changed:
+                break 
+
+        return ''.join(num)
+
 
 list_n = '123', '021', '5'
 list_c = [9,8,5,0,3,6,4,2,6,8], [9,4,3,5,7,2,1,9,0,6], [1,4,7,5,3,2,5,6,9,4]
