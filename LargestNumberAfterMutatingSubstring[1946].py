@@ -50,3 +50,19 @@
 # 18,613
 # Submissions
 # 52,905
+
+
+class Solution(object):
+    def maximumNumber(self, num, change):
+        """
+        :type num: str
+        :type change: List[int]
+        :rtype: str
+        """
+        return res
+
+list_n = '123', '021', '5'
+list_c = [9,8,5,0,3,6,4,2,6,8], [9,4,3,5,7,2,1,9,0,6], [1,4,7,5,3,2,5,6,9,4]
+
+for i,n in enumerate(list_n):
+   Solution.maximumNumber('Success', n, list_c[i])
