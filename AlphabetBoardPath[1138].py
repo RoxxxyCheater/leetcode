@@ -50,13 +50,37 @@ class Solution(object):
         :type target: str
         :rtype: str
         """
+class Solution(object):
+    def alphabetBoardPath(self, target):
+        """
+        :type target: str
+        :rtype: str
+        """
         # Создаем словарь для хранения координат каждой буквы
         board = ["abcde", "fghij", "klmno", "pqrst", "uvwxy", "z"]
         char_to_coords = {}
         for r, row in enumerate(board):
             for c, char in enumerate(row):
-                char_to_coords[char] = (r, c)
-             
+                char_to_coords[char] = (r, c)       
+        r, c = 0, 0
+        result = [] 
+        for char in target:
+            tr, tc = char_to_coords[char]  
+            while r > tr:
+                result.append('U')  
+                r -= 1
+            while c < tc:
+                result.append('R') 
+                c += 1
+            while c > tc:
+                result.append('L')  
+                c -= 1
+            while r < tr:
+                result.append('D') 
+                r += 1
+            result.append('!') 
+        return ''.join(result)
+
 
  list_t = "leet", "code"
 for i in list_t:
