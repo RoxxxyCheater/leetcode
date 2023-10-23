@@ -50,7 +50,13 @@ class Solution(object):
         :type target: str
         :rtype: str
         """
-        return res
+        # Создаем словарь для хранения координат каждой буквы
+        board = ["abcde", "fghij", "klmno", "pqrst", "uvwxy", "z"]
+        char_to_coords = {}
+        for r, row in enumerate(board):
+            for c, char in enumerate(row):
+                char_to_coords[char] = (r, c)
+             
 
  list_t = "leet", "code"
 for i in list_t:
