@@ -42,3 +42,16 @@
 # 94.2K
 # Acceptance Rate
 # 51.9%
+
+
+class Solution(object):
+    def alphabetBoardPath(self, target):
+        """
+        :type target: str
+        :rtype: str
+        """
+        return res
+
+ list_t = "leet", "code"
+for i in list_t:
+  Solution.alphabetBoardPath('Success', i)
