@@ -44,24 +44,28 @@
 # Submissions
 # 61,358
 
-
 class Solution(object):
-    def is_vowel_string(self, word):
+    def is_vowel_string(self, word):   # Функция для проверки, является ли строка гласной строкой
         vowels = "aeiou"
         return word[0] in vowels and word[-1] in vowels
-     
-    def vowelStrings(self, words, left, right):
+
+    def vowelStrings(self, words, left, right): # Метод для подсчета числа гласных строк в указанном диапазоне
         """
         :type words: List[str]
         :type left: int
         :type right: int
         :rtype: int
         """
-        count = 0
-        for i in range(left, right + 1):
+        count = 0  # Инициализируем счетчик
+
+        for i in range(left, right + 1): # Проходим по словам в указанном диапазоне
+            
             if self.is_vowel_string(words[i]):
-                count += 1
-        return count
+                # Если текущее слово является гласной строкой
+                count += 1  # Увеличиваем счетчик
+
+        return count  # Возвращаем итоговое количество гласных строк
+
 
 list_w = ["are","amy","u"], ["hey","aeo","mu","ooo","artro"]
 list_l = 0, 1
