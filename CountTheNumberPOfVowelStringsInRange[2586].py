@@ -43,3 +43,20 @@
 # 45,431
 # Submissions
 # 61,358
+
+class Solution(object):
+    def vowelStrings(self, words, left, right):
+        """
+        :type words: List[str]
+        :type left: int
+        :type right: int
+        :rtype: int
+        """
+        return res
+
+list_w = ["are","amy","u"], ["hey","aeo","mu","ooo","artro"]
+list_l = 0, 1
+list_r = 2, 4
+for index, word in enumerate(list_w):
+  Solution.voweStrings('Success', word, list_l[index], list_r[index])
+
