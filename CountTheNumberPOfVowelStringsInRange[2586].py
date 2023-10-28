@@ -44,7 +44,12 @@
 # Submissions
 # 61,358
 
+
 class Solution(object):
+    def is_vowel_string(self, word):
+        vowels = "aeiou"
+        return word[0] in vowels and word[-1] in vowels
+     
     def vowelStrings(self, words, left, right):
         """
         :type words: List[str]
@@ -52,7 +57,11 @@ class Solution(object):
         :type right: int
         :rtype: int
         """
-        return res
+        count = 0
+        for i in range(left, right + 1):
+            if self.is_vowel_string(words[i]):
+                count += 1
+        return count
 
 list_w = ["are","amy","u"], ["hey","aeo","mu","ooo","artro"]
 list_l = 0, 1
