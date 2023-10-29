@@ -45,18 +45,22 @@ class Solution(object):
         :type words: List[str]
         :rtype: int
         """
+        # Вспомогательная функция, которая проверяет, является ли `word` подпоследовательностью строки `s`.
         def isSubsequence(word, s):
             i, j = 0, 0
             while i < len(word) and j < len(s):
                 if word[i] == s[j]:
-                    i += 1
-                j += 1
-            return i == len(word)
-        count = 0
+                    i += 1  # Увеличиваем индекс в `word`, если символы совпадают
+                j += 1  # Увеличиваем индекс в строке `s`
+
+            return i == len(word)  # Если `i` становится равным длине `word`, это означает, что `word` является подпоследовательностью `s`
+
+        count = 0  # Инициализируем счетчик
         for word in words:
+            # Проверяем, является ли `word` подпоследовательностью `s`
             if isSubsequence(word, s):
-                count += 1
-        return count
+                count += 1  # Если является, увеличиваем счетчик
+        return count  # Возвращаем общее количество подпоследовательностей
 
 
 list_s =  "abcde", "dsahjpjauf"
