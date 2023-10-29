@@ -36,3 +36,20 @@
 # 219,673
 # Submissions
 # 428,515
+
+
+
+class Solution(object):
+    def numMatchingSubseq(self, s, words):
+        """
+        :type s: str
+        :type words: List[str]
+        :rtype: int
+        """
+        return res
+
+
+list_s =  "abcde", "dsahjpjauf"
+list_w = ["a","bb","acd","ace"], ["ahjpjau","ja","ahbwzgqnuk","tnmlanowax"]
+for index, s in enumerate(list_s):
+   Solution.numMatchingSubseq('Success', s, list_[index])
