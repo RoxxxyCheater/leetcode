@@ -38,7 +38,6 @@
 # 428,515
 
 
-
 class Solution(object):
     def numMatchingSubseq(self, s, words):
         """
@@ -46,7 +45,18 @@ class Solution(object):
         :type words: List[str]
         :rtype: int
         """
-        return res
+        def isSubsequence(word, s):
+            i, j = 0, 0
+            while i < len(word) and j < len(s):
+                if word[i] == s[j]:
+                    i += 1
+                j += 1
+            return i == len(word)
+        count = 0
+        for word in words:
+            if isSubsequence(word, s):
+                count += 1
+        return count
 
 
 list_s =  "abcde", "dsahjpjauf"
