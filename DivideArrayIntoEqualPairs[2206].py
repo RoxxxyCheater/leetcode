@@ -47,7 +47,12 @@ class Solution(object):
         :type nums: List[int]
         :rtype: bool
         """
-        return res
+        nums.sort()
+        for i in range(0, len(nums), 2):
+            if nums[i] != nums[i + 1]:
+                return False
+        return True
+
 
 list_n = [3,2,3,2,2,2], [1,2,3,4]
 for i in list_n:
