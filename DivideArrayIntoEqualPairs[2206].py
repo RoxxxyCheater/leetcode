@@ -39,3 +39,17 @@
 # 65,330
 # Submissions
 # 89,191
+
+
+class Solution(object):
+    def divideArray(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: bool
+        """
+        return res
+
+list_n = [3,2,3,2,2,2], [1,2,3,4]
+for i in list_n:
+  Solution.divideArray('Success', i)
+ 
