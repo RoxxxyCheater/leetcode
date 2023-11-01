@@ -40,24 +40,21 @@
 
 class Solution(object):
     def numMatchingSubseq(self, s, words):
-        """
-        :type s: str
-        :type words: List[str]
-        :rtype: int
-        """
+        # Функция для проверки, является ли слово подпоследовательностью строки s
         def isSubsequence(word):
             i, j = 0, 0
             while i < len(s) and j < len(word):
                 if s[i] == word[j]:
-                    j += 1
-                i += 1
-            return j == len(word)
-        count = 0
+                    j += 1  # Увеличиваем индекс в слове, если буква совпадает
+                i += 1  # Увеличиваем индекс в строке s независимо от совпадения
+            return j == len(word)  # Возвращает True, если все буквы word обработаны в s
+
+        count = 0  # Переменная для подсчета количества подпоследовательностей
         for word in words:
             if isSubsequence(word):
-                count += 1
-        return count
+                count += 1  # Увеличиваем счетчик, если слово - подпоследовательность
 
+        return count  # Возвращаем общее количество подпоследовательностей
 
 list_s = "abcde", "dsahjpjauf"
 list_w = ["a","bb","acd","ace"], ["ahjpjau","ja","ahbwzgqnuk","tnmlanowax"]
