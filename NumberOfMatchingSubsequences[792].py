@@ -45,7 +45,18 @@ class Solution(object):
         :type words: List[str]
         :rtype: int
         """
-        return res
+        def isSubsequence(word):
+            i, j = 0, 0
+            while i < len(s) and j < len(word):
+                if s[i] == word[j]:
+                    j += 1
+                i += 1
+            return j == len(word)
+        count = 0
+        for word in words:
+            if isSubsequence(word):
+                count += 1
+        return count
 
 
 list_s = "abcde", "dsahjpjauf"
