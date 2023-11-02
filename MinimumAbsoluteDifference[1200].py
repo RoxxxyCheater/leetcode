@@ -48,7 +48,20 @@ class Solution(object):
         :type arr: List[int]
         :rtype: List[List[int]]
         """
-        return res
+        arr.sort() 
+        min_diff = float('inf')  
+        result = []
+        for i in range(1, len(arr)):
+            diff = arr[i] - arr[i - 1]
+            if diff < min_diff:
+                min_diff = diff
+        for i in range(1, len(arr)):
+            diff = arr[i] - arr[i - 1]
+            if diff == min_diff:
+                result.append([arr[i - 1], arr[i]])
+    
+        return result
+
 
 list_a = [4,2,1,3],[1,3,6,10,15],[3,8,-10,23,19,-4,-14,27]
 for i in list_a:
