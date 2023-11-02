@@ -48,19 +48,26 @@ class Solution(object):
         :type arr: List[int]
         :rtype: List[List[int]]
         """
-        arr.sort() 
-        min_diff = float('inf')  
-        result = []
-        for i in range(1, len(arr)):
-            diff = arr[i] - arr[i - 1]
-            if diff < min_diff:
-                min_diff = diff
-        for i in range(1, len(arr)):
-            diff = arr[i] - arr[i - 1]
-            if diff == min_diff:
-                result.append([arr[i - 1], arr[i]])
+        arr.sort()  # Сортируем массив в порядке возрастания
     
-        return result
+        min_diff = float('inf')  # Инициализируем min_diff бесконечностью
+    
+        result = []  # Создаем пустой список для хранения пар
+    
+        # Находим минимальную абсолютную разницу между элементами
+        for i in range(1, len(arr)):  # Проходим по всем элементам массива, начиная с первого
+            diff = arr[i] - arr[i - 1]  # Вычисляем разницу между текущим и предыдущим элементами
+            if diff < min_diff:  # Если разница меньше текущей минимальной разницы
+                min_diff = diff  # Обновляем минимальную разницу
+    
+        # Находим пары с минимальной абсолютной разницей
+        for i in range(1, len(arr)):  # Проходим по всем элементам массива, начиная с первого
+            diff = arr[i] - arr[i - 1]  # Вычисляем разницу между текущим и предыдущим элементами
+            if diff == min_diff:  # Если разница равна минимальной разнице
+                result.append([arr[i - 1], arr[i]])  # Добавляем пару в результат
+    
+        return result  # Возвращаем список пар
+
 
 
 list_a = [4,2,1,3],[1,3,6,10,15],[3,8,-10,23,19,-4,-14,27]
