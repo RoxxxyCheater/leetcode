@@ -40,3 +40,17 @@
 # 173,720
 # Submissions
 # 250,124
+
+
+class Solution(object):
+    def minimumAbsDifference(self, arr):
+        """
+        :type arr: List[int]
+        :rtype: List[List[int]]
+        """
+        return res
+
+list_a = [4,2,1,3],[1,3,6,10,15],[3,8,-10,23,19,-4,-14,27]
+for i in list_a:
+   Solution.minimumAbsDifference('Success', i)
+
