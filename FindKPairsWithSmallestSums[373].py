@@ -51,19 +51,25 @@ class Solution(object):
         :rtype: List[List[int]]
         """
         if not nums1 or not nums2:
-            return []    
-        heap = [] 
-        results = [] 
+            return []
+    
+        heap = []  # Создаем мин-кучу (приоритетную очередь)
+        results = []  # Создаем список для хранения результатов
+    
+        # Функция для добавления пар чисел и их суммы в кучу
         def push(i, j):
             if i < len(nums1) and j < len(nums2):
-                heapq.heappush(heap, (nums1[i] + nums2[j], i, j))    
-        push(0, 0) 
+                heapq.heappush(heap, (nums1[i] + nums2[j], i, j))
+    
+        push(0, 0)  # Добавляем первую пару (0, 0) с суммой nums1[0] + nums2[0]
+    
         while heap and len(results) < k:
-            _, i, j = heapq.heappop(heap)  
-            results.append([nums1[i], nums2[j]]) 
-            push(i, j + 1)  
+            _, i, j = heapq.heappop(heap)  # Извлекаем пару с минимальной суммой
+            results.append([nums1[i], nums2[j]])  # Добавляем ее в список результатов
+            push(i, j + 1)  # Добавляем пару (i, j+1) в кучу
             if j == 0:
-                push(i + 1, 0)     
+                push(i + 1, 0)  # Добавляем пару (i+1, 0) в кучу
+    
         return results
      
 list_num1 = [1,7,11], [1,1,2], [1,2]
