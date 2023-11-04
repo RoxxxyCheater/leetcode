@@ -35,3 +35,18 @@
 # 109,869
 # Submissions
 # 155,581
+
+
+
+class Solution(object):
+    def frequencySort(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+        return res
+
+list_n = [1,1,2,2,2,3], [2,3,1,3,2], [-1,1,-6,4,5,-6,1,4,1]
+for i in list_n:
+   Solution.frequencySort('Success', i)
+ 
