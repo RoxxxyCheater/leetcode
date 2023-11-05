@@ -49,21 +49,26 @@ class Solution(object):
         :type k: int
         :rtype: int
         """
-        n = len(matrix)
-        left, right = matrix[0][0], matrix[n - 1][n - 1]        
-        while left < right:
-            mid = left + (right - left) // 2
-            count = 0
-            j = n - 1            
-            for i in range(n):
-                while j >= 0 and matrix[i][j] > mid:
+        n = len(matrix)  # Получаем размер матрицы (предполагается, что матрица квадратная)
+        left, right = matrix[0][0], matrix[n - 1][n - 1]  # Инициализируем левую и правую границы для бинарного поиска
+        
+        while left < right:  # Выполняем бинарный поиск, пока левая граница меньше правой
+            mid = left + (right - left) // 2  # Вычисляем среднее значение текущего диапазона
+            count = 0  # Инициализируем счетчик числа элементов меньше или равных mid
+            j = n - 1  # Начинаем с самой правой колонки
+            
+            for i in range(n):  # Проходим по каждой строке матрицы
+                while j >= 0 and matrix[i][j] > mid:  # Поиск элемента, меньшего или равного mid
                     j -= 1
-                count += (j + 1)            
-            if count < k:
+                count += (j + 1)  # Увеличиваем счетчик на количество элементов в текущей строке меньших или равных mid
+            
+            if count < k:  # Если число элементов меньше k, сдвигаем левую границу
                 left = mid + 1
-            else:
-                right = mid        
-        return left
+            else:  # В противном случае сдвигаем правую границу
+                right = mid
+        
+        return left  # Возвращаем значение left как k-тое наименьшее число
+
 
 
 list_m = [[1,5,9],[10,11,13],[12,13,15]], [[-5]]
