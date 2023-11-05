@@ -41,3 +41,18 @@
 # 570,935
 # Submissions
 # 919,727
+
+class Solution(object):
+    def kthSmallest(self, matrix, k):
+        """
+        :type matrix: List[List[int]]
+        :type k: int
+        :rtype: int
+        """
+        return res
+
+
+list_m = [[1,5,9],[10,11,13],[12,13,15]], [[-5]]
+list_k = 8, 1
+for index, m in enumerate(list_m):
+   Solution.kthSmallest('Success', m, list_k[index])
