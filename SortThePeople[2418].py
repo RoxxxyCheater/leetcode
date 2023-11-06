@@ -36,3 +36,19 @@
 # 103,207
 # Submissions
 # 128,877
+
+
+class Solution(object):
+    def sortPeople(self, names, heights):
+        """
+        :type names: List[str]
+        :type heights: List[int]
+        :rtype: List[str]
+        """
+        return res
+
+list_n = ["Mary","John","Emma"], ["Alice","Bob","Bob"]
+list_h = [180,165,170], [155,185,150]
+
+for index, n in enumerate('Success'):
+  Solution.sortPeople('Success', n, list_h[index])
