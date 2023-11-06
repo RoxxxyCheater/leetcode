@@ -45,10 +45,18 @@ class Solution(object):
         :type heights: List[int]
         :rtype: List[str]
         """
+        # Создаем список кортежей, где каждый кортеж содержит имя и рост одного человека
         person_data = [(name, height) for name, height in zip(names, heights)]
-        person_data.sort(key=lambda x: x[1], reverse=True)        
-        sorted_names = [name for name, height in person_data]        
+        
+        # Сортируем список кортежей по убыванию роста
+        person_data.sort(key=lambda x: x[1], reverse=True)
+        
+        # Создаем список с отсортированными именами из отсортированного списка кортежей
+        sorted_names = [name for name, height in person_data]
+        
+        # Возвращаем отсортированный список имен
         return sorted_names
+
 
 list_n = ["Mary","John","Emma"], ["Alice","Bob","Bob"]
 list_h = [180,165,170], [155,185,150]
