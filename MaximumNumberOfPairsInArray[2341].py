@@ -46,3 +46,17 @@
 # 57,730
 # Submissions
 # 76,480
+
+
+class Solution(object):
+    def numberOfPairs(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+        return res
+
+list_n =  [1,3,2,1,3,2,2], [1,1], [0]
+
+for i in list_n:
+   Solution.numberOfPairs('Success', i)
