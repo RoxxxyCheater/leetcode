@@ -54,7 +54,19 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[int]
         """
-        return res
+        count_dict = {}
+        for num in nums:
+            if num in count_dict:
+                count_dict[num] += 1
+            else:
+                count_dict[num] = 1
+        pairs = 0
+        leftover = 0
+        for count in count_dict.values():
+            pairs += count // 2
+            leftover += count % 2
+        return [pairs, leftover]
+
 
 list_n =  [1,3,2,1,3,2,2], [1,1], [0]
 
