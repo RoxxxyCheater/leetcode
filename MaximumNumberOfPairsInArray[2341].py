@@ -54,19 +54,30 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[int]
         """
+        # Создаем словарь для подсчета количества вхождений каждого числа в nums
         count_dict = {}
+    
+        # Итерируемся по элементам в nums и увеличиваем счетчик для каждого числа
         for num in nums:
             if num in count_dict:
                 count_dict[num] += 1
             else:
                 count_dict[num] = 1
+    
+        # Инициализируем переменные для отслеживания количества пар и оставшихся чисел
         pairs = 0
         leftover = 0
+    
+        # Итерируемся по значениям в словаре (количество вхождений чисел)
         for count in count_dict.values():
+            # Рассчитываем количество пар, которые можно сформировать, используя текущее количество
             pairs += count // 2
+    
+            # Рассчитываем количество оставшихся чисел
             leftover += count % 2
+    
+        # Возвращаем результат в виде списка [pairs, leftover]
         return [pairs, leftover]
-
 
 list_n =  [1,3,2,1,3,2,2], [1,1], [0]
 
