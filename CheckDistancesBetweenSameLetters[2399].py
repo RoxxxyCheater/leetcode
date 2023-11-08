@@ -57,7 +57,20 @@ class Solution(object):
         :type distance: List[int]
         :rtype: bool
         """
-        return res
+        letter_indices = {chr(i): [] for i in range(ord('a'), ord('z') + 1)}
+        for i, letter in enumerate(s):
+            letter_index = ord(letter) - ord('a')
+            letter_indices[letter].append(i)
+        for letter, indices in letter_indices.items():
+            if len(indices) == 2:
+                diff = indices[1] - indices[0] - 1
+                if diff != distance[ord(letter) - ord('a')]:
+                    return False
+            elif len(indices) > 0:
+                if distance[ord(letter) - ord('a')] != 0:
+                    return False
+        return True
+
 
 list_s = "abaccb", "aa"
 list_d = [1,3,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
