@@ -48,3 +48,19 @@
 # 41,833
 # Submissions
 # 59,731
+
+
+class Solution(object):
+    def checkDistances(self, s, distance):
+        """
+        :type s: str
+        :type distance: List[int]
+        :rtype: bool
+        """
+        return res
+
+list_s = "abaccb", "aa"
+list_d = [1,3,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+
+for inddex, s in enumerate(list_s):
+   Solution.checkDistances('Success', s, list_d[index])
