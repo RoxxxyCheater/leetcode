@@ -57,18 +57,27 @@ class Solution(object):
         :type distance: List[int]
         :rtype: bool
         """
+        # Создаем словарь для хранения индексов первого и второго появления каждой буквы.
         letter_indices = {chr(i): [] for i in range(ord('a'), ord('z') + 1)}
+    
+        # Итерируемся по строке, чтобы найти индексы первых появлений букв.
         for i, letter in enumerate(s):
             letter_index = ord(letter) - ord('a')
             letter_indices[letter].append(i)
+    
+        # Проверяем, удовлетворяют ли расстояния для каждой буквы условиям.
         for letter, indices in letter_indices.items():
             if len(indices) == 2:
+                # Если буква появляется дважды, вычисляем разницу между индексами и проверяем с заданным расстоянием.
                 diff = indices[1] - indices[0] - 1
                 if diff != distance[ord(letter) - ord('a')]:
                     return False
             elif len(indices) > 0:
+                # Если буква появляется только один раз, но её расстояние не равно 0, возвращаем False.
                 if distance[ord(letter) - ord('a')] != 0:
                     return False
+    
+        # Если все буквы удовлетворяют условиям, возвращаем True.
         return True
 
 
