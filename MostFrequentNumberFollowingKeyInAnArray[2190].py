@@ -40,3 +40,19 @@
 # 31,117
 # Submissions
 # 52,626
+
+
+
+class Solution(object):
+    def mostFrequent(self, nums, key):
+        """
+        :type nums: List[int]
+        :type key: int
+        :rtype: int
+        """
+        return res
+
+list_n = [1,100,200,1,100], [2,2,2,2,3]
+list_k = 1, 2
+for index, n in enumerate(list_n):
+   Solution.mostFrequent('Success', n, list_k[index])
