@@ -50,7 +50,13 @@ class Solution(object):
         :type key: int
         :rtype: int
         """
-        return res
+        target_count = {}
+        for i in range(len(nums) - 1):
+            if nums[i] == key:
+                target = nums[i + 1]
+                target_count[target] = target_count.get(target, 0) + 1
+        max_target = max(target_count, key=target_count.get)
+        return max_target
 
 list_n = [1,100,200,1,100], [2,2,2,2,3]
 list_k = 1, 2
