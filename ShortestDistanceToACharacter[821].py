@@ -46,7 +46,19 @@ class Solution(object):
         :type c: str
         :rtype: List[int]
         """
-        return res
+        n = len(s)
+        result = [float('inf')] * n
+        last_seen_index = float('-inf')
+        for i in range(n):
+            if s[i] == c:
+                last_seen_index = i
+            result[i] = min(result[i], abs(i - last_seen_index))
+        last_seen_index = float('inf')
+        for i in range(n - 1, -1, -1):
+            if s[i] == c:
+                last_seen_index = i
+            result[i] = min(result[i], abs(i - last_seen_index))
+        return result
 
 
 list_s =  "loveleetcode", "aaab"
