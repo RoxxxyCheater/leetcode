@@ -47,19 +47,29 @@ class Solution(object):
         :rtype: List[int]
         """
         n = len(s)
+        # Создаем массив result, заполненный бесконечно большими значениями.
         result = [float('inf')] * n
+    
+        # Проход вперёд: вычисляем расстояние до ближайшего вхождения 'c' справа.
         last_seen_index = float('-inf')
         for i in range(n):
+            # Обновляем last_seen_index, если текущий символ - 'c'.
             if s[i] == c:
                 last_seen_index = i
+            # Вычисляем расстояние от текущего индекса до последнего вхождения 'c' и обновляем результат.
             result[i] = min(result[i], abs(i - last_seen_index))
+    
+        # Проход назад: вычисляем расстояние до ближайшего вхождения 'c' слева.
         last_seen_index = float('inf')
         for i in range(n - 1, -1, -1):
+            # Обновляем last_seen_index, если текущий символ - 'c'.
             if s[i] == c:
                 last_seen_index = i
+            # Вычисляем расстояние от текущего индекса до последнего вхождения 'c' и обновляем результат.
             result[i] = min(result[i], abs(i - last_seen_index))
+    
+        # Возвращаем итоговый массив расстояний.
         return result
-
 
 list_s =  "loveleetcode", "aaab"
 list_c =  "e", "b"
