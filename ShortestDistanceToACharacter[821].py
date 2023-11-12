@@ -38,3 +38,19 @@
 # 170,885
 # Submissions
 # 239,563
+class Solution(object):
+ 
+    def shortestToChar(self, s, c):
+        """
+        :type s: str
+        :type c: str
+        :rtype: List[int]
+        """
+        return res
+
+
+list_s =  "loveleetcode", "aaab"
+list_c =  "e", "b"
+
+for index, s in enumerate(list_s):
+   Solution.shortestToChar('Success', s, list_c[index])
