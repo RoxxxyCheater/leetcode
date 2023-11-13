@@ -46,7 +46,14 @@ class Solution(object):
         :type nums2: List[int]
         :rtype: List[int]
         """
-        return res
+        counter1 = Counter(nums1)
+        counter2 = Counter(nums2)
+        intersection = []
+        for num, count in counter1.items():
+            min_count = min(count, counter2.get(num, 0))
+            intersection.extend([num] * min_count)    
+        return intersection
+
 
 list_n1 = [1,2,2,1], [4,9,5]
 list_n2 = [2,2], [9,4,9,8,4]
