@@ -46,13 +46,22 @@ class Solution(object):
         :type nums2: List[int]
         :rtype: List[int]
         """
+        # Используем Counter для подсчета частоты каждого элемента в обоих массивах
         counter1 = Counter(nums1)
         counter2 = Counter(nums2)
+    
+        # Инициализируем пустой список для хранения пересечения
         intersection = []
+    
+        # Итерируемся по элементам в Counter первого массива (counter1)
         for num, count in counter1.items():
+            # Находим минимальную частоту текущего элемента в обоих Counter'ах
             min_count = min(count, counter2.get(num, 0))
-            intersection.extend([num] * min_count)    
+            # Добавляем элемент в список пересечения min_count раз
+            intersection.extend([num] * min_count)
+    
         return intersection
+
 
 
 list_n1 = [1,2,2,1], [4,9,5]
