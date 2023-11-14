@@ -43,9 +43,15 @@ class Solution(object):
         :type nums: List[List[int]]
         :rtype: List[int]
         """
+        # Инициализируем переменную для хранения результата, начинаем с элементов первого подмассива
         result_set = set(nums[0])
+
+        # Итерируемся по оставшимся подмассивам
         for num_list in nums[1:]:
+            # Обновляем result_set, оставляя только общие элементы
             result_set.intersection_update(num_list)
+
+        # Преобразуем множество в отсортированный список и возвращаем результат
         return sorted(result_set)
 
 list_n = [[3,1,2,4,5],[1,2,3,4],[3,4,5,6]], [[1,2,3],[4,5,6]]
