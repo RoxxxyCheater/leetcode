@@ -35,3 +35,16 @@
 # 63,313
 # Submissions
 # 92,997
+
+
+class Solution(object):
+    def intersection(self, nums):
+        """
+        :type nums: List[List[int]]
+        :rtype: List[int]
+        """
+        return res
+
+list_n = [[3,1,2,4,5],[1,2,3,4],[3,4,5,6]], [[1,2,3],[4,5,6]]
+for i in list_n:
+   Solution.intersection('Success', i)
