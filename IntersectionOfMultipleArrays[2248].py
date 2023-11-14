@@ -43,7 +43,10 @@ class Solution(object):
         :type nums: List[List[int]]
         :rtype: List[int]
         """
-        return res
+        result_set = set(nums[0])
+        for num_list in nums[1:]:
+            result_set.intersection_update(num_list)
+        return sorted(result_set)
 
 list_n = [[3,1,2,4,5],[1,2,3,4],[3,4,5,6]], [[1,2,3],[4,5,6]]
 for i in list_n:
