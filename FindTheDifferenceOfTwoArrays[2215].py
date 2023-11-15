@@ -49,9 +49,16 @@ class Solution(object):
         :type nums2: List[int]
         :rtype: List[List[int]]
         """
+        # Создаем множества из списков для быстрого поиска различий
         set1, set2 = set(nums1), set(nums2)
+    
+        # Находим различия в nums1, т.е. числа, которые есть в nums1, но отсутствуют в nums2
         result1 = list(set1 - set2)
-        result2 = list(set2 - set1)    
+    
+        # Находим различия в nums2, т.е. числа, которые есть в nums2, но отсутствуют в nums1
+        result2 = list(set2 - set1)
+    
+        # Возвращаем результат в виде списка списков
         return [result1, result2]
 
 list_n1 = [1,2,3], [1,2,3,3]
