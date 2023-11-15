@@ -40,3 +40,19 @@
 # 225,281
 # Submissions
 # 287,443
+
+
+class Solution(object):
+    def findDifference(self, nums1, nums2):
+        """
+        :type nums1: List[int]
+        :type nums2: List[int]
+        :rtype: List[List[int]]
+        """
+        return res
+
+list_n1 = [1,2,3], [1,2,3,3]
+list_n2 = [2,4,6], [1,1,2,2]
+
+for index, n in enumerate(list_n1):
+   Solution.findDeifference('Success', n, list_n2[index])
