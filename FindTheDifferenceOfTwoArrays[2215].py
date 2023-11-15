@@ -49,7 +49,10 @@ class Solution(object):
         :type nums2: List[int]
         :rtype: List[List[int]]
         """
-        return res
+        set1, set2 = set(nums1), set(nums2)
+        result1 = list(set1 - set2)
+        result2 = list(set2 - set1)    
+        return [result1, result2]
 
 list_n1 = [1,2,3], [1,2,3,3]
 list_n2 = [2,4,6], [1,1,2,2]
