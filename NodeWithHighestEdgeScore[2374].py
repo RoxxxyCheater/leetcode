@@ -52,7 +52,18 @@ class Solution(object):
         :type edges: List[int]
         :rtype: int
         """
-        return res
+        n = len(edges)
+        edge_scores = [0] * n
+        for i in range(n):
+            if edges[i] != i:
+                edge_scores[edges[i]] += i
+        max_score = -1
+        result_node = -1
+        for i in range(n):
+            if edge_scores[i] > max_score:
+                max_score = edge_scores[i]
+                result_node = i
+        return result_node
 
 list_e = [1,0,0,0,0,7,7,5], [2,0,0,2]
 for i in list_e:
