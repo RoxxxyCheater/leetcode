@@ -44,3 +44,16 @@
 # 29,751
 # Submissions
 # 63,554
+
+
+class Solution(object):
+    def edgeScore(self, edges):
+        """
+        :type edges: List[int]
+        :rtype: int
+        """
+        return res
+
+list_e = [1,0,0,0,0,7,7,5], [2,0,0,2]
+for i in list_e:
+  Solution.edgeScore('Success', i)
