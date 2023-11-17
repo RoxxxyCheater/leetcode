@@ -52,18 +52,26 @@ class Solution(object):
         :type edges: List[int]
         :rtype: int
         """
-        n = len(edges)
+        n = len(edges)  # Определяем количество узлов в графе
+    
+        # Инициализируем массив для хранения суммы оценок узлов, указывающих на каждый узел
         edge_scores = [0] * n
+    
+        # Рассчитываем оценки для каждого узла
         for i in range(n):
-            if edges[i] != i:
-                edge_scores[edges[i]] += i
+            if edges[i] != i:  # Проверяем, что узел не указывает на самого себя
+                edge_scores[edges[i]] += i  # Добавляем оценку текущего узла к соответствующему узлу, на который он указывает
+    
+        # Находим узел с максимальной суммой оценок
         max_score = -1
         result_node = -1
+    
         for i in range(n):
-            if edge_scores[i] > max_score:
-                max_score = edge_scores[i]
-                result_node = i
-        return result_node
+            if edge_scores[i] > max_score:  # Проверяем, если сумма оценок у текущего узла больше максимальной
+                max_score = edge_scores[i]  # Обновляем максимальную сумму оценок
+                result_node = i  # Запоминаем узел с максимальной суммой оценок
+    
+        return result_node  # Возвращаем узел с максимальной суммой оценок
 
 list_e = [1,0,0,0,0,7,7,5], [2,0,0,2]
 for i in list_e:
