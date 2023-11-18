@@ -39,20 +39,24 @@
 # 555,398
 # Submissions
 # 787,981
-
 class Solution(object):
     def frequencySort(self, s):
         """
         :type s: str
         :rtype: str
         """
+        # Создаем словарь для подсчета частоты каждого символа в строке
         char_freq = {}
         for char in s:
             char_freq[char] = char_freq.get(char, 0) + 1
-        sorted_chars = sorted(char_freq.keys(), key=lambda x: char_freq[x], reverse=True)
-        result = ''.join(char * char_freq[char] for char in sorted_chars)
-        return result
 
+        # Сортируем символы по убыванию частоты
+        sorted_chars = sorted(char_freq.keys(), key=lambda x: char_freq[x], reverse=True)
+
+        # Формируем отсортированную строку на основе отсортированных символов и их частоты
+        result = ''.join(char * char_freq[char] for char in sorted_chars)
+
+        return result
 
 list_s = "tree", "cccaaa", "Aabb"
 for i in list_s:
