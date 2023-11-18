@@ -39,3 +39,18 @@
 # 555,398
 # Submissions
 # 787,981
+
+class Solution(object):
+    def frequencySort(self, s):
+        """
+        :type s: str
+        :rtype: str
+        """
+        return result
+
+
+list_s = "tree", "cccaaa", "Aabb"
+for i in list_s:
+   Solution.frequencySort('Success', i)
+
+ 
