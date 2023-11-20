@@ -40,10 +40,16 @@ class Solution(object):
         :type nums2: List[int]
         :rtype: List[int]
         """
+        # Используем set для уникальных значений в каждом массиве
         set_nums1 = set(nums1)
         set_nums2 = set(nums2)
+    
+        # Используем оператор & для нахождения пересечения множеств
         result_set = set_nums1 & set_nums2
-        result_list = list(result_set)    
+    
+        # Преобразуем результат в список
+        result_list = list(result_set)
+    
         return result_list
 
 list_n = [1,2,2,1], [4,9,5]
