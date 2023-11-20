@@ -31,3 +31,19 @@
 # 952,984
 # Submissions
 # 1,325,899
+
+
+class Solution(object):
+    def intersection(self, nums1, nums2):
+        """
+        :type nums1: List[int]
+        :type nums2: List[int]
+        :rtype: List[int]
+        """
+        return res
+
+list_n = [1,2,2,1], [4,9,5]
+list_ nn = [9,4,9,8,4], [2,2]
+
+for index, n in enumerate(list_n):
+    Solution.intersection('Success', n, list_nn[index])
