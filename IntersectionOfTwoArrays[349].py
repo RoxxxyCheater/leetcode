@@ -40,7 +40,11 @@ class Solution(object):
         :type nums2: List[int]
         :rtype: List[int]
         """
-        return res
+        set_nums1 = set(nums1)
+        set_nums2 = set(nums2)
+        result_set = set_nums1 & set_nums2
+        result_list = list(result_set)    
+        return result_list
 
 list_n = [1,2,2,1], [4,9,5]
 list_ nn = [9,4,9,8,4], [2,2]
