@@ -31,3 +31,19 @@
 # 1,795,480
 # Submissions
 # 2,856,147
+
+
+class Solution(object):
+    def topKFrequent(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: List[int]
+        """
+        return res
+
+list_n = [1,1,1,2,2,3], [1]
+list_ nn = 2, 1
+
+for index, n in enumerate(list_n):
+    Solution.topKFrequent('Success', n, list_nn[index])
