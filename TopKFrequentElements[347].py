@@ -40,13 +40,21 @@ class Solution(object):
         :type k: int
         :rtype: List[int]
         """
+        # Подсчитываем частоту каждого элемента в массиве
         counter = Counter(nums)
+    
+        # Создаем мин-кучу, преобразуя частоту в отрицательное число (так как heapq поддерживает только мин-кучу)
         heap = [(-freq, num) for num, freq in counter.items()]
-        heapq.heapify(heap)
+        # Преобразуем список в кучу
+        heapq.heapify(heap)  
+    
         result = []
         for _ in range(k):
-            freq, num = heapq.heappop(heap)
-            result.append(num)
+            # Извлекаем элемент с наивысшей частотой
+            freq, num = heapq.heappop(heap)  
+            # Добавляем элемент в результирующий список
+            result.append(num)  
+    
         return result
      
 list_n = [1,1,1,2,2,3], [1]
