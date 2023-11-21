@@ -40,8 +40,15 @@ class Solution(object):
         :type k: int
         :rtype: List[int]
         """
-        return res
-
+        counter = Counter(nums)
+        heap = [(-freq, num) for num, freq in counter.items()]
+        heapq.heapify(heap)
+        result = []
+        for _ in range(k):
+            freq, num = heapq.heappop(heap)
+            result.append(num)
+        return result
+     
 list_n = [1,1,1,2,2,3], [1]
 list_ nn = 2, 1
 
