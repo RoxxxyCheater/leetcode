@@ -31,3 +31,20 @@
 # 60,421
 # Submissions
 # 81,733
+
+
+class Solution(object):
+    def percentageLetter(self, s, letter):
+        """
+        :type s: str
+        :type letter: str
+        :rtype: int
+        """
+        return res
+
+
+list_s = "foobar", "jjjj"
+list_l = "o", "k"
+
+for i, s in enumerate(list_s):
+   Solution.percentageLetter('Success', s, list_l[i])
