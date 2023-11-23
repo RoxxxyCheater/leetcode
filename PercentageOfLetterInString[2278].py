@@ -40,7 +40,10 @@ class Solution(object):
         :type letter: str
         :rtype: int
         """
-        return res
+        count_matching = s.count(letter)
+        percentage = (float(count_matching) / len(s)) * 100
+        return int(percentage)
+
 
 
 list_s = "foobar", "jjjj"
