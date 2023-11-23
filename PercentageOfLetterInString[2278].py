@@ -40,8 +40,13 @@ class Solution(object):
         :type letter: str
         :rtype: int
         """
-        count_matching = s.count(letter)
+        # Подсчитываем колличество букв в слове
+        count_matching = s.count(letter) 
+     
+        # Узнаём процентное соотношение буквы к слову
         percentage = (float(count_matching) / len(s)) * 100
+     
+        # Возвращаем численное значение процентов 
         return int(percentage)
 
 
