@@ -49,15 +49,15 @@ class Solution(object):
         :type s: str
         :rtype: int
         """
-        moves = 0
+        moves = 0 # инициализируем кол-во хходов
          
-         i = 0
-         while i < len(s):
-             if s[i] == 'X':
-                 moves += 1
-                 i += 3
+         i = 0 
+         while i < len(s): # Проходим циклом while 
+             if s[i] == 'X': # Если буква в слове искома
+                 moves += 1 # Прибавляем ход
+                 i += 3 
              else:
-                 i += 1
+                 i += 1 #иначе отнимаем
          
          return moves
 
