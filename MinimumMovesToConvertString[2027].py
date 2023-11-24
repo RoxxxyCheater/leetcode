@@ -41,3 +41,16 @@
 # 31,912
 # Submissions
 # 58,588
+
+
+class Solution(object):
+    def minimumMoves(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        return res
+
+list_s = "XXX", "XXOX"
+for i in list_s:
+   Solution.minimumMoves('Success', i)
