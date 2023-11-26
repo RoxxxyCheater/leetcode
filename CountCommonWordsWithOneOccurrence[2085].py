@@ -57,13 +57,21 @@ class Solution(object):
         """
         word_count1 = {}
         word_count2 = {}
+    
+        # Подсчитываем частоту встречаемости слов в words1
         for word in words1:
             word_count1[word] = word_count1.get(word, 0) + 1
+    
+        # Подсчитываем частоту встречаемости слов в words2
         for word in words2:
-            word_count2[word] = word_count2.get(word, 0) + 1    
+            word_count2[word] = word_count2.get(word, 0) + 1
+    
         count = 0
+    
+        # Проверяем, сколько слов встречается ровно один раз в обоих словарях
         for word in set(words1 + words2):
             count += (word_count1.get(word, 0) == 1) and (word_count2.get(word, 0) == 1)
+    
         return count
 
 
