@@ -43,3 +43,23 @@
 # 55,848
 # Submissions
 # 80,029
+
+
+
+
+
+class Solution(object):
+    def countWords(self, words1, words2):
+        """
+        :type words1: List[str]
+        :type words2: List[str]
+        :rtype: int
+        """
+        return res
+
+
+list_w = ["leetcode","is","amazing","as","is"], ["b","bb","bbb"], ["a","ab"]
+list_ww = ["amazing","leetcode","is"], ["a","aa","aaa"],  ["a","a","a","ab"]
+
+for i, w in enumerate(list_w):
+   Solution.countWords('Success', w, list_ww[i])
