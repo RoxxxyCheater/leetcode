@@ -55,7 +55,16 @@ class Solution(object):
         :type words2: List[str]
         :rtype: int
         """
-        return res
+        word_count1 = {}
+        word_count2 = {}
+        for word in words1:
+            word_count1[word] = word_count1.get(word, 0) + 1
+        for word in words2:
+            word_count2[word] = word_count2.get(word, 0) + 1    
+        count = 0
+        for word in set(words1 + words2):
+            count += (word_count1.get(word, 0) == 1) and (word_count2.get(word, 0) == 1)
+        return count
 
 
 list_w = ["leetcode","is","amazing","as","is"], ["b","bb","bbb"], ["a","ab"]
