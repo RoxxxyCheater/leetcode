@@ -40,3 +40,15 @@
 # 42,628
 # Submissions
 # 114,660
+
+class Solution(object):
+    def numDifferentIntegers(self, word):
+        """
+        :type word: str
+        :rtype: int
+        """
+        return res
+
+l_w = "a123bc34d8ef34", "leet1234code234",  "a1b01c001"
+for i in l_w:
+  Solution.numDifferentIntegers('Success', i)
