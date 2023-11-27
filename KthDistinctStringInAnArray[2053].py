@@ -57,7 +57,16 @@ class Solution(object):
         :type k: int
         :rtype: str
         """
-        return res
+        string_count = Counter(arr)
+        ordered_dict = OrderedDict(sorted(string_count.items(), key=lambda x: arr.index(x[0])))
+    
+        for string, count in ordered_dict.items():
+            if count == 1:
+                k -= 1
+                if k == 0:
+                    return string
+    
+        return ""
 
 al = ["d","b","c","b","c","a"], ["aaa","aa","a"], ["a","b","a"]
 kl = 2, 1, 3
