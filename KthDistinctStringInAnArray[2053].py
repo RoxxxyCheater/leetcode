@@ -48,3 +48,19 @@
 # 54,164
 # Submissions
 # 74,920
+
+
+class Solution(object):
+    def kthDistinct(self, arr, k):
+        """
+        :type arr: List[str]
+        :type k: int
+        :rtype: str
+        """
+        return res
+
+al = ["d","b","c","b","c","a"], ["aaa","aa","a"], ["a","b","a"]
+kl = 2, 1, 3
+
+for i, a in enumerate(al):
+   Solution.kthDistinct('Success', a, kl[i])
