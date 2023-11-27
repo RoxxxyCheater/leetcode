@@ -57,15 +57,30 @@ class Solution(object):
         :type k: int
         :rtype: str
         """
+class Solution(object):
+    def kthDistinct(self, arr, k):
+        """
+        :type arr: List[str]
+        :type k: int
+        :rtype: str
+        """
+        # Создаем словарь с подсчетом уникальных строк в массиве
         string_count = Counter(arr)
+
+        # Сортируем словарь с учетом порядка появления строк в оригинальном массиве
         ordered_dict = OrderedDict(sorted(string_count.items(), key=lambda x: arr.index(x[0])))
-    
+
+        # Перебираем отсортированный словарь
         for string, count in ordered_dict.items():
+            # Если строка встречается только один раз
             if count == 1:
+                # Уменьшаем значение k
                 k -= 1
+                # Когда k достигает нуля, возвращаем эту строку
                 if k == 0:
                     return string
-    
+
+        # Если уникальных строк меньше, чем k, возвращаем пустую строку
         return ""
 
 al = ["d","b","c","b","c","a"], ["aaa","aa","a"], ["a","b","a"]
