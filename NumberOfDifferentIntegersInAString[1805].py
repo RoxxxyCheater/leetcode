@@ -47,7 +47,11 @@ class Solution(object):
         :type word: str
         :rtype: int
         """
-        return res
+
+        cleaned_word = ''.join(char if char.isdigit() else ' ' for char in word)
+        substrings = [substring for substring in cleaned_word.split(' ') if substring]
+        unique_digits = set(int(substring) for substring in substrings)
+        return len(unique_digits)
 
 l_w = "a123bc34d8ef34", "leet1234code234",  "a1b01c001"
 for i in l_w:
