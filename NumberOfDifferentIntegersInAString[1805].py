@@ -47,10 +47,16 @@ class Solution(object):
         :type word: str
         :rtype: int
         """
-
+        # Заменяем все символы, не являющиеся цифрами, пробелами
         cleaned_word = ''.join(char if char.isdigit() else ' ' for char in word)
+
+        # Разделяем строку на подстроки по пробелам и удаляем пустые строки
         substrings = [substring for substring in cleaned_word.split(' ') if substring]
+
+        # Преобразуем каждую подстроку в число и добавляем в множество
         unique_digits = set(int(substring) for substring in substrings)
+
+        # Возвращаем количество уникальных цифр
         return len(unique_digits)
 
 l_w = "a123bc34d8ef34", "leet1234code234",  "a1b01c001"
