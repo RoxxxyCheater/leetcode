@@ -44,3 +44,17 @@
 # 48,552
 # Submissions
 # 66,930
+
+
+class Solution(object):
+    def digitCount(self, num):
+        """
+        :type num: str
+        :rtype: bool
+        """
+        return res
+
+list_n = "1210", "030"
+
+for i in list_n:
+   Solution.digitCount('Success', i)
