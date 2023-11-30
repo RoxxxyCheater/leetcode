@@ -38,3 +38,17 @@
 # 194,113
 
 
+class Solution(object):
+    def uncommonFromSentences(self, s1, s2):
+        """
+        :type s1: str
+        :type s2: str
+        :rtype: List[str]
+        """
+        return res
+
+list_s = "this apple is sweet", "apple apple"
+list_ss = "this apple is sour", "banana"
+
+for i, s in enumerate(list_s):
+   Solution.uncommonFromSentences('Success', s, list_ss[i])
