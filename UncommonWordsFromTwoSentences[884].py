@@ -45,7 +45,19 @@ class Solution(object):
         :type s2: str
         :rtype: List[str]
         """
-        return res
+        def get_word_count(sentence):
+            words = sentence.split()
+            return Counter(words)
+        count_s1 = get_word_count(s1)
+        count_s2 = get_word_count(s2)
+        uncommon_words = []
+        for word, count in count_s1.items():
+            if count == 1 and word not in count_s2:
+                uncommon_words.append(word)
+        for word, count in count_s2.items():
+            if count == 1 and word not in count_s1:
+                uncommon_words.append(word)
+        return uncommon_words
 
 list_s = "this apple is sweet", "apple apple"
 list_ss = "this apple is sour", "banana"
