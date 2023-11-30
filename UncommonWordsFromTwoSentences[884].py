@@ -45,18 +45,27 @@ class Solution(object):
         :type s2: str
         :rtype: List[str]
         """
+        # Функция для подсчета количества вхождений каждого слова в предложении
         def get_word_count(sentence):
-            words = sentence.split()
-            return Counter(words)
+            words = sentence.split()  # Разбиваем предложение на слова
+            return Counter(words)  # Используем Counter для подсчета вхождений каждого слова
+    
+        # Получаем словари с количеством вхождений слов в каждом предложении
         count_s1 = get_word_count(s1)
         count_s2 = get_word_count(s2)
-        uncommon_words = []
+    
+        uncommon_words = []  # Список для хранения неповторяющихся слов
+    
+        # Проверяем слова из первого предложения
         for word, count in count_s1.items():
             if count == 1 and word not in count_s2:
                 uncommon_words.append(word)
+    
+        # Проверяем слова из второго предложения
         for word, count in count_s2.items():
             if count == 1 and word not in count_s1:
                 uncommon_words.append(word)
+    
         return uncommon_words
 
 list_s = "this apple is sweet", "apple apple"
