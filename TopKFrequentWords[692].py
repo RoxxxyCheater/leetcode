@@ -45,8 +45,13 @@ class Solution(object):
         :type k: int
         :rtype: List[str]
         """
+        # Count word frequencies
         word_count = Counter(words)
+
+        # Sort words based on frequency and lexicographical order
         sorted_words = sorted(word_count.keys(), key=lambda word: (-word_count[word], word))
+
+        # Return the top k words
         return sorted_words[:k]
 
 
