@@ -45,7 +45,11 @@ class Solution(object):
         :type k: int
         :rtype: List[str]
         """
-        return res
+        word_count = Counter(words)
+        sorted_words = sorted(word_count.keys(), key=lambda word: (-word_count[word], word))
+        return sorted_words[:k]
+
+
 words = ["i","love","leetcode","i","love","coding"], ["the","day","is","sunny","the","the","the","sunny","is","is"]
 k = 2, 4
 
