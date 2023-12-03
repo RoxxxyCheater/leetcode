@@ -49,7 +49,8 @@
 # 51,720
 
 class Solution:
-    def are_similar(self, word1, word2):       
+    def are_similar(self, word1, word2):
+        # Функция для проверки схожести двух слов
         return set(word1) == set(word2)
 
     def similarPairs(self, words):
@@ -59,10 +60,14 @@ class Solution:
         """
         n = len(words)
         similar_pairs = set()
+
+        # Перебираем все пары слов
         for i in range(n):
             for j in range(i + 1, n):
                 if self.are_similar(words[i], words[j]):
+                    # Добавляем пару в множество схожих пар
                     similar_pairs.add((i, j))
+
         return len(similar_pairs)
 
 
