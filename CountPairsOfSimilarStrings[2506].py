@@ -48,13 +48,22 @@
 # Submissions
 # 51,720
 
-class Solution(object):
+class Solution:
+    def are_similar(self, word1, word2):       
+        return set(word1) == set(word2)
+
     def similarPairs(self, words):
         """
         :type words: List[str]
         :rtype: int
         """
-        return res
+        n = len(words)
+        similar_pairs = set()
+        for i in range(n):
+            for j in range(i + 1, n):
+                if self.are_similar(words[i], words[j]):
+                    similar_pairs.add((i, j))
+        return len(similar_pairs)
 
 
 words = ["aba","aabb","abcd","bac","aabc"], ["aabb","ab","ba"]
