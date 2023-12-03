@@ -47,3 +47,17 @@
 # 35,780
 # Submissions
 # 51,720
+
+class Solution(object):
+    def similarPairs(self, words):
+        """
+        :type words: List[str]
+        :rtype: int
+        """
+        return res
+
+
+words = ["aba","aabb","abcd","bac","aabc"], ["aabb","ab","ba"]
+
+for w in words:
+   Solution.similarPairs('Success', w)
