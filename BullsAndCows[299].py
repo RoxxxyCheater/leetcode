@@ -48,3 +48,19 @@
 # 359,778
 # Submissions
 # 720,917
+
+
+
+class Solution(object):
+    def getHint(self, secret, guess):
+        """
+        :type secret: str
+        :type guess: str
+        :rtype: str
+        """
+        return res
+
+list_s = "1807", "1123"
+list_g = "7810", "0111"
+for i, s in enumerate(list_s):
+   Solution.getHint('Success', s, list_g[i])
