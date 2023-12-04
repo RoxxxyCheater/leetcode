@@ -58,7 +58,19 @@ class Solution(object):
         :type guess: str
         :rtype: str
         """
-        return res
+        bulls = 0
+        cows = 0
+        secret_count = {}
+        guess_count = {}
+        for s, g in zip(secret, guess):
+            if s == g:
+                bulls += 1
+            else:
+                secret_count[s] = secret_count.get(s, 0) + 1
+                guess_count[g] = guess_count.get(g, 0) + 1
+        for g, count in guess_count.items():
+            cows += min(count, secret_count.get(g, 0))
+        return "{}A{}B".format(bulls, cows)
 
 list_s = "1807", "1123"
 list_g = "7810", "0111"
