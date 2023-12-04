@@ -58,19 +58,32 @@ class Solution(object):
         :type guess: str
         :rtype: str
         """
+        # Инициализируем счетчики для быков и коров
         bulls = 0
         cows = 0
+        # Инициализируем словари для подсчета вхождений цифр в строках secret и guess
         secret_count = {}
         guess_count = {}
+    
+        # Подсчет быков и заполнение словарей
         for s, g in zip(secret, guess):
+            # Если цифры на одинаковых позициях совпадают, увеличиваем счетчик быков
             if s == g:
                 bulls += 1
             else:
+                # Иначе увеличиваем счетчик вхождений цифры в соответствующем словаре
                 secret_count[s] = secret_count.get(s, 0) + 1
                 guess_count[g] = guess_count.get(g, 0) + 1
+    
+        # Подсчет коров
         for g, count in guess_count.items():
+            # Для каждой цифры в guess смотрим, сколько таких же цифр есть в secret
+            # и прибавляем минимум из этих значений к счетчику коров
             cows += min(count, secret_count.get(g, 0))
+    
+        # Возвращаем результат в формате "xAyB", где x - количество быков, y - количество коров
         return "{}A{}B".format(bulls, cows)
+
 
 list_s = "1807", "1123"
 list_g = "7810", "0111"
