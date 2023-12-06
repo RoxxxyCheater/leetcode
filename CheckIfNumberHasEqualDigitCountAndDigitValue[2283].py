@@ -52,12 +52,22 @@ class Solution(object):
         :type num: str
         :rtype: bool
         """
-        n = len(num)        
+        # Получаем длину строки
+        n = len(num)
+        
+        # Проходим по каждому индексу в строке
         for i in range(n):
+            # Получаем цифру на текущем индексе
             digit = int(num[i])
-            count = num.count(str(i))            
+            
+            # Считаем сколько раз цифра i встречается в строке
+            count = num.count(str(i))
+            
+            # Если количество не совпадает с текущей цифрой, возвращаем False
             if count != digit:
-                return False    
+                return False
+    
+        # Если проверка прошла для каждого индекса, возвращаем True
         return True
 
 list_n = "1210", "030"
