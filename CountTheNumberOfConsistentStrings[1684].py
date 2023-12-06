@@ -48,11 +48,19 @@ class Solution(object):
         :type words: List[str]
         :rtype: int
         """
+        # Convert the allowed string to a set for faster lookup
         allowed_set = set(allowed)
+
+        # Initialize a counter for consistent strings
         count = 0
+
+        # Iterate through each word in the words array
         for word in words:
+            # Check if all characters in the word are in the allowed set
             if all(char in allowed_set for char in word):
+                # Increment the counter if the word is consistent
                 count += 1
+
         return count
 
 list_a ="ab", "abc", "cad"
