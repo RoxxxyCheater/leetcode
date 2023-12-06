@@ -48,7 +48,12 @@ class Solution(object):
         :type words: List[str]
         :rtype: int
         """
-        return res
+        allowed_set = set(allowed)
+        count = 0
+        for word in words:
+            if all(char in allowed_set for char in word):
+                count += 1
+        return count
 
 list_a ="ab", "abc", "cad"
 list_w = ["ad","bd","aaab","baa","badab"],["a","b","c","ab","ac","bc","abc"], ["cc","acd","b","ba","bac","bad","ac","d"]
