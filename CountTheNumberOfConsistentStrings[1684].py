@@ -39,3 +39,19 @@
 # 154,974
 # Submissions
 # 187,443
+
+
+class Solution(object):
+    def countConsistentStrings(self, allowed, words):
+        """
+        :type allowed: str
+        :type words: List[str]
+        :rtype: int
+        """
+        return res
+
+list_a ="ab", "abc", "cad"
+list_w = ["ad","bd","aaab","baa","badab"],["a","b","c","ab","ac","bc","abc"], ["cc","acd","b","ba","bac","bad","ac","d"]
+
+for w, a in enumerate(list_a):
+   Solution.countConsistentStrings('Success', a, list_w[w])
