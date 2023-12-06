@@ -52,7 +52,13 @@ class Solution(object):
         :type num: str
         :rtype: bool
         """
-        return res
+        n = len(num)        
+        for i in range(n):
+            digit = int(num[i])
+            count = num.count(str(i))            
+            if count != digit:
+                return False    
+        return True
 
 list_n = "1210", "030"
 
