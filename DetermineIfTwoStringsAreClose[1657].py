@@ -58,8 +58,14 @@ class Solution(object):
         :type word1: str
         :type word2: str
         :rtype: bool
-        """
-        return res
+        """       
+        count1 = Counter(word1)
+        count2 = Counter(word2)    
+        if set(count1.keys()) != set(count2.keys()):
+        if sorted(count1.values()) != sorted(count2.values()):
+            return False
+        return True
+
 
 
 list_a = "abc", "a", "cabbba"
