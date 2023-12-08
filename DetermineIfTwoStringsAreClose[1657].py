@@ -50,3 +50,19 @@
 # 165,253
 # Submissions
 # 308,421
+
+
+class Solution(object):
+    def closeStrings(self, word1, word2):
+        """
+        :type word1: str
+        :type word2: str
+        :rtype: bool
+        """
+        return res
+
+
+list_a = "abc", "a", "cabbba"
+list_w = "bca","aa" , "abbccc"
+for w, a in enumerate(list_a):
+   Solution.closeStrings('Success', a, list_w[w])
