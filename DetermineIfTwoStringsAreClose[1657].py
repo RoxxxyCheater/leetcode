@@ -52,29 +52,18 @@
 # 308,421
 
 
+
 class Solution(object):
     def closeStrings(self, word1, word2):
         """
         :type word1: str
         :type word2: str
         :rtype: bool
-        """       
-        # Подсчитываем частоту встречаемости символов в обеих строках
+        """
         count1 = Counter(word1)
         count2 = Counter(word2)
-    
-        # Проверяем, имеют ли строки одинаковый набор символов
-        # (так как частоты символов могут быть разные, но это не важно)
-        if set(count1.keys()) != set(count2.keys()):
-            return False
-    
-        # Проверяем, имеют ли строки одинаковые частоты для каждого символа
-        # (сортируем частоты, чтобы сравнение было корректным)
-        if sorted(count1.values()) != sorted(count2.values()):
-            return False
-    
-        # Если оба условия выполнены, строки считаются "близкими"
-        return True
+        return set(count1.keys()) == set(count2.keys()) and sorted(count1.values()) == sorted(count2.values())
+
 
 
 
