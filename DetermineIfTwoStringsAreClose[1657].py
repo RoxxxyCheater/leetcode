@@ -59,10 +59,13 @@ class Solution(object):
         :type word1: str
         :type word2: str
         :rtype: bool
-        """
+        """     
+        # Подсчитываем частоту встречаемости символов в обеих строках
         count1 = Counter(word1)
         count2 = Counter(word2)
+        # Проверяем, имеют ли строки одинаковые частоты для каждого символа
         return set(count1.keys()) == set(count2.keys()) and sorted(count1.values()) == sorted(count2.values())
+
 
 
 
