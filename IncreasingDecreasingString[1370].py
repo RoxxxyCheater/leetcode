@@ -52,7 +52,26 @@ class Solution(object):
         :type s: str
         :rtype: str
         """
-        return res
+        result = []
+        s_list = list(s)        
+        while s_list:
+            smallest = min(s_list)
+            result.append(smallest)
+            s_list.remove(smallest)
+            for char in sorted(set(s_list)):
+                if char > result[-1]:
+                    result.append(char)
+                    s_list.remove(char)
+            if not s_list:
+                break
+            largest = max(s_list)
+            result.append(largest)
+            s_list.remove(largest)
+            for char in sorted(set(s_list), reverse=True):
+                if char < result[-1]:
+                    result.append(char)
+                    s_list.remove(char)        
+        return ''.join(result)
 
 ls= "aaaabbbbcccc", "rat"
 
