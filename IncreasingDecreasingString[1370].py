@@ -52,25 +52,36 @@ class Solution(object):
         :type s: str
         :rtype: str
         """
-        result = []
-        s_list = list(s)        
+        result = []  # Результирующая строка
+        s_list = list(s)  # Преобразуем строку в список символов
+        
         while s_list:
+            # Шаг 1: Выбор самого маленького символа
             smallest = min(s_list)
             result.append(smallest)
             s_list.remove(smallest)
+            
+            # Шаг 2: Выбор самого маленького символа, большего, чем последний добавленный символ
             for char in sorted(set(s_list)):
                 if char > result[-1]:
                     result.append(char)
                     s_list.remove(char)
+            
+            # Проверка наличия оставшихся символов
             if not s_list:
                 break
+            
+            # Шаг 4: Выбор самого большого символа
             largest = max(s_list)
             result.append(largest)
             s_list.remove(largest)
+            
+            # Шаг 5: Выбор самого большого символа, меньшего, чем последний добавленный символ
             for char in sorted(set(s_list), reverse=True):
                 if char < result[-1]:
                     result.append(char)
-                    s_list.remove(char)        
+                    s_list.remove(char)
+        
         return ''.join(result)
 
 ls= "aaaabbbbcccc", "rat"
