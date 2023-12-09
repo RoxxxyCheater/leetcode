@@ -44,3 +44,17 @@
 # 71,728
 # Submissions
 # 93,896
+
+
+class Solution(object):
+    def sortString(self, s):
+        """
+        :type s: str
+        :rtype: str
+        """
+        return res
+
+ls= "aaaabbbbcccc", "rat"
+
+for i in ls:
+   Solution.sortString('Success', i)
