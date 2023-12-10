@@ -40,7 +40,6 @@
 # Submissions
 # 43,523
 
-
 class DataStream(object):
 
     def __init__(self, value, k):
@@ -48,15 +47,31 @@ class DataStream(object):
         :type value: int
         :type k: int
         """
-        return res
+        self.value = value
+        self.k = k
+        self.stream = deque()
+        self.value_counter = Counter()
 
     def consec(self, num):
         """
         :type num: int
         :rtype: bool
         """
-        return res
-        
+        self.stream.append(num)
+
+        if num == self.value:
+            self.value_counter[num] += 1
+
+        if len(self.stream) > self.k:
+            leftmost = self.stream.popleft()
+            self.value_counter[leftmost] -= 1
+            if self.value_counter[leftmost] == 0:
+                del self.value_counter[leftmost]
+
+        return self.value_counter[self.value] == self.k
+
+
+
 
 
 Your DataStream object will be instantiated and called as such:
