@@ -39,3 +39,26 @@
 # 20,517
 # Submissions
 # 43,523
+
+
+class DataStream(object):
+
+    def __init__(self, value, k):
+        """
+        :type value: int
+        :type k: int
+        """
+        return res
+
+    def consec(self, num):
+        """
+        :type num: int
+        :rtype: bool
+        """
+        return res
+        
+
+
+Your DataStream object will be instantiated and called as such:
+obj = DataStream(value, k)
+param_1 = obj.consec(num)
