@@ -44,33 +44,39 @@ class DataStream(object):
 
     def __init__(self, value, k):
         """
+        Инициализация объекта DataStream.
+        
         :type value: int
+            Значение, которое мы ищем в потоке.
         :type k: int
+            Размер окна, в котором мы проверяем, что последние k чисел равны value.
         """
         self.value = value
         self.k = k
-        self.stream = deque()
-        self.value_counter = Counter()
+        self.stream = deque()           # Двусторонняя очередь для хранения последних k элементов потока.
+        self.value_counter = Counter()   # Счетчик для подсчета количества вхождений значения в текущем окне.
 
     def consec(self, num):
         """
+        Добавление числа в поток и проверка условия.
+        
         :type num: int
+            Добавляемое число в поток.
         :rtype: bool
+            Возвращает True, если последние k чисел равны value, и False в противном случае.
         """
-        self.stream.append(num)
+        self.stream.append(num)  # Добавляем число в конец очереди.
 
         if num == self.value:
-            self.value_counter[num] += 1
+            self.value_counter[num] += 1  # Увеличиваем счетчик для указанного значения.
 
         if len(self.stream) > self.k:
-            leftmost = self.stream.popleft()
-            self.value_counter[leftmost] -= 1
+            leftmost = self.stream.popleft()  # Удаляем левый (старый) элемент из окна.
+            self.value_counter[leftmost] -= 1  # Уменьшаем счетчик для удаленного значения.
             if self.value_counter[leftmost] == 0:
-                del self.value_counter[leftmost]
+                del self.value_counter[leftmost]  # Удаляем из счетчика, если счетчик стал равен 0.
 
-        return self.value_counter[self.value] == self.k
-
-
+        return self.value_counter[self.value] == self.k  # Проверяем условие.
 
 
 
