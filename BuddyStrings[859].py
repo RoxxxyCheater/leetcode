@@ -40,3 +40,19 @@
 # 201,981
 # Submissions
 # 617,482
+
+
+class Solution(object):
+    def buddyStrings(self, s, goal):
+        """
+        :type s: str
+        :type goal: str
+        :rtype: bool
+        """
+        return res
+
+list_s ="ab", , "ab", "aa"
+list_g = "ba", "ab", "aa"
+
+for g, s in enumerate(list_s):
+   Solution.buddyStrings('Success', s, list_g[g])
