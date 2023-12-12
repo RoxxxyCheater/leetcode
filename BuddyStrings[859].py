@@ -49,7 +49,13 @@ class Solution(object):
         :type goal: str
         :rtype: bool
         """
-        return res
+        if len(s) != len(goal):
+            return False
+        if s == goal:
+            return len(set(s)) < len(s)
+        indices = [i for i in range(len(s)) if s[i] != goal[i]]
+        return len(indices) == 2 and s[indices[0]] == goal[indices[1]] and s[indices[1]] == goal[indices[0]]
+
 
 list_s ="ab", , "ab", "aa"
 list_g = "ba", "ab", "aa"
