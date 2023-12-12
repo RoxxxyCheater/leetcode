@@ -49,38 +49,33 @@ class Solution(object):
         :type goal: str
         :rtype: bool
         """
+        # Проверка, что длины строк одинаковы
         if len(s) != len(goal):
             return False
+
+        # Если строки совпадают, то проверяем, есть ли в строке повторяющиеся символы
         if s == goal:
+            # Проверяем, есть ли повторяющиеся символы в строке s
             seen_chars = set()
             for char in s:
                 if char in seen_chars:
                     return True
                 seen_chars.add(char)
             return False
+
+        # Находим индексы, где символы не совпадают
         indices = []
         for i in range(len(s)):
             if s[i] != goal[i]:
                 indices.append(i)
+
+        # Проверяем, что у нас два индекса
         if len(indices) != 2:
             return False
+
+        # Проверяем, что обмен этих символов делает строки равными
         i, j = indices
         return s[i] == goal[j] and s[j] == goal[i]
-
-        # # Проверка, что длины строк одинаковы
-        # if len(s) != len(goal):
-        #     return False
-
-        # # Если строки совпадают, то проверяем, есть ли в строке повторяющиеся символы
-        # if s == goal:
-        #     return len(set(s)) < len(s)
-
-        # # Находим индексы, где символы не совпадают
-        # indices = [i for i in range(len(s)) if s[i] != goal[i]]
-
-        # # Проверяем, что у нас два индекса и обмен этих символов делает строки равными
-        # return len(indices) == 2 and s[indices[0]] == goal[indices[1]] and s[indices[1]] == goal[indices[0]]
-
 
 
 list_s ="ab", , "ab", "aa"
