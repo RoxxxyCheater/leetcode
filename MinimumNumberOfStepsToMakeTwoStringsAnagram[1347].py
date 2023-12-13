@@ -39,3 +39,17 @@
 # 184.9K
 # Acceptance Rate
 # 78.2%
+class Solution(object):
+    def minSteps(self, s, t):
+        """
+        :type s: str
+        :type t: str
+        :rtype: int
+        """
+        
+        return res
+
+list_s = "bab", "leetcode", "anagram"
+list_t = "aba", "practice", "mangaar"
+for t, s in enumerate(list_s):
+   Solution.minSteps('Success', s, list_t[t])
