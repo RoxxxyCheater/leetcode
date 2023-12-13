@@ -46,8 +46,21 @@ class Solution(object):
         :type t: str
         :rtype: int
         """
-        
-        return res
+        if len(s) != len(t):
+            raise ValueError("Input strings must have the same length.")   
+        freq_s = {}
+        freq_t = {}
+        for char in s:
+            freq_s[char] = freq_s.get(char, 0) + 1
+        for char in t:
+            freq_t[char] = freq_t.get(char, 0) + 1
+        steps = 0
+        for char, count in freq_s.items():
+            if char in freq_t:
+                steps += max(0, count - freq_t[char])
+            else:
+                steps += count    
+        return steps
 
 list_s = "bab", "leetcode", "anagram"
 list_t = "aba", "practice", "mangaar"
