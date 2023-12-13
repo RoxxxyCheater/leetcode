@@ -46,20 +46,33 @@ class Solution(object):
         :type t: str
         :rtype: int
         """
+        # Проверка, что строки имеют одинаковую длину
         if len(s) != len(t):
-            raise ValueError("Input strings must have the same length.")   
-        freq_s = {}
-        freq_t = {}
+            raise ValueError("Строки должны иметь одинаковую длину.")
+    
+        # Инициализация словарей для подсчета частот символов
+        freq_s = {}  # Частоты символов в строке s
+        freq_t = {}  # Частоты символов в строке t
+    
+        # Подсчет частот символов в строке s
         for char in s:
             freq_s[char] = freq_s.get(char, 0) + 1
+    
+        # Подсчет частот символов в строке t
         for char in t:
             freq_t[char] = freq_t.get(char, 0) + 1
+    
+        # Расчет количества шагов, необходимых для того, чтобы сделать t анаграммой s
         steps = 0
         for char, count in freq_s.items():
             if char in freq_t:
+                # Если символ присутствует в обеих строках, сравниваем их частоты
+                # и прибавляем разницу к общему количеству шагов
                 steps += max(0, count - freq_t[char])
             else:
-                steps += count    
+                # Если символ отсутствует в строке t, прибавляем его частоту к общему количеству шагов
+                steps += count
+    
         return steps
 
 list_s = "bab", "leetcode", "anagram"
