@@ -50,7 +50,16 @@ class Solution(object):
         :type t: str
         :rtype: int
         """
-        return res
+        freq_s = {}
+        freq_t = {}
+        for char in s:
+            freq_s[char] = freq_s.get(char, 0) + 1
+        for char in t:
+            freq_t[char] = freq_t.get(char, 0) + 1
+        steps = 0
+        for char in set(s + t):
+            steps += abs(freq_s.get(char, 0) - freq_t.get(char, 0))
+        return steps
 
 
 list_s = "leetcode", "night"
