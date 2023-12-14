@@ -41,3 +41,20 @@
 # 36,705
 # Submissions
 # 51,020
+
+
+class Solution(object):
+    def minSteps(self, s, t):
+        """
+        :type s: str
+        :type t: str
+        :rtype: int
+        """
+        return res
+
+
+list_s = "leetcode", "night"
+list_t = "coats", "thing"
+
+for t, s in enumerate(list_s):
+    Solution.minSteps("Success", s, list_t[t])
