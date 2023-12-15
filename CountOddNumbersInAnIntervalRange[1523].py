@@ -34,11 +34,21 @@ class Solution(object):
         :type high: int
         :rtype: int
         """
-        res = high - low +1
-        if (res % 2) == 0: return res/2
+        # Разница между high и low, увеличенная на 1
+        res = high - low + 1
+        
+        # Если разница четная, возвращаем половину этой разницы
+        if (res % 2) == 0:
+            return res / 2
         else:
-            if (high % 2) != 0 or (low % 2) != 0: return int(res/2) +1
-            else: return int(res/2)
+            # Если разница нечетная, и хотя бы одно из чисел (low или high) нечетное,
+            # возвращаем половину разницы + 1
+            if (high % 2) != 0 or (low % 2) != 0:
+                return int(res / 2) + 1
+            else:
+                # Иначе возвращаем половину разницы
+                return int(res / 2)
+             
 
             
 low_list = 4,9
