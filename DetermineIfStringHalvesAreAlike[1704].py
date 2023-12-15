@@ -42,7 +42,20 @@ class Solution(object):
         :type s: str
         :rtype: bool
         """
-        return res
+        def countVowels(substring):
+            vowels = set("aeiouAEIOU")
+            count = 0
+            for char in substring:
+                if char in vowels:
+                    count += 1
+            return count
+        length = len(s)
+        half_length = length // 2
+        a = s[:half_length]
+        b = s[half_length:]
+        count_a = countVowels(a)
+        count_b = countVowels(b)
+        return count_a == count_b
 
 
 list_s = "book", "textbook"
