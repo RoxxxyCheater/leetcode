@@ -46,13 +46,21 @@ class Solution(object):
         :type s2: str
         :rtype: bool
         """
+        # Проверяем, равны ли строки. Если равны, возвращаем True, так как обмен не требуется.
         if s1 == s2:
             return True
+    
+        # Находим индексы, где символы в строках отличаются друг от друга.
         diff_indices = [i for i in range(len(s1)) if s1[i] != s2[i]]
+    
+        # Проверяем, что есть ровно два отличающихся индекса.
         if len(diff_indices) == 2:
+            # Проверяем, что обмен символами на этих индексах сделает строки равными.
             i, j = diff_indices
             return s1[i] == s2[j] and s1[j] == s2[i]
-        return False 
+    
+        return False  # Больше двух отличающихся индексов или отсутствие отличий.
+
 
 
 s1 = "bank", "attack", "kelb"
