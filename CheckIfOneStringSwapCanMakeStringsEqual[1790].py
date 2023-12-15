@@ -46,7 +46,13 @@ class Solution(object):
         :type s2: str
         :rtype: bool
         """
-        return res
+        if s1 == s2:
+            return True
+        diff_indices = [i for i in range(len(s1)) if s1[i] != s2[i]]
+        if len(diff_indices) == 2:
+            i, j = diff_indices
+            return s1[i] == s2[j] and s1[j] == s2[i]
+        return False 
 
 
 s1 = "bank", "attack", "kelb"
