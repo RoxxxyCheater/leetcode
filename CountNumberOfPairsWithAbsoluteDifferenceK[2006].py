@@ -56,17 +56,26 @@ class Solution(object):
         :type k: int
         :rtype: int
         """        
+        # Создаем словарь для хранения количества встреченных чисел
         num_count = {}
-        count = 0  
+        count = 0  # Переменная для подсчета пар чисел с разницей k
+        
+        # Итерируем по массиву чисел
         for num in nums:
+            # Проверяем, есть ли число num - k в словаре, и увеличиваем count соответственно
             if num - k in num_count:
                 count += num_count[num - k]
+            
+            # Проверяем, есть ли число num + k в словаре и k > 0 (избегаем учета одинаковых чисел)
             if num + k in num_count and k > 0:
                 count += num_count[num + k]
+            
+            # Обновляем словарь num_count, увеличивая счетчик для текущего числа
             if num in num_count:
                 num_count[num] += 1
             else:
                 num_count[num] = 1
+        
         return count
      
 list_nums = [1,2,2,1], [1,3], [3,2,1,5,4]
