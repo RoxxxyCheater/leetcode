@@ -37,3 +37,20 @@
 # 96,375
 # Submissions
 # 212,239
+
+
+class Solution(object):
+    def areAlmostEqual(self, s1, s2):
+        """
+        :type s1: str
+        :type s2: str
+        :rtype: bool
+        """
+        return res
+
+
+s1 = "bank", "attack", "kelb"
+s2 = "defend","kanb", "kelb"
+
+for i, s in enumerate(s1):
+   Solution.areAlmostEqual('Success', s, s2[i])
