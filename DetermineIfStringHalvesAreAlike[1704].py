@@ -36,12 +36,14 @@
 # Acceptance Rate
 # 77.5%
 
+
 class Solution(object):
     def halvesAreAlike(self, s):
         """
         :type s: str
         :rtype: bool
         """
+        # Функция для подсчета гласных в строке
         def countVowels(substring):
             vowels = set("aeiouAEIOU")
             count = 0
@@ -49,13 +51,19 @@ class Solution(object):
                 if char in vowels:
                     count += 1
             return count
+
+        # Разделяем строку на две половины
         length = len(s)
         half_length = length // 2
         a = s[:half_length]
         b = s[half_length:]
+
+        # Подсчитываем гласные для каждой половины и сравниваем
         count_a = countVowels(a)
         count_b = countVowels(b)
+
         return count_a == count_b
+
 
 
 list_s = "book", "textbook"
