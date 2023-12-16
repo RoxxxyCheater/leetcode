@@ -46,6 +46,7 @@ class Solution(object):
         :type banned: List[str]
         :rtype: str
         """
+     
         # Токенизация слов, игнорируя знаки препинания и приводя к нижнему регистру
         words = re.findall(r'\b\w+\b', paragraph.lower())
     
