@@ -37,3 +37,18 @@
 # 339,635
 # Submissions
 # 764,262
+
+
+class Solution(object):
+    def mostCommonWord(self, paragraph, banned):
+        """
+        :type paragraph: str
+        :type banned: List[str]
+        :rtype: str
+        """
+        return res
+
+list_p = "Bob hit a ball, the hit BALL flew far after it was hit.",  "a."
+list_b = ["hit"], []
+for b, p in enumerate(list_p):
+  Solution.mostCommonWord('Success', p, list_b[b])
