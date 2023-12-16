@@ -46,7 +46,10 @@ class Solution(object):
         :type banned: List[str]
         :rtype: str
         """
-        return res
+        words = re.findall(r'\b\w+\b', paragraph.lower())
+        word_counts = Counter(word for word in words if word not in banned)
+        most_common_word = max(word_counts, key=word_counts.get)
+        return most_common_word
 
 list_p = "Bob hit a ball, the hit BALL flew far after it was hit.",  "a."
 list_b = ["hit"], []
