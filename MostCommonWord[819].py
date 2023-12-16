@@ -46,9 +46,15 @@ class Solution(object):
         :type banned: List[str]
         :rtype: str
         """
+        # Токенизация слов, игнорируя знаки препинания и приводя к нижнему регистру
         words = re.findall(r'\b\w+\b', paragraph.lower())
+    
+        # Создание словаря частоты для неблокированных слов
         word_counts = Counter(word for word in words if word not in banned)
+    
+        # Нахождение самого частого неблокированного слова
         most_common_word = max(word_counts, key=word_counts.get)
+    
         return most_common_word
 
 list_p = "Bob hit a ball, the hit BALL flew far after it was hit.",  "a."
