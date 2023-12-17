@@ -47,21 +47,25 @@ class Solution(object):
         :type s: str
         :rtype: str
         """
-        stack = []
-        current_num = 0
-        current_str = ''    
+        stack = []  # Используем стек для отслеживания состояний (подстрок и их повторений)
+        current_num = 0  # Текущее число повторений
+        current_str = ''  # Текущая подстрока
+    
         for char in s:
             if char.isdigit():
-                current_num = current_num * 10 + int(char)
+                current_num = current_num * 10 + int(char)  # Строим число повторений
             elif char.isalpha():
-                current_str += char
+                current_str += char  # Собираем текущую подстроку
             elif char == '[':
+                # Начало новой подстроки, сохраняем текущую в стек и сбрасываем состояние
                 stack.append((current_str, current_num))
                 current_str, current_num = '', 0
             elif char == ']':
+                # Обработка завершения повторяющейся подстроки
                 prev_str, repeat_count = stack.pop()
                 current_str = prev_str + current_str * repeat_count
-            return current_str
+    
+        return current_str
 
 
 list_s = "3[a]2[bc]", "3[a2[c]]", "2[abc]3[cd]ef"
