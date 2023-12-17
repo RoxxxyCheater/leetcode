@@ -39,3 +39,18 @@
 # 732,944
 # Submissions
 # 1,248,804
+
+
+class Solution(object):
+    def decodeString(self, s):
+        """
+        :type s: str
+        :rtype: str
+        """
+        return res
+
+
+list_s = "3[a]2[bc]", "3[a2[c]]", "2[abc]3[cd]ef"
+
+for s in list_s:
+   Solution.decodeString('Success', s)
