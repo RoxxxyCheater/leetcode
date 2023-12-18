@@ -57,21 +57,29 @@ class Solution(object):
         :rtype: str
         """
         n = len(senate)
-        radiant = deque()
-        dire = deque()
-        for i, party in enumerate(senate):
-            if party == 'R':
-                radiant.append(i)
-            else:
-                dire.append(i)
-        while radiant and dire:
-            radiant_senator = radiant.popleft()
-            dire_senator = dire.popleft()
-            if radiant_senator < dire_senator:
-                radiant.append(radiant_senator + n)
-            else:
-                dire.append(dire_senator + n)
-        return "Radiant" if radiant else "Dire"
+        radiant_bans = 0  # Количество "банов" для Radiant
+        dire_bans = 0     # Количество "банов" для Dire
+    
+        # Итерируемся по сенаторам
+        for senator in senate:
+            if senator == 'R':
+                # Если у Radiant есть "баны", уменьшаем их
+                if radiant_bans > 0:
+                    radiant_bans -= 1
+                else:
+                    # Иначе увеличиваем количество "банов" для Dire
+                    dire_bans += 1
+            else:  # senator == 'D'
+                # Если у Dire есть "баны", уменьшаем их
+                if dire_bans > 0:
+                    dire_bans -= 1
+                else:
+                    # Иначе увеличиваем количество "банов" для Radiant
+                    radiant_bans += 1
+    
+        # Определяем результат в зависимости от оставшихся "банов"
+        return "Radiant" if radiant_bans == 0 else "Dire"
+
 
 list_senate = "RD", "RDD"
 for i in list_senate:
