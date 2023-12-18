@@ -47,3 +47,17 @@
 # 114,206
 # Submissions
 # 240,065
+
+
+
+class Solution(object):
+    def predictPartyVictory(self, senate):
+        """
+        :type senate: str
+        :rtype: str
+        """
+        return res
+
+list_senate = "RD", "RDD"
+for i in list_senate:
+   Solution.predictPartyVictory('Success', i)
