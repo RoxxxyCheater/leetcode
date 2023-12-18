@@ -56,7 +56,22 @@ class Solution(object):
         :type senate: str
         :rtype: str
         """
-        return res
+        n = len(senate)
+        radiant = deque()
+        dire = deque()
+        for i, party in enumerate(senate):
+            if party == 'R':
+                radiant.append(i)
+            else:
+                dire.append(i)
+        while radiant and dire:
+            radiant_senator = radiant.popleft()
+            dire_senator = dire.popleft()
+            if radiant_senator < dire_senator:
+                radiant.append(radiant_senator + n)
+            else:
+                dire.append(dire_senator + n)
+        return "Radiant" if radiant else "Dire"
 
 list_senate = "RD", "RDD"
 for i in list_senate:
