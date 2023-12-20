@@ -44,11 +44,19 @@ class Solution(object):
         :type s: str
         :rtype: bool
         """        
+        # Создаем словарь для отслеживания количества вхождений каждого символа
         char_count = {}
+        
+        # Подсчитываем количество вхождений каждого символа в строке
         for char in s:
             char_count[char] = char_count.get(char, 0) + 1
+        
+        # Создаем список, содержащий частоты вхождений каждого символа
         frequencies = list(char_count.values())
+        
+        # Проверяем, имеют ли все символы одинаковую частоту
         return all(frequency == frequencies[0] for frequency in frequencies)
+
      
 l_s = "abacbc", "aaabb"
 for s in l_s:
