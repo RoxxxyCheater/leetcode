@@ -35,3 +35,17 @@
 # 81,509
 # Submissions
 # 105,877
+
+
+
+class Solution(object):
+    def areOccurrencesEqual(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        return res
+
+l_s = "abacbc", "aaabb"
+for s in l_s:
+   Solution.areOccurrencesEqual('Success', s)
