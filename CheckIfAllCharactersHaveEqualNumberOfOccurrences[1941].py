@@ -43,9 +43,13 @@ class Solution(object):
         """
         :type s: str
         :rtype: bool
-        """
-        return res
-
+        """        
+        char_count = {}
+        for char in s:
+            char_count[char] = char_count.get(char, 0) + 1
+        frequencies = list(char_count.values())
+        return all(frequency == frequencies[0] for frequency in frequencies)
+     
 l_s = "abacbc", "aaabb"
 for s in l_s:
    Solution.areOccurrencesEqual('Success', s)
