@@ -58,13 +58,26 @@
 # Submissions
 # 81,062
 
+
 class Solution(object):
     def countPoints(self, rings):
         """
         :type rings: str
         :rtype: int
         """
-        return res
+        rods = {} 
+        for i in range(0, len(rings), 2):
+            color = rings[i]
+            position = int(rings[i + 1])
+            if position not in rods:
+                rods[position] = set()
+            rods[position].add(color)
+        count = 0 
+        for rod_colors in rods.values():
+            if len(rod_colors) == 3:
+                count += 1
+        return count
+
 
 l_r = "B0B6G0R6R0R6G9",  "B0R0G0R9R0B0G0", "G4"
 
