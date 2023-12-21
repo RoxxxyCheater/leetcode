@@ -65,18 +65,28 @@ class Solution(object):
         :type rings: str
         :rtype: int
         """
-        rods = {} 
+        rods = {}  # Словарь для хранения множеств цветов для каждого стержня
+        
+        # Обработка каждой пары цвет-позиция
         for i in range(0, len(rings), 2):
-            color = rings[i]
-            position = int(rings[i + 1])
+            color = rings[i]  # Цвет кольца
+            position = int(rings[i + 1])  # Позиция стержня
+            
+            # Проверка наличия стержня в словаре, создание множества, если его нет
             if position not in rods:
                 rods[position] = set()
-            rods[position].add(color)
-        count = 0 
+            
+            rods[position].add(color)  # Добавление цвета в множество для данного стержня
+        
+        count = 0  # Счетчик стержней со всеми тремя цветами
+        
+        # Подсчет стержней со всеми тремя цветами
         for rod_colors in rods.values():
             if len(rod_colors) == 3:
                 count += 1
+        
         return count
+
 
 
 l_r = "B0B6G0R6R0R6G9",  "B0R0G0R9R0B0G0", "G4"
