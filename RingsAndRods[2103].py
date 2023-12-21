@@ -57,3 +57,16 @@
 # 65,518
 # Submissions
 # 81,062
+
+class Solution(object):
+    def countPoints(self, rings):
+        """
+        :type rings: str
+        :rtype: int
+        """
+        return res
+
+l_r = "B0B6G0R6R0R6G9",  "B0R0G0R9R0B0G0", "G4"
+
+for r in l_r:
+  Soluiton.countPoints('Success', r)
