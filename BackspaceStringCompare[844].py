@@ -39,3 +39,22 @@
 # 774,670
 # Submissions
 # 1,578,452
+
+
+
+
+class Solution(object):
+    def backspaceCompare(self, s, t):
+        """
+        :type s: str
+        :type t: str
+        :rtype: bool
+        """
+        return res
+
+
+l_s = "ab#c", "ab##", "a#c"
+l_t =  "ad#c","c#d#", "b"
+
+for t, s in enumerate(l_s):
+   Solution.backspaceCompare('Success', s, l_t[t])
