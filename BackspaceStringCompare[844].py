@@ -50,7 +50,18 @@ class Solution(object):
         :type t: str
         :rtype: bool
         """
-        return res
+        def build_string(input_str):
+            result = []
+            for char in input_str:
+                if char == '#':
+                    if result:
+                        result.pop()
+                else:
+                    result.append(char)
+            return ''.join(result)
+    
+        return build_string(s) == build_string(t)
+
 
 
 l_s = "ab#c", "ab##", "a#c"
