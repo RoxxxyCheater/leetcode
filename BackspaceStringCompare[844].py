@@ -50,16 +50,22 @@ class Solution(object):
         :type t: str
         :rtype: bool
         """
+        # Вспомогательная функция для имитации процесса ввода текста
         def build_string(input_str):
             result = []
             for char in input_str:
                 if char == '#':
+                    # Если встречен символ '#', удаляем последний символ, если результат не пуст
                     if result:
                         result.pop()
                 else:
+                    # Добавляем символы, отличные от '#', в результат
                     result.append(char)
             return ''.join(result)
-    
+
+        # Сравниваем полученные строки после применения операций удаления
+        return build_string(s) == build_string(t)
+
         return build_string(s) == build_string(t)
 
 
