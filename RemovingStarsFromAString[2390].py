@@ -52,7 +52,14 @@ class Solution(object):
         :type s: str
         :rtype: str
         """
-        return res
+        stack = []
+        for char in s:
+            if char == '*':
+                stack.pop()
+            else:
+                stack.append(char)
+        return ''.join(stack)
+
 
 l_s = "leet**cod*e", "erase*****"
 
