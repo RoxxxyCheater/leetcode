@@ -52,13 +52,17 @@ class Solution(object):
         :type s: str
         :rtype: str
         """
-        stack = []
+        stack = []  # Используем стек для отслеживания символов в результирующей строке
+    
         for char in s:
             if char == '*':
+                # Если текущий символ - '*', удаляем ближайший символ, отличный от '*'
                 stack.pop()
             else:
                 stack.append(char)
-        return ''.join(stack)
+    
+        return ''.join(stack)  # Преобразуем стек в строку и возвращаем результат
+
 
 
 l_s = "leet**cod*e", "erase*****"
