@@ -45,3 +45,16 @@
 # 216,989
 # Submissions
 # 293,425
+
+class Solution(object):
+    def removeStars(self, s):
+        """
+        :type s: str
+        :rtype: str
+        """
+        return res
+
+l_s = "leet**cod*e", "erase*****"
+
+for s in l_s:
+   Solution.removeStars('Success', s)
