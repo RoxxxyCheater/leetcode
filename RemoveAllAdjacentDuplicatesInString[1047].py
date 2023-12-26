@@ -52,6 +52,7 @@ class Solution(object):
     
         return ''.join(stack)  # Собираем символы из стека в строку и возвращаем результат
 
+
      
 l_s = "abbaca", "azxxzy"
 for i in l_s:
