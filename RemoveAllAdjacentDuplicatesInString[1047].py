@@ -32,3 +32,17 @@
 # 513,980
 # Submissions
 # 743,041
+
+
+class Solution(object):
+    def removeDuplicates(self, s):
+        """
+        :type s: str
+        :rtype: str
+        """
+        return res
+
+
+l_s = "abbaca", "azxxzy"
+for i in l_s:
+   Soluiton.removeDuplicates('Success', i)
