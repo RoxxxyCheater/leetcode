@@ -40,9 +40,14 @@ class Solution(object):
         :type s: str
         :rtype: str
         """
-        return res
-
-
+        stack = []
+        for char in s:
+            if stack and stack[-1] == char:
+                stack.pop()
+            else:
+                stack.append(char)
+        return ''.join(stack)  
+     
 l_s = "abbaca", "azxxzy"
 for i in l_s:
    Soluiton.removeDuplicates('Success', i)
