@@ -40,13 +40,18 @@ class Solution(object):
         :type s: str
         :rtype: str
         """
-        stack = []
+        stack = []  # Используем стек для отслеживания символов
+    
         for char in s:
             if stack and stack[-1] == char:
+                # Если текущий символ равен вершине стека, удаляем вершину стека (дубликат)
                 stack.pop()
             else:
+                # Иначе добавляем текущий символ в стек
                 stack.append(char)
-        return ''.join(stack)  
+    
+        return ''.join(stack)  # Собираем символы из стека в строку и возвращаем результат
+
      
 l_s = "abbaca", "azxxzy"
 for i in l_s:
