@@ -41,3 +41,19 @@
 # 294,272
 # Submissions
 # 515,569
+
+
+class Solution(object):
+    def removeDuplicates(self, s, k):
+        """
+        :type s: str
+        :type k: int
+        :rtype: str
+        """
+        return res
+
+l_s = "abcd", "deeedbbcccbdaa", "pbbcggttciiippooaais"
+l_k = 2, 3, 2
+
+for k, s in enumerate(l_s):
+   Soluiton.removeDuplicates('Success', s, l_k[k])
