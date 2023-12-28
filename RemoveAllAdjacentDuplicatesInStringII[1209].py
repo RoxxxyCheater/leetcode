@@ -50,17 +50,24 @@ class Solution(object):
         :type k: int
         :rtype: str
         """
-        stack = []
+        stack = []  # Используем стек для отслеживания символов и их количества
+    
         for char in s:
             if stack and stack[-1][0] == char:
+                # Если текущий символ равен вершине стека, увеличиваем количество повторений
                 stack[-1] = (char, stack[-1][1] + 1)
                 if stack[-1][1] == k:
+                    # Если количество повторений достигло k, удаляем вершину стека
                     stack.pop()
             else:
+                # Иначе добавляем текущий символ с количеством 1 в стек
                 stack.append((char, 1))
+    
         result = ''
         for char, count in stack:
+            # Собираем окончательный результат, объединяя символы с их количеством
             result += char * count
+    
         return result
 
 l_s = "abcd", "deeedbbcccbdaa", "pbbcggttciiippooaais"
