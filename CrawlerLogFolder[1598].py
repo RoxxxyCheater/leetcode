@@ -56,7 +56,16 @@ class Solution(object):
         :type logs: List[str]
         :rtype: int
         """
-        return res
+        stack = [] 
+        for operation in logs:
+            if operation == "../":
+                if stack:
+                    stack.pop()
+            elif operation == "./":
+                pass
+            else:
+                stack.append(operation)
+        return len(stack)
 
 l_l = ["d1/","d2/","../","d21/","./"], ["d1/","d2/","./","d3/","../","d31/"], ["d1/","../","../","../"]
 
