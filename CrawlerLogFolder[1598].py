@@ -47,3 +47,18 @@
 # 71,269
 # Submissions
 # 109,947
+
+
+
+class Solution(object):
+    def minOperations(self, logs):
+        """
+        :type logs: List[str]
+        :rtype: int
+        """
+        return res
+
+l_l = ["d1/","d2/","../","d21/","./"], ["d1/","d2/","./","d3/","../","d31/"], ["d1/","../","../","../"]
+
+fro l in l_l:
+  Solution.miOperations('Success', l)
