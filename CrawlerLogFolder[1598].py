@@ -56,16 +56,22 @@ class Solution(object):
         :type logs: List[str]
         :rtype: int
         """
-        stack = [] 
+        stack = []  # Стек для отслеживания текущего пути
+    
         for operation in logs:
             if operation == "../":
+                # Переход к родительской папке (если не находимся уже в корневой папке)
                 if stack:
                     stack.pop()
             elif operation == "./":
+                # Оставаться в текущей папке (ничего не делаем)
                 pass
             else:
+                # Переход к дочерней папке (добавляем её к пути)
                 stack.append(operation)
+    
         return len(stack)
+
 
 l_l = ["d1/","d2/","../","d21/","./"], ["d1/","d2/","./","d3/","../","d31/"], ["d1/","../","../","../"]
 
