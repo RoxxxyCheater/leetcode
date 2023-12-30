@@ -34,15 +34,29 @@ class Solution(object):
         :type n: int
         :rtype: List[str]
         """
+        result = []  # Список для хранения всех комбинаций скобок
+    
         def backtrack(s='', left=0, right=0):
+            """
+            Рекурсивная функция для генерации комбинаций скобок.
+    
+            :param s: текущая строка скобок
+            :param left: количество открытых скобок
+            :param right: количество закрытых скобок
+            """
+            # Базовый случай: когда строка достигла нужной длины
             if len(s) == 2 * n:
                 result.append(s)
                 return
+            # Рекурсивные случаи
             if left < n:
+                # Добавляем открывающую скобку, если это разрешено
                 backtrack(s + '(', left + 1, right)
             if right < left:
+                # Добавляем закрывающую скобку, если это разрешено
                 backtrack(s + ')', left, right + 1)
-        result = []
+    
+        # Начинаем рекурсию
         backtrack()
         return result
 
