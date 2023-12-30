@@ -34,7 +34,18 @@ class Solution(object):
         :type n: int
         :rtype: List[str]
         """
-        return res
+        def backtrack(s='', left=0, right=0):
+            if len(s) == 2 * n:
+                result.append(s)
+                return
+            if left < n:
+                backtrack(s + '(', left + 1, right)
+            if right < left:
+                backtrack(s + ')', left, right + 1)
+        result = []
+        backtrack()
+        return result
+
 
 l_n = 3, 1
 
