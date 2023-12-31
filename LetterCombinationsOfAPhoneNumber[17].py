@@ -41,7 +41,9 @@ class Solution(object):
         :rtype: List[str]
         """
         if not digits:
-            return []       
+            return []
+
+        # Отображение цифр на соответствующие буквы
         digit_map = {
             '2': 'abc',
             '3': 'def',
@@ -52,14 +54,22 @@ class Solution(object):
             '8': 'tuv',
             '9': 'wxyz'
         }
+
         def backtrack(index, path):
+            # Если мы достигли конца строки digits, добавляем текущую комбинацию
+            if index == len(digits):
                 combinations.append(''.join(path))
                 return
+
+            # Получаем буквы, соответствующие текущей цифре
             letters = digit_map[digits[index]]
+
+            # Рекурсивно строим комбинации для следующей цифры
             for letter in letters:
                 path.append(letter)
                 backtrack(index + 1, path)
-                path.pop()  
+                path.pop()  # Откатываем изменение для следующей итерации
+
         combinations = []
         backtrack(0, [])
         return combinations
