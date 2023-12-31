@@ -40,7 +40,29 @@ class Solution(object):
         :type digits: str
         :rtype: List[str]
         """
-        return res
+        if not digits:
+            return []       
+        digit_map = {
+            '2': 'abc',
+            '3': 'def',
+            '4': 'ghi',
+            '5': 'jkl',
+            '6': 'mno',
+            '7': 'pqrs',
+            '8': 'tuv',
+            '9': 'wxyz'
+        }
+        def backtrack(index, path):
+                combinations.append(''.join(path))
+                return
+            letters = digit_map[digits[index]]
+            for letter in letters:
+                path.append(letter)
+                backtrack(index + 1, path)
+                path.pop()  
+        combinations = []
+        backtrack(0, [])
+        return combinations
 
 l_d = "23", "", "2"
 for d in l_d:
