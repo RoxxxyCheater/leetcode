@@ -33,3 +33,15 @@
 # 1,854,671
 # Submissions
 # 3,121,525
+
+class Solution(object):
+    def letterCombinations(self, digits):
+        """
+        :type digits: str
+        :rtype: List[str]
+        """
+        return res
+
+l_d = "23", "", "2"
+for d in l_d:
+   Solution.letterCombinations('Success', d)
