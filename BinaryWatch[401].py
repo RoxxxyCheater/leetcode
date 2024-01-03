@@ -37,3 +37,21 @@
 # 135,404
 # Submissions
 # 252,988
+
+
+
+class Solution(object):
+    def readBinaryWatch(self, turnedOn):
+        """
+        :type turnedOn: int
+        :rtype: List[str]
+        """
+        return res
+
+
+l_t = 1, 9
+
+for i in l_t:
+   Solution.readBinaryWatch('Success', i)
+
+
