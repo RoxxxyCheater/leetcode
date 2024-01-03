@@ -46,8 +46,14 @@ class Solution(object):
         :type turnedOn: int
         :rtype: List[str]
         """
-        return res
-
+        def count_bits(num):
+            return bin(num).count('1')
+        result = []
+        for hour in range(12):
+            for minute in range(60):
+                if count_bits(hour) + count_bits(minute) == turnedOn:
+                    result.append("{:d}:{:02d}".format(hour, minute))
+        return result
 
 l_t = 1, 9
 
