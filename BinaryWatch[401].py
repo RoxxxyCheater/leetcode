@@ -47,13 +47,20 @@ class Solution(object):
         :rtype: List[str]
         """
         def count_bits(num):
+            # Функция для подсчета количества включенных битов в числе
             return bin(num).count('1')
+
         result = []
+
         for hour in range(12):
             for minute in range(60):
                 if count_bits(hour) + count_bits(minute) == turnedOn:
+                    # Форматирование времени с использованием str.format()
                     result.append("{:d}:{:02d}".format(hour, minute))
+
         return result
+
+
 
 l_t = 1, 9
 
