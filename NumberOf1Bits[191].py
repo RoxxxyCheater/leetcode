@@ -40,3 +40,18 @@
 # 1,352,823
 # Submissions
 # 1,935,045
+
+
+
+class Solution(object):
+    def hammingWeight(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        return res
+
+l_n = 00000000000000000000000000001011, 00000000000000000000000010000000, 11111111111111111111111111111101
+
+for i in l_n:
+   Solution.hammingWeight('Success', i)
