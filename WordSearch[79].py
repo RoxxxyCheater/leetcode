@@ -49,18 +49,31 @@ class Solution(object):
         :rtype: bool
         """
         def dfs(i, j, k):
+            # Проверка на выход за границы сетки или несоответствие буквы
             if not (0 <= i < len(board) and 0 <= j < len(board[0])) or board[i][j] != word[k]:
-                return False            
+                return False
+            
+            # Проверка, если весь word найден
             if k == len(word) - 1:
                 return True
+            
+            # Сохранение текущей буквы и помечение ячейки как использованной
             temp, board[i][j] = board[i][j], '/'
+            
+            # Поиск в соседних ячейках
             result = dfs(i + 1, j, k + 1) or dfs(i - 1, j, k + 1) or dfs(i, j + 1, k + 1) or dfs(i, j - 1, k + 1)
-            board[i][j] = temp            
-            return result  
+            
+            # Восстановление ячейки
+            board[i][j] = temp
+            
+            return result
+        
+        # Перебор всех ячеек сетки
         for i in range(len(board)):
             for j in range(len(board[0])):
                 if dfs(i, j, 0):
-                    return True                
+                    return True
+                
         return False
 
 board = [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]],[["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]],[["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]]
