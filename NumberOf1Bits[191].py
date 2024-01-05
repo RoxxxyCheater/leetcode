@@ -49,7 +49,7 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
-        return res
+        return bin(n).count('1')
 
 l_n = 00000000000000000000000000001011, 00000000000000000000000010000000, 11111111111111111111111111111101
 
