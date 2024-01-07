@@ -34,3 +34,19 @@
 # 229,796
 # Submissions
 # 293,568
+
+
+class Solution(object):
+    def selfDividingNumbers(self, left, right):
+        """
+        :type left: int
+        :type right: int
+        :rtype: List[int]
+        """                
+        return res
+    
+l_l = 1, 47
+l_r = 22, 85
+
+for r, l in enumerate(l_l):
+    Solution.selfDividingNumbers('Success', l, l_r[r])
