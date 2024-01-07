@@ -42,8 +42,19 @@ class Solution(object):
         :type left: int
         :type right: int
         :rtype: List[int]
-        """                
-        return res
+        """
+        result = []        
+        for num in range(left, right + 1):
+            if self.isSelfDividing(num):
+                result.append(num)                
+        return result
+    
+    def isSelfDividing(self, num):
+        for digit in str(num):
+            if digit == '0' or num % int(digit) != 0:
+                return False
+        return True
+
     
 l_l = 1, 47
 l_r = 22, 85
