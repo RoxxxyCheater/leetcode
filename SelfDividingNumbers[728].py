@@ -43,18 +43,26 @@ class Solution(object):
         :type right: int
         :rtype: List[int]
         """
-        result = []        
+        result = []  # Список для хранения самоделительных чисел
+        
+        # Проходим по диапазону чисел от left до right включительно
         for num in range(left, right + 1):
             if self.isSelfDividing(num):
-                result.append(num)                
+                result.append(num)
+                
         return result
     
     def isSelfDividing(self, num):
+        """
+        :type num: int
+        :rtype: bool
+        """
+        # Преобразуем число в строку для итерации по его цифрам
         for digit in str(num):
+            # Проверяем наличие цифры 0 и деление числа на каждую цифру
             if digit == '0' or num % int(digit) != 0:
                 return False
         return True
-
     
 l_l = 1, 47
 l_r = 22, 85
