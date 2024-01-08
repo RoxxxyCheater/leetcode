@@ -39,3 +39,18 @@
 # 66,376
 # Submissions
 # 79,151
+
+
+class Solution(object):
+    def countDigits(self, num):
+        """
+        :type num: int
+        :rtype: int
+        """
+        return count
+
+
+l_n = 7, 121, 1248
+
+for n in l_n:
+  Solution.countDigits('Success', n)
