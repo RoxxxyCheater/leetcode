@@ -40,18 +40,22 @@
 # Submissions
 # 79,151
 
-
 class Solution(object):
     def countDigits(self, num):
         """
         :type num: int
         :rtype: int
         """
-        count = 0 
+        count = 0  # Инициализируем счетчик
+
+        # Преобразуем число в строку для итерации по его цифрам
         for digit_str in str(num):
             digit = int(digit_str)
+
+            # Проверяем, делится ли число num на текущую цифру
             if digit != 0 and num % digit == 0:
-                count += 1 
+                count += 1  # Увеличиваем счетчик
+
         return count
 
 
