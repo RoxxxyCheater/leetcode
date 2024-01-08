@@ -47,6 +47,11 @@ class Solution(object):
         :type num: int
         :rtype: int
         """
+        count = 0 
+        for digit_str in str(num):
+            digit = int(digit_str)
+            if digit != 0 and num % digit == 0:
+                count += 1 
         return count
 
 
