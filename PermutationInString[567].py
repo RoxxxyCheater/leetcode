@@ -33,3 +33,19 @@
 # 780,794
 # Submissions
 # 1,765,386
+
+
+class Solution(object):
+    def checkInclusion(self, s1, s2):
+        """
+        :type s1: str
+        :type s2: str
+        :rtype: bool
+        """
+        return res
+
+l1 = "ab", "ab"
+l2 = "eidbaooo", "eidboaoo"
+
+for s2, s1 in enumerate(l1):
+    Solution.checkInclusion('Success', s1, l2[s2])
