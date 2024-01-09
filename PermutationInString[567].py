@@ -43,20 +43,32 @@ class Solution(object):
         :type s2: str
         :rtype: bool
         """
+        # Проверка, если длина s1 больше длины s2, то перестановки не могут вмещаться.
         if len(s1) > len(s2):
-            return False        
+            return False
+
+        # Инициализация размера окна и счетчиков символов в строках.
         window_size = len(s1)
         target_count = Counter(s1)
         current_count = Counter(s2[:window_size])
+
+        # Проверка совпадения для начального окна.
         for i in range(len(s2) - window_size + 1):
             if current_count == target_count:
-                return True            
+                return True
+
+            # Обновление счетчика для следующего окна.
             if i + window_size < len(s2):
+                # Уменьшение счетчика для символа, который выходит из окна.
                 current_count[s2[i]] -= 1
                 if current_count[s2[i]] == 0:
-                    del current_count[s2[i]]                
-                current_count[s2[i + window_size]] += 1        
+                    del current_count[s2[i]]
+
+                # Увеличение счетчика для нового символа в окне.
+                current_count[s2[i + window_size]] += 1
+
         return False
+
 
 l1 = "ab", "ab"
 l2 = "eidbaooo", "eidboaoo"
