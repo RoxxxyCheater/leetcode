@@ -48,20 +48,33 @@ class Solution(object):
         :type p: str
         :rtype: List[int]
         """
+        # Инициализация словаря для хранения частот символов в строке p
         char_freq_p = {}
         for char in p:
             char_freq_p[char] = char_freq_p.get(char, 0) + 1
-        char_freq_window = {}        
+
+        # Инициализация словаря для хранения частот символов в текущем окне строки s
+        char_freq_window = {}
+        
+        # Инициализация списка для хранения индексов начала анаграмм в строке s
         result = []
+        
+        # Итерация по строке s
         for i in range(len(s)):
+            # Обновление частоты символов в текущем окне строки s
             char_freq_window[s[i]] = char_freq_window.get(s[i], 0) + 1
+            
+            # Если размер окна превышает длину строки p, удаляем первый символ из окна
             if i >= len(p):
                 if char_freq_window[s[i - len(p)]] == 1:
                     del char_freq_window[s[i - len(p)]]
                 else:
-                    char_freq_window[s[i - len(p)]] -= 1   
+                    char_freq_window[s[i - len(p)]] -= 1
+            
+            # Проверка, является ли текущее окно анаграммой строки p
             if char_freq_window == char_freq_p:
                 result.append(i - len(p) + 1)
+
         return result
 
 l_s = "cbaebabacd", "abab"
