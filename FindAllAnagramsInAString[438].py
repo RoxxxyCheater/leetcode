@@ -39,3 +39,19 @@
 # 831,525
 # Submissions
 # 1,641,642
+
+
+class Solution(object):
+    def findAnagrams(self, s, p):
+        """
+        :type s: str
+        :type p: str
+        :rtype: List[int]
+        """
+        return res
+
+l_s = "cbaebabacd", "abab"
+l_p = "abc", "ab"
+
+for p, s in enumerate(l_s):
+    Solution.findAnagrams('Success', s, l_p[p])
