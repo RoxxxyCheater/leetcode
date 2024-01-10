@@ -48,7 +48,21 @@ class Solution(object):
         :type p: str
         :rtype: List[int]
         """
-        return res
+        char_freq_p = {}
+        for char in p:
+            char_freq_p[char] = char_freq_p.get(char, 0) + 1
+        char_freq_window = {}        
+        result = []
+        for i in range(len(s)):
+            char_freq_window[s[i]] = char_freq_window.get(s[i], 0) + 1
+            if i >= len(p):
+                if char_freq_window[s[i - len(p)]] == 1:
+                    del char_freq_window[s[i - len(p)]]
+                else:
+                    char_freq_window[s[i - len(p)]] -= 1   
+            if char_freq_window == char_freq_p:
+                result.append(i - len(p) + 1)
+        return result
 
 l_s = "cbaebabacd", "abab"
 l_p = "abc", "ab"
