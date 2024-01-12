@@ -48,8 +48,14 @@ class Solution(object):
         :type dimensions: List[List[int]]
         :rtype: int
         """
-        return res
-
+        max_diagonal_length = 0
+        max_area = 0
+        for length, width in dimensions:
+            diagonal_length = math.sqrt(length ** 2 + width ** 2)
+            if diagonal_length > max_diagonal_length or (diagonal_length == max_diagonal_length and length * width > max_area):
+                max_diagonal_length = diagonal_length
+                max_area = length * width
+        return max_area
 
 L_d = [[9,3],[8,6]], [[3,4],[4,3]]
 
