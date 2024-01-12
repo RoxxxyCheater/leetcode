@@ -48,13 +48,22 @@ class Solution(object):
         :type dimensions: List[List[int]]
         :rtype: int
         """
+        # Инициализируем переменные для максимальной длины диагонали и соответствующей площади
         max_diagonal_length = 0
         max_area = 0
+
+        # Проходим по каждому прямоугольнику в массиве dimensions
         for length, width in dimensions:
+            # Вычисляем длину диагонали с использованием теоремы Пифагора
             diagonal_length = math.sqrt(length ** 2 + width ** 2)
+
+            # Проверяем, является ли текущий прямоугольник более "диагональным" или имеет большую площадь
             if diagonal_length > max_diagonal_length or (diagonal_length == max_diagonal_length and length * width > max_area):
+                # Если условие выполняется, обновляем максимальные значения
                 max_diagonal_length = diagonal_length
                 max_area = length * width
+
+        # Возвращаем максимальную площадь прямоугольника
         return max_area
 
 L_d = [[9,3],[8,6]], [[3,4],[4,3]]
