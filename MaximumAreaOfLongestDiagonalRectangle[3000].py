@@ -41,3 +41,17 @@
 # 24,274
 # Submissions
 # 69,881
+
+class Solution(object):
+    def areaOfMaxDiagonal(self, dimensions):
+        """
+        :type dimensions: List[List[int]]
+        :rtype: int
+        """
+        return res
+
+
+L_d = [[9,3],[8,6]], [[3,4],[4,3]]
+
+for i in L_d:
+   Solution.areaOfMaxDiagonal("Success", i)
