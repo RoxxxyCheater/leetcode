@@ -42,14 +42,17 @@ class Solution(object):
         :rtype: bool
         """
         if num <= 1:
-            return False    
-        divisor_sum = 1 
+            return False  # Число меньше или равно 1 не может быть совершенным
+    
+        divisor_sum = 1  # 1 всегда является делителем
         for i in range(2, int(num**0.5) + 1):
             if num % i == 0:
-                divisor_sum += i
-                if i != num // i: 
-                    divisor_sum += num // i    
-        return divisor_sum == num
+                divisor_sum += i  # Добавляем делитель
+                if i != num // i:  # Избегаем учета одного и того же делителя дважды для квадратов
+                    divisor_sum += num // i  # Добавляем соответствующий делитель
+    
+        return divisor_sum == num  # Возвращаем True, если сумма делителей равна исходному числу
+
 
 l_n = 28,7
 
