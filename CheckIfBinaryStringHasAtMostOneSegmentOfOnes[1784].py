@@ -40,7 +40,13 @@ class Solution(object):
         :type s: str
         :rtype: bool
         """
-        return res
+        seen_zero = False    
+        for char in s:
+            if char == '0':
+                seen_zero = True
+            elif seen_zero:
+                return False    
+        return True
 
  l_s = 1001, 110
 
