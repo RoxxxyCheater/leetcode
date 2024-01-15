@@ -32,3 +32,17 @@
 # 39,237
 # Submissions
 # 99,574
+
+
+class Solution(object):
+    def checkOnesSegment(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        return res
+
+ l_s = 1001, 110
+
+for s in l_s:
+   Solution.checkOnesSegment('Success', s)
