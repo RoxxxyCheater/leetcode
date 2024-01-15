@@ -40,13 +40,17 @@ class Solution(object):
         :type s: str
         :rtype: bool
         """
-        seen_zero = False    
+        seen_zero = False  # Флаг для отслеживания появления '0' после начала единичного сегмента
+    
         for char in s:
             if char == '0':
-                seen_zero = True
+                seen_zero = True  # Если встречено '0', устанавливаем флаг в True
             elif seen_zero:
-                return False    
-        return True
+                return False  # Если после появления '0' снова встречается '1', значит, есть более одного сегмента единиц
+                # Возвращаем False
+    
+        return True  # Если цикл завершен без встречи '0' после начала сегмента единиц, возвращаем True
+
 
  l_s = 1001, 110
 
