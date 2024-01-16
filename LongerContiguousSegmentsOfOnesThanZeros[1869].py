@@ -49,3 +49,18 @@
 # 44,399
 # Submissions
 # 73,184
+
+
+class Solution(object):
+    def checkZeroOnes(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        return res
+
+
+l_s = "1101", "11100", "110100010"
+
+for s in l_s:
+   Solution.checkZeroOnes('Success', s)
