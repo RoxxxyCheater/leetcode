@@ -57,20 +57,34 @@ class Solution(object):
         :type s: str
         :rtype: bool
         """
-        max_ones_length = 0
-        max_zeros_length = 0
-        current_ones_length = 0
-        current_zeros_length = 0
+        # Инициализация переменных для хранения максимальной длины сегментов
+        max_ones_length = 0  # Максимальная длина сегмента единиц
+        max_zeros_length = 0  # Максимальная длина сегмента нулей
+    
+        # Инициализация переменных для текущей длины сегментов
+        current_ones_length = 0  # Текущая длина сегмента единиц
+        current_zeros_length = 0  # Текущая длина сегмента нулей
+    
+        # Итерация по символам бинарной строки
         for char in s:
             if char == '1':
+                # Если встречена '1', увеличиваем текущую длину сегмента единиц
                 current_ones_length += 1
+                # Обнуляем текущую длину сегмента нулей
                 current_zeros_length = 0
             elif char == '0':
+                # Если встречен '0', увеличиваем текущую длину сегмента нулей
                 current_zeros_length += 1
+                # Обнуляем текущую длину сегмента единиц
                 current_ones_length = 0
+    
+            # Обновление максимальных длин сегментов
             max_ones_length = max(max_ones_length, current_ones_length)
             max_zeros_length = max(max_zeros_length, current_zeros_length)
+    
+        # Сравнение максимальных длин сегментов и возвращение результата
         return max_ones_length > max_zeros_length
+
 
 
 l_s = "1101", "11100", "110100010"
