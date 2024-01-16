@@ -57,7 +57,20 @@ class Solution(object):
         :type s: str
         :rtype: bool
         """
-        return res
+        max_ones_length = 0
+        max_zeros_length = 0
+        current_ones_length = 0
+        current_zeros_length = 0
+        for char in s:
+            if char == '1':
+                current_ones_length += 1
+                current_zeros_length = 0
+            elif char == '0':
+                current_zeros_length += 1
+                current_ones_length = 0
+            max_ones_length = max(max_ones_length, current_ones_length)
+            max_zeros_length = max(max_zeros_length, current_zeros_length)
+        return max_ones_length > max_zeros_length
 
 
 l_s = "1101", "11100", "110100010"
