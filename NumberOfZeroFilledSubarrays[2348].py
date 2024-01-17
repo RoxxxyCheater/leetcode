@@ -46,3 +46,17 @@
 # 118,325
 # Submissions
 # 177,433
+
+
+class Solution(object):
+    def zeroFilledSubarray(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        return res
+
+l_n = [1,3,0,0,2,0,0,4], [0,0,0,2,0,0], [2,10,2019]
+
+for n in l_n:
+   Solution.zeroFilledSubbarray('Success', n)
