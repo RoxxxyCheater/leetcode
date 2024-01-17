@@ -54,14 +54,18 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        count_zeros = 0
-        result = 0    
+        # Инициализация переменных
+        count_zeros = 0  # Счетчик последовательных нулей
+        result = 0       # Переменная для хранения общего количества подмассивов с нулями
+    
+        # Итерация по массиву
         for num in nums:
             if num == 0:
-                count_zeros += 1
-                result += count_zeros
+                count_zeros += 1  # Увеличиваем счетчик нулей при обнаружении нулевого элемента
+                result += count_zeros  # Обновляем результат на основе количества нулей
             else:
-                count_zeros = 0    
+                count_zeros = 0  # Если встречен ненулевой элемент, обнуляем счетчик
+    
         return result
 
 l_n = [1,3,0,0,2,0,0,4], [0,0,0,2,0,0], [2,10,2019]
