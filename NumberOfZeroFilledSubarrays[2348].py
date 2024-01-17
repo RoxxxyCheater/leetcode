@@ -54,7 +54,15 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        return res
+        count_zeros = 0
+        result = 0    
+        for num in nums:
+            if num == 0:
+                count_zeros += 1
+                result += count_zeros
+            else:
+                count_zeros = 0    
+        return result
 
 l_n = [1,3,0,0,2,0,0,4], [0,0,0,2,0,0], [2,10,2019]
 
