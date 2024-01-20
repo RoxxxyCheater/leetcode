@@ -38,3 +38,17 @@
 # 127,673
 # Submissions
 # 282,820
+
+
+class Solution(object):
+    def isOneBitCharacter(self, bits):
+        """
+        :type bits: List[int]
+        :rtype: bool
+        """
+        return res
+
+l_b = [1,0,0], [1,1,1,0]
+
+for i in l_b:
+   Solution.isOneBitCharacter('Success', i)
