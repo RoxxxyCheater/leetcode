@@ -46,7 +46,14 @@ class Solution(object):
         :type bits: List[int]
         :rtype: bool
         """
-        return res
+        n = len(bits)
+        i = 0
+        while i < n - 1:
+            if bits[i] == 1:
+                i += 2
+            else:
+                i += 1
+        return i == n - 1
 
 l_b = [1,0,0], [1,1,1,0]
 
