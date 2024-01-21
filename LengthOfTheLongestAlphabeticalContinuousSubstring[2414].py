@@ -46,15 +46,22 @@ class Solution(object):
         """
         if not s:
             return 0
-        max_length = 1 
-        current_length = 1
+    
+        max_length = 1  # Инициализируем максимальную длину подстроки минимальным значением (одним символом)
+        current_length = 1  # Инициализируем текущую длину подстроки минимальным значением (одним символом)
+    
         for i in range(1, len(s)):
             if ord(s[i]) == ord(s[i - 1]) + 1:
+                # Текущий символ находится в алфавитном порядке после предыдущего
                 current_length += 1
             else:
+                # Обнаружен разрыв в алфавитном порядке, обновляем максимальную длину и сбрасываем текущую длину
                 max_length = max(max_length, current_length)
                 current_length = 1
+    
+        # Обновляем максимальную длину, учитывая последнюю непрерывную подстроку
         max_length = max(max_length, current_length)
+    
         return max_length
 
 l_s = "abacaba", "abcde"
