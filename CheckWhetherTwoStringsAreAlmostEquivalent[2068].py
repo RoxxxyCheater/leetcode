@@ -62,15 +62,23 @@ class Solution(object):
         :type word2: str
         :rtype: bool
         """
+        # Инициализация массивов для хранения частот каждой буквы
         freq_word1 = [0] * 26
         freq_word2 = [0] * 26
+
+        # Рассчитываем частоты каждой буквы в word1
         for char in word1:
             freq_word1[ord(char) - ord('a')] += 1
+
+        # Рассчитываем частоты каждой буквы в word2
         for char in word2:
             freq_word2[ord(char) - ord('a')] += 1
+
+        # Проверяем различия между частотами для каждой буквы
         for i in range(26):
             if abs(freq_word1[i] - freq_word2[i]) > 3:
                 return False
+
         return True
 
 word1 = "aaaa", "abcdeef", "cccddabba"
