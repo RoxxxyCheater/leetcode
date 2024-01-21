@@ -53,3 +53,20 @@
 # 48,229
 # Submissions
 # 75,698
+
+
+class Solution(object):
+    def checkAlmostEquivalent(self, word1, word2):
+        """
+        :type word1: str
+        :type word2: str
+        :rtype: bool
+        """
+        return res
+
+word1 = "aaaa", "abcdeef", "cccddabba"
+word2 = "bccb", "abaaacc", "babababab"
+
+
+for i, w in enumerate(world1):
+   Solution.checkAlmostEquivalent('Success', w, word2[i])
