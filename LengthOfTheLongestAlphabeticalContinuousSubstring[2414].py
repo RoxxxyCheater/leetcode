@@ -36,3 +36,17 @@
 # 41,606
 # Submissions
 # 72,150
+
+
+class Solution(object):
+    def longestContinuousSubstring(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        return res
+
+l_s = "abacaba", "abcde"
+
+for i in l_s:
+   Solution.longestContinuousSubstring('Success', i)
