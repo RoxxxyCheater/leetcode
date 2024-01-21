@@ -62,7 +62,16 @@ class Solution(object):
         :type word2: str
         :rtype: bool
         """
-        return res
+        freq_word1 = [0] * 26
+        freq_word2 = [0] * 26
+        for char in word1:
+            freq_word1[ord(char) - ord('a')] += 1
+        for char in word2:
+            freq_word2[ord(char) - ord('a')] += 1
+        for i in range(26):
+            if abs(freq_word1[i] - freq_word2[i]) > 3:
+                return False
+        return True
 
 word1 = "aaaa", "abcdeef", "cccddabba"
 word2 = "bccb", "abaaacc", "babababab"
