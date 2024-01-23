@@ -34,3 +34,17 @@
 # 157,508
 # Submissions
 # 260,377
+
+
+class Solution(object):
+    def maxPower(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        return res
+
+l_s = "leetcode", "abbcccddddeeeeedcba"
+
+for i in l_s:
+   Solution.maxPower('Success', i)
