@@ -42,7 +42,19 @@ class Solution(object):
         :type s: str
         :rtype: int
         """
-        return res
+        max_length = 1 
+        current_length = 1 
+        current_char = s[0]
+        for i in range(1, len(s)):
+            if s[i] == current_char:
+                current_length += 1
+            else:
+                max_length = max(max_length, current_length)
+                current_length = 1
+                current_char = s[i]
+        max_length = max(max_length, current_length)
+
+        return max_length
 
 l_s = "leetcode", "abbcccddddeeeeedcba"
 
