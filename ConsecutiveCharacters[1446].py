@@ -42,26 +42,37 @@ class Solution(object):
         :type s: str
         :rtype: int
         """
-        max_length = 1  # Инициализация максимальной длины (минимально возможной)
-    
-        current_length = 1  # Инициализация длины текущей последовательной подстроки
-        current_char = s[0]  # Инициализация текущего символа
-    
-        # Итерация по строке, начиная со второго символа
-        for i in range(1, len(s)):
-            if s[i] == current_char:
-                # Если текущий символ такой же, как предыдущий, увеличиваем длину текущей подстроки
-                current_length += 1
-            else:
-                # Если текущий символ отличается, обновляем максимальную длину и сбрасываем текущую длину
-                max_length = max(max_length, current_length)
-                current_length = 1
-                current_char = s[i]
-    
-        # Обновление максимальной длины после завершения цикла (в случае, если последний символ образует самую длинную последовательную подстроку)
-        max_length = max(max_length, current_length)
-    
+        # Варинат группировкой
+ 
+        max_length = 1
+        for char, group in itertools.groupby(s):
+            max_length = max(max_length, len(list(group)))
         return max_length
+
+
+
+
+
+        # max_length = 1  # Инициализация максимальной длины (минимально возможной)
+    
+        # current_length = 1  # Инициализация длины текущей последовательной подстроки
+        # current_char = s[0]  # Инициализация текущего символа
+    
+        # # Итерация по строке, начиная со второго символа
+        # for i in range(1, len(s)):
+        #     if s[i] == current_char:
+        #         # Если текущий символ такой же, как предыдущий, увеличиваем длину текущей подстроки
+        #         current_length += 1
+        #     else:
+        #         # Если текущий символ отличается, обновляем максимальную длину и сбрасываем текущую длину
+        #         max_length = max(max_length, current_length)
+        #         current_length = 1
+        #         current_char = s[i]
+    
+        # # Обновление максимальной длины после завершения цикла (в случае, если последний символ образует самую длинную последовательную подстроку)
+        # max_length = max(max_length, current_length)
+    
+        # return max_length
 
 l_s = "leetcode", "abbcccddddeeeeedcba"
 
