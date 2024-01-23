@@ -51,7 +51,14 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[int]
         """
-        return res
+        n = len(nums)
+        result = []
+        for i in range(n):
+            prefix_set = set(nums[:i + 1])  
+            suffix_set = set(nums[i + 1:])  
+            distinct_difference = len(prefix_set) - len(suffix_set)
+            result.append(distinct_difference)
+        return result
 
 list_n = [1,2,3,4,5],  [3,2,3,4,2]
 for i in list_n:
