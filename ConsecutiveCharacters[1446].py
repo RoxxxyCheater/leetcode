@@ -45,8 +45,12 @@ class Solution(object):
         # Варинат группировкой
  
         max_length = 1
+
+        # Итерация по строке
         for char, group in itertools.groupby(s):
+            # Рассматриваем каждую группу и обновляем максимальную длину
             max_length = max(max_length, len(list(group)))
+
         return max_length
 
 
