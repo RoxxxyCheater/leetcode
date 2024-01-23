@@ -53,11 +53,20 @@ class Solution(object):
         """
         n = len(nums)
         result = []
+
         for i in range(n):
-            prefix_set = set(nums[:i + 1])  
-            suffix_set = set(nums[i + 1:])  
+            # Создаем множество для элементов в префиксе nums[0, ..., i]
+            prefix_set = set(nums[:i + 1])
+
+            # Создаем множество для элементов в суффиксе nums[i + 1, ..., n - 1]
+            suffix_set = set(nums[i + 1:])
+
+            # Рассчитываем разницу в количестве уникальных элементов
             distinct_difference = len(prefix_set) - len(suffix_set)
+
+            # Добавляем полученное значение в результат
             result.append(distinct_difference)
+
         return result
 
 list_n = [1,2,3,4,5],  [3,2,3,4,2]
