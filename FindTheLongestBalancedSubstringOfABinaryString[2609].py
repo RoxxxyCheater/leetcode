@@ -43,3 +43,17 @@
 # 28,108
 # Submissions
 # 61,405
+
+
+class Solution(object):
+    def findTheLongestBalancedSubstring(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        return res
+
+l_s = "01000111", "00111", "111"
+
+for s in l_s:
+   Solution.findTheLongestBalancedSubstring('Success', s)
