@@ -51,7 +51,21 @@ class Solution(object):
         :type s: str
         :rtype: int
         """
-        return res
+        max_length = 0
+        balance = 0
+    
+        for i in range(len(s)):
+            if s[i] == '0':
+                balance += 1
+            else:
+                balance -= 1
+    
+            if balance == 0:
+                max_length = max(max_length, i + 1)
+            elif balance < 0:
+                balance = 0
+    
+        return max_length
 
 l_s = "01000111", "00111", "111"
 
