@@ -54,8 +54,11 @@ class Solution(object):
         :type arr: List[int]
         :rtype: bool
         """
+        # Сортируем оба массива
         target.sort()
         arr.sort()
+    
+        # Проверяем, равны ли отсортированные массивы
         return target == arr
      
 t_l = [1,2,3,4], [7], [3,7,9]
