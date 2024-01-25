@@ -45,3 +45,19 @@
 # 120,339
 # Submissions
 # 167,297
+
+
+class Solution(object):
+    def canBeEqual(self, target, arr):
+        """
+        :type target: List[int]
+        :type arr: List[int]
+        :rtype: bool
+        """
+        return res
+     
+t_l = [1,2,3,4], [7], [3,7,9]
+l_a = [2,4,1,3], [7], [3,7,11]
+
+for a, t in enumerate(t_l):
+   Solution.canBeEqual('Success', t, l_a[a])
