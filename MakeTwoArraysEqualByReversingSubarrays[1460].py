@@ -54,7 +54,9 @@ class Solution(object):
         :type arr: List[int]
         :rtype: bool
         """
-        return res
+        target.sort()
+        arr.sort()
+        return target == arr
      
 t_l = [1,2,3,4], [7], [3,7,9]
 l_a = [2,4,1,3], [7], [3,7,11]
