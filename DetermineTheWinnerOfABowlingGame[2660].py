@@ -58,3 +58,26 @@
 # 30,484
 # Submissions
 # 89,446
+
+
+class Solution(object):
+    def calculate_score(self, player):
+        """
+        :type player1: List[int]
+        :rtype: int
+        """
+        return score
+
+    def isWinner(self, player1, player2):
+        """
+        :type player1: List[int]
+        :type player2: List[int]
+        :rtype: int
+        """
+        return res
+
+lp1 = [4,10,7,9], [3,5,7,6], [2,3]
+lp2 = [6,5,2,3], [8,10,10,2], [4,1]
+
+for p2, p1 in enumerate(p1):
+   Solution.isWinner('Success', p1, lp2[p2])
