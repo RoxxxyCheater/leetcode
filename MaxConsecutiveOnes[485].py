@@ -39,7 +39,16 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        return res
+        max_consecutive_ones = 0
+        current_consecutive_ones = 0
+        for num in nums:
+            if num == 1:
+                current_consecutive_ones += 1
+                max_consecutive_ones = max(max_consecutive_ones, current_consecutive_ones)
+            else:
+                current_consecutive_ones = 0
+        return max_consecutive_ones
+
 
 
 l_n = [1,1,0,1,1,1], [1,0,1,1,0,1]
