@@ -39,15 +39,17 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        max_consecutive_ones = 0
-        current_consecutive_ones = 0
-        for num in nums:
-            if num == 1:
-                current_consecutive_ones += 1
-                max_consecutive_ones = max(max_consecutive_ones, current_consecutive_ones)
-            else:
-                current_consecutive_ones = 0
-        return max_consecutive_ones
+        max_consecutive_ones = 0  # Переменная для хранения максимального числа последовательных единиц
+        current_consecutive_ones = 0  # Переменная для хранения текущего числа последовательных единиц
+
+        for num in nums:  # Проходим по массиву чисел
+            if num == 1:  # Если текущее число равно 1
+                current_consecutive_ones += 1  # Увеличиваем текущее число последовательных единиц на 1
+                max_consecutive_ones = max(max_consecutive_ones, current_consecutive_ones)  # Обновляем максимальное число последовательных единиц
+            else:  # Если текущее число не равно 1 (равно 0)
+                current_consecutive_ones = 0  # Обнуляем текущее число последовательных единиц
+
+        return max_consecutive_ones  # Возвращаем максимальное число последовательных единиц
 
 
 
