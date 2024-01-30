@@ -35,3 +35,20 @@
 # 444,945
 # Submissions
 # 710,456
+
+
+class Solution(object):
+    def longestOnes(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
+        return res
+
+
+list_n = [1,1,1,0,0,0,1,1,1,1,0], [0,0,1,1,0,0,1,1,1,0,1,1,0,0,0,1,1,1,1]
+list_k = 2,3
+
+for i, n in enumerate(list_n):
+    Solution.longestOnes("Success", n, list_k[i])
