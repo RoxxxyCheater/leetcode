@@ -37,7 +37,7 @@
 # 640,936
 # Submissions
 # 1,202,625
-
+ 
 
 class Solution(object):
     def characterReplacement(self, s, k):
