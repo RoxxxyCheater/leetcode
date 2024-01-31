@@ -46,18 +46,27 @@ class Solution(object):
         :type k: int
         :rtype: int
         """
-        max_length = 0 
-        max_count = 0 
-        char_count = {}     
-        left = 0     
-        for right in range(len(s)):
-            char_count[s[right]] = char_count.get(s[right], 0) + 1      
-            max_count = max(max_count, char_count[s[right]]) 
+        max_length = 0  # Максимальная длина подстроки с одинаковыми буквами
+        max_count = 0  # Максимальное количество одинаковых букв в текущем окне
+        char_count = {}  # Словарь для хранения количества встреченных букв
+
+        left = 0  # Левая граница текущего окна
+
+        for right in range(len(s)):  # Проходим по строке
+            char_count[s[right]] = char_count.get(s[right], 0) + 1  # Обновляем количество встреченных букв
+
+            max_count = max(max_count, char_count[s[right]])  # Обновляем максимальное количество одинаковых букв в текущем окне
+
+            # Если суммарное количество букв в текущем окне минус максимальное количество одинаковых букв больше k,
+            # сдвигаем левую границу окна
             if right - left + 1 - max_count > k:
                 char_count[s[left]] -= 1
-                left += 1    
-            max_length = max(max_length, right - left + 1)     
-        return max_length  
+                left += 1
+
+            max_length = max(max_length, right - left + 1)  # Обновляем максимальную длину подстроки с одинаковыми буквами
+
+        return max_length  # Возвращаем максимальную длину подстроки с одинаковыми буквами
+
 
 
 ls = "ABAB", "AABABBA"
