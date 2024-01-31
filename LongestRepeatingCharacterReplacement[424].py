@@ -37,3 +37,19 @@
 # 640,936
 # Submissions
 # 1,202,625
+
+
+class Solution(object):
+    def characterReplacement(self, s, k):
+        """
+        :type s: str
+        :type k: int
+        :rtype: int
+        """
+        return res
+
+ls = "ABAB", "AABABBA"
+lk = 2, 1
+
+for i, s in enumerate(ls):
+    Solution.characterReplacement("Success", s, lk[i])
