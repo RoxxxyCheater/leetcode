@@ -44,18 +44,24 @@ class Solution(object):
         :type k: int
         :rtype: int
         """
-        left = 0
-        max_length = 0
-        zero_count = 0
-        for right in range(len(nums)):
-            if nums[right] == 0:
-                zero_count += 1
-            while zero_count > k:
-                if nums[left] == 0:
-                    zero_count -= 1
-                left += 1
-            max_length = max(max_length, right - left + 1)
-        return max_length
+        left = 0  # Левая граница текущего окна
+        max_length = 0  # Максимальная длина последовательности единиц
+        zero_count = 0  # Количество нулей в текущем окне
+    
+        for right in range(len(nums)):  # Проходим по массиву nums
+            if nums[right] == 0:  # Если текущий элемент равен 0
+                zero_count += 1  # Увеличиваем счетчик нулей
+    
+            while zero_count > k:  # Если количество нулей в текущем окне превышает k
+                if nums[left] == 0:  # Если крайний левый элемент текущего окна равен 0
+                    zero_count -= 1  # Уменьшаем счетчик нулей
+                left += 1  # Сдвигаем левую границу окна
+    
+            max_length = max(max_length, right - left + 1)  # Обновляем максимальную длину последовательности единиц
+    
+        return max_length  # Возвращаем максимальную длину последовательности единиц
+
+
 
 
 list_n = [1,1,1,0,0,0,1,1,1,1,0], [0,0,1,1,0,0,1,1,1,0,1,1,0,0,0,1,1,1,1]
