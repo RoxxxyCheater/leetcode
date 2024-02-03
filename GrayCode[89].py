@@ -53,7 +53,10 @@ class Solution(object):
         :type n: int
         :rtype: List[int]
         """
-        return res
+        result = [0]
+        for i in range(1, 2 ** n):
+            result.append(i ^ (i >> 1))
+        return result
 
 ln = 2, 1
 for i in ln:
