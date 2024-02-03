@@ -44,3 +44,17 @@
 # 284,645
 # Submissions
 # 486,128
+
+
+
+class Solution(object):
+    def grayCode(self, n):
+        """
+        :type n: int
+        :rtype: List[int]
+        """
+        return res
+
+ln = 2, 1
+for i in ln:
+   Solution.grayCode('Success', i)
