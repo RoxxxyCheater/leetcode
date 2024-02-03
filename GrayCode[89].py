@@ -53,8 +53,9 @@ class Solution(object):
         :type n: int
         :rtype: List[int]
         """
-        result = [0]
-        for i in range(1, 2 ** n):
+        result = [0]  # Начинаем с нуля, как требуется для серии Грея
+        for i in range(1, 2 ** n):  # Итерируем от 1 до 2^n - 1 включительно
+            # Добавляем к результату (i XOR i/2), чтобы обеспечить условия серии Грея
             result.append(i ^ (i >> 1))
         return result
 
