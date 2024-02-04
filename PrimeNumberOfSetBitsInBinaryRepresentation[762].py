@@ -54,30 +54,33 @@ class Solution(object):
         :type right: int
         :rtype: int
         """
+        # Функция для проверки, является ли число простым
         def is_prime(n):
-            if n <= 1:
+            if n <= 1:  # Числа 0 и 1 не являются простыми
                 return False
             for i in range(2, int(n ** 0.5) + 1):
-                if n % i == 0:
+                if n % i == 0:  # Если число делится нацело на какое-либо число из интервала [2, квадратный корень из n], то оно не является простым
                     return False
-            return True
+            return True  # Если ни одно из чисел из интервала [2, квадратный корень из n] не делит число n нацело, то оно является простым
 
+        # Функция для подсчета количества установленных битов в двоичном представлении числа
         def count_set_bits(n):
             count = 0
             while n:
-                count += n & 1
-                n >>= 1
+                count += n & 1  # Подсчет количества установленных битов
+                n >>= 1        # Сдвиг вправо на 1 бит
             return count
 
-        primes = set([2, 3, 5, 7, 11, 13, 17, 19]) 
+        primes = set([2, 3, 5, 7, 11, 13, 17, 19])  # Множество простых чисел до 20
 
         count = 0
         for num in range(left, right + 1):
-            set_bits_count = count_set_bits(num)
-            if set_bits_count in primes:
+            set_bits_count = count_set_bits(num)  # Получение количества установленных битов
+            if set_bits_count in primes:          # Проверка, является ли количество простым числом
                 count += 1
 
         return count
+
 
 
 ll = 6, 10
