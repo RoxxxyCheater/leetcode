@@ -54,7 +54,31 @@ class Solution(object):
         :type right: int
         :rtype: int
         """
-        return res
+        def is_prime(n):
+            if n <= 1:
+                return False
+            for i in range(2, int(n ** 0.5) + 1):
+                if n % i == 0:
+                    return False
+            return True
+
+        def count_set_bits(n):
+            count = 0
+            while n:
+                count += n & 1
+                n >>= 1
+            return count
+
+        primes = set([2, 3, 5, 7, 11, 13, 17, 19]) 
+
+        count = 0
+        for num in range(left, right + 1):
+            set_bits_count = count_set_bits(num)
+            if set_bits_count in primes:
+                count += 1
+
+        return count
+
 
 ll = 6, 10
 lr = 10, 15
