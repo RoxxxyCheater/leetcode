@@ -45,3 +45,19 @@
 # 93,034
 # Submissions
 # 134,717
+
+
+class Solution(object):
+    def countPrimeSetBits(self, left, right):
+        """
+        :type left: int
+        :type right: int
+        :rtype: int
+        """
+        return res
+
+ll = 6, 10
+lr = 10, 15
+
+for i, l in enumerate(ll):
+  Solution.countPrimeSetBits('Success', l, lr[i])
