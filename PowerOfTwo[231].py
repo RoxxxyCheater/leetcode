@@ -36,3 +36,16 @@
 # 1,089,011
 # Submissions
 # 2,335,852
+
+
+class Solution(object):
+    def isPowerOfTwo(self, n):
+        """
+        :type n: int
+        :rtype: bool
+        """
+        return res
+
+ln = 1, 16, 3
+for i in ln:
+   Solution.isPowerOfTwo('Success', i)
