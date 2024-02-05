@@ -44,7 +44,9 @@ class Solution(object):
         :type n: int
         :rtype: bool
         """
-        return res
+        if n <= 0:
+            return False
+        return n & (n - 1) == 0
 
 ln = 1, 16, 3
 for i in ln:
