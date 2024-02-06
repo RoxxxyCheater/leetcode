@@ -48,6 +48,6 @@ class Solution(object):
         return n > 0 and max_pow % n == 0 # является ли число n положительным и делится ли максимальная степень тройки max_pow на n без остатка.
 
 ln = 27, 0, -1
-
+ 
 for i in ln:
    Solution.isPowerOfThree('Success', i)
