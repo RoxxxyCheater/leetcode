@@ -44,8 +44,8 @@ class Solution(object):
         :type n: int
         :rtype: bool
         """
-        max_pow = 1162261467  
-        return n > 0 and max_pow % n == 0
+        max_pow = 1162261467  # 3^19, the maximum power of three within the constraints
+        return n > 0 and max_pow % n == 0 # является ли число n положительным и делится ли максимальная степень тройки max_pow на n без остатка.
 
 ln = 27, 0, -1
 
