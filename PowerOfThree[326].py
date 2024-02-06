@@ -37,3 +37,16 @@
 # 788,718
 # Submissions
 # 1,705,020
+
+class Solution(object):
+    def isPowerOfThree(self, n):
+        """
+        :type n: int
+        :rtype: bool
+        """
+        return res
+
+ln = 27, 0, -1
+
+for i in ln:
+   Solution.isPowerOfThree('Success', i)
