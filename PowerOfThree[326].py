@@ -44,7 +44,10 @@ class Solution(object):
         :type n: int
         :rtype: bool
         """
-        return res
+        if n <= 0:
+            return False
+        max_pow = 1162261467 
+        return max_pow % n == 0
 
 ln = 27, 0, -1
 
