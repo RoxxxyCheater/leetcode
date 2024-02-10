@@ -44,7 +44,11 @@ class Solution(object):
         :type n: int
         :rtype: bool
         """
-        return res
+        while n > 0:
+            if n % 3 == 2:
+                return False
+            n //= 3
+        return True
 
 ln = 12, 91, 21
 
