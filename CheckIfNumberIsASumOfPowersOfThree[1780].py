@@ -34,3 +34,19 @@
 # 39,260
 # Submissions
 # 58,414
+
+
+
+
+class Solution(object):
+    def checkPowersOfThree(self, n):
+        """
+        :type n: int
+        :rtype: bool
+        """
+        return res
+
+ln = 12, 91, 21
+
+for i in ln:
+   Solution.checkPowersOfThree(´Success´, i)
