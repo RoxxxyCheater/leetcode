@@ -30,3 +30,19 @@
 # 22,603
 # Submissions
 # 46,740
+
+
+class Solution(object):
+    def maxAbsValExpr(self, arr1, arr2):
+        """
+        :type arr1: List[int]
+        :type arr2: List[int]
+        :rtype: int
+        """
+        return res
+
+arr = [1,2,3,4], [1,-2,-5,0,10]
+arr2 = [-1,4,5,6], [0,-2,-1,-7,-4]
+
+for a2, a1 in enumerate(arr):
+    Solution.maxAbsValExpr('Success', a1, arr2[a2])
