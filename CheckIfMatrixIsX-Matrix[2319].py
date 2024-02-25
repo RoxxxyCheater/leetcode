@@ -46,8 +46,18 @@ class Solution(object):
         :type grid: List[List[int]]
         :rtype: bool
         """
-        return res
-
+        n = len(grid)
+        for i in range(n):
+            if grid[i][i] == 0:
+                return False
+            if grid[i][n - 1 - i] == 0:
+                return False
+        for i in range(n):
+            for j in range(n):
+                if i != j and j != n - 1 - i and grid[i][j] != 0:
+                    return False        
+        return True
+     
 lg = [[2,0,0,1],[0,3,1,0],[0,5,2,0],[4,0,0,2]], [[5,7,0],[0,3,1],[0,5,0]]
 
 for g in lg:
