@@ -38,3 +38,17 @@
 # 48,928
 # Submissions
 # 74,888
+
+
+class Solution(object):
+    def checkXMatrix(self, grid):
+        """
+        :type grid: List[List[int]]
+        :rtype: bool
+        """
+        return res
+
+lg = [[2,0,0,1],[0,3,1,0],[0,5,2,0],[4,0,0,2]], [[5,7,0],[0,3,1],[0,5,0]]
+
+for g in lg:
+   Solution.checkMatrix('Success', g)
