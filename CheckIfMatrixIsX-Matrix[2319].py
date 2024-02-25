@@ -47,16 +47,21 @@ class Solution(object):
         :rtype: bool
         """
         n = len(grid)
+        
+        # Проверка условия 1: все элементы на диагоналях матрицы ненулевые
         for i in range(n):
-            if grid[i][i] == 0:
+            if grid[i][i] == 0:  # Проверка главной диагонали
                 return False
-            if grid[i][n - 1 - i] == 0:
+            if grid[i][n - 1 - i] == 0:  # Проверка побочной диагонали
                 return False
+        
+        # Проверка условия 2: все остальные элементы матрицы равны 0
         for i in range(n):
             for j in range(n):
-                if i != j and j != n - 1 - i and grid[i][j] != 0:
-                    return False        
-        return True
+                if i != j and j != n - 1 - i and grid[i][j] != 0:  # Проверка наличия ненулевых элементов, кроме диагональных
+                    return False
+        
+        return True  # Если оба условия выполняются, матрица является X-матрицей
      
 lg = [[2,0,0,1],[0,3,1,0],[0,5,2,0],[4,0,0,2]], [[5,7,0],[0,3,1],[0,5,0]]
 
